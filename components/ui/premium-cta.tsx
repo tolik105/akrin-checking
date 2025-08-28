@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { useEffect, useRef } from "react";
 
 interface PremiumCTAProps {
   variant?: "teal" | "dark" | "neutral";
@@ -41,6 +42,27 @@ export function PremiumCTA({
   backgroundImage
 }: PremiumCTAProps) {
   const styles = variantStyles[variant];
+  const noiseRef = useRef<HTMLDivElement | null>(null)
+
+  // Lazy-apply the heavy noise background when the section is near viewport
+  useEffect(() => {
+    const el = noiseRef.current
+    if (!el) return
+    let applied = false
+    const apply = () => {
+      if (applied) return
+      applied = true
+      el.style.backgroundImage = 'url(/noise.webp)'
+    }
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        apply()
+        observer.disconnect()
+      }
+    }, { rootMargin: '200px 0px' })
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
 
   return (
     <section className={cn(
@@ -65,10 +87,13 @@ export function PremiumCTA({
 
       {/* Noise Background Pattern */}
       <div
+        ref={noiseRef}
         className="absolute inset-0 w-full h-full opacity-10 [mask-image:radial-gradient(#fff,transparent,75%)]"
         style={{
-          backgroundImage: "url(/noise.webp)",
+          // backgroundImage intentionally applied lazily to avoid early network cost
           backgroundSize: "30%",
+          contentVisibility: 'auto',
+          containIntrinsicSize: '1000px 400px'
         }}
       ></div>
       

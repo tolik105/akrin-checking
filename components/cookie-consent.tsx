@@ -19,12 +19,21 @@ export function CookieConsent() {
       // Check if user has already made a choice
       const consent = localStorage.getItem('cookie-consent')
       if (!consent) {
-        // Small delay to prevent flash on page load
-        const timer = setTimeout(() => {
-          setShowBanner(true)
-          setIsLoading(false)
-        }, 1000)
-        return () => clearTimeout(timer)
+        // Defer showing banner until after first paint and interaction idle
+        const onIdle = () => {
+          // additional micro-delay to ensure hero paints first
+          setTimeout(() => {
+            setShowBanner(true)
+            setIsLoading(false)
+          }, 800)
+        }
+        if ('requestIdleCallback' in window) {
+          ;(window as any).requestIdleCallback(onIdle, { timeout: 2500 })
+        } else {
+          // Fallback: show shortly after interactive
+          setTimeout(onIdle, 1500)
+        }
+        return () => {}
       }
     }
     setIsLoading(false)
@@ -43,6 +52,11 @@ export function CookieConsent() {
         'analytics_storage': 'granted'
       })
     }
+
+    // Notify listeners (e.g., GA component) that consent was granted
+    try {
+      window.dispatchEvent(new Event('ga-consent-granted'))
+    } catch {}
   }
 
   const declineCookies = () => {

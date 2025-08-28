@@ -11,6 +11,7 @@ export function VideoHeroMobile() {
   const { t } = useTranslation('common')
   const [isMobile, setIsMobile] = useState(false)
   const [isTablet, setIsTablet] = useState(false)
+  const [shouldPlayVideo, setShouldPlayVideo] = useState(false)
 
   useEffect(() => {
     const checkScreenSize = () => {
@@ -23,6 +24,28 @@ export function VideoHeroMobile() {
     window.addEventListener('resize', checkScreenSize)
     
     return () => window.removeEventListener('resize', checkScreenSize)
+  }, [])
+
+  // Defer loading/playing the background video until idle or interaction,
+  // ensuring the text hero can be LCP.
+  useEffect(() => {
+    const start = () => setShouldPlayVideo(true)
+    if (typeof window !== 'undefined') {
+      if ('requestIdleCallback' in window) {
+        ;(window as any).requestIdleCallback(start, { timeout: 2000 })
+      } else {
+        setTimeout(start, 1200)
+      }
+      // Also start on first user interaction
+      window.addEventListener('scroll', start, { once: true })
+      window.addEventListener('pointerdown', start, { once: true })
+    }
+    return () => {
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('scroll', start)
+        window.removeEventListener('pointerdown', start)
+      }
+    }
   }, [])
 
   // Enhanced animation variants with better mobile performance
@@ -157,49 +180,79 @@ export function VideoHeroMobile() {
           {isMobile ? (
             // Mobile: Video background with overlay for readability
             <div className="w-full h-full relative">
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                className="absolute inset-0 w-full h-full object-cover"
-                style={{ filter: 'brightness(0.6)' }}
-              >
-                <source src="/video/AKRINKK.mp4" type="video/mp4" />
-              </video>
+              {shouldPlayVideo ? (
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  style={{ filter: 'brightness(0.6)' }}
+                  poster="/images/banners/it-managed-services/banner.avif"
+                >
+                  <source src="/video/AKRINKK.mp4" type="video/mp4" />
+                </video>
+              ) : (
+                <img
+                  src="/images/banners/it-managed-services/banner.avif"
+                  alt="AKRIN hero background"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  fetchPriority="high"
+                />
+              )}
                <div className="absolute inset-0 bg-black/30" />
             </div>
           ) : isTablet ? (
             // Tablet: Video background with overlay
             <div className="w-full h-full relative">
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                className="absolute inset-0 w-full h-full object-cover"
-                style={{ filter: 'brightness(0.7)' }}
-              >
-                <source src="/video/AKRINKK.mp4" type="video/mp4" />
-              </video>
+              {shouldPlayVideo ? (
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  style={{ filter: 'brightness(0.7)' }}
+                  poster="/images/banners/it-managed-services/banner.avif"
+                >
+                  <source src="/video/AKRINKK.mp4" type="video/mp4" />
+                </video>
+              ) : (
+                <img
+                  src="/images/banners/it-managed-services/banner.avif"
+                  alt="AKRIN hero background"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  fetchPriority="high"
+                />
+              )}
                <div className="absolute inset-0 bg-black/25" />
             </div>
           ) : (
             // Desktop: Full video background with subtle overlay
             <div className="w-full h-full relative">
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                className="absolute inset-0 w-full h-full object-cover"
-                style={{ filter: 'brightness(0.8) contrast(1.1)' }}
-              >
-                <source src="/video/AKRINKK.mp4" type="video/mp4" />
-              </video>
+              {shouldPlayVideo ? (
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  style={{ filter: 'brightness(0.8) contrast(1.1)' }}
+                  poster="/images/banners/it-managed-services/banner.avif"
+                >
+                  <source src="/video/AKRINKK.mp4" type="video/mp4" />
+                </video>
+              ) : (
+                <img
+                  src="/images/banners/it-managed-services/banner.avif"
+                  alt="AKRIN hero background"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  fetchPriority="high"
+                />
+              )}
                <div className="absolute inset-0 bg-black/20" />
             </div>
           )}
