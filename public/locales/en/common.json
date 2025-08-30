@@ -1,0 +1,1590 @@
+{
+  "common": {
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "contactUs": "Contact Us"
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "aboutUs": "About Us",
+    "caseStudies": "Case Studies",
+    "blog": "Blog",
+    "contact": "Contact",
+    "bookConsultation": "Book Consultation",
+    "allServices": "All Services",
+
+    "managedItSupport": "Managed IT Support",
+    "itConsultingProjectManagement": "IT Consulting & Project Management",
+    "cloudInfrastructure": "Cloud Infrastructure Solutions",
+    "cybersecurity": "Cybersecurity & IT Security",
+    "networkPenetrationTesting": "Network Penetration Testing",
+    "wifiAssessment": "Wi-Fi Assessment & Optimization",
+    "wifiDesign": "Enterprise Wi-Fi Design & Deployment",
+    "itSecurity": "IT Security Services",
+    "cloudSolutionsMigration": "Cloud Solutions & Migration",
+    "cybersecurityCompliance": "Cybersecurity & Compliance",
+    "networkInfrastructure": "Network & Infrastructure",
+    "aiPoweredAutomation": "AI-Powered Automation",
+    "itConsultingStrategy": "IT Consulting & Strategy",
+    "projectManagement": "Project Management"
+  },
+  "navExtra": {},
+  "hero": {
+    "title": "What's the next bold step for your IT?",
+    "exploreServices": "Explore Services",
+    "requestConsultation": "Request Consultation",
+    "subtitle": "Strategic consulting, end-to-end project management, and always-on managed services-secured 24/7.",
+    "cta": "Get started →",
+    "support247": "24/7 Global Support",
+    "enterpriseSecurity": "Enterprise-Grade Security",
+    "certifiedProfessionals": "Certified Professionals",
+    "tailoredSolutions": "Tailored IT Solutions"
+  },
+  "homepage": {
+    "industryExpertiseTitle": "Industry expertise that",
+    "industryExpertiseHighlight": "drives measurable results",
+    "industryExpertiseDescription": "With over 15 years of experience across diverse sectors, we understand the unique challenges and opportunities in your industry. Our solutions are tailored to meet regulatory requirements while driving innovation and growth.",
+    "trustedByLeadersTitle": "Trusted by industry leaders",
+    "trustedByLeadersDescription": "We partner with the world's leading technology companies to deliver best-in-class solutions.",
+    "readyToTransformTitle": "Ready to transform your IT infrastructure?",
+    "readyToTransformDescription": "Get expert consultation and discover how our solutions can drive your business forward with enterprise-grade reliability and startup agility.",
+    "scheduleConsultationButton": "Schedule Consultation",
+    "industryStats": {
+      "financialServices": "Financial Services",
+      "healthcare": "Healthcare & Life Sciences",
+      "manufacturing": "Manufacturing & Retail",
+      "technology": "Technology & Telecom"
+    }
+  },
+  "about": {
+    "title": "About Akrin",
+    "subtitle": "Your trusted partner for IT solutions and digital transformation",
+    "ourMission": "Our Mission",
+    "missionText": "At Akrin, we are dedicated to providing innovative IT solutions that empower businesses to thrive in the digital age. Our commitment to excellence and customer satisfaction drives us to deliver cutting-edge technology services tailored to your unique needs.",
+    "ourValues": "Our Values",
+    "values": {
+      "reliability": {
+        "title": "Reliability",
+        "description": "We deliver consistent, dependable IT services that keep your business running smoothly."
+      },
+      "partnership": {
+        "title": "Partnership",
+        "description": "We work closely with our clients to understand their goals and challenges, providing solutions that truly meet their needs."
+      },
+      "excellence": {
+        "title": "Excellence",
+        "description": "We strive for excellence in everything we do, from service delivery to customer support."
+      },
+      "innovation": {
+        "title": "Innovation",
+        "description": "We stay at the forefront of technology trends to bring you the most advanced solutions."
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch with us for any questions or support needs",
+    "sendMessage": "Send Message",
+    "formDescription": "Fill out the form below and we'll get back to you as soon as possible.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "sending": "Sending...",
+      "sendButton": "Send Message"
+    },
+    "info": {
+      "title": "Contact Information",
+      "address": "Address",
+      "addressText": "〒107-0062 Tokyo, Minato City, Minami Aoyama 2-4-15 4F",
+      "phone": "Phone",
+      "phoneText": "03-6821-1223",
+      "email": "Email",
+      "emailText": "support@akrin.jp",
+      "businessHours": "Business Hours",
+      "weekdays": "Monday - Friday: 9:00 AM - 6:00 PM",
+      "weekends": "Saturday - Sunday: Closed",
+      "subtitle": "Find us using the information below"
+    }
+  },
+  "booking": {
+    "title": "Book Reservation",
+    "subtitle": "Schedule a consultation with our IT experts to discuss your technology needs.",
+    "formTitle": "Reservation Details",
+    "form": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "phone": "Phone Number",
+      "preferredDate": "Preferred Date",
+      "service": "Service",
+      "additionalInfo": "Additional Information",
+      "placeholders": {
+        "firstName": "John",
+        "lastName": "Doe",
+        "email": "john.doe@example.com",
+        "phone": "03-6821-1223",
+        "date": "Select a date",
+        "service": "Select a service",
+        "additionalInfo": "Tell us more about your IT needs (optional)"
+      },
+      "services": {
+        "managed": "Managed IT Services",
+        "cyber": "Cyber Security",
+        "cloud": "Cloud Services",
+        "consulting": "IT Consulting",
+        "other": "Other"
+      },
+      "submitButton": "Book Reservation"
+    }
+  },
+
+  "servicesPage": {
+    "title": "Our IT Services",
+    "subtitle": "Comprehensive technology solutions for modern businesses",
+    "sectionTitle": "Our Comprehensive IT Solutions",
+    "sectionSubtitle": "Choose from our wide range of professional IT services designed to meet your business needs",
+    "allServices": {
+      "managed": {
+        "title": "Managed IT Services",
+        "description": "Complete IT management and support for your business"
+      },
+      "consulting": {
+        "title": "IT Consulting & Project Management",
+        "description": "Strategy, PMO, and delivery for complex IT initiatives"
+      }
+    },
+    "cta": {
+      "title": "Ready to Transform Your Business?",
+      "description": "Let us help you leverage technology to achieve your goals"
+    }
+  },
+  "sections": {
+    "whoWeAre": "Who We Are",
+    "whoWeAreDesc": "Akrin is a leading IT solutions provider serving businesses across Japan and internationally. With over a decade of experience, we specialize in delivering comprehensive technology services that drive digital transformation and business growth. Our team of certified professionals combines global expertise with local market understanding to provide tailored solutions that meet your unique challenges.",
+    "companyOverview": "Company Overview",
+    "companyOverviewDesc": "Leading IT solutions provider with global expertise and local understanding",
+    "ourCoreServices": "Our Core Services",
+    "coreServices": "Core Services",
+    "coreServicesDesc": "Comprehensive IT solutions tailored to your business needs",
+    "additionalServices": "Additional Services",
+    "additionalServicesDesc": "Extended IT solutions to support every aspect of your business",
+    "newServices": "New Services",
+    "newServicesDesc": "Expanding our offerings to meet evolving business needs",
+    "whyChooseUs": "Why Choose Akrin",
+    "whyChooseUsDesc": "Experience the difference with our comprehensive approach",
+    "faq": "Frequently Asked Questions",
+    "faqDesc": "Find answers to common questions about our services",
+    "testimonials": "What Our Clients Say",
+    "testimonialsDesc": "Trusted by businesses across industries",
+    "cta": "Discover the Right Solution for Your Business",
+    "ctaDesc": "Let our experts help you navigate the best IT solutions tailored to your industry and needs.",
+    "contactUs": "Contact Us",
+    "globalReach": "Global Reach",
+    "globalReachDesc": "Supporting multinational corporations with seamless IT services across borders and time zones.",
+    "industryExcellence": "Industry Excellence",
+    "industryExcellenceDesc": "Certified partnerships with leading technology vendors and commitment to service excellence.",
+    "companySummary": "Leading IT solutions provider serving businesses in Japan and internationally with over 10 years of experience."
+  },
+  "overview": {
+    "global": "Global Reach",
+    "globalDesc": "Supporting businesses worldwide with multi-language support and 24/7 availability",
+    "expertise": "Expert Team",
+    "expertiseDesc": "Certified professionals with deep industry knowledge and technical expertise",
+    "trusted": "Trusted Partner",
+    "trustedDesc": "Proven track record of delivering successful IT solutions for businesses of all sizes"
+  },
+  "whyChoose": {
+    "support247": {
+      "title": "24/7 Support",
+      "description": "Round-the-clock technical support ensures your business never stops"
+    },
+    "certified": {
+      "title": "Certified Experts",
+      "description": "Our team holds industry-leading certifications and continuous training"
+    },
+    "global": {
+      "title": "Global Experience",
+      "description": "International expertise with local market understanding"
+    },
+    "security": {
+      "title": "Enterprise Security",
+      "description": "Bank-grade security measures to protect your digital assets"
+    },
+    "scalable": {
+      "title": "Scalable Solutions",
+      "description": "IT infrastructure that grows with your business needs"
+    },
+    "proven": {
+      "title": "Proven Results",
+      "description": "Track record of successful implementations across industries"
+    }
+  },
+  "cta": {
+    "ready": "Ready to Get Started?",
+    "transform": "Let us help you transform your business with cutting-edge technology",
+    "contactToday": "Contact Us Today",
+    "scheduleConsultation": "Schedule Consultation"
+  },
+  "faq": {
+    "q1": {
+      "question": "What services does Akrin offer?",
+      "answer": "We provide comprehensive IT solutions including managed IT services, cybersecurity, cloud solutions, IT consulting, and 24/7 support, all tailored to meet your business needs."
+    },
+    "q2": {
+      "question": "How quickly can you respond to IT emergencies?",
+      "answer": "Our emergency response team is available 24/7 with guaranteed response times based on your SLA. Most critical issues are addressed within 1 hour."
+    },
+    "q3": {
+      "question": "Do you provide services outside of Japan?",
+      "answer": "Yes, we serve clients both domestically and internationally, with multi-language support and global expertise."
+    },
+    "q4": {
+      "question": "Can you help with digital transformation?",
+      "answer": "Absolutely! We specialize in guiding businesses through digital transformation with strategic planning, implementation, and ongoing support."
+    },
+    "q5": {
+      "question": "What is your response time for IT emergencies?",
+      "answer": "Our service desk operates 24/7 with guaranteed response times. Critical issues are addressed immediately, with most issues resolved within 2-4 hours."
+    },
+    "q6": {
+      "question": "Can you help with IT infrastructure relocation?",
+      "answer": "Yes! We specialize in seamless IT relocations, minimizing downtime and ensuring data integrity throughout the process."
+    },
+    "q7": {
+      "question": "What certifications do your technicians have?",
+      "answer": "Our team holds various industry certifications including Microsoft, Cisco, VMware, and security certifications. We continuously invest in training to stay current with technology trends."
+    },
+    "didntFindAnswer": "Didn’t find your answer?",
+    "stillHaveQuestions": "Still have questions? We're here to help."
+  },
+  "blog": {
+    "title": "Akrin Tech Blog",
+    "subtitle": "Insights, updates, and expertise from Japan's leading IT solutions provider",
+    "searchPlaceholder": "Search articles...",
+    "allCategories": "All Categories",
+    "featuredArticles": "Featured Articles",
+    "latestArticles": "Latest Articles",
+    "searchResults": "Search Results",
+    "noArticlesFound": "No articles found matching your criteria.",
+    "readMore": "Read More",
+    "read": "Read",
+    "minRead": "min read",
+    "stayUpdated": "Stay Updated",
+    "newsletterSubtitle": "Subscribe to our newsletter for the latest IT insights and industry updates",
+    "enterEmail": "Enter your email",
+    "subscribe": "Subscribe",
+    "backToBlog": "Back to Blog",
+    "tags": "Tags",
+    "share": "Share",
+    "about": "About",
+    "relatedArticles": "Related Articles",
+    "needExpertSolutions": "Need Expert IT Solutions?",
+    "ctaSubtitle": "Our team is ready to help you transform your IT infrastructure",
+    "viewServices": "View Services"
+  },
+  "testimonials": {
+    "t1": {
+      "name": "Yuki Tanaka",
+      "role": "CTO, TechCorp Japan",
+      "content": "Akrin has completely transformed our IT infrastructure. Their proactive approach and 24/7 support have been game-changers for our operations."
+    },
+    "t2": {
+      "name": "Sarah Johnson",
+      "role": "Operations Director, Global Retail Co.",
+      "content": "The cybersecurity solutions from Akrin have given us peace of mind. Their team is knowledgeable, responsive, and truly cares about our success."
+    },
+    "t3": {
+      "name": "Hiroshi Yamamoto",
+      "role": "CEO, Innovation Labs",
+      "content": "Working with Akrin has been exceptional. They understand our unique needs and deliver solutions that drive real business value."
+    }
+  },
+  "services": {
+    "managedIT": {
+      "title": "Managed IT Services",
+      "description": "Comprehensive IT management solutions customized to optimize your business operations."
+    },
+    "itSecurity": {
+      "title": "IT Security",
+      "description": "Advanced security measures to protect your digital assets from cyber threats."
+    },
+    "serviceDesk": {
+      "title": "Service Desk Services",
+      "description": "Professional IT support ensuring smooth operations and quick issue resolution."
+    },
+    "cloud": {
+      "title": "Cloud Solutions",
+      "description": "Scalable cloud infrastructure and migration services for modern businesses."
+    },
+    "consulting": {
+      "title": "IT Consulting",
+      "description": "Strategic technology guidance to align IT with your business objectives."
+    },
+    "cyberSecurity": {
+      "title": "Cyber Security",
+      "description": "Comprehensive protection against evolving cyber threats and vulnerabilities."
+    },
+    "flukeTester": {
+      "title": "Fluke Tester Survey",
+      "description": "Comprehensive network testing and certification for optimal performance."
+    },
+    "citrix": {
+      "title": "Citrix Workplace Services",
+      "description": "Virtual workspace solutions enhancing productivity and flexibility."
+    },
+    "recruitment": {
+      "title": "IT Recruitment",
+      "description": "Expert IT talent acquisition to build your dream tech team."
+    },
+    "relocation": {
+      "title": "IT Relocation Services",
+      "description": "Seamless IT infrastructure relocation with minimal downtime."
+    },
+    "eWaste": {
+      "title": "E-Waste Management",
+      "description": "Responsible disposal and recycling of electronic equipment."
+    }
+  },
+  "features": {
+    "tailoredSolutions": {
+      "title": "Tailored Solutions",
+      "description": "Every business is unique. We customize our services to match your specific requirements, ensuring optimal results and maximum ROI."
+    },
+    "expertTeam": {
+      "title": "Expert Team",
+      "description": "Our certified professionals bring years of experience and deep technical expertise to every project, ensuring successful outcomes."
+    },
+    "support247": {
+      "title": "24/7 Support",
+      "description": "Round-the-clock support ensures your systems run smoothly. Our dedicated support team is always ready to assist you."
+    }
+  },
+  "components": {
+    "aiChat": {
+      "title": "Akrin Chat",
+      "close": "Close",
+      "placeholder": "Ask Akrin Chat anything...",
+      "send": "Send",
+      "ai": "AI",
+      "you": "You"
+    },
+    "brochure": {
+      "title": "Learn More About Our Services",
+      "subtitle": "Discover how we can help your business succeed",
+      "button": "Explore Services"
+    }
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "contactUs": "Contact Us"
+  },
+  "footer": {
+    "description": "Leading IT solutions provider serving businesses in Japan and internationally with innovative technology services.",
+    "quickLinks": "Quick Links",
+    "company": "Company",
+    "contactInfo": "Contact Info",
+    "newsletter": "Newsletter",
+    "newsletterDesc": "Stay updated with the latest IT trends and updates.",
+    "emailPlaceholder": "Enter your email",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "allRightsReserved": "All Rights Reserved",
+    "viewOnMap": "View on map"
+  },
+  "servicePages": {
+    "managedServices": {
+      "title": "Managed IT Services",
+      "subtitle": "Akrin's Managed Services keeps your IT running smoothly. From monitoring to upgrades, we handle it all expertly so you can focus on your business.",
+      "mainDescription": "Akrin's Managed Services provides comprehensive IT management solutions that ensure your IT infrastructure operates at peak efficiency. Our team of experts specializes in proactive monitoring, maintenance, and upgrades of your IT systems. This service is tailored to free up your resources, allowing you to focus on core business activities while we ensure your IT environment is reliable, secure, and up-to-date.",
+      "sections": {
+        "empowering": "Empowering Your Business with 24/7 Global Support",
+        "features": "Key Features",
+        "additionalServices": "Additional Services"
+      },
+      "features": {
+        "globalSupport": "24/7 Global Support",
+        "blendedModel": "Blended Support Model",
+        "proactiveMonitoring": "Proactive Monitoring",
+        "serviceDesk": "Always Available Service Desk",
+        "onsiteSupport": "Onsite Support",
+        "relocationServices": "Relocation Services",
+        "proactiveReactive": "Proactive and Reactive Support",
+        "tailoredNeeds": "Tailored to Your Specific Needs",
+        "minimizeDowntime": "Minimize Downtime",
+        "enhanceProductivity": "Enhance Productivity",
+        "globalSupportDesc": "Round-the-clock IT support available globally to ensure your business never stops.",
+        "blendedModelDesc": "Combines remote and onsite support for comprehensive IT service delivery.",
+        "proactiveMonitoringDesc": "Continuous monitoring to identify and resolve issues before they impact your business.",
+        "serviceDeskDesc": "Dedicated service desk providing immediate assistance for all your IT needs.",
+        "onsiteSupportDesc": "Professional technicians available for onsite technical support and maintenance.",
+        "relocationServicesDesc": "Complete IT relocation services to ensure seamless business continuity during moves."
+      },
+      "additionalServices": {
+        "dataComm": {
+          "title": "Data Communication Systems",
+          "description": "We design, install, and maintain data communication devices and systems, ensuring your network runs smoothly and efficiently."
+        },
+        "itEquipment": {
+          "title": "IT Equipment & Services",
+          "description": "We provide a wide range of ICT equipment and peripherals including computers, printers, and networking devices."
+        },
+        "recruitment": {
+          "title": "Recruitment & Staffing",
+          "description": "We offer comprehensive recruitment services including job posting, recruitment strategy consulting, and temporary and permanent staffing solutions."
+        },
+        "wasteManagement": {
+          "title": "Waste Management",
+          "description": "We provide comprehensive waste management solutions including collection, transportation, and responsible disposal and recycling of general waste."
+        },
+        "itSolutions": {
+          "title": "IT Solutions",
+          "description": "We design, develop, and maintain custom software and internet systems to streamline your operations and enhance your competitive edge."
+        },
+        "workforceSolutions": {
+          "title": "Workforce Solutions",
+          "description": "Our general and designated worker dispatch services provide flexible solutions for short-term staffing needs or specialized skills."
+        }
+      },
+      "cta": {
+        "title": "Ready to Transform Your IT Experience?",
+        "description": "Contact Akrin today and experience the difference that comprehensive support can make for your organization.",
+        "button": "Get Started"
+      }
+    },
+    "assetManagement": {
+      "title": "Asset Management",
+      "subtitle": "Optimize your IT investments with comprehensive asset tracking and lifecycle management solutions.",
+      "mainDescription": "Akrin's Asset Management service provides complete visibility and control over your IT assets throughout their lifecycle. From procurement to disposal, we help you track, manage, and optimize your technology investments, ensuring maximum ROI and compliance with industry regulations.",
+      "sections": {
+        "lifecycle": "Complete Lifecycle Management",
+        "benefits": "Key Benefits",
+        "features": "Core Features"
+      },
+      "features": {
+        "assetTracking": "Real-time Asset Tracking",
+        "assetTrackingDesc": "Track all IT assets in real-time with our comprehensive inventory management system.",
+        "lifecycleManagement": "Lifecycle Management",
+        "performanceMonitoring": "Performance Monitoring",
+        "performanceMonitoringDesc": "Monitor asset performance and identify optimization opportunities.",
+        "costOptimization": "Cost Optimization",
+        "complianceReporting": "Compliance Reporting",
+        "inventoryManagement": "Inventory Management",
+        "disposalServices": "Secure Disposal Services",
+        "assetDiscovery": "Automated Asset Discovery",
+        "assetDiscoveryDesc": "Automated discovery and cataloging of IT assets in your network.",
+        "realTimeTrackingDesc": "Real-time tracking and monitoring of all IT assets across your organization.",
+        "lifecycleManagementDesc": "Complete management of IT assets from procurement to disposal.",
+        "costOptimizationDesc": "Optimize costs through better asset utilization and lifecycle planning.",
+        "complianceReportingDesc": "Comprehensive reporting for regulatory compliance and auditing.",
+        "inventoryManagementDesc": "Maintain accurate inventory of all IT assets.",
+        "disposalServicesDesc": "Secure and compliant disposal of end-of-life assets."
+      },
+      "benefits": {
+        "reducedCosts": "Reduced IT costs through optimized asset utilization",
+        "improvedEfficiencyTitle": "Improved Efficiency",
+        "improvedCompliance": "Improved compliance with licensing and regulations",
+        "betterPlanning": "Better planning for technology refresh cycles",
+        "enhancedSecurity": "Enhanced security through proper asset disposal",
+        "costReductionTitle": "Cost Reduction",
+        "enhancedDecisionTitle": "Enhanced Decision Making",
+        "improvedEfficiencyDesc": "Streamline operations and improve productivity through better asset visibility."
+      },
+      "cta": {
+        "title": "Take Control of Your IT Assets",
+        "description": "Let Akrin help you maximize the value of your technology investments.",
+        "button": "Learn More"
+      }
+    },
+    "cloudServices": {
+      "title": "Cloud Solutions",
+      "subtitle": "Transform your business with scalable, secure cloud infrastructure and migration services.",
+      "mainDescription": "Akrin's Cloud Solutions empower you to leverage the power of cloud computing for enhanced scalability, flexibility, and cost-efficiency. Our experts guide you through every stage of your cloud journey, from strategy and migration to ongoing management and optimization.",
+      "sections": {
+        "services": "Cloud Services",
+        "approach": "Our Approach",
+        "benefits": "Cloud Benefits",
+        "whyChoose": "Why businesses choose our cloud solutions"
+      },
+      "features": {
+        "cloudMigration": "Cloud Migration",
+        "hybridCloud": "Hybrid Cloud Solutions",
+        "hybridCloudDesc": "Flexible hybrid cloud architectures that combine on-premises and cloud resources.",
+        "cloudManagement": "Cloud Management",
+        "cloudSecurity": "Cloud Security",
+        "cloudSecurityDesc": "Advanced security measures to protect your cloud infrastructure and data.",
+        "disasterRecovery": "Disaster Recovery",
+        "disasterRecoveryDesc": "Robust backup and disaster recovery solutions to ensure business continuity.",
+        "cloudOptimization": "Cost Optimization",
+        "cloudOptimizationDesc": "Continuous monitoring and optimization to reduce cloud costs and improve efficiency.",
+        "cloudStorage": "Cloud Storage",
+        "cloudStorageDesc": "Scalable and secure storage solutions for all your data needs."
+      },
+      "approach": {
+        "assessment": "Comprehensive cloud readiness assessment",
+        "strategy": "Customized cloud strategy development",
+        "migration": "Seamless migration with minimal disruption",
+        "optimization": "Continuous optimization and support"
+      },
+      "benefits": {
+        "scalability": "Unlimited scalability to meet growing demands",
+        "scalabilityTitle": "Scalability",
+        "costSavings": "Reduced infrastructure costs",
+        "costTitle": "Cost-Efficiency",
+        "flexibility": "Enhanced business agility and flexibility",
+        "flexibilityTitle": "Business Agility",
+        "security": "Enterprise-grade security and compliance"
+      },
+      "cta": {
+        "title": "Ready to Move to the Cloud?",
+        "description": "Start your cloud transformation journey with Akrin today.",
+        "button": "Get Cloud Ready"
+      },
+      "mainSection": {
+        "description": "Transform your business with our comprehensive cloud solutions and expertise."
+      }
+    },
+    "customSolutions": {
+      "title": "Custom Solutions",
+      "subtitle": "Tailored IT solutions designed to address your unique business challenges.",
+      "mainDescription": "At Akrin, we understand that every business has unique requirements. Our Custom Solutions service delivers bespoke technology solutions that perfectly align with your specific needs, industry requirements, and business objectives.",
+      "sections": {
+        "process": "Our Development Process",
+        "expertise": "Areas of Expertise",
+        "whyCustom": "Why Choose Custom Solutions?"
+      },
+      "process": {
+        "consultation": "Detailed consultation to understand your needs",
+        "design": "Custom solution design and architecture",
+        "development": "Agile development with regular updates",
+        "testing": "Comprehensive testing and quality assurance",
+        "deployment": "Smooth deployment and integration",
+        "support": "Ongoing support and maintenance",
+        "discoveryTitle": "Discovery & Analysis",
+        "designTitle": "Design & Architecture",
+        "developmentTitle": "Development",
+        "testingTitle": "Testing & QA",
+        "deploymentTitle": "Deployment"
+      },
+      "expertise": {
+        "webApps": "Custom Web Applications",
+        "webAppsDesc": "Scalable web applications tailored to your business processes and requirements.",
+        "mobileApps": "Mobile App Development",
+        "systemIntegration": "System Integration",
+        "systemIntegrationDesc": "Seamless integration of disparate systems for unified operations.",
+        "automation": "Business Process Automation",
+        "apiDevelopment": "API Development",
+        "dataAnalytics": "Data Analytics Solutions",
+        "cybersecurity": "Custom Security Solutions",
+        "cybersecurityDesc": "Tailored security solutions to protect your unique digital assets."
+      },
+      "benefits": {
+        "perfectFit": "Solutions that perfectly match your requirements",
+        "competitive": "Competitive advantage through unique features",
+        "scalable": "Scalable architecture that grows with your business",
+        "integration": "Seamless integration with existing systems"
+      },
+      "cta": {
+        "title": "Need a Custom Solution?",
+        "description": "Let's discuss how we can build the perfect solution for your business.",
+        "button": "Start Your Project"
+      },
+      "features": {
+        "webApplicationsDesc": "Scalable web applications tailored to your business needs.",
+        "mobileAppDevelopmentDesc": "Native and cross-platform mobile applications.",
+        "systemIntegrationDesc": "Seamless integration of disparate systems for unified operations.",
+        "businessAutomationDesc": "Streamline operations with intelligent automation solutions tailored to your workflows.",
+        "apiDevelopmentDesc": "Robust API development and integration for seamless system connectivity.",
+        "dataAnalyticsDesc": "Transform data into actionable insights with custom analytics and reporting solutions.",
+        "customSecurityDesc": "Tailored security solutions to protect your unique infrastructure."
+      }
+    },
+    "cyberSecurity": {
+      "title": "Cyber Security",
+      "subtitle": "Comprehensive protection against evolving digital threats and cyber attacks.",
+      "mainDescription": "Akrin's Cyber Security services provide multi-layered protection for your digital assets. Our team of security experts uses advanced technologies and proven methodologies to defend against sophisticated cyber threats, ensuring your business remains secure and compliant.",
+      "sections": {
+        "services": "Security Services",
+        "approach": "Security Approach",
+        "threats": "What We Protect Against"
+      },
+      "services": {
+        "assessment": "Security Assessment & Audit",
+        "assessmentDesc": "Comprehensive evaluation of your security posture to identify vulnerabilities and risks.",
+        "monitoring": "24/7 Security Monitoring",
+        "monitoringDesc": "Round-the-clock surveillance of your systems to detect and respond to threats in real-time.",
+        "incidentResponse": "Incident Response",
+        "incidentResponseDesc": "Rapid response and recovery services to minimize damage from security breaches.",
+        "penetrationTesting": "Penetration Testing",
+        "penetrationTestingDesc": "Simulated attacks to identify vulnerabilities before malicious actors can exploit them.",
+        "securityTraining": "Security Awareness Training",
+        "complianceManagement": "Compliance Management",
+        "complianceManagementDesc": "Ensure your organization meets industry-specific security standards and regulations.",
+        "dataEncryption": "Data Encryption",
+        "dataEncryptionDesc": "Advanced encryption technologies to protect your sensitive data at rest and in transit."
+      },
+      "threats": {
+        "malware": "Malware and Ransomware",
+        "phishing": "Phishing and Social Engineering",
+        "dataBreaches": "Data Breaches",
+        "insiderThreats": "Insider Threats",
+        "ddos": "DDoS Attacks",
+        "zeroDay": "Zero-Day Exploits"
+      },
+      "approach": {
+        "prevention": "Proactive threat prevention",
+        "preventionTitle": "Proactive Prevention",
+        "detection": "Real-time threat detection",
+        "detectionTitle": "Advanced Detection",
+        "response": "Rapid incident response",
+        "responseTitle": "Rapid Response",
+        "recovery": "Business continuity planning"
+      },
+      "cta": {
+        "title": "Secure Your Business Now",
+        "description": "Don't wait for a breach. Strengthen your cyber defenses with Akrin.",
+        "button": "Get Protected"
+      }
+    },
+    "eWaste": {
+      "title": "E-Waste Management",
+      "subtitle": "Responsible disposal and recycling of electronic equipment with environmental compliance.",
+      "mainDescription": "Akrin's E-Waste Management service ensures the safe, secure, and environmentally responsible disposal of your electronic equipment. We follow strict data security protocols and environmental regulations to protect your business and the planet.",
+      "sections": {
+        "process": "Our Process",
+        "services": "What We Handle",
+        "certifications": "Compliance & Certifications",
+        "whyChoose": "Why Choose Akrin for E-Waste Management?",
+        "whyChooseDesc": "We combine environmental responsibility with data security to provide comprehensive e-waste management solutions that protect your business and the planet.",
+        "benefitsTitle": "Benefits of Our E-Waste Management Service"
+      },
+      "process": {
+        "collection": "Secure collection from your premises",
+        "dataDestruction": "Data Destruction",
+        "sorting": "Material sorting and segregation",
+        "recycling": "Responsible recycling and disposal",
+        "reporting": "Detailed disposal certificates",
+        "compliance": "Full regulatory compliance"
+      },
+      "equipment": {
+        "computers": "Computers and Laptops",
+        "servers": "Servers and Network Equipment",
+        "mobile": "Mobile Devices",
+        "printers": "Printers and Scanners",
+        "storage": "Storage Devices",
+        "peripherals": "IT Peripherals"
+      },
+      "benefits": {
+        "dataProtection": "Complete data protection with certified destruction",
+        "dataProtectionTitle": "Data Security",
+        "dataProtectionDesc": "Certified data destruction ensures your sensitive information is completely erased.",
+        "environmental": "Environmental responsibility and sustainability",
+        "environmentalTitle": "Environmental Responsibility",
+        "environmentalDesc": "We follow strict environmental guidelines to minimize ecological impact.",
+        "compliance": "Full compliance with e-waste regulations",
+        "complianceTitle": "Regulatory Compliance",
+        "complianceDesc": "Stay compliant with all local and international e-waste disposal regulations.",
+        "certificates": "Detailed disposal certificates",
+        "certificatesTitle": "Certified Disposal",
+        "certificatesDesc": "Receive detailed certificates documenting the secure disposal of your equipment.",
+        "environmentalImpact": "Environmental Impact",
+        "carbonFootprintDesc": "Reduce your carbon footprint through responsible electronic waste management."
+      },
+      "cta": {
+        "title": "Dispose Responsibly",
+        "description": "Protect your data and the environment with our e-waste management services.",
+        "button": "Schedule Collection"
+      },
+      "features": {
+        "dataDestructionDesc": "Secure and certified data destruction to protect sensitive information.",
+        "recyclingDesc": "Environmentally responsible recycling of electronic components.",
+        "complianceDesc": "Full compliance with local and international e-waste regulations.",
+        "certificateIssuanceDesc": "Official certificates of disposal for audit and compliance purposes.",
+        "assetRecoveryDesc": "Recovery of valuable materials and components where possible.",
+        "pickupServiceDesc": "Convenient pickup service for your electronic waste."
+      }
+    },
+    "hardwareMaintenance": {
+      "title": "Hardware Maintenance",
+      "subtitle": "Keep your IT equipment running at peak performance with proactive maintenance services.",
+      "mainDescription": "Akrin's Hardware Maintenance service ensures your IT infrastructure operates reliably and efficiently. Our certified technicians provide preventive maintenance, repairs, and upgrades to minimize downtime and extend equipment lifespan.",
+      "sections": {
+        "services": "Maintenance Services",
+        "coverage": "Equipment Coverage",
+        "benefits": "Service Benefits"
+      },
+      "services": {
+        "preventive": "Preventive Maintenance",
+        "preventiveDesc": "Regular maintenance to prevent equipment failures and extend hardware lifespan.",
+        "repairs": "On-site and Off-site Repairs",
+        "repairsDesc": "Quick and efficient repair services to minimize downtime and restore functionality.",
+        "upgrades": "Hardware Upgrades",
+        "upgradesDesc": "Strategic upgrades to keep your equipment current and performing optimally.",
+        "diagnostics": "Performance Diagnostics",
+        "diagnosticsDesc": "Comprehensive diagnostics to identify and resolve performance issues.",
+        "replacement": "Parts Replacement",
+        "replacementDesc": "Genuine parts replacement with warranty coverage for reliable performance.",
+        "emergency": "Emergency Support",
+        "emergencyDesc": "24/7 emergency support for critical hardware failures.",
+        "dataProtection": "Data Protection Services",
+        "dataProtectionDesc": "Ensure data integrity during maintenance and repair procedures."
+      },
+      "coverage": {
+        "servers": "Servers and Storage Systems",
+        "networking": "Networking Equipment",
+        "workstations": "Workstations and PCs",
+        "printers": "Printers and Peripherals",
+        "ups": "UPS and Power Systems",
+        "cooling": "Cooling Systems"
+      },
+      "benefits": {
+        "uptime": "Maximum uptime and reliability",
+        "lifespan": "Extended equipment lifespan",
+        "performance": "Optimal performance",
+        "costSavings": "Reduced repair costs",
+        "sla": "Guaranteed SLA response times",
+        "uptimeTitle": "Maximum Uptime",
+        "costTitle": "Cost Savings",
+        "expertSupportTitle": "Expert Support",
+        "expertSupport": "Access to certified technicians with extensive hardware expertise."
+      },
+      "cta": {
+        "title": "Maximize Hardware Performance",
+        "description": "Let our experts maintain your IT infrastructure for optimal performance.",
+        "button": "Get Maintenance Plan"
+      },
+      "features": {
+        "preventiveDesc": "Regular maintenance to prevent failures before they occur.",
+        "repairsDesc": "Expert repair services for all types of IT hardware.",
+        "emergencyDesc": "24/7 emergency support for critical hardware failures.",
+        "dataProtectionDesc": "Ensure data integrity during all maintenance procedures.",
+        "upgradesDesc": "Hardware upgrades to improve performance and extend lifespan.",
+        "diagnosticsDesc": "Comprehensive diagnostics to identify and resolve issues."
+      }
+    },
+    "itConsulting": {
+      "title": "IT Consulting",
+      "subtitle": "Strategic technology guidance to align IT with your business objectives.",
+      "mainDescription": "Akrin's IT Consulting services help you navigate complex technology decisions and develop strategies that drive business growth. Our experienced consultants work closely with you to understand your challenges and deliver actionable, innovative solutions.",
+      "sections": {
+        "services": "Consulting Services",
+        "approach": "Our Approach",
+        "expertise": "Industry Expertise"
+      },
+      "services": {
+        "strategy": "IT Strategy Development",
+        "strategyDesc": "Develop comprehensive IT strategies aligned with your business goals and growth plans.",
+        "transformation": "Digital Transformation",
+        "transformationDesc": "Guide your organization through digital transformation with proven methodologies.",
+        "architecture": "Enterprise Architecture",
+        "architectureDesc": "Design scalable enterprise architectures that support your business operations.",
+        "projectManagement": "Project Management",
+        "projectManagementDesc": "Expert project management to ensure successful IT initiative implementation.",
+        "vendorManagement": "Vendor Management",
+        "vendorManagementDesc": "Optimize vendor relationships and negotiate favorable terms for your organization.",
+        "budgetOptimization": "IT Budget Optimization",
+        "budgetOptimizationDesc": "Maximize IT ROI through strategic budget planning and cost optimization."
+      },
+      "approach": {
+        "assessment": "Comprehensive business and IT assessment",
+        "assessmentTitle": "Assessment & Discovery",
+        "assessmentDesc": "Thorough evaluation of your current IT landscape and business requirements.",
+        "strategy": "Strategic roadmap development",
+        "strategyTitle": "Strategy Development",
+        "strategyDesc": "Create a detailed roadmap aligned with your business objectives.",
+        "implementation": "Implementation planning and support",
+        "implementationTitle": "Implementation Support",
+        "implementationDesc": "Hands-on guidance throughout the implementation process.",
+        "optimization": "Continuous improvement and optimization",
+        "optimizationTitle": "Continuous Optimization",
+        "optimizationDesc": "Ongoing refinement to ensure maximum value from your IT investments."
+      },
+      "expertise": {
+        "finance": "Financial Services",
+        "healthcare": "Healthcare",
+        "retail": "Retail & E-commerce",
+        "manufacturing": "Manufacturing",
+        "education": "Education",
+        "government": "Government"
+      },
+      "cta": {
+        "title": "Transform Your IT Strategy",
+        "description": "Partner with Akrin to unlock your technology's full potential.",
+        "button": "Schedule Consultation"
+      }
+    },
+    "itEquipment": {
+      "title": "IT Equipment",
+      "subtitle": "Quality hardware solutions and procurement services for your business needs.",
+      "mainDescription": "Akrin provides comprehensive IT equipment solutions, from procurement to deployment. We partner with leading manufacturers to deliver high-quality hardware that meets your performance requirements and budget.",
+      "sections": {
+        "products": "Product Categories",
+        "services": "Equipment Services",
+        "brands": "Trusted Brands",
+        "whyChoose": "Why Choose Akrin for IT Equipment & Services?"
+      },
+      "products": {
+        "computers": "Desktops and Laptops",
+        "computersDesc": "High-performance computers for every business need and budget.",
+        "servers": "Servers and Storage",
+        "serversDesc": "Enterprise-grade servers and storage solutions for reliable data management.",
+        "networking": "Networking Equipment",
+        "networkingDesc": "Advanced networking hardware for seamless connectivity and performance.",
+        "security": "Security Devices",
+        "securityDesc": "Cutting-edge security hardware to protect your digital infrastructure.",
+        "printers": "Printers and Scanners",
+        "accessories": "IT Accessories"
+      },
+      "services": {
+        "consultation": "Equipment consultation and selection",
+        "consultationDesc": "Expert guidance to choose the right equipment for your specific needs.",
+        "procurement": "Procurement and sourcing",
+        "procurementDesc": "Streamlined procurement process with competitive pricing and fast delivery.",
+        "configuration": "Pre-configuration services",
+        "configurationDesc": "Equipment pre-configured to your specifications for immediate deployment.",
+        "deployment": "Deployment and installation",
+        "deploymentDesc": "Professional installation and setup by certified technicians.",
+        "warranty": "Warranty management",
+        "warrantyDesc": "Comprehensive warranty management and support services.",
+        "leasing": "Leasing options available",
+        "leasingDesc": "Flexible leasing options to manage cash flow and technology refresh.",
+        "printersDesc": "Professional printers, scanners, and multi-function devices for all business needs."
+      },
+      "benefits": {
+        "quality": "Enterprise-grade equipment from trusted brands",
+        "qualityTitle": "Quality Assurance",
+        "pricing": "Competitive pricing through partner relationships",
+        "pricingTitle": "Best Pricing",
+        "support": "Full lifecycle support",
+        "flexibility": "Flexible procurement options",
+        "supportTitle": "Lifecycle Support"
+      },
+      "cta": {
+        "title": "Upgrade Your IT Equipment",
+        "description": "Get the right hardware for your business at the best prices.",
+        "button": "Request Quote"
+      },
+      "features": {
+        "procurementDesc": "Expert guidance in selecting and procuring the right IT equipment.",
+        "deploymentDesc": "Professional deployment and configuration of IT hardware.",
+        "lifecycleManagementDesc": "Complete lifecycle management from procurement to disposal.",
+        "vendorManagementDesc": "Managing relationships with multiple IT equipment vendors.",
+        "warrantyManagementDesc": "Tracking and managing warranties for all IT equipment.",
+        "leaseManagementDesc": "Management of IT equipment leases and renewals.",
+        "procurementSourcing": "Procurement & Sourcing",
+        "warrantyManagement": "Warranty Management"
+      }
+    },
+    "itSecurity": {
+      "title": "IT Security Services",
+      "subtitle": "Akrin delivers comprehensive IT Security as a Service, safeguarding your digital assets with expert monitoring, threat detection, and proactive defense measures.",
+      "mainDescription": "In today's digital landscape, security is paramount. Akrin's IT Security services provide robust protection for your infrastructure, data, and applications, ensuring your business remains secure against evolving threats.",
+      "sections": {
+        "services": "Security Services",
+        "whyChoose": "Why Choose Akrin for IT Security?",
+        "features": "Security Features"
+      },
+      "features": {
+        "networkSecurity": "Network Security",
+        "networkSecurityDesc": "Comprehensive network protection against cyber threats and unauthorized access.",
+        "dataEncryption": "Data Encryption",
+        "dataEncryptionDesc": "Advanced encryption protocols to secure sensitive data at rest and in transit.",
+        "monitoring": "24/7 Monitoring",
+        "monitoringDesc": "24/7 monitoring and real-time threat detection to protect your systems.",
+        "threatDetection": "Threat Intelligence",
+        "threatIntelligenceDesc": "Advanced threat intelligence services to stay ahead of emerging cyber threats.",
+        "compliance": "Compliance Management",
+        "complianceDesc": "Ensure regulatory compliance with industry security standards and frameworks.",
+        "incidentResponse": "Incident Response",
+        "incidentResponseDesc": "Rapid incident response to minimize damage and restore normal operations.",
+        "threatDetectionDesc": "Proactive threat detection and response using advanced security intelligence."
+      },
+      "services": {
+        "networkSecurity": {
+          "title": "Network Security",
+          "description": "Protect your network infrastructure from unauthorized access and cyber threats."
+        },
+        "dataEncryption": {
+          "title": "Data Encryption",
+          "description": "Secure your sensitive data with state-of-the-art encryption technologies."
+        },
+        "monitoring": {
+          "title": "24/7 Monitoring",
+          "description": "Continuous surveillance of your systems to detect and respond to security incidents in real-time."
+        },
+        "threatIntelligence": {
+          "title": "Threat Intelligence",
+          "description": "Stay ahead of emerging threats with our advanced threat intelligence services."
+        },
+        "compliance": {
+          "title": "Compliance Management",
+          "description": "Ensure your organization meets industry-specific security standards and regulations."
+        },
+        "incidentResponse": {
+          "title": "Incident Response",
+          "description": "Rapid response and recovery services in the event of a security breach."
+        }
+      },
+      "whyChoose": {
+        "expertTeam": {
+          "title": "Expert Team",
+          "description": "Our security specialists are certified professionals with years of experience in cybersecurity."
+        },
+        "cuttingEdge": {
+          "title": "Cutting-edge Technology",
+          "description": "We employ the latest security technologies to stay ahead of evolving cyber threats."
+        },
+        "tailored": {
+          "title": "Tailored Solutions",
+          "description": "Our security services are customized to meet the specific needs of your organization."
+        }
+      },
+      "cta": {
+        "title": "Ready to Secure Your Business?",
+        "description": "Don't wait for a security breach to happen. Protect your business today with Akrin's IT Security Services.",
+        "button": "Contact Us Now"
+      }
+    },
+    "itSupport": {
+      "title": "IT Support Services",
+      "subtitle": "Professional technical support to keep your business running smoothly 24/7.",
+      "mainDescription": "Akrin's IT Support services provide comprehensive technical assistance for all your technology needs. Our experienced support team ensures quick resolution of issues, minimizing downtime and maximizing productivity.",
+      "sections": {
+        "levels": "Support Levels",
+        "coverage": "What We Support",
+        "features": "Support Features"
+      },
+      "levels": {
+        "tier1": {
+          "title": "Tier 1 Support",
+          "description": "Basic troubleshooting and common issue resolution"
+        },
+        "tier2": {
+          "title": "Tier 2 Support",
+          "description": "Advanced technical support and system configuration"
+        },
+        "tier3": {
+          "title": "Tier 3 Support",
+          "description": "Expert-level support for complex issues"
+        }
+      },
+      "coverage": {
+        "desktop": "Desktop and laptop support",
+        "software": "Software installation and troubleshooting",
+        "network": "Network connectivity issues",
+        "email": "Email and communication systems",
+        "printing": "Printer and peripheral support",
+        "mobile": "Mobile device management"
+      },
+      "features": {
+        "availability": "24/7 availability",
+        "multichannel": "Multi-channel support (phone, email, chat)",
+        "ticketing": "Advanced ticketing system",
+        "sla": "Guaranteed SLA response times",
+        "remote": "Remote assistance capabilities",
+        "reporting": "Detailed reporting and analytics",
+        "networkSupport": "Network Support",
+        "systemMigrations": "System Migrations",
+        "audioVisualSupport": "Audio Visual Support",
+        "accessControlSystems": "Access Control Systems",
+        "title": "Comprehensive IT Support Solutions",
+        "subtitle": "We provide end-to-end IT support to keep your business running smoothly",
+        "onsiteSupportDesc": "Professional onsite installation, maintenance, and technical support services.",
+        "networkSupportDesc": "Complete network infrastructure support including configuration and optimization.",
+        "relocationDesc": "Seamless IT infrastructure relocation with minimal business disruption.",
+        "eWasteDesc": "Responsible disposal and recycling of electronic equipment with environmental compliance.",
+        "systemMigrationsDesc": "Seamless migration of hardware and software systems with minimal downtime.",
+        "audioVisualSupportDesc": "Professional audio-visual system support and maintenance services.",
+        "accessControlSystemsDesc": "Security access control system installation, configuration, and support."
+      },
+      "services": {
+        "desktopManagement": {
+          "title": "Desktop Management",
+          "description": "Comprehensive management of desktop computers including updates, security, and performance optimization."
+        },
+        "cloudBackup": {
+          "title": "Cloud Backup",
+          "description": "Automated cloud backup solutions to protect your critical data and ensure business continuity."
+        },
+        "remoteSupport": {
+          "title": "Remote Support",
+          "description": "Instant remote assistance for quick issue resolution without on-site visits."
+        },
+        "userSupport": {
+          "title": "User Support",
+          "description": "End-user support for all IT-related queries and issues to maintain productivity."
+        },
+        "systemAdmin": {
+          "title": "System Administration",
+          "description": "Professional system administration services to maintain and optimize your IT infrastructure."
+        },
+        "networkSupport": {
+          "title": "Network Support",
+          "description": "Complete network support including configuration, troubleshooting, and optimization."
+        },
+        "emailSupport": {
+          "title": "Email Support",
+          "description": "Email system management including setup, troubleshooting, and security configuration."
+        },
+        "securitySupport": {
+          "title": "Security Support",
+          "description": "Security monitoring, incident response, and vulnerability management services."
+        },
+        "printerSupport": {
+          "title": "Printer Support",
+          "description": "Printer and peripheral device support including setup, maintenance, and troubleshooting."
+        },
+        "softwareSupport": {
+          "title": "Software Support",
+          "description": "Support for all business applications including installation, updates, and troubleshooting."
+        },
+        "mobileSupport": {
+          "title": "Mobile Device Support",
+          "description": "Mobile device management and support for smartphones and tablets."
+        },
+        "itNetworking": {
+          "title": "IT Networking",
+          "description": "Design, implementation, and maintenance of robust network infrastructure."
+        },
+        "databaseSupport": {
+          "title": "Database Support",
+          "description": "Database administration, optimization, and troubleshooting services."
+        },
+        "backupRecovery": {
+          "title": "Backup & Recovery",
+          "description": "Comprehensive backup solutions and disaster recovery planning."
+        },
+        "hardwareMigration": {
+          "title": "Hardware & Software Migrations",
+          "description": "Seamless migration of hardware and software systems with minimal downtime."
+        },
+        "audioVisual": {
+          "title": "Audio Visual Solutions",
+          "description": "Professional AV system design, installation, and support for modern workplaces."
+        },
+        "accessControl": {
+          "title": "Access Control & Surveillance Solutions",
+          "description": "Advanced security systems including access control and video surveillance."
+        }
+      },
+      "cta": {
+        "title": "Experience Reliable IT Support",
+        "description": "Let Akrin's support team handle your technical challenges.",
+        "button": "Get Support"
+      }
+    },
+    "onsiteSupport": {
+      "title": "Onsite Support",
+      "subtitle": "Professional IT support delivered directly at your location when you need it most.",
+      "mainDescription": "Akrin's Onsite Support service brings expert technicians directly to your premises. Whether it's hardware installation, network troubleshooting, or emergency repairs, our team provides hands-on assistance to resolve issues quickly and efficiently.",
+      "sections": {
+        "services": "Onsite Services",
+        "coverage": "Coverage Areas",
+        "response": "Response Times",
+        "additionalStaffing": "Additional IT Staffing Solutions"
+      },
+      "services": {
+        "installation": "Hardware installation and setup",
+        "troubleshooting": "On-location troubleshooting",
+        "maintenance": "Preventive maintenance",
+        "upgrades": "System upgrades and migrations",
+        "training": "User training sessions",
+        "emergency": "Emergency response"
+      },
+      "coverage": {
+        "tokyo": "Greater Tokyo Area",
+        "osaka": "Osaka Region",
+        "national": "Nationwide coverage available",
+        "international": "International support on request"
+      },
+      "response": {
+        "critical": "Critical: 2-4 hours",
+        "high": "High Priority: Same business day",
+        "standard": "Standard: Next business day",
+        "scheduled": "Scheduled visits available"
+      },
+      "features": {
+        "expertTechnicians": "Expert Technicians",
+        "flexibleScheduling": "Flexible Scheduling",
+        "comprehensiveSupport": "Comprehensive IT Support",
+        "comprehensiveSupportDesc": "From basic troubleshooting to complex infrastructure projects.",
+        "emergencyResponse": "Emergency Response",
+        "preventiveMaintenance": "Preventive Maintenance",
+        "userTraining": "User Training",
+        "expertTechniciansDesc": "Certified professionals with extensive experience in diverse IT environments.",
+        "rapidResponseDesc": "Quick response times to minimize downtime and maintain business continuity.",
+        "preventiveMaintenanceDesc": "Regular maintenance to prevent issues before they impact your business.",
+        "hardwareRepairDesc": "Expert diagnosis and repair of all types of IT hardware.",
+        "projectImplementationDesc": "Professional implementation of IT projects on your premises.",
+        "flexibleSchedulingDesc": "Flexible scheduling options to meet your business needs and minimize disruption.",
+        "emergencyResponseDesc": "Rapid emergency response services for critical IT issues and outages.",
+        "userTrainingDesc": "Comprehensive user training to maximize your technology investments.",
+        "hardwareInstallation": "Hardware Installation",
+        "hardwareInstallationDesc": "Professional installation and setup of hardware components and systems.",
+        "systemTroubleshooting": "System Troubleshooting",
+        "systemTroubleshootingDesc": "Expert troubleshooting and resolution of complex IT system issues."
+      },
+      "cta": {
+        "title": "Need Onsite Assistance?",
+        "description": "Our technicians are ready to help at your location.",
+        "button": "Request Onsite Support"
+      }
+    },
+    "recruitment": {
+      "title": "IT Recruitment",
+      "subtitle": "Find the right IT talent to drive your business forward.",
+      "mainDescription": "Akrin's IT Recruitment service connects you with top-tier technology professionals. Our specialized recruitment team understands the IT landscape and matches candidates with the technical skills and cultural fit your organization needs.",
+      "sections": {
+        "services": "Recruitment Services",
+        "positions": "Positions We Fill",
+        "process": "Our Process",
+        "whyChoose": "Why Choose Akrin for Recruitment?"
+      },
+      "services": {
+        "permanent": "Permanent placement",
+        "permanentTitle": "Permanent Placement",
+        "permanentDesc": "Find long-term IT professionals who align with your company culture and goals.",
+        "contract": "Contract staffing",
+        "contractTitle": "Contract Staffing",
+        "contractDesc": "Flexible contract staffing solutions for project-based or temporary needs.",
+        "contractToHire": "Contract-to-hire",
+        "contractToHireTitle": "Contract-to-Hire",
+        "contractToHireDesc": "Try before you hire with our contract-to-permanent placement options.",
+        "executive": "Executive search",
+        "executiveTitle": "Executive Search",
+        "executiveDesc": "Specialized search services for senior IT leadership positions.",
+        "projectBased": "Project-based staffing",
+        "projectBasedTitle": "Project-Based Staffing",
+        "projectBasedDesc": "Complete project teams with the right mix of skills and experience.",
+        "teamBuilding": "Complete team building",
+        "teamBuildingTitle": "Team Building",
+        "teamBuildingDesc": "Build entire IT departments with complementary skills and expertise.",
+        "marketAnalysis": "IT Market Analysis",
+        "marketAnalysisTitle": "Market Analysis",
+        "marketAnalysisDesc": "Gain insights into IT talent market trends and salary benchmarks.",
+        "employerBranding": "Employer Branding",
+        "employerBrandingTitle": "Employer Branding",
+        "employerBrandingDesc": "Enhance your employer brand to attract top IT talent."
+      },
+      "positions": {
+        "developers": "Software Developers",
+        "developersDesc": "Full-stack, frontend, backend, and mobile developers with expertise in modern technologies.",
+        "engineers": "System Engineers",
+        "engineersDesc": "Infrastructure, cloud, and DevOps engineers to build and maintain your systems.",
+        "administrators": "IT Administrators",
+        "administratorsDesc": "System and network administrators to keep your IT infrastructure running smoothly.",
+        "security": "Security Specialists",
+        "securityDesc": "Cybersecurity experts to protect your digital assets and ensure compliance.",
+        "projectManagers": "Project Managers",
+        "projectManagersDesc": "Experienced IT project managers to lead your technology initiatives.",
+        "analysts": "Business Analysts",
+        "analystsDesc": "Business and systems analysts to bridge the gap between technology and business needs.",
+        "cloudArchitects": "Cloud Architects"
+      },
+      "process": {
+        "consultation": "Requirements consultation",
+        "sourcing": "Candidate sourcing and screening",
+        "assessment": "Technical assessment",
+        "interviews": "Interview coordination",
+        "onboarding": "Onboarding support",
+        "followUp": "Post-placement follow-up",
+        "candidateSourcing": "Candidate Sourcing",
+        "technicalAssessment": "Technical Assessment"
+      },
+      "benefits": {
+        "industryExpertise": "Deep IT Industry Knowledge",
+        "industryExpertiseDesc": "Our recruiters understand technology and can accurately assess technical skills.",
+        "extensiveNetwork": "Extensive Talent Network",
+        "extensiveNetworkDesc": "Access to a wide network of pre-screened IT professionals.",
+        "timeToHire": "Reduced Time-to-Hire",
+        "timeToHireDesc": "Streamlined recruitment process to fill positions quickly."
+      },
+      "cta": {
+        "title": "Build Your Dream IT Team",
+        "description": "Let us help you find the perfect IT professionals.",
+        "button": "Start Hiring"
+      },
+      "features": {
+        "technicalScreeningDesc": "Rigorous technical screening to find the best candidates.",
+        "cultureFitDesc": "Assessment of cultural fit with your organization.",
+        "contractStaffingDesc": "Flexible contract staffing solutions for project needs.",
+        "permanentPlacementDesc": "Finding permanent IT professionals for your team.",
+        "executiveSearchDesc": "Specialized search for IT leadership positions.",
+        "skillsAssessmentDesc": "Comprehensive skills assessment and verification."
+      }
+    },
+    "relocation": {
+      "title": "IT Relocation",
+      "subtitle": "Seamless IT infrastructure relocation with minimal business disruption.",
+      "mainDescription": "Akrin's IT Relocation service ensures smooth transition of your technology infrastructure to new locations. Our experienced team handles everything from planning to execution, minimizing downtime and ensuring business continuity.",
+      "sections": {
+        "services": "Relocation Services",
+        "process": "Our Process",
+        "benefits": "Key Benefits"
+      },
+      "services": {
+        "planning": "Comprehensive relocation planning",
+        "planningTitle": "Relocation Planning",
+        "planningDesc": "Detailed planning to ensure every aspect of your IT move is covered.",
+        "inventory": "Asset inventory and documentation",
+        "inventoryTitle": "Asset Inventory",
+        "inventoryDesc": "Complete inventory and documentation of all IT assets for the move.",
+        "decommissioning": "Safe equipment decommissioning",
+        "decommissioningTitle": "Equipment Decommissioning",
+        "decommissioningDesc": "Careful decommissioning and packing of sensitive IT equipment.",
+        "transport": "Secure transportation",
+        "transportTitle": "Secure Transport",
+        "transportDesc": "Secure handling of all IT equipment with full insurance coverage.",
+        "reinstallation": "Professional reinstallation",
+        "reinstallationTitle": "Reinstallation Services",
+        "reinstallationDesc": "Expert reinstallation and configuration at your new location.",
+        "testing": "System testing and validation",
+        "testingTitle": "Testing & Validation",
+        "testingDesc": "Comprehensive testing to ensure all systems are fully operational.",
+        "networkSetup": "Network Infrastructure Setup",
+        "networkSetupTitle": "Network Setup",
+        "networkSetupDesc": "Complete network infrastructure design and implementation at the new location.",
+        "equipmentPacking": "Professional Equipment Packing",
+        "equipmentPackingTitle": "Equipment Packing",
+        "equipmentPackingDesc": "Specialized packing techniques to protect sensitive equipment during transit.",
+        "packingDesc": "Professional packing and inventory management of all IT equipment."
+      },
+      "process": {
+        "assessment": "Pre-move assessment and planning",
+        "assessmentTitle": "Initial Assessment",
+        "schedule": "Detailed relocation schedule",
+        "scheduleTitle": "Scheduling",
+        "backup": "Data backup and protection",
+        "backupTitle": "Data Protection",
+        "execution": "Coordinated move execution",
+        "executionTitle": "Move Execution",
+        "validation": "Post-move validation",
+        "support": "Post-relocation support"
+      },
+      "benefits": {
+        "minimal": "Minimal business disruption",
+        "minimalTitle": "Minimal Downtime",
+        "minimalDesc": "Strategic planning to minimize business interruption during the move.",
+        "secure": "Secure handling of equipment",
+        "secureTitle": "Secure Handling",
+        "secureDesc": "Professional handling of all IT equipment with full insurance coverage.",
+        "professional": "Professional project management",
+        "professionalTitle": "Project Management",
+        "professionalDesc": "Dedicated project managers to oversee every aspect of your relocation.",
+        "insurance": "Full insurance coverage",
+        "insuranceTitle": "Insurance Coverage",
+        "insuranceDesc": "Comprehensive insurance coverage for all equipment during transit.",
+        "weekend": "Weekend and after-hours options",
+        "weekendTitle": "Flexible Scheduling",
+        "weekendDesc": "Weekend and after-hours relocation options to minimize business impact.",
+        "businessContinuity": "Business Continuity"
+      },
+      "cta": {
+        "title": "Planning an Office Move?",
+        "description": "Trust Akrin to relocate your IT infrastructure safely and efficiently.",
+        "button": "Plan Your Move"
+      },
+      "features": {
+        "preMoveAssessmentDesc": "Comprehensive assessment and planning before relocation.",
+        "secureTransportDesc": "Secure packing and transportation of sensitive IT equipment.",
+        "installationSetupDesc": "Professional installation and setup at the new location.",
+        "testingValidationDesc": "Thorough testing to ensure everything works perfectly.",
+        "minimizeDisruptionDesc": "Strategies to minimize business disruption during relocation.",
+        "weekendServiceDesc": "Weekend and after-hours relocation services available."
+      }
+    },
+    "wirelessSurvey": {
+      "title": "Wireless Survey",
+      "subtitle": "Optimize your wireless network performance with professional site surveys and analysis.",
+      "mainDescription": "Akrin's Wireless Survey service provides comprehensive analysis of your wireless environment. Using advanced tools and methodologies, we identify coverage gaps, interference sources, and optimization opportunities to ensure reliable wireless connectivity.",
+      "sections": {
+        "types": "Survey Types",
+        "deliverables": "What You Receive",
+        "benefits": "Survey Benefits",
+        "whyMatter": "Why Wireless Surveys Matter",
+        "process": "Our Wireless Survey Process"
+      },
+      "types": {
+        "predictive": {
+          "title": "Predictive Survey",
+          "description": "Virtual modeling for new deployments"
+        },
+        "passive": {
+          "title": "Passive Survey",
+          "description": "Analysis of existing wireless networks"
+        },
+        "active": {
+          "title": "Active Survey",
+          "description": "Real-world performance testing"
+        },
+        "spectrum": {
+          "title": "Spectrum Analysis",
+          "description": "Interference identification and mitigation"
+        }
+      },
+      "deliverables": {
+        "heatmaps": "Coverage heat maps",
+        "reports": "Detailed survey reports",
+        "recommendations": "Optimization recommendations",
+        "apPlacement": "Access point placement plans",
+        "channelPlan": "Channel planning",
+        "documentation": "Complete documentation"
+      },
+      "benefits": {
+        "coverage": "Optimal wireless coverage",
+        "performance": "Improved network performance",
+        "reliability": "Enhanced reliability",
+        "capacity": "Increased user capacity",
+        "troubleshooting": "Proactive issue prevention",
+        "security": "Enhanced security and reduced vulnerabilities"
+      },
+      "services": {
+        "siteAnalysis": "Comprehensive Site Analysis",
+        "siteAnalysisTitle": "Site Analysis",
+        "siteAnalysisDesc": "Thorough analysis of your physical environment and wireless requirements.",
+        "networkDesign": "Wireless Network Design",
+        "networkDesignTitle": "Network Design",
+        "networkDesignDesc": "Custom wireless network design optimized for your specific needs.",
+        "postDeployment": "Post-Deployment Verification",
+        "postDeploymentTitle": "Deployment Verification",
+        "postDeploymentDesc": "Verification surveys to ensure your wireless network meets design specifications."
+      },
+      "whyMatter": {
+        "content": "Professional wireless surveys are essential for ensuring optimal network performance, identifying potential issues before they impact users, and maximizing your wireless infrastructure investment.",
+        "issues": {
+          "deadZones": "Eliminate dead zones and coverage gaps",
+          "interference": "Identify and mitigate interference sources",
+          "capacity": "Ensure adequate capacity for user density",
+          "performance": "Optimize network performance and reliability"
+        }
+      },
+      "process": {
+        "requirementsTitle": "Requirements Gathering",
+        "requirementsDesc": "Understanding your wireless needs, user density, and performance requirements.",
+        "surveyTitle": "Site Survey",
+        "surveyDesc": "Conducting comprehensive wireless surveys using professional-grade equipment.",
+        "analysisTitle": "Data Analysis",
+        "analysisDesc": "Analyzing survey data to identify issues and optimization opportunities.",
+        "recommendationsTitle": "Recommendations",
+        "recommendationsDesc": "Providing detailed recommendations for network improvements and optimization."
+      },
+      "cta": {
+        "title": "Optimize Your Wireless Network",
+        "description": "Get a professional wireless survey to maximize your network performance.",
+        "button": "Schedule Survey"
+      },
+      "features": {
+        "siteAssessmentDesc": "Comprehensive evaluation of your physical space and wireless requirements.",
+        "coverageMappingDesc": "Detailed heat maps showing signal strength throughout your facility.",
+        "performanceTestingDesc": "Thorough testing to ensure optimal speed and reliability.",
+        "securityAnalysisDesc": "Assessment of wireless security protocols and recommendations.",
+        "interferenceMitigationDesc": "Identification and resolution of signal interference issues.",
+        "capacityPlanningDesc": "Planning for current and future wireless capacity needs."
+      },
+      "surveyTypes": {
+        "coverage": "Coverage Analysis",
+        "performance": "Performance Optimization",
+        "capacity": "Capacity Planning"
+      }
+    },
+    "workforceSolutions": {
+      "title": "Workforce Solutions",
+      "subtitle": "Flexible staffing solutions to meet your dynamic business needs.",
+      "mainDescription": "Akrin's Workforce Solutions provide flexible staffing options for businesses of all sizes. From temporary assignments to specialized project teams, we deliver the right talent at the right time to help you achieve your business objectives.",
+      "sections": {
+        "services": "Our Services",
+        "industries": "Industries Served",
+        "benefits": "Client Benefits"
+      },
+      "services": {
+        "temporary": "Temporary staffing",
+        "temporaryTitle": "Temporary Staffing",
+        "temporaryDesc": "Short-term staffing solutions for seasonal peaks and special projects.",
+        "projectBased": "Project-based teams",
+        "projectBasedTitle": "Project Teams",
+        "projectBasedDesc": "Complete project teams with the right mix of skills and experience.",
+        "managed": "Managed workforce services",
+        "managedTitle": "Managed Services",
+        "managedDesc": "Comprehensive workforce management including recruitment, payroll, and compliance.",
+        "payroll": "Payroll services",
+        "payrollTitle": "Payroll Services",
+        "payrollDesc": "Full payroll processing and administration for temporary and contract staff.",
+        "compliance": "Compliance management",
+        "complianceTitle": "Compliance Management",
+        "complianceDesc": "Ensure compliance with all labor laws and regulations.",
+        "training": "Workforce training",
+        "trainingTitle": "Training Programs",
+        "trainingDesc": "Customized training programs to upskill your workforce.",
+        "contractToHire": "Contract-to-Hire Solutions",
+        "contractToHireTitle": "Contract-to-Hire",
+        "contractToHireDesc": "Try before you hire with flexible contract-to-permanent options.",
+        "directPlacement": "Direct Placement Services",
+        "directPlacementTitle": "Direct Placement",
+        "directPlacementDesc": "Permanent placement services for long-term staffing needs."
+      },
+      "industries": {
+        "it": "Information Technology",
+        "manufacturing": "Manufacturing",
+        "logistics": "Logistics & Distribution",
+        "hospitality": "Hospitality",
+        "retail": "Retail",
+        "healthcare": "Healthcare"
+      },
+      "benefits": {
+        "flexibility": "Workforce flexibility",
+        "flexibilityTitle": "Flexibility",
+        "costControl": "Cost control",
+        "costTitle": "Cost-Effectiveness",
+        "riskMitigation": "Risk mitigation",
+        "riskTitle": "Risk Mitigation",
+        "expertise": "Access to specialized skills",
+        "scalability": "Quick scalability",
+        "compliance": "Regulatory compliance"
+      },
+      "cta": {
+        "title": "Build a Flexible Workforce",
+        "description": "Let Akrin provide the staffing solutions you need to succeed.",
+        "button": "Get Started"
+      }
+    }
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: January 2025",
+    "introduction": {
+      "title": "Introduction",
+      "content": "Akrin Co., Ltd. (\"we,\" \"our,\" or \"us\") respects your privacy and is committed to protecting your personal data. This privacy policy explains how we collect, use, and safeguard your information when you use our services."
+    },
+    "informationWeCollect": {
+      "title": "Information We Collect",
+      "personal": {
+        "title": "Personal Information",
+        "item1": "Name and contact details (email, phone number, address)",
+        "item2": "Company name and business information",
+        "item3": "Payment and billing information",
+        "item4": "Communication history and service preferences"
+      },
+      "technical": {
+        "title": "Technical Information",
+        "item1": "IP address and browser information",
+        "item2": "Device and operating system details",
+        "item3": "Usage data and analytics"
+      }
+    },
+    "howWeUse": {
+      "title": "How We Use Your Information",
+      "item1": "To provide and maintain our IT services",
+      "item2": "To communicate with you about our services",
+      "item3": "To process payments and manage billing",
+      "item4": "To improve our services and customer experience",
+      "item5": "To comply with legal obligations"
+    },
+    "dataProtection": {
+      "title": "Data Protection",
+      "content": "We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction. Our security measures include encryption, access controls, and regular security assessments."
+    },
+    "dataSharing": {
+      "title": "Data Sharing",
+      "content": "We do not sell or rent your personal information to third parties. We may share your information only in the following circumstances:",
+      "item1": "With your consent or at your direction",
+      "item2": "With trusted service providers who assist us in operating our business",
+      "item3": "To comply with legal obligations or protect our rights"
+    },
+    "yourRights": {
+      "title": "Your Rights",
+      "content": "Under applicable data protection laws, you have the following rights:",
+      "item1": "Right to access your personal data",
+      "item2": "Right to correct inaccurate data",
+      "item3": "Right to request deletion of your data",
+      "item4": "Right to object to or restrict processing"
+    },
+    "cookies": {
+      "title": "Cookies",
+      "content": "We use cookies and similar tracking technologies to improve your browsing experience and analyze site traffic. You can control cookie preferences through your browser settings."
+    },
+    "contact": {
+      "title": "Contact Us",
+      "content": "If you have any questions about this privacy policy or our data practices, please contact us:",
+      "company": "Akrin Co., Ltd.",
+      "email": "Email: support@akrin.jp",
+      "phone": "Phone: 03-6821-1223",
+      "address": "Address: 〒107-0062 Tokyo, Minato City, Minami Aoyama 2-4-15"
+    }
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "lastUpdated": "Last updated: January 2025",
+    "acceptance": {
+      "title": "1. Acceptance of Terms",
+      "content": "By accessing or using Akrin's services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services."
+    },
+    "services": {
+      "title": "2. Services",
+      "content": "Akrin provides comprehensive IT solutions including but not limited to:",
+      "item1": "Managed IT services and support",
+      "item2": "Cybersecurity and data protection",
+      "item3": "Cloud solutions and infrastructure",
+      "item4": "IT consulting and digital transformation"
+    },
+    "userResponsibilities": {
+      "title": "3. User Responsibilities",
+      "content": "When using our services, you agree to:",
+      "item1": "Provide accurate and complete information",
+      "item2": "Maintain the confidentiality of your account credentials",
+      "item3": "Comply with all applicable laws and regulations",
+      "item4": "Not engage in any activity that could harm our systems or services"
+    },
+    "payment": {
+      "title": "4. Payment Terms",
+      "content": "Payment terms for our services are as follows:",
+      "item1": "All fees are due as specified in your service agreement",
+      "item2": "Late payments may incur additional charges",
+      "item3": "We reserve the right to suspend services for non-payment"
+    },
+    "intellectualProperty": {
+      "title": "5. Intellectual Property",
+      "content": "All intellectual property rights in our services, including software, documentation, and materials, remain with Akrin or our licensors. You may not copy, modify, or distribute our proprietary materials without written permission."
+    },
+    "confidentiality": {
+      "title": "6. Confidentiality",
+      "content": "Both parties agree to maintain the confidentiality of any proprietary or sensitive information shared during the course of our business relationship."
+    },
+    "limitation": {
+      "title": "7. Limitation of Liability",
+      "content": "To the maximum extent permitted by law, Akrin shall not be liable for any indirect, incidental, special, or consequential damages arising from the use of our services."
+    },
+    "termination": {
+      "title": "8. Termination",
+      "content": "Either party may terminate the service agreement:",
+      "item1": "With 30 days written notice",
+      "item2": "Immediately for material breach",
+      "item3": "As specified in your service agreement"
+    },
+    "governingLaw": {
+      "title": "9. Governing Law",
+      "content": "These terms shall be governed by and construed in accordance with the laws of Japan. Any disputes shall be resolved in the courts of Tokyo, Japan."
+    },
+    "changes": {
+      "title": "10. Changes to Terms",
+      "content": "We reserve the right to modify these terms at any time. We will notify you of any material changes via email or through our website."
+    },
+    "contact": {
+      "title": "11. Contact Information",
+      "content": "For questions about these Terms of Service, please contact us:",
+      "company": "Akrin Co., Ltd.",
+      "email": "Email: support@akrin.jp",
+      "phone": "Phone: 03-6821-1223",
+      "address": "Address: 〒107-0062 Tokyo, Minato City, Minami Aoyama 2-4-15"
+    }
+  },
+  "cookies": {
+    "title": "We use cookies",
+    "description": "We use cookies to enhance your browsing experience, analyze site traffic, and personalize content. By clicking \"Accept\", you consent to our use of cookies.",
+    "learnMore": "Learn more about our cookie policy",
+    "accept": "Accept All Cookies",
+    "decline": "Decline Optional Cookies",
+    "customize": "Cookie Settings"
+  }
+}

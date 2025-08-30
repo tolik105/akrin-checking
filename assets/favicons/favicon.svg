@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" shape-rendering="geometricPrecision">
+  <!-- White background -->
+  <rect width="64" height="64" rx="8" fill="#FFFFFF"/>
+  
+  <!-- Exact A from logo centered and scaled -->
+  <g transform="translate(32, 32)">
+    <g transform="scale(0.75) translate(-236.5, -596)">
+      <!-- Purple accent triangle -->
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M206.766 610.642H234.452L220.235 635.074H192.998L206.766 610.642Z" fill="#7A28FF" fill-opacity="0.9"/>
+      <!-- Black A shape -->
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M235.5 557.975L280.098 634.928H248.969L219.936 585.187L235.5 557.975Z" fill="#1a1a1a"/>
+    </g>
+  </g>
+</svg>

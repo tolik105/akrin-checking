@@ -1,0 +1,67 @@
+---
+title: "Nationwide Wi‑Fi Standardization (30 Offices)"
+slug: "nationwide-wifi-30-offices"
+date: "2025-08-16"
+tags: ['wifi', 'ekahau', 'survey', 'roaming', 'nationwide']
+locale: "en"
+image: "/case-assets/nationwide-wifi-30-offices/hero.webp"
+metaDescription: "Standardized Wi‑Fi across 30 offices with pre/post surveys, roaming optimization, cable tests, and governance for consistent performance and fewer tickets."
+---
+![Program flow: pre/post survey and optimization](/case-assets/nationwide-wifi-30-offices/hero.webp "Standardization Program")
+
+# Overview
+A repeatable program unified wireless experience across 30 Japanese offices, with pre/post surveys and cable tests.
+
+**Client.** Global company with 30 offices in Japan
+
+## Context
+Rapid growth and office refits created inconsistent WLAN configurations across regions. Some sites had consumer APs and range extenders, others had aging controllers. We needed a repeatable playbook that would deliver consistent enterprise Wi‑Fi nationwide.
+
+## Challenge
+- Inconsistent Wi‑Fi quality and complaints across sites; roaming delays and sticky clients
+- Mixed hardware and ad‑hoc SSIDs; repeaters causing interference and loops
+- Uneven cabling quality and PoE budgets limiting AP density
+
+## Approach and rationale
+We standardized on an enterprise controller and a survey‑led design process that balanced coverage and capacity. Roaming enhancements and client steering were adopted where device fleets allowed. Cable health and power budgets were remediated to avoid hidden bottlenecks.
+We established a central playbook and regional champions to keep field execution consistent. Acceptance criteria covered survey deltas, cable PASS rates, guest onboarding tests, and a short UC call to validate latency/jitter.
+
+
+## Implementation
+- Pre‑survey → design → deployment → post‑survey acceptance using Ekahau (predictive + validation)
+- 802.11k/v and optimized roaming; TWT for supported devices; band selection and min‑RSSI guardrails
+- Directional antennas where needed; channel/power plans tuned to reduce CCI/OBSS
+- Cable testing with Fluke DSX; remove consumer repeaters; PoE power planning and switch upgrades; label standards and photo evidence for acceptance
+- Regional runbooks and change windows; on‑site guides for floor captains and facilities
+- SSID/policy standard: WPA3‑Enterprise where supported, guest via NAC with QR onboarding and limits
+- Min‑RSSI and client steering templates; 6 GHz pilots in high‑density zones
+- Field‑ops handbook: survey cadence, acceptance criteria, and photo evidence requirements
+
+## Outcomes
+- −47% roam time (median) and +45% average throughput across cohorts
+- −58% Wi‑Fi‑related helpdesk tickets; fewer UC complaints in monthly surveys
+- Enablement: regional champions trained on surveys, acceptance tests, and incident tagging; quarterly refreshers keep field practices aligned
+
+## Program outcomes (extended)
+- First‑pass acceptance rate 96% across sites; 99% cable PASS rate on Fluke DSX spot checks
+- 95th percentile roam times improved materially in dense offices; fewer sticky‑client cases post‑tuning
+
+- Consistent guest onboarding and floor‑captain guidance reduced hand‑holding
+
+We also captured lessons learned to accelerate subsequent regional waves and codified acceptance criteria into the playbook for future offices.
+
+## Monitoring and governance
+- Post‑survey heatmaps published to leadership; trends reviewed quarterly
+- KPIs tracked: roam dwell times, throughput distribution, ticket rates per site
+- Firmware lanes and CAB‑approved changes; rollback images prepped per region
+- Weekly program stand‑ups; exceptions routed to a tiger team for remediation
+
+
+## Timeline
+Sequenced by region over one quarter with pilot → rollout waves; change freezes around peak business periods
+
+## Technology
+## Next steps
+Scale standard to acquired offices and refresh survey cadence. Related services: [Wi‑Fi Assessment & Optimization](/services/wifi-assessment), [Cloud Infrastructure](/services/cloud-infrastructure).
+
+Ekahau, enterprise WLAN controller, Fluke DSX

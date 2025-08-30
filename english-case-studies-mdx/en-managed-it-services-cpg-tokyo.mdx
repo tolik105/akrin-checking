@@ -1,0 +1,67 @@
+---
+title: "Consumer Goods Managed IT (Tokyo)"
+slug: "managed-it-services-cpg-tokyo"
+date: "2025-08-17"
+tags: ["managed-it","service-desk","intune","tokyo"]
+locale: "en"
+image: "/case-assets/managed-it-services-cpg-tokyo/hero.webp"
+metaDescription: "ITIL-aligned service-desk and Intune standardization cut repeat incidents by 41% and took VIP first response under 60s while sustaining 98%+ SLA."
+---
+
+![Managed IT service desk dashboard (anonymized)](/case-assets/managed-it-services-cpg-tokyo/hero.webp "Service Desk (SLA)")
+
+# Overview
+Fragmented vendors and ad‑hoc processes slowed first response and allowed the same incidents to recur. We unified the service‑desk on an ITIL‑aligned platform, standardized endpoints with Autopilot + Intune, and introduced visible SLA accountability across Tokyo HQ and remote sites.
+
+> Client: Global consumer goods company, Tokyo HQ (~350 staff)
+
+## Context
+The client had grown quickly through acquisitions. Support was split across multiple vendors and on‑prem tools with limited reporting. VIP users frequently experienced delays during morning peaks, and device baselines varied by team, creating avoidable incidents. Stakeholders asked for a managed‑it approach that balanced speed with control.
+
+## Challenge
+- Slow first‑line response and unclear escalation paths
+- Recurring incidents from weak knowledge capture and inconsistent device baselines
+- Low visibility into SLA compliance and ticket aging across queues; limited problem management practice
+
+## Approach and rationale
+We introduced a single, ITIL‑aligned operating model. Freshservice consolidated ticketing, CMDB, and change; Intune provided policy‑driven standardization. We prioritized measurable improvements (first response, repeat rates) and minimized change fatigue by sequencing quick wins before deeper process changes. We also aligned service‑catalog entries to clear request types and mapped ownership to reduce ping‑pong.
+
+## Implementation
+- Redesigned SLAs/OLAs, queue ownership, and escalation; instituted weekly CAB with KEDB reviews
+- Consolidated ticketing/CMDB/change in Freshservice with real‑time SLA dashboards and aging reports
+- Autopilot provisioning with standardized images; Intune configuration + conditional access enforced by device compliance
+- Tiered support playbooks for VIP, retail, and remote teams; documented runbooks and knowledge templates
+- On‑call rota and paging rules integrated with incident severity and stakeholder comms
+
+## Implementation details
+- Built role‑based device profiles (executive, field, engineering) with baseline policies (BitLocker, Defender, Wi‑Fi/VPN, app sets)
+- Migrated 96% of devices to compliant state; non‑compliant devices quarantined with guided remediation
+- Configured Freshservice automations: triage by service, SLO targets by priority, breach notifications, and root‑cause tags
+- Introduced change categories with risk scoring and back‑out plans; CAB minutes and KEDB entries linked to resolved incidents
+- Knowledge management cadence: owner‑reviewed articles, linked to incidents; VIP runbooks for exec travel and offsite events
+
+## Risk management and governance
+- Staged Autopilot rollout (pilot → wave) with rollback imaging and comms templates
+- Weekly operations review covering SLA trends, repeat incident drill‑downs, and top knowledge gaps
+- Security baselines audited monthly; exceptions tracked with owners and expiry dates; quarterly access reviews
+
+## Outcomes
+- −28% monthly tickets; −41% repeat incidents
+- VIP first response <60 seconds; 98.7% SLA compliance sustained over 8 weeks
+- 96% device standardization; −35% unplanned downtime
+- Higher stakeholder satisfaction measured through post‑ticket CSAT (+18 pts)
+
+## Business impact
+- VIP experience improved (first response <60s) while overall SLA stayed >98%—higher executive trust
+- Fewer incidents and faster resolutions reduced downtime and freed engineers for roadmap work
+- Proactive problem management reduced repeats and improved change success rate; fewer escalations to leadership
+- Self‑service catalog adoption shortened lead time for routine requests and improved employee satisfaction
+
+## Timeline
+10 weeks to steady state (4‑week migration + 6‑week stabilization)
+
+## Technology
+Microsoft 365, Intune & Autopilot, Azure AD, Freshservice, Defender for Endpoint
+
+## Next steps
+Phase 2 covers self‑service catalog expansion, proactive problem management, and end‑user education to reduce ticket demand further. Related services: [Managed IT Services](/services/it-managed-services) and [Cloud Infrastructure](/services/cloud-infrastructure). Explore operational tips on our [blog](/blog). Keywords: managed‑it, service‑desk, Intune, Tokyo.

@@ -1,0 +1,2370 @@
+/* Local variable fonts only; remove external Google Fonts for consistency and performance */
+
+/* Variable Font Declarations - McKinsey Typography System */
+@font-face {
+  font-family: "Inter Var";
+  src: url("/fonts/Inter.var.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  font-feature-settings: "kern", "liga", "clig", "calt";
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Lora Var";
+  src: url("/fonts/Lora.var.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 300 800;
+  font-variation-settings: "opsz" 32;
+  font-display: swap;
+  font-feature-settings: "kern", "liga", "clig", "calt";
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Mobile-First Best Practices - Safe Area Support */
+:root {
+  --measure: 65ch;          /* ideal line length */
+  
+  /* Safe area insets for modern devices */
+  --safe-area-top: env(safe-area-inset-top, 0px);
+  --safe-area-right: env(safe-area-inset-right, 0px);
+  --safe-area-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-area-left: env(safe-area-inset-left, 0px);
+
+  /* Fortitude-Inspired CSS Custom Properties */
+  
+  /* Responsive Spacing System */
+  --space-xs: clamp(0.25rem, 1vw, 0.5rem);      /* 4-8px */
+  --space-sm: clamp(0.44rem, 2vw, 0.75rem);     /* 7-12px */
+  --space-md: clamp(0.75rem, 3vw, 1.25rem);     /* 12-20px */
+  --space-lg: clamp(1rem, 4vw, 2rem);           /* 16-32px */
+  --space-xl: clamp(1.5rem, 6vw, 3rem);         /* 24-48px */
+  --space-2xl: clamp(2rem, 8vw, 4rem);          /* 32-64px */
+  --space-3xl: clamp(3rem, 12vw, 6rem);         /* 48-96px */
+  --space-4xl: clamp(4rem, 16vw, 8rem);         /* 64-128px */
+  --space-5xl: clamp(5.06rem, 20vw, 10rem);     /* 81-160px */
+  
+  /* Fortitude Preset Spacing */
+  --space-preset-1: 0.44rem;   /* 7px */
+  --space-preset-2: 0.75rem;   /* 12px */
+  --space-preset-3: 1.19rem;   /* 19px */
+  --space-preset-4: 1.56rem;   /* 25px */
+  --space-preset-5: 2.25rem;   /* 36px */
+  --space-preset-6: 3.19rem;   /* 51px */
+  --space-preset-7: 5.06rem;   /* 81px */
+
+  /* Responsive Typography Scale */
+  --text-xs: clamp(0.75rem, 1.8vw, 0.8125rem);    /* 12-13px */
+  --text-sm: clamp(0.8125rem, 2.2vw, 0.875rem);   /* 13-14px */
+  --text-base: clamp(0.875rem, 2.5vw, 1rem);      /* 14-16px */
+  --text-md: clamp(1rem, 3vw, 1.125rem);          /* 16-18px */
+  --text-lg: clamp(1.125rem, 3.5vw, 1.25rem);     /* 18-20px */
+  --text-xl: clamp(1.25rem, 4vw, 1.5rem);         /* 20-24px */
+  --text-2xl: clamp(1.5rem, 4.5vw, 1.875rem);     /* 24-30px */
+  --text-3xl: clamp(1.875rem, 5.5vw, 2.25rem);    /* 30-36px */
+  --text-4xl: clamp(2.25rem, 6.5vw, 3rem);        /* 36-48px */
+  --text-5xl: clamp(3rem, 8vw, 4rem);             /* 48-64px */
+
+  /* Fortitude Typography Presets */
+  --text-fortitude-sm: 0.8125rem;  /* 13px */
+  --text-fortitude-md: 1.25rem;    /* 20px */
+  --text-fortitude-lg: 2.25rem;    /* 36px */
+
+  /* Container Widths */
+  --container-xs: 352px;
+  --container-sm: 425px;
+  --container-md: 576px;
+  --container-lg: 768px;
+  --container-xl: 1024px;
+  --container-2xl: 1280px;
+  --container-3xl: 1536px;
+  --container-4xl: 1920px;
+
+  /* Responsive Container System */
+  --container-padding-xs: 0.75rem;   /* 12px */
+  --container-padding-sm: 1rem;      /* 16px */
+  --container-padding-md: 1.25rem;   /* 20px */
+  --container-padding-lg: 1.5rem;    /* 24px */
+  --container-padding-xl: 2rem;      /* 32px */
+  --container-padding-2xl: 2.5rem;   /* 40px */
+  --container-padding-3xl: 3rem;     /* 48px */
+
+  /* Animation Durations */
+  --duration-fast: 0.15s;
+  --duration-normal: 0.3s;
+  --duration-slow: 0.5s;
+
+  /* Transition Easings (Fortitude-style) */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Plus Jakarta Sans Typography Variables (Legacy) */
+  --plus-jakarta-sans-regular-font-family: "Plus Jakarta Sans", Helvetica;
+  --plus-jakarta-sans-regular-font-size: var(--text-lg);
+  --plus-jakarta-sans-regular-font-style: normal;
+  --plus-jakarta-sans-regular-font-weight: 400;
+  --plus-jakarta-sans-regular-letter-spacing: 0.27px;
+  --plus-jakarta-sans-regular-line-height: 1.5;
+  --semantic-heading-1-font-family: "Plus Jakarta Sans", Helvetica;
+  --semantic-heading-1-font-size: var(--text-5xl);
+  --semantic-heading-1-font-style: normal;
+  --semantic-heading-1-font-weight: 700;
+  --semantic-heading-1-letter-spacing: -0.96px;
+  --semantic-heading-1-line-height: 1.1;
+  --semantic-heading-2-font-family: "Plus Jakarta Sans", Helvetica;
+  --semantic-heading-2-font-size: var(--text-4xl);
+  --semantic-heading-2-font-style: normal;
+  --semantic-heading-2-font-weight: 700;
+  --semantic-heading-2-letter-spacing: -0.72px;
+  --semantic-heading-2-line-height: 1.2;
+  --semantic-heading-3-font-family: "Plus Jakarta Sans", Helvetica;
+  --semantic-heading-3-font-size: var(--text-lg);
+  --semantic-heading-3-font-style: normal;
+  --semantic-heading-3-font-weight: 400;
+  --semantic-heading-3-letter-spacing: -0.30px;
+  --semantic-heading-3-line-height: 1.4;
+}
+
+html {
+  font-family: "Inter Var", 'Noto Sans JP', system-ui, sans-serif;
+  font-size: 16px; /* Base font size for mobile */
+  line-height: 1.6;
+  letter-spacing: .01em;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  /* HDPI/Retina Optimizations */
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  /* Mobile-first viewport optimization */
+  scroll-behavior: smooth;
+  /* Prevent horizontal scroll */
+  max-width: 100vw;
+}
+
+/* Responsive font scaling */
+@media (min-width: 768px) {
+  html {
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+/* Mobile-optimized body with safe area support */
+body {
+  position: relative;
+  width: 100%;
+  
+  /* Touch optimization */
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  
+  /* Safe area support for content */
+  padding-left: max(0px, var(--safe-area-left));
+  padding-right: max(0px, var(--safe-area-right));
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Removed Preline UI imports to fix module errors */
+
+/* Custom utility for overflow-clip to fix sticky navbar */
+@layer utilities {
+  .overflow-x-clip {
+    overflow-x: hidden; /* Fallback for browsers that don't support clip */
+    overflow-x: clip;
+  }
+  .overflow-clip {
+    overflow: hidden; /* Fallback for browsers that don't support clip */
+    overflow: clip;
+  }
+  
+  /* For browsers that support clip, ensure sticky positioning works */
+  @supports (overflow: clip) {
+    .overflow-x-clip {
+      overflow-x: clip;
+    }
+    .overflow-clip {
+      overflow: clip;
+    }
+  }
+}
+
+/* Import mobile optimizations */
+@import url("./mobile-optimizations.css");
+
+/* Import mobile-first foundation */
+@import '../styles/mobile-first.css';
+
+/* Mobile-First Utility Classes */
+@layer utilities {
+  /* Touch-friendly interaction states */
+  .touch-manipulation {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* Mobile typography utilities */
+  .mobile-text-lg {
+    font-size: clamp(1.125rem, 2.5vw, 1.25rem);
+    line-height: 1.6;
+  }
+  
+  .mobile-text-xl {
+    font-size: clamp(1.25rem, 3vw, 1.5rem); 
+    line-height: 1.5;
+  }
+  
+  /* Safe area utilities */
+  .safe-area-p {
+    padding-left: max(1rem, var(--safe-area-left));
+    padding-right: max(1rem, var(--safe-area-right));
+    padding-top: max(1rem, var(--safe-area-top));
+    padding-bottom: max(1rem, var(--safe-area-bottom));
+  }
+  
+  /* Mobile-specific hover states */
+  @media (hover: hover) {
+    .hover-desktop:hover {
+      /* Only apply hover on devices that support true hover */
+    }
+  }
+}
+
+@layer base {
+  /* McKinsey Blog Content Wrapper */
+  .blog-content {
+    max-width: var(--measure);
+    margin-inline: auto;
+    padding-inline: 1rem;
+    font-family: "Inter Var", 'Noto Sans JP', system-ui, sans-serif;
+    font-size: 18px;
+    line-height: 1.56;
+    letter-spacing: .01em;
+  }
+
+  /* McKinsey Vertical Rhythm - 8pt Grid */
+  .blog-content p {
+    margin: 0 0 24px;              /* 8×3 */
+    font-size: 18px;
+    line-height: 1.56;
+    color: #374151;
+  }
+
+  .blog-content h2 {
+    margin: 48px 0 16px;          /* space-before > after */
+    font-size: 24px;
+    font-weight: 600;
+    color: #111827;
+    line-height: 1.3;
+  }
+
+  .blog-content h3 {
+    margin: 40px 0 16px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #111827;
+    line-height: 1.4;
+  }
+
+  /* McKinsey-style blockquotes */
+  .blog-content blockquote {
+    margin: 32px 0;
+    padding: 24px;
+    background: #f8fafc;
+    border-left: 4px solid #6366f1;
+    font-style: italic;
+    font-size: 18px;
+    line-height: 1.56;
+  }
+
+  /* McKinsey-style lists */
+  .blog-content ul, .blog-content ol {
+    margin: 24px 0;
+    padding-left: 24px;
+  }
+
+  .blog-content li {
+    margin: 8px 0;
+    font-size: 18px;
+    line-height: 1.56;
+  }
+
+  /* Smooth scrolling with custom properties */
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 0;
+  }
+
+  /* Better scroll performance */
+  * {
+    scroll-behavior: inherit;
+  }
+  
+  /* Premium Body Typography */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-variant-ligatures: common-ligatures contextual;
+    font-feature-settings: "kern" 1, "liga" 1, "clig" 1, "calt" 1;
+    font-kerning: normal;
+    /* Enhanced readability */
+    line-height: 1.6;
+    letter-spacing: -0.011em;
+    /* HDPI/Retina Body Optimizations */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    /* Removed transform and will-change to fix fixed navbar positioning */
+  }
+
+  /* Premium Typography Hierarchy */
+  h1, h2, h3, h4, h5, h6 {
+    font-feature-settings: "kern" 1, "liga" 1, "clig" 1, "calt" 1, "ss01" 1;
+    font-variant-ligatures: common-ligatures contextual;
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+    /* HDPI/Retina Heading Optimizations */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-optical-sizing: auto;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  h1 {
+    font-size: clamp(1.75rem, 5vw, 3rem);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+    margin-bottom: clamp(1rem, 3vw, 1.5rem);
+  }
+
+  h2 {
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+    margin-bottom: clamp(0.75rem, 2.5vw, 1.25rem);
+  }
+
+  h3 {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    line-height: 1.4;
+    margin-bottom: clamp(0.5rem, 2vw, 1rem);
+  }
+
+  p {
+    font-feature-settings: "kern" 1, "liga" 1, "clig" 1, "calt" 1;
+    font-variant-ligatures: common-ligatures contextual;
+    line-height: 1.7;
+    letter-spacing: -0.011em;
+    font-weight: 400;
+    margin-bottom: clamp(1rem, 3vw, 1.5rem);
+    font-size: clamp(0.875rem, 2.5vw, 1.125rem);
+  }
+
+  /* Enhanced text elements */
+  strong, b {
+    font-weight: 600;
+    font-feature-settings: "kern" 1, "liga" 1, "clig" 1, "calt" 1;
+  }
+
+  em, i {
+    font-style: italic;
+    font-feature-settings: "kern" 1, "liga" 1, "clig" 1, "calt" 1;
+  }
+
+  /* Premium UI Elements - Responsive */
+  button, .btn {
+    font-feature-settings: "kern" 1, "liga" 1, "clig" 1, "calt" 1;
+    font-variant-ligatures: common-ligatures contextual;
+    letter-spacing: -0.011em;
+    font-weight: 500;
+    text-rendering: optimizeLegibility;
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+    padding: clamp(0.5rem, 2vw, 0.75rem) clamp(1rem, 3vw, 1.5rem);
+    min-height: 44px; /* Touch-friendly minimum */
+    min-width: 44px;
+  }
+
+  input, textarea, select {
+    font-feature-settings: "kern" 1, "liga" 1, "clig" 1, "calt" 1;
+    font-variant-ligatures: common-ligatures contextual;
+    letter-spacing: -0.011em;
+    text-rendering: optimizeLegibility;
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+    padding: clamp(0.5rem, 2vw, 0.75rem);
+    min-height: 44px; /* Touch-friendly minimum */
+  }
+
+  /* Premium link styles */
+  a {
+    font-feature-settings: "kern" 1, "liga" 1, "clig" 1, "calt" 1;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Enhanced code elements */
+  code, pre {
+    font-feature-settings: "kern" 0, "liga" 0, "clig" 0, "calt" 0;
+    font-variant-ligatures: none;
+    text-rendering: optimizeSpeed;
+  }
+
+  /* Responsive Image System */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .img-responsive {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .img-contain {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .aspect-video {
+    aspect-ratio: 16 / 9;
+  }
+
+  .aspect-square {
+    aspect-ratio: 1 / 1;
+  }
+
+  .aspect-4-3 {
+    aspect-ratio: 4 / 3;
+  }
+
+  /* Animation utilities */
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  /* Logo Carousel Animations */
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes scroll-right {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  .animate-scroll {
+    animation: scroll-left 40s linear infinite;
+  }
+
+  .animate-scroll-slow {
+    animation: scroll-left 60s linear infinite;
+  }
+
+  .animate-scroll-fast {
+    animation: scroll-left 20s linear infinite;
+  }
+
+  .reverse {
+    animation-direction: reverse;
+  }
+
+  .hover\:pause:hover {
+    animation-play-state: paused;
+  }
+
+  /* High-DPI logo rendering */
+  .logo-crisp {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+  }
+
+  /* Smooth logo transitions */
+  .logo-smooth {
+    image-rendering: auto;
+    image-rendering: smooth;
+  }
+
+  /* SVG rendering optimizations */
+  svg {
+    shape-rendering: geometricPrecision;
+    text-rendering: geometricPrecision;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Image placeholder styling */
+  .image-placeholder {
+    @apply flex items-center justify-center text-sm text-gray-400;
+  }
+  .image-placeholder::before {
+    content: "Image coming soon";
+  }
+
+  /* Subtle border at bottom of sticky bar */
+  .sticky-border::after {
+    content: '';
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 1px;
+    background: rgb(229 231 235 / 0.7);
+  }
+
+  .dark .sticky-border::after {
+    background: rgb(38 38 38 / 0.7);
+  }
+} /* End of @layer base */
+
+:root {
+    /* Premium Typography Variables */
+    --font-feature-premium: "kern" 1, "liga" 1, "clig" 1, "calt" 1;
+    --font-feature-display: "kern" 1, "liga" 1, "clig" 1, "calt" 1, "ss01" 1;
+    --letter-spacing-premium: -0.011em;
+    --letter-spacing-display: -0.025em;
+    --letter-spacing-headline: -0.04em;
+    --line-height-premium: 1.7;
+    --line-height-display: 1.1;
+    --line-height-headline: 1.2;
+
+    /* OpenType Feature Settings */
+    font-feature-settings: "tnum" 1;        /* tabular numbers */
+    font-variant-caps: normal;              /* avoid petite-caps for better readability */
+
+    /* Akrin Brand Colors */
+    --akrin-purple: 265 100% 58%;
+    --akrin-black: 0 0% 10%;
+    --akrin-white: 0 0% 100%;
+
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 174 72% 41%; /* Brand Teal */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 10%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 174 72% 95%;
+    --accent-foreground: 174 72% 41%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 174 72% 41%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 10%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 265 100% 58%; /* Akrin Purple */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 20%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 265 100% 20%;
+    --accent-foreground: 265 100% 70%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 265 100% 58%;
+  }
+
+body {
+  @apply bg-background text-foreground;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced backdrop filter support */
+@supports (backdrop-filter: blur(12px)) {
+  .backdrop-blur-enhanced {
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+  }
+}
+
+/* Fallback for browsers without backdrop-filter support */
+@supports not (backdrop-filter: blur(12px)) {
+  .backdrop-blur-enhanced {
+    background-color: rgba(255, 255, 255, 0.95);
+  }
+
+  .dark .backdrop-blur-enhanced {
+    background-color: rgba(17, 24, 39, 0.95);
+  }
+}
+
+/* Preline-Style Mobile Menu */
+.mobile-menu-preline {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 320px;
+  max-width: 85vw;
+  background: white;
+  box-shadow: -10px 0 25px -5px rgba(0, 0, 0, 0.1), -20px 0 25px -5px rgba(0, 0, 0, 0.04);
+  transform: translateX(100%);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 70;
+  will-change: transform;
+  -webkit-overflow-scrolling: touch;
+  border-left: 1px solid rgba(229, 231, 235, 0.8);
+}
+
+.mobile-menu-preline.open {
+  transform: translateX(0);
+  box-shadow: -10px 0 25px -5px rgba(0, 0, 0, 0.15), -20px 0 25px -5px rgba(0, 0, 0, 0.08);
+}
+
+/* Preline-style menu overlay */
+.mobile-menu-overlay-preline {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 24, 39, 0.4);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 60;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-overlay-preline.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Preline-style navigation items */
+.nav-item-preline {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #1f2937;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.nav-item-preline:hover {
+  background-color: #f9fafb;
+  color: #1f2937;
+}
+
+.nav-item-preline svg {
+  flex-shrink: 0;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.75rem;
+  color: #9ca3af;
+}
+
+/* Mobile Navigation Button Styles */
+.mobile-nav-button {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Prevent scroll bounce on iOS */
+body.menu-open {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Smooth transitions for mobile menu elements */
+@media (max-width: 768px) {
+  .mobile-menu-content {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+}
+
+/* Ensure mobile menu appears above sticky header */
+[data-radix-dialog-overlay] {
+  z-index: 60 !important;
+}
+
+/* Testimonial fade-in animation */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out;
+}
+
+[data-radix-dialog-content] {
+  z-index: 60 !important;
+}
+
+/* Ensure navigation dropdowns appear correctly */
+[data-radix-navigation-menu-viewport] {
+  z-index: 55 !important;
+}
+
+/* Support for fixed navbar */
+header[class*="fixed"] {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 9999 !important;
+  width: 100% !important;
+}
+
+/* Ensure main content is visible */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Sticky header support and spacing */
+.sticky-header-offset {
+  padding-top: 56px; /* sm:h-16 = 64px, h-14 = 56px for mobile */
+}
+
+@media (min-width: 640px) {
+  .sticky-header-offset {
+    padding-top: 64px; /* Height of fixed navbar on larger screens */
+  }
+}
+
+/* Fixed navbar support - ensure it stays at top */
+.navbar-fixed {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 9999 !important;
+  width: 100% !important;
+  transform: none !important;
+  will-change: auto !important;
+}
+
+/* Ensure navbar works in all contexts */
+header.navbar-fixed {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 9999 !important;
+  width: 100% !important;
+  transform: none !important;
+  will-change: auto !important;
+  contain: none !important;
+}
+
+/* Ensure body content doesn't go under fixed navbar */
+body {
+  padding-top: 0 !important;
+}
+
+/* Nuclear option - force navbar to be fixed regardless of any other CSS */
+header[class*="navbar-fixed"],
+.navbar-fixed {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 9999 !important;
+  width: 100% !important;
+  transform: none !important;
+  will-change: auto !important;
+  contain: none !important;
+  isolation: auto !important;
+  backdrop-filter: none !important;
+  filter: none !important;
+}
+
+/* Blog pages - disable all fixed/sticky headers */
+[data-blog-page] header,
+[data-blog-page] .navbar-fixed,
+[data-blog-page] header[class*="navbar-fixed"],
+[data-blog-page] header[class*="fixed"],
+[data-blog-page] header[class*="sticky"] {
+  position: static !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  z-index: auto !important;
+  width: auto !important;
+  transform: none !important;
+  will-change: auto !important;
+  contain: none !important;
+  isolation: auto !important;
+  backdrop-filter: none !important;
+  filter: none !important;
+  display: none !important;
+}
+
+/* Mobile menu specific styles */
+.mobile-menu-container .sm\\:hidden {
+  display: block !important;
+}
+
+@media (min-width: 640px) {
+  .mobile-menu-container .sm\\:hidden {
+    display: none !important;
+  }
+}
+
+/* Professional mobile menu styling */
+.mobile-menu-dropdown {
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 9998 !important;
+  background-color: white !important;
+  border-top: 1px solid #e5e7eb !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  display: block !important;
+  width: 100% !important;
+  max-height: 80vh !important;
+  overflow-y: auto !important;
+  border-bottom-left-radius: 12px !important;
+  border-bottom-right-radius: 12px !important;
+}
+
+/* Smooth mobile menu animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobile-menu-dropdown {
+  animation: slideDown 0.25s ease-out !important;
+}
+
+/* Mobile menu item hover effects */
+.mobile-menu-dropdown a:hover {
+  background-color: #f8fafc !important;
+  color: #7c3aed !important;
+}
+
+/* Mobile services dropdown animation */
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in.slide-in-from-top-2 {
+  animation: slideInFromTop 0.2s ease-out;
+}
+
+/* Services dropdown button hover effect */
+.mobile-menu-dropdown button:hover {
+  color: #7c3aed !important;
+}
+
+/* Fortitude-Inspired Responsive Container System */
+.container {
+  width: 100%;
+  max-width: var(--container-2xl);
+  margin: 0 auto;
+  padding-left: var(--container-padding-lg);
+  padding-right: var(--container-padding-lg);
+}
+
+/* Responsive container variants */
+.container-xs {
+  width: 100%;
+  max-width: var(--container-xs);
+  margin: 0 auto;
+  padding-left: var(--container-padding-xs);
+  padding-right: var(--container-padding-xs);
+}
+
+.container-sm {
+  width: 100%;
+  max-width: var(--container-sm);
+  margin: 0 auto;
+  padding-left: var(--container-padding-sm);
+  padding-right: var(--container-padding-sm);
+}
+
+.container-md {
+  width: 100%;
+  max-width: var(--container-md);
+  margin: 0 auto;
+  padding-left: var(--container-padding-md);
+  padding-right: var(--container-padding-md);
+}
+
+.container-lg {
+  width: 100%;
+  max-width: var(--container-lg);
+  margin: 0 auto;
+  padding-left: var(--container-padding-lg);
+  padding-right: var(--container-padding-lg);
+}
+
+.container-xl {
+  width: 100%;
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  padding-left: var(--container-padding-xl);
+  padding-right: var(--container-padding-xl);
+}
+
+.container-2xl {
+  width: 100%;
+  max-width: var(--container-2xl);
+  margin: 0 auto;
+  padding-left: var(--container-padding-2xl);
+  padding-right: var(--container-padding-2xl);
+}
+
+.container-3xl {
+  width: 100%;
+  max-width: var(--container-3xl);
+  margin: 0 auto;
+  padding-left: var(--container-padding-3xl);
+  padding-right: var(--container-padding-3xl);
+}
+
+/* Legacy containers for backward compatibility */
+.container-narrow {
+  width: 100%;
+  max-width: var(--container-lg);
+  margin: 0 auto;
+  padding-left: var(--container-padding-lg);
+  padding-right: var(--container-padding-lg);
+}
+
+.container-wide {
+  width: 100%;
+  max-width: var(--container-4xl);
+  margin: 0 auto;
+  padding-left: var(--container-padding-xl);
+  padding-right: var(--container-padding-xl);
+}
+
+/* Professional hover effects */
+@layer utilities {
+  .transition-base {
+    @apply transition-all duration-200 ease-in-out;
+  }
+}
+
+/* Card hover effects */
+.card-hover {
+  @apply transition-shadow duration-200 hover:shadow-lg;
+}
+
+/* Button hover states */
+.btn-primary {
+  @apply bg-primary text-primary-foreground hover:bg-primary/90 transition-colors duration-200;
+}
+
+.btn-secondary {
+  @apply bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-colors duration-200;
+}
+
+/* Newsletter form styles */
+.newsletter-input {
+  @apply w-full px-4 py-2 text-gray-900 bg-white border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent;
+}
+
+.newsletter-button {
+  @apply px-6 py-2 text-white bg-primary rounded-md hover:bg-primary/90 transition-colors;
+}
+
+/* Fortitude-Inspired Responsive Spacing System */
+.section-padding {
+  padding-top: var(--space-3xl);
+  padding-bottom: var(--space-3xl);
+}
+
+.section-padding-sm {
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-xl);
+}
+
+.section-padding-md {
+  padding-top: var(--space-2xl);
+  padding-bottom: var(--space-2xl);
+}
+
+.section-padding-lg {
+  padding-top: var(--space-4xl);
+  padding-bottom: var(--space-4xl);
+}
+
+.section-padding-xl {
+  padding-top: var(--space-5xl);
+  padding-bottom: var(--space-5xl);
+}
+
+/* Responsive Gap System */
+.gap-responsive {
+  gap: var(--space-lg);
+}
+
+.gap-responsive-xs {
+  gap: var(--space-xs);
+}
+
+.gap-responsive-sm {
+  gap: var(--space-sm);
+}
+
+.gap-responsive-md {
+  gap: var(--space-md);
+}
+
+.gap-responsive-lg {
+  gap: var(--space-lg);
+}
+
+.gap-responsive-xl {
+  gap: var(--space-xl);
+}
+
+.gap-responsive-2xl {
+  gap: var(--space-2xl);
+}
+
+/* Fortitude Preset Spacing Classes */
+.space-preset-1 { margin: var(--space-preset-1); }
+.space-preset-2 { margin: var(--space-preset-2); }
+.space-preset-3 { margin: var(--space-preset-3); }
+.space-preset-4 { margin: var(--space-preset-4); }
+.space-preset-5 { margin: var(--space-preset-5); }
+.space-preset-6 { margin: var(--space-preset-6); }
+.space-preset-7 { margin: var(--space-preset-7); }
+
+.p-preset-1 { padding: var(--space-preset-1); }
+.p-preset-2 { padding: var(--space-preset-2); }
+.p-preset-3 { padding: var(--space-preset-3); }
+.p-preset-4 { padding: var(--space-preset-4); }
+.p-preset-5 { padding: var(--space-preset-5); }
+.p-preset-6 { padding: var(--space-preset-6); }
+.p-preset-7 { padding: var(--space-preset-7); }
+
+/* Responsive Margin/Padding Utilities */
+.m-responsive-xs { margin: var(--space-xs); }
+.m-responsive-sm { margin: var(--space-sm); }
+.m-responsive-md { margin: var(--space-md); }
+.m-responsive-lg { margin: var(--space-lg); }
+.m-responsive-xl { margin: var(--space-xl); }
+.m-responsive-2xl { margin: var(--space-2xl); }
+.m-responsive-3xl { margin: var(--space-3xl); }
+
+.p-responsive-xs { padding: var(--space-xs); }
+.p-responsive-sm { padding: var(--space-sm); }
+.p-responsive-md { padding: var(--space-md); }
+.p-responsive-lg { padding: var(--space-lg); }
+.p-responsive-xl { padding: var(--space-xl); }
+.p-responsive-2xl { padding: var(--space-2xl); }
+.p-responsive-3xl { padding: var(--space-3xl); }
+
+/* Responsive Vertical Padding Utilities */
+.py-responsive-xs { padding-top: var(--space-xs); padding-bottom: var(--space-xs); }
+.py-responsive-sm { padding-top: var(--space-sm); padding-bottom: var(--space-sm); }
+.py-responsive-md { padding-top: var(--space-md); padding-bottom: var(--space-md); }
+.py-responsive-lg { padding-top: var(--space-lg); padding-bottom: var(--space-lg); }
+.py-responsive-xl { padding-top: var(--space-xl); padding-bottom: var(--space-xl); }
+.py-responsive-2xl { padding-top: var(--space-2xl); padding-bottom: var(--space-2xl); }
+.py-responsive-3xl { padding-top: var(--space-3xl); padding-bottom: var(--space-3xl); }
+
+/* Responsive Horizontal Padding Utilities */
+.px-responsive-xs { padding-left: var(--space-xs); padding-right: var(--space-xs); }
+.px-responsive-sm { padding-left: var(--space-sm); padding-right: var(--space-sm); }
+.px-responsive-md { padding-left: var(--space-md); padding-right: var(--space-md); }
+.px-responsive-lg { padding-left: var(--space-lg); padding-right: var(--space-lg); }
+.px-responsive-xl { padding-left: var(--space-xl); padding-right: var(--space-xl); }
+.px-responsive-2xl { padding-left: var(--space-2xl); padding-right: var(--space-2xl); }
+.px-responsive-3xl { padding-left: var(--space-3xl); padding-right: var(--space-3xl); }
+
+/* Responsive Margin Bottom Utilities */
+.mb-responsive-xs { margin-bottom: var(--space-xs); }
+.mb-responsive-sm { margin-bottom: var(--space-sm); }
+.mb-responsive-md { margin-bottom: var(--space-md); }
+.mb-responsive-lg { margin-bottom: var(--space-lg); }
+.mb-responsive-xl { margin-bottom: var(--space-xl); }
+.mb-responsive-2xl { margin-bottom: var(--space-2xl); }
+.mb-responsive-3xl { margin-bottom: var(--space-3xl); }
+
+/* Responsive Margin Top Utilities */
+.mt-responsive-xs { margin-top: var(--space-xs); }
+.mt-responsive-sm { margin-top: var(--space-sm); }
+.mt-responsive-md { margin-top: var(--space-md); }
+.mt-responsive-lg { margin-top: var(--space-lg); }
+.mt-responsive-xl { margin-top: var(--space-xl); }
+.mt-responsive-2xl { margin-top: var(--space-2xl); }
+.mt-responsive-3xl { margin-top: var(--space-3xl); }
+
+/* Mobile-First Grid System */
+.grid-responsive {
+  display: grid;
+  gap: clamp(1rem, 4vw, 2rem);
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+}
+
+.grid-responsive-2 {
+  display: grid;
+  gap: clamp(1rem, 4vw, 2rem);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .grid-responsive-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.grid-responsive-3 {
+  display: grid;
+  gap: clamp(1rem, 4vw, 2rem);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .grid-responsive-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-responsive-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Flexbox Responsive Utilities */
+.flex-responsive {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 4vw, 2rem);
+}
+
+@media (min-width: 768px) {
+  .flex-responsive {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+/* Premium Typography Utility Classes */
+@layer utilities {
+  .text-premium {
+    font-feature-settings: "kern" 1, "liga" 1, "clig" 1, "calt" 1;
+    font-variant-ligatures: common-ligatures contextual;
+    text-rendering: optimizeLegibility;
+    letter-spacing: -0.011em;
+  }
+
+  .text-display {
+    font-feature-settings: "kern" 1, "liga" 1, "clig" 1, "calt" 1, "ss01" 1;
+    font-variant-ligatures: common-ligatures contextual;
+    text-rendering: optimizeLegibility;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+    font-weight: 300;
+  }
+
+  .text-headline {
+    font-feature-settings: "kern" 1, "liga" 1, "clig" 1, "calt" 1;
+    font-variant-ligatures: common-ligatures contextual;
+    text-rendering: optimizeLegibility;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    font-weight: 500;
+  }
+
+  .text-body-premium {
+    font-feature-settings: "kern" 1, "liga" 1, "clig" 1, "calt" 1;
+    font-variant-ligatures: common-ligatures contextual;
+    text-rendering: optimizeLegibility;
+    letter-spacing: -0.011em;
+    line-height: 1.7;
+    font-weight: 400;
+  }
+
+  .text-crisp {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  .font-feature-premium {
+    font-feature-settings: "kern" 1, "liga" 1, "clig" 1, "calt" 1, "ss01" 1, "ss02" 1;
+    font-variant-ligatures: common-ligatures contextual;
+    font-variant-numeric: oldstyle-nums proportional-nums;
+  }
+
+  .font-feature-display {
+    font-feature-settings: "kern" 1, "liga" 1, "clig" 1, "calt" 1, "ss01" 1;
+    font-variant-ligatures: common-ligatures contextual;
+  }
+
+  /* Premium Capabilities Section */
+  .capabilities {
+    position: relative;
+  }
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Professional scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground));
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}
+
+/* Focus states for accessibility */
+*:focus-visible {
+  outline: 2px solid hsl(var(--primary));
+  outline-offset: 2px;
+}
+
+/* Remove default button focus */
+button:focus {
+  outline: none;
+}
+
+/* Professional link transitions */
+a {
+  @apply transition-colors duration-200;
+}
+
+/* Section spacing */
+section {
+  @apply relative;
+}
+
+/* Typography refinements */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-bold tracking-tight;
+}
+
+p {
+  @apply leading-relaxed;
+}
+
+/* Professional card shadows */
+.shadow-professional {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.shadow-professional-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Loading states */
+.loading {
+  @apply opacity-50 pointer-events-none;
+}
+
+/* Disable animations for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Particle Background Styles */
+.space-bg {
+  background: linear-gradient(180deg, hsl(240, 100%, 10%) 0%, hsl(240, 100%, 5%) 100%);
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  opacity: var(--opacity, 0.5);
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(147, 51, 234, 0.8);
+  border-radius: 50%;
+  animation: particle-fall var(--duration) linear var(--delay) infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: var(--opacity, 0.5); }
+  50% { opacity: calc(var(--opacity, 0.5) * 0.3); }
+}
+
+@keyframes particle-fall {
+  0% {
+    transform: translateY(-10vh) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) scale(1);
+    opacity: 0;
+  }
+}
+
+/* Data Stream Styles */
+.data-stream {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.data-line {
+  position: absolute;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(147, 51, 234, 0.4),
+    rgba(147, 51, 234, 0.8),
+    rgba(147, 51, 234, 0.4),
+    transparent
+  );
+  opacity: 0;
+  animation: data-flow linear infinite;
+}
+
+@keyframes data-flow {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+/* High DPI/Retina Display Optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Crisp borders for retina displays */
+  * {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  /* Ensure sharp text rendering */
+  body {
+    font-weight: 400;
+  }
+  
+  /* Thin borders for high DPI */
+  .border {
+    border-width: 0.5px;
+  }
+}
+
+/* Responsive breakpoints for all devices */
+/* Mobile First Approach */
+
+/* Extra small devices (phones, less than 640px) */
+@media (max-width: 639px) {
+  .container {
+    @apply px-4;
+  }
+
+  h1 {
+    @apply text-3xl;
+  }
+
+  h2 {
+    @apply text-2xl;
+  }
+
+  .hero-section {
+    min-height: 60vh;
+  }
+
+  /* Blog Content Mobile Optimizations */
+  .blog-content {
+    padding-inline: 0.75rem;
+    font-size: 16px;
+  }
+
+  .blog-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0 0 20px;
+  }
+
+  .blog-content h2 {
+    font-size: 20px;
+    margin: 32px 0 12px;
+    line-height: 1.25;
+  }
+
+  .blog-content h3 {
+    font-size: 18px;
+    margin: 28px 0 12px;
+    line-height: 1.3;
+  }
+
+  .blog-content h4 {
+    font-size: 16px;
+    margin: 24px 0 8px;
+    line-height: 1.35;
+  }
+
+  .blog-content blockquote {
+    margin: 24px 0;
+    padding: 16px;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .blog-content ul, .blog-content ol {
+    margin: 20px 0;
+    padding-left: 20px;
+  }
+
+  .blog-content li {
+    margin: 6px 0;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* Mobile image optimizations */
+  .blog-content img {
+    margin: 12px 0;
+    border-radius: 4px;
+  }
+
+  /* Mobile newsletter form improvements */
+  .newsletter-form input {
+    font-size: 16px !important; /* Prevent zoom on iOS */
+  }
+
+  /* Mobile blog card improvements */
+  .blog-card {
+    margin-bottom: 1rem;
+  }
+
+  /* Mobile hero image adjustments */
+  .blog-hero-container {
+    margin-bottom: 1.5rem;
+  }
+
+  /* Very small screens (iPhone SE, etc.) */
+  @media (max-width: 375px) {
+    .blog-content {
+      padding-inline: 0.5rem;
+      font-size: 15px;
+    }
+
+    .blog-content p {
+      font-size: 15px;
+      margin: 0 0 18px;
+    }
+
+    .blog-content h2 {
+      font-size: 18px;
+      margin: 28px 0 10px;
+    }
+
+    .blog-content h3 {
+      font-size: 16px;
+      margin: 24px 0 10px;
+    }
+  }
+}
+
+/* Small devices (tablets, 640px and up) */
+@media (min-width: 640px) {
+  .container {
+    @apply px-6;
+  }
+}
+
+/* Large mobile devices (480px to 639px) */
+@media (min-width: 480px) and (max-width: 639px) {
+  .blog-content {
+    font-size: 17px;
+  }
+
+  .blog-content p {
+    font-size: 17px;
+    line-height: 1.58;
+  }
+
+  .blog-content h2 {
+    font-size: 21px;
+  }
+
+  .blog-content h3 {
+    font-size: 19px;
+  }
+}
+
+/* Medium devices (tablets, up to 768px) */
+@media (max-width: 767px) {
+  /* Blog Content Tablet Optimizations */
+  .blog-content {
+    padding-inline: 1rem;
+    font-size: 17px;
+  }
+
+  .blog-content p {
+    font-size: 17px;
+    line-height: 1.58;
+    margin: 0 0 22px;
+  }
+
+  .blog-content h2 {
+    font-size: 22px;
+    margin: 40px 0 14px;
+  }
+
+  .blog-content h3 {
+    font-size: 19px;
+    margin: 36px 0 14px;
+  }
+
+  /* Blog page specific mobile improvements */
+  .max-w-7xl {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .max-w-4xl {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Blog image optimizations for mobile */
+  .blog-hero-image {
+    border-radius: 8px;
+  }
+
+  .blog-card-image {
+    border-radius: 6px;
+  }
+
+  /* Ensure images don't overflow on small screens */
+  .blog-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin: 16px 0;
+  }
+}
+
+/* Medium devices (small laptops, 768px and up) */
+@media (min-width: 768px) {
+  .container {
+    @apply px-8;
+  }
+}
+
+/* Large devices (desktops, 1024px and up) */
+@media (min-width: 1024px) {
+  .container {
+    @apply px-8;
+  }
+}
+
+/* Extra large devices (large desktops, 1280px and up) */
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+/* 2XL devices (larger desktops, 1536px and up) */
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
+
+/* Ultra-wide screens (1920px and up) */
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1800px;
+  }
+}
+
+/* Global Premium Typography System */
+.text-premium {
+  font-family: 'Inter Var', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-feature-settings: "kern" 1, "liga" 1, "clig" 1, "calt" 1, "cv02" 1, "cv03" 1, "cv04" 1, "cv11" 1;
+  font-variant-ligatures: common-ligatures contextual;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.text-premium-serif {
+  font-family: 'Lora Var', 'Lora', Georgia, 'Times New Roman', serif;
+  font-feature-settings: "kern" 1, "liga" 1, "clig" 1, "calt" 1;
+  font-variant-ligatures: common-ligatures contextual;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-variation-settings: "opsz" 32;
+}
+
+.text-crisp {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Apply premium typography to all headings - Using Inter Var for consistency */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter Var', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+  font-feature-settings: "kern" 1, "liga" 1, "clig" 1, "calt" 1;
+  font-variant-ligatures: common-ligatures contextual;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.025em;
+}
+
+/* Apply premium typography to body text - Using Inter Var for readability */
+body, p, span, div, a, button, input, textarea, select {
+  font-family: 'Inter Var', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+  font-feature-settings: "kern" 1, "liga" 1, "clig" 1, "calt" 1, "cv02" 1, "cv03" 1, "cv04" 1, "cv11" 1;
+  font-variant-ligatures: common-ligatures contextual;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Navigation specific typography - Using Inter Var for UI */
+nav, .navbar, .navigation {
+  font-family: 'Inter Var', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+  font-weight: 500;
+  letter-spacing: -0.011em;
+  font-feature-settings: "kern" 1, "liga" 1, "clig" 1, "calt" 1, "cv02" 1, "cv03" 1, "cv04" 1, "cv11" 1;
+}
+
+/* Footer specific typography - Using Inter Var for UI */
+footer {
+  font-family: 'Inter Var', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+  font-feature-settings: "kern" 1, "liga" 1, "clig" 1, "calt" 1, "cv02" 1, "cv03" 1, "cv04" 1, "cv11" 1;
+}
+
+/* Button typography - Using Inter Var for UI */
+button, .btn, [role="button"] {
+  font-family: 'Inter Var', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+  font-weight: 500;
+  letter-spacing: -0.011em;
+  font-feature-settings: "kern" 1, "liga" 1, "clig" 1, "calt" 1, "cv02" 1, "cv03" 1, "cv04" 1, "cv11" 1;
+}
+
+/* Form elements typography - Using Inter Var for UI */
+input, textarea, select {
+  font-family: 'Inter Var', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+  font-weight: 400;
+  letter-spacing: -0.011em;
+  font-feature-settings: "kern" 1, "liga" 1, "clig" 1, "calt" 1, "cv02" 1, "cv03" 1, "cv04" 1, "cv11" 1;
+}
+
+/* Premium link styling - Using Inter Var for UI */
+a {
+  font-family: 'Inter Var', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+  font-weight: 500;
+  letter-spacing: -0.011em;
+  transition: all 0.2s ease;
+  font-feature-settings: "kern" 1, "liga" 1, "clig" 1, "calt" 1, "cv02" 1, "cv03" 1, "cv04" 1, "cv11" 1;
+}
+
+/* Card and component typography - Using Inter Var for UI */
+.card, .component {
+  font-family: 'Inter Var', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+  font-feature-settings: "kern" 1, "liga" 1, "clig" 1, "calt" 1, "cv02" 1, "cv03" 1, "cv04" 1, "cv11" 1;
+}
+
+/* Enhanced typography utility classes */
+.font-feature-premium {
+  font-feature-settings: "kern" 1, "liga" 1, "clig" 1, "calt" 1, "ss01" 1;
+  font-variant-ligatures: common-ligatures contextual;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.tracking-premium {
+  letter-spacing: -0.011em;
+}
+
+.tracking-headline {
+  letter-spacing: -0.025em;
+}
+
+.leading-premium {
+  line-height: 1.6;
+}
+
+.leading-headline {
+  line-height: 1.2;
+}
+
+.leading-display {
+  line-height: 1.1;
+}
+
+.text-body-premium {
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+  line-height: 1.6;
+  letter-spacing: -0.011em;
+}
+
+/* Safe area insets for modern phones */
+@supports (padding: max(0px)) {
+  .safe-top {
+    padding-top: max(1rem, env(safe-area-inset-top));
+  }
+  
+  .safe-bottom {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+  
+  .safe-left {
+    padding-left: max(1rem, env(safe-area-inset-left));
+  }
+  
+  .safe-right {
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+}
+
+/* Fortitude-Inspired Responsive Typography Scale */
+.text-responsive-xs {
+  font-size: var(--text-xs);
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+
+.text-responsive-sm {
+  font-size: var(--text-sm);
+  line-height: 1.55;
+  letter-spacing: -0.011em;
+}
+
+.text-responsive-base {
+  font-size: var(--text-base);
+  line-height: 1.6;
+  letter-spacing: -0.011em;
+}
+
+.text-responsive-md {
+  font-size: var(--text-md);
+  line-height: 1.55;
+  letter-spacing: -0.012em;
+}
+
+.text-responsive-lg {
+  font-size: var(--text-lg);
+  line-height: 1.5;
+  letter-spacing: -0.014em;
+}
+
+.text-responsive-xl {
+  font-size: var(--text-xl);
+  line-height: 1.45;
+  letter-spacing: -0.017em;
+}
+
+.text-responsive-2xl {
+  font-size: var(--text-2xl);
+  line-height: 1.4;
+  letter-spacing: -0.019em;
+}
+
+.text-responsive-3xl {
+  font-size: var(--text-3xl);
+  line-height: 1.3;
+  letter-spacing: -0.021em;
+}
+
+.text-responsive-4xl {
+  font-size: var(--text-4xl);
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+}
+
+.text-responsive-5xl {
+  font-size: var(--text-5xl);
+  line-height: 1.15;
+  letter-spacing: -0.028em;
+}
+
+/* Fortitude Typography Presets */
+.text-fortitude-sm {
+  font-size: var(--text-fortitude-sm);
+  line-height: 1.55;
+  letter-spacing: -0.011em;
+}
+
+.text-fortitude-md {
+  font-size: var(--text-fortitude-md);
+  line-height: 1.5;
+  letter-spacing: -0.014em;
+}
+
+.text-fortitude-lg {
+  font-size: var(--text-fortitude-lg);
+  line-height: 1.3;
+  letter-spacing: -0.021em;
+}
+
+/* Fortitude-Inspired Responsive Button System */
+.btn-responsive-sm {
+  font-size: var(--text-sm);
+  padding: var(--space-sm) var(--space-md);
+  min-height: 40px;
+  border-radius: 6px;
+  transition: all var(--duration-normal) var(--ease-out);
+  font-weight: 500;
+  letter-spacing: -0.011em;
+}
+
+.btn-responsive-md {
+  font-size: var(--text-base);
+  padding: var(--space-md) var(--space-lg);
+  min-height: 44px;
+  border-radius: 8px;
+  transition: all var(--duration-normal) var(--ease-out);
+  font-weight: 500;
+  letter-spacing: -0.011em;
+}
+
+.btn-responsive-lg {
+  font-size: var(--text-lg);
+  padding: var(--space-lg) var(--space-xl);
+  min-height: 48px;
+  border-radius: 10px;
+  transition: all var(--duration-normal) var(--ease-out);
+  font-weight: 500;
+  letter-spacing: -0.014em;
+}
+
+/* Fortitude-Style Button Hover Effects */
+.btn-fortitude {
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.btn-fortitude:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px -8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-fortitude:active {
+  transform: translateY(0px);
+  transition-duration: var(--duration-fast);
+}
+
+/* Fortitude-Inspired Responsive Form Elements */
+.input-responsive {
+  font-size: var(--text-base);
+  padding: var(--space-md) var(--space-lg);
+  min-height: 44px;
+  border-radius: 8px;
+  border: 1px solid hsl(var(--border));
+  background: hsl(var(--background));
+  transition: all var(--duration-normal) var(--ease-out);
+  font-weight: 400;
+  letter-spacing: -0.011em;
+}
+
+.input-responsive:focus {
+  outline: none;
+  border-color: hsl(var(--primary));
+  box-shadow: 0 0 0 3px hsl(var(--primary) / 0.1);
+  transform: translateY(-1px);
+}
+
+.textarea-responsive {
+  font-size: var(--text-base);
+  padding: var(--space-md) var(--space-lg);
+  min-height: 120px;
+  border-radius: 8px;
+  border: 1px solid hsl(var(--border));
+  background: hsl(var(--background));
+  transition: all var(--duration-normal) var(--ease-out);
+  font-weight: 400;
+  letter-spacing: -0.011em;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.textarea-responsive:focus {
+  outline: none;
+  border-color: hsl(var(--primary));
+  box-shadow: 0 0 0 3px hsl(var(--primary) / 0.1);
+  transform: translateY(-1px);
+}
+
+/* Fortitude-Style Form Labels */
+.label-responsive {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  letter-spacing: -0.011em;
+  color: hsl(var(--foreground) / 0.9);
+  margin-bottom: var(--space-xs);
+  display: block;
+}
+
+/* Touch-friendly improvements */
+@media (pointer: coarse) {
+  /* Larger tap targets for touch devices */
+  button, a, .clickable {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Remove hover effects on touch devices */
+  @media (hover: none) {
+    button:hover, a:hover {
+      background-color: inherit;
+    }
+  }
+}
+
+/* iOS-specific fixes */
+@supports (-webkit-touch-callout: none) {
+  /* Prevent text selection on tap */
+  * {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+  }
+  
+  /* Smooth scrolling on iOS */
+  .scroll-smooth {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Fix for iOS input zoom */
+  input, textarea, select {
+    font-size: 16px !important;
+  }
+}
+
+/* Android-specific optimizations */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  /* Optimize font rendering on Android */
+  body {
+    text-rendering: optimizeSpeed;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .border {
+    border-width: 2px;
+  }
+
+  .text-muted-foreground {
+    opacity: 1;
+  }
+}
+
+/* High-DPI/Retina Display Optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Retina-optimized font rendering */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Sharper borders on retina displays */
+  .border {
+    border-width: 0.5px;
+  }
+
+  /* Crisp icons and graphics */
+  svg, img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+
+  /* Enhanced shadows for depth on retina */
+  .shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+}
+
+/* 3x Retina displays (iPhone Pro Max, etc.) */
+@media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 288dpi) {
+  /* Ultra-sharp text rendering */
+  body {
+    -webkit-font-smoothing: subpixel-antialiased;
+    text-rendering: geometricPrecision;
+  }
+
+  /* Ultra-thin borders */
+  .border {
+    border-width: 0.33px;
+  }
+}
+
+/* 4K and Ultra-wide Display Optimizations */
+@media (min-width: 2560px) {
+  .container {
+    max-width: 2400px;
+  }
+
+  /* Enhanced spacing for large screens */
+  .section-padding {
+    @apply py-32 lg:py-40 xl:py-48;
+  }
+}
+
+
+
+/* ITSM Dashboard Specific Styles */
+.itsm-dashboard {
+  @apply bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900;
+}
+
+.itsm-card {
+  @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-4 transition-all duration-300 hover:bg-white/10 hover:border-white/20;
+}
+
+.itsm-metric-card {
+  @apply bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-3 transition-all duration-300 hover:scale-105 hover:shadow-lg;
+}
+
+.itsm-status-indicator {
+  @apply w-2 h-2 rounded-full;
+}
+
+.itsm-status-online {
+  @apply bg-emerald-400 shadow-emerald-400/50 shadow-lg;
+}
+
+.itsm-status-warning {
+  @apply bg-amber-400 shadow-amber-400/50 shadow-lg;
+}
+
+.itsm-status-critical {
+  @apply bg-red-400 shadow-red-400/50 shadow-lg;
+}
+
+.itsm-progress-bar {
+  @apply w-full bg-white/10 rounded-full h-2 overflow-hidden;
+}
+
+.itsm-progress-fill {
+  @apply h-full bg-gradient-to-r from-[hsl(var(--primary))] to-blue-500 rounded-full transition-all duration-500 ease-out;
+}
+
+.itsm-glow-effect {
+  @apply relative;
+}
+
+.itsm-glow-effect::before {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-r from-[hsl(var(--primary))]/20 to-blue-500/20 rounded-lg blur-xl -z-10 opacity-0 transition-opacity duration-300;
+}
+
+.itsm-glow-effect:hover::before {
+  @apply opacity-100;
+}
+
+.itsm-text-gradient {
+  @apply bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent;
+}
+
+.itsm-badge {
+  @apply px-2 py-1 rounded-full text-xs font-medium border;
+}
+
+.itsm-badge-success {
+  @apply bg-emerald-500/20 text-emerald-300 border-emerald-500/30;
+}
+
+.itsm-badge-warning {
+  @apply bg-amber-500/20 text-amber-300 border-amber-500/30;
+}
+
+.itsm-badge-error {
+  @apply bg-red-500/20 text-red-300 border-red-500/30;
+}
+
+.itsm-badge-info {
+  @apply bg-blue-500/20 text-blue-300 border-blue-500/30;
+}
+
+/* ITSM Animation Classes */
+@keyframes itsm-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes itsm-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes itsm-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Removed pulse animation for professional appearance */
+.itsm-animate-pulse {
+  /* animation: itsm-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; */
+}
+
+.itsm-animate-slide-in {
+  animation: itsm-slide-in 0.5s ease-out;
+}
+
+.itsm-animate-fade-in {
+  animation: itsm-fade-in 0.3s ease-out;
+}
+
+/* ITSM Responsive Grid */
+.itsm-grid {
+  @apply grid gap-4;
+}
+
+.itsm-grid-responsive {
+  @apply grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+}
+
+.itsm-grid-metrics {
+  @apply grid-cols-2 md:grid-cols-4;
+}
+
+/* ITSM Dark Theme Enhancements */
+.dark .itsm-card {
+  @apply bg-white/5 border-white/10;
+}
+
+.dark .itsm-metric-card {
+  @apply from-white/5 to-white/10 border-white/20;
+}
+
+/* Capabilities Section Clean Design */
+.capabilities {
+  background: white;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.dark .capabilities {
+  background: #1f2937;
+  border-top: 1px solid #374151;
+  border-bottom: 1px solid #374151;
+}
+
+/* ITSM Mobile Optimizations */
+@media (max-width: 768px) {
+  .itsm-dashboard {
+    @apply p-2;
+  }
+
+  .itsm-card {
+    @apply p-3;
+  }
+
+  .itsm-metric-card {
+    @apply p-2;
+  }
+
+  .itsm-grid {
+    @apply gap-2;
+  }
+
+  .itsm-grid-metrics {
+    @apply grid-cols-2;
+  }
+
+  .itsm-grid-responsive {
+    @apply grid-cols-1;
+  }
+}
+
+/* ITSM Print Styles */
+@media print {
+  .itsm-dashboard {
+    @apply bg-white text-black;
+  }
+
+  .itsm-card {
+    @apply bg-white border-gray-300 text-black;
+  }
+
+  .itsm-glow-effect::before {
+    display: none;
+  }
+}
+
+/* ITSM Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+  .itsm-animate-pulse,
+  .itsm-animate-slide-in,
+  .itsm-animate-fade-in {
+    animation: none;
+  }
+
+  .itsm-status-indicator {
+    /* No pulse animation needed */
+  }
+}
+
+/* ITSM Focus States */
+.itsm-card:focus-within {
+  @apply ring-2 ring-[hsl(var(--primary))] ring-opacity-50;
+}
+
+.itsm-metric-card:focus-within {
+  @apply ring-2 ring-blue-500 ring-opacity-50;
+}
+
+/* ITSM Scrollbar Styling */
+.itsm-dashboard::-webkit-scrollbar {
+  width: 8px;
+}
+
+.itsm-dashboard::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.itsm-dashboard::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+.itsm-dashboard::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Curved Diagonal Section Styles */
+.curved-diagonal-section {
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 0 85%);
+}
+
+/* Mobile responsive adjustments for curved diagonal */
+@media (max-width: 768px) {
+  .curved-diagonal-section {
+    clip-path: polygon(0 0, 100% 0, 90% 100%, 0 90%);
+  }
+}
+
+@media (max-width: 480px) {
+  .curved-diagonal-section {
+    clip-path: polygon(0 0, 100% 0, 95% 100%, 0 95%);
+  }
+}

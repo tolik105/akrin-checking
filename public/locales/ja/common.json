@@ -1,0 +1,1589 @@
+{
+  "common": {
+    "learnMore": "詳細を見る",
+    "getStarted": "始める",
+    "contactUs": "お問い合わせ"
+  },
+  "nav": {
+    "home": "ホーム",
+    "services": "サービス",
+    "aboutUs": "会社概要",
+    "caseStudies": "導入事例",
+    "blog": "ブログ",
+    "contact": "お問い合わせ",
+    "bookConsultation": "相談予約",
+    "allServices": "すべてのサービス",
+
+    "managedItSupport": "マネージドITサービス",
+    "itConsultingProjectManagement": "ITコンサルティング・プロジェクト管理",
+    "cloudInfrastructure": "クラウドインフラソリューション",
+    "cybersecurity": "サイバーセキュリティ・ITセキュリティ",
+    "networkPenetrationTesting": "ネットワークペネトレーションテスト",
+    "wifiAssessment": "Wi-Fiアセスメント・最適化",
+    "wifiDesign": "エンタープライズWi-Fi設計・導入",
+    "itSecurity": "ITセキュリティサービス",
+    "cloudSolutionsMigration": "クラウドソリューション＆マイグレーション",
+    "cybersecurityCompliance": "サイバーセキュリティ＆コンプライアンス",
+    "networkInfrastructure": "ネットワーク＆インフラストラクチャ",
+    "aiPoweredAutomation": "AI駆動オートメーション",
+    "itConsultingStrategy": "ITコンサルティング＆戦略",
+    "projectManagement": "プロジェクト管理"
+  },
+  "navExtra": {},
+  "hero": {
+    "title": "次に踏み出す大胆なIT戦略は？",
+    "exploreServices": "サービスを見る",
+    "requestConsultation": "無料相談を申し込む",
+    "subtitle": "戦略コンサルティング、エンドツーエンドのプロジェクト管理、24時間365日対応のセキュアなマネージドサービス",
+    "cta": "はじめる →",
+    "support247": "24時間365日サポート",
+    "enterpriseSecurity": "エンタープライズセキュリティ",
+    "certifiedProfessionals": "認定プロフェッショナル",
+    "tailoredSolutions": "オーダーメイドソリューション"
+  },
+  "homepage": {
+    "industryExpertiseTitle": "業界の専門知識が",
+    "industryExpertiseHighlight": "測定可能な結果を生み出します",
+    "industryExpertiseDescription": "多様な分野での15年以上の実績を基に、業界特有の課題と機会を的確に捉えます。規制要件を満たしつつ、イノベーションと成長を後押しするソリューションをご提供します。",
+    "trustedByLeadersTitle": "業界リーダーから信頼されています",
+    "trustedByLeadersDescription": "世界をリードするテクノロジー企業とパートナーシップを結び、最高クラスのソリューションを提供しています。",
+    "readyToTransformTitle": "ITインフラの変革をお考えですか？",
+    "readyToTransformDescription": "専門家にご相談いただき、エンタープライズ級の信頼性とスタートアップの俊敏性でビジネスを前進させる方法をご確認ください。",
+    "scheduleConsultationButton": "相談を予約",
+    "industryStats": {
+      "financialServices": "金融サービス",
+      "healthcare": "ヘルスケア・ライフサイエンス",
+      "manufacturing": "製造・小売",
+      "technology": "テクノロジー・通信"
+    }
+  },
+  "about": {
+    "title": "AKRIN株式会社について",
+    "subtitle": "ITソリューションとデジタルトランスフォーメーションの信頼できるパートナー",
+    "ourMission": "私たちの使命",
+    "missionText": "AKRIN株式会社では、デジタル時代においてビジネスを成功に導く革新的なITソリューションの提供に専念しています。卓越性と顧客満足へのコミットメントを原動力に、お客様独自のニーズに合わせた最先端のテクノロジーサービスを提供しています。",
+    "ourValues": "私たちの価値観",
+    "values": {
+      "reliability": {
+        "title": "信頼性",
+        "description": "お客様のビジネスを円滑に進めるため、一貫した信頼性の高いITサービスを提供します。"
+      },
+      "partnership": {
+        "title": "パートナーシップ",
+        "description": "私たちはクライアントと密接に協力し、その目標や課題を理解することで、真にニーズを満たすソリューションを提供します。"
+      },
+      "excellence": {
+        "title": "エクセレンス",
+        "description": "私たちは、サービスの提供からカスタマー・サポートに至るまで、あらゆる面で卓越性を追求しています。"
+      },
+      "innovation": {
+        "title": "イノベーション",
+        "description": "常に技術トレンドの最前線に立ち、最先端のソリューションをお届けします。"
+      }
+    }
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "subtitle": "ご質問やサポートが必要な場合は、お気軽にお問い合わせください。",
+    "sendMessage": "メッセージを送る",
+    "formDescription": "下記のフォームにご記入ください。",
+    "form": {
+      "name": "名称",
+      "email": "電子メール",
+      "message": "メッセージ",
+      "sending": "送信...",
+      "sendButton": "メッセージを送る"
+    },
+    "info": {
+      "title": "連絡先",
+      "address": "住所",
+      "addressText": "107-0062 東京都港区南青山2-4-15 4F",
+      "phone": "電話",
+      "phoneText": "03-6821-1223",
+      "email": "電子メール",
+      "emailText": "support@akrin.jp",
+      "businessHours": "営業時間",
+      "weekdays": "月曜日～金曜日：午前9時～午後6時",
+      "weekends": "土曜日 - 日曜日定休日",
+      "subtitle": "以下の情報でお問い合わせください"
+    }
+  },
+  "booking": {
+    "title": "予約",
+    "subtitle": "ITエキスパートとのコンサルテーションをご予約ください。",
+    "formTitle": "予約詳細",
+    "form": {
+      "firstName": "名前",
+      "lastName": "ラストネーム",
+      "email": "電子メール",
+      "phone": "電話番号",
+      "preferredDate": "希望日",
+      "service": "サービス",
+      "additionalInfo": "追加情報",
+      "placeholders": {
+        "firstName": "ジョン",
+        "lastName": "ドウ",
+        "email": "john.doe@example.com",
+        "phone": "03-6821-1223",
+        "date": "日付を選択",
+        "service": "サービスを選択",
+        "additionalInfo": "お客様のITニーズについてお聞かせください（オプション）"
+      },
+      "services": {
+        "managed": "マネージドITサービス",
+        "cyber": "サイバー・セキュリティ",
+        "cloud": "クラウドサービス",
+        "consulting": "ITコンサルティング",
+        "other": "その他"
+      },
+      "submitButton": "予約"
+    }
+  },
+
+  "servicesPage": {
+    "title": "ITサービス",
+    "subtitle": "現代のビジネスに向けた包括的なテクノロジーソリューション",
+    "sectionTitle": "包括的なITソリューション",
+    "sectionSubtitle": "お客様のビジネスニーズに合わせて設計された幅広いプロフェッショナルITサービスからお選びください",
+    "allServices": {
+      "managed": {
+        "title": "マネージドITサービス",
+        "description": "お客様のビジネスのための完全なIT管理とサポート"
+      },
+      "consulting": {
+        "title": "ITコンサルティング＆プロジェクトマネジメント",
+        "description": "戦略策定、PMO、実行支援まで複雑なITプロジェクトを推進"
+      }
+    },
+    "cta": {
+      "title": "ビジネスを変革する準備はできていますか？",
+      "description": "テクノロジーを活用して目標を達成するお手伝いをさせてください"
+    }
+  },
+  "sections": {
+    "whoWeAre": "会社概要",
+    "whoWeAreDesc": "AKRIN株式会社は、日本および世界各地の企業にサービスを提供する大手ITソリューションプロバイダーです。10年以上の経験を持つ当社は、デジタルトランスフォーメーションとビジネスの成長を促進する包括的なテクノロジーサービスの提供を専門としています。当社の認定プロフェッショナルチームは、グローバルな専門知識とローカル市場の理解を組み合わせ、お客様独自の課題に対応するオーダーメードのソリューションを提供します。",
+    "ourCoreServices": "主要サービス",
+    "coreServicesDesc": "お客様のビジネスニーズに合わせた包括的なITソリューション",
+    "newServices": "新サービス",
+    "newServicesDesc": "進化するビジネスニーズに対応するため、提供するサービスを拡大",
+    "whyChooseUs": "Akrinを選ぶ理由",
+    "whyChooseUsDesc": "包括的なアプローチで違いを実感",
+    "faq": "よくあるご質問",
+    "faqDesc": "サービスに関する一般的なご質問への回答",
+    "testimonials": "お客様の声",
+    "testimonialsDesc": "様々な業界のお客様からの信頼の声",
+    "cta": "お客様のビジネスに最適なソリューションを見つけましょう",
+    "ctaDesc": "お客様の業種やニーズに合わせた最適なITソリューションのご提案は、当社の専門家にお任せください。",
+    "contactUs": "お問い合わせ",
+    "globalReach": "グローバルネットワーク",
+    "globalReachDesc": "国境やタイムゾーンを越えたシームレスなITサービスで多国籍企業をサポート",
+    "industryExcellence": "業界最高水準",
+    "industryExcellenceDesc": "大手テクノロジーベンダーとの認定パートナーシップと卓越したサービスへの取り組み",
+    "companySummary": "10年以上の経験を持つ、日本および世界の企業にサービスを提供する大手ITソリューションプロバイダー",
+    "companyOverview": "会社概要",
+    "companyOverviewDesc": "グローバルな視点と日本市場への深い理解を併せ持つ、信頼のITパートナー",
+    "additionalServices": "その他のサービス",
+    "additionalServicesDesc": "お客様のあらゆるITニーズに対応する幅広いサービスラインナップ"
+  },
+  "faq": {
+    "q1": {
+      "question": "Akrinはどのようなサービスを提供していますか？",
+      "answer": "マネージドITサービス、サイバーセキュリティ、クラウドソリューション、ITコンサルティング、24時間365日のサポートなど、お客様のビジネスニーズに合わせた包括的なITソリューションを提供しています。"
+    },
+    "q2": {
+      "question": "IT緊急事態にどれくらい早く対応できますか？",
+      "answer": "緊急対応チームは24時間365日利用可能で、SLAに基づいた保証された応答時間を提供します。ほとんどの重要な問題は1時間以内に対処されます。"
+    },
+    "q3": {
+      "question": "日本国外でもサービスを提供していますか？",
+      "answer": "はい、日本国内と国際的の両方でクライアントにサービスを提供しており、多言語サポートとグローバルな専門知識を備えています。"
+    },
+    "q4": {
+      "question": "デジタルトランスフォーメーションの支援はできますか？",
+      "answer": "もちろんです！戦略的計画、実装、継続的なサポートで、ビジネスのデジタルトランスフォーメーションをガイドすることを専門としています。"
+    },
+    "q5": {
+      "question": "IT緊急時の対応速度はどのくらいですか？",
+      "answer": "サービスデスクは24時間365日稼働しており、保証された応答時間を提供しています。重要な問題は即座に対処され、ほとんどの問題は2〜4時間以内に解決されます。"
+    },
+    "q6": {
+      "question": "ITインフラストラクチャの移転を支援できますか？",
+      "answer": "もちろんです！私たちはシームレスなIT移転を専門としており、ダウンタイムを最小限に抑え、プロセス全体でデータの完全性を確保します。"
+    },
+    "q7": {
+      "question": "技術者はどのような認定を持っていますか？",
+      "answer": "私たちのチームは、Microsoft、Cisco、VMware、セキュリティ認定など、さまざまな業界認定を保持しています。技術トレンドに対応するため、継続的にトレーニングに投資しています。"
+    },
+    "didntFindAnswer": "お探しの回答が見つかりませんでしたか？",
+    "stillHaveQuestions": "他にご質問はありますか？私たちがサポートいたします。"
+  },
+  "blog": {
+    "title": "Akrin テックブログ",
+    "subtitle": "日本をリードするITソリューションプロバイダーからの洞察、アップデート、専門知識",
+    "searchPlaceholder": "記事を検索...",
+    "allCategories": "すべてのカテゴリー",
+    "featuredArticles": "注目記事",
+    "latestArticles": "最新記事",
+    "searchResults": "検索結果",
+    "noArticlesFound": "条件に一致する記事が見つかりませんでした。",
+    "readMore": "続きを読む",
+    "read": "読む",
+    "minRead": "分で読了",
+    "stayUpdated": "最新情報を入手",
+    "newsletterSubtitle": "最新のIT洞察と業界アップデートのニュースレターを購読する",
+    "enterEmail": "メールアドレスを入力",
+    "subscribe": "購読する",
+    "backToBlog": "ブログに戻る",
+    "tags": "タグ",
+    "share": "共有",
+    "about": "について",
+    "relatedArticles": "関連記事",
+    "needExpertSolutions": "専門的なITソリューションが必要ですか？",
+    "ctaSubtitle": "私たちのチームがITインフラストラクチャの変革をお手伝いします",
+    "viewServices": "サービスを見る"
+  },
+  "testimonials": {
+    "t1": {
+      "name": "田中 由紀",
+      "role": "CTO、TechCorp Japan",
+      "content": "AkrinはITインフラストラクチャを完全に変革しました。彼らの積極的なアプローチと24時間365日のサポートは、私たちの業務にとって画期的でした。"
+    },
+    "t2": {
+      "name": "サラ・ジョンソン",
+      "role": "オペレーションディレクター、Global Retail Co.",
+      "content": "Akrinのサイバーセキュリティソリューションは私たちに安心をもたらしました。彼らのチームは知識豊富で、迅速に対応し、私たちの成功を真に気にかけています。"
+    },
+    "t3": {
+      "name": "山本 洋",
+      "role": "CEO、Innovation Labs",
+      "content": "Akrinとの協力は例外的でした。彼らは私たちの独自のニーズを理解し、実際のビジネス価値を生み出すソリューションを提供します。"
+    }
+  },
+  "services": {
+    "managedIT": {
+      "title": "マネージドITサービス",
+      "description": "お客様の業務を最適化する包括的なIT管理ソリューション"
+    },
+    "itSecurity": {
+      "title": "ITセキュリティ",
+      "description": "サイバー脅威からデジタル資産を守る高度なセキュリティ対策"
+    },
+    "serviceDesk": {
+      "title": "サービスデスクサポート",
+      "description": "迅速な問題解決でビジネスの継続性を確保するプロフェッショナルサポート"
+    },
+    "flukeTester": {
+      "title": "フルーク・テスター調査",
+      "description": "最適なパフォーマンスを実現するための包括的なネットワーク・テストと認証。"
+    },
+    "citrix": {
+      "title": "シトリックス・ワークプレイス・サービス",
+      "description": "生産性と柔軟性を高めるバーチャル・ワークスペース・ソリューション。"
+    },
+    "recruitment": {
+      "title": "ITリクルートメント",
+      "description": "IT人材獲得のエキスパートが、夢の技術チームを構築します。"
+    },
+    "relocation": {
+      "title": "IT移転サービス",
+      "description": "ダウンタイムを最小限に抑えたシームレスなITインフラ移転。"
+    },
+    "eWaste": {
+      "title": "電子廃棄物管理",
+      "description": "電子機器の責任ある廃棄とリサイクル。"
+    },
+    "cloud": {
+      "title": "クラウドソリューション",
+      "description": "モダンなビジネスのためのスケーラブルなクラウドインフラと移行サービス"
+    },
+    "consulting": {
+      "title": "ITコンサルティング",
+      "description": "ビジネス目標とITを連携させる戦略的テクノロジーガイダンス"
+    },
+    "cyberSecurity": {
+      "title": "サイバーセキュリティ",
+      "description": "進化するサイバー脅威と脆弱性に対する包括的な保護"
+    }
+  },
+  "features": {
+    "tailoredSolutions": {
+      "title": "カスタマイズされたソリューション",
+      "description": "すべてのビジネスは独自です。最適な結果と最大のROIを確保するため、お客様の特定の要件に合わせてサービスをカスタマイズします。"
+    },
+    "expertTeam": {
+      "title": "専門家チーム",
+      "description": "認定プロフェッショナルは、すべてのプロジェクトに長年の経験と深い技術的専門知識をもたらし、成功した結果を保証します。"
+    },
+    "support247": {
+      "title": "24時間365日サポート",
+      "description": "24時間体制のサポートにより、システムがスムーズに動作します。専任のサポートチームがいつでもお手伝いする準備ができています。"
+    }
+  },
+  "components": {
+    "aiChat": {
+      "title": "Akrinチャット",
+      "close": "閉じる",
+      "placeholder": "Akrinチャットに質問する...",
+      "send": "送信",
+      "ai": "AI",
+      "you": "あなた"
+    },
+    "brochure": {
+      "title": "サービスについて詳しく知る",
+      "subtitle": "お客様のビジネスの成功をサポートする方法をご覧ください",
+      "button": "サービスを探す"
+    }
+  },
+  "common": {
+    "learnMore": "さらに詳しく",
+    "getStarted": "スタート",
+    "contactUs": "お問い合わせ"
+  },
+  "overview": {
+    "global": "グローバル展開",
+    "globalDesc": "世界中のクライアントにサービスを提供し、国際的なビジネスニーズに対応",
+    "expertise": "専門知識",
+    "expertiseDesc": "認定プロフェッショナルによる最高水準の技術サービスを提供",
+    "trusted": "信頼の実績",
+    "trustedDesc": "10年以上にわたり、多様な業界の企業様から信頼をいただいています"
+  },
+  "whyChoose": {
+    "support247": {
+      "title": "24時間365日サポート",
+      "description": "いつでもどこでも、お客様のITニーズに迅速に対応します"
+    },
+    "certified": {
+      "title": "認定プロフェッショナル",
+      "description": "業界最高水準の認定を持つエキスパートチームが対応"
+    },
+    "global": {
+      "title": "グローバル対応",
+      "description": "国際的なビジネス展開をサポートする多言語対応サービス"
+    },
+    "security": {
+      "title": "セキュリティ第一",
+      "description": "最新のセキュリティ技術でお客様のデータと資産を保護"
+    },
+    "scalable": {
+      "title": "スケーラブル",
+      "description": "ビジネスの成長に合わせて柔軟に拡張可能なソリューション"
+    },
+    "proven": {
+      "title": "実績豊富",
+      "description": "多数の成功事例と満足度の高いお客様からの評価"
+    }
+  },
+  "cta": {
+    "ready": "ITインフラの改革をお考えですか？",
+    "transform": "最新のテクノロジーソリューションで、ビジネスの可能性を最大限に引き出しましょう",
+    "contactToday": "今すぐお問い合わせ",
+    "scheduleConsultation": "無料相談を予約"
+  },
+  "footer": {
+    "description": "革新的なテクノロジー・サービスで国内外の企業にサービスを提供する大手ITソリューション・プロバイダー。",
+    "quickLinks": "クイックリンク",
+    "company": "会社情報",
+    "contactInfo": "連絡先",
+    "newsletter": "ニュースレター",
+    "newsletterDesc": "最新のITトレンドやアップデートを常にチェック。",
+    "emailPlaceholder": "メールアドレスを入力してください。",
+    "privacyPolicy": "プライバシーポリシー",
+    "termsOfService": "利用規約",
+    "allRightsReserved": "無断複写・転載を禁じます。",
+    "viewOnMap": "地図で見る"
+  },
+  "servicePages": {
+    "managedServices": {
+      "title": "マネージドITサービス",
+      "subtitle": "AkrinのマネージドサービスがITをスムーズに稼働させます。監視からアップグレードまで、すべてを専門家が対応し、お客様はビジネスに集中できます。",
+      "mainDescription": "AkrinのマネージドサービスはITインフラストラクチャーが最高効率で稼働することを保証する包括的なIT管理ソリューションを提供します。専門家チームがプロアクティブなモニタリング、メンテナンス、ITシステムのアップグレードを専門としています。このサービスはリソースを解放し、お客様がコアビジネス活動に集中できるようにカスタマイズされ、IT環境の信頼性、セキュリティ、最新性を確保します。",
+      "sections": {
+        "empowering": "24時間365日のグローバルサポートでビジネスを強化",
+        "features": "主な機能",
+        "additionalServices": "追加サービス"
+      },
+      "features": {
+        "globalSupport": "24時間365日グローバルサポート",
+        "blendedModel": "ブレンドサポートモデル",
+        "proactiveMonitoring": "プロアクティブモニタリング",
+        "serviceDesk": "常時利用可能なサービスデスク",
+        "onsiteSupport": "オンサイトサポート",
+        "relocationServices": "移転サービス",
+        "proactiveReactive": "プロアクティブおよびリアクティブサポート",
+        "tailoredNeeds": "お客様固有のニーズに合わせたカスタマイズ",
+        "minimizeDowntime": "ダウンタイムの最小化",
+        "enhanceProductivity": "生産性の向上",
+        "globalSupportDesc": "24時間体制でグローバルにITサポートを提供し、お客様のビジネスを止めません。",
+        "blendedModelDesc": "リモートサポートとオンサイトサポートを組み合わせて、包括的なITサービスを提供します。",
+        "proactiveMonitoringDesc": "継続的なモニタリングにより、お客様のビジネスに影響が及ぶ前に問題を特定し、解決します。",
+        "serviceDeskDesc": "お客様のあらゆるITニーズに即座に対応する専用サービスデスク。",
+        "onsiteSupportDesc": "専門技術者によるオンサイトの技術サポートとメンテナンス。",
+        "relocationServicesDesc": "移転中のシームレスな事業継続を保証する完全なIT移転サービス。"
+      },
+      "additionalServices": {
+        "dataComm": {
+          "title": "データ通信システム",
+          "description": "ネットワークがスムーズかつ効率的に動作するよう、データ通信デバイスとシステムの設計、インストール、メンテナンスを行います。"
+        },
+        "itEquipment": {
+          "title": "IT機器＆サービス",
+          "description": "コンピューター、プリンター、ネットワーキングデバイスなど、幅広いICT機器と周辺機器を提供します。"
+        },
+        "recruitment": {
+          "title": "採用＆人材派遣",
+          "description": "求人広告、採用戦略コンサルティング、一時的および永続的な人材派遣ソリューションを含む包括的な採用サービスを提供します。"
+        },
+        "wasteManagement": {
+          "title": "廃棄物管理",
+          "description": "収集、輸送、責任ある処分、一般廃棄物のリサイクルを含む包括的な廃棄物管理ソリューションを提供します。"
+        },
+        "itSolutions": {
+          "title": "ITソリューション",
+          "description": "運営を効率化し、競争力を高めるカスタムソフトウェアとインターネットシステムの設計、開発、メンテナンスを行います。"
+        },
+        "workforceSolutions": {
+          "title": "ワークフォースソリューション",
+          "description": "一般および指定労働者派遣サービスは、短期的な人材ニーズや専門的なスキルに対する柔軟なソリューションを提供します。"
+        }
+      },
+      "cta": {
+        "title": "IT体験を変革する準備はできていますか？",
+        "description": "今すぐAkrinにお問い合わせいただき、包括的なサポートがお客様の組織にもたらす違いを体験してください。",
+        "button": "始める"
+      }
+    },
+    "assetManagement": {
+      "title": "資産管理",
+      "subtitle": "包括的な資産追跡とライフサイクル管理ソリューションでIT投資を最適化します。",
+      "mainDescription": "Akrinの資産管理サービスは、ライフサイクル全体を通じてIT資産の完全な可視性と制御を提供します。調達から廃棄まで、技術投資の追跡、管理、最適化を支援し、最大のROIと業界規制への準拠を確保します。",
+      "sections": {
+        "lifecycle": "完全なライフサイクル管理",
+        "benefits": "主な利点",
+        "features": "コア機能"
+      },
+      "features": {
+        "assetTracking": "リアルタイム資産追跡",
+        "assetTrackingDesc": "包括的な在庫管理システムですべてのIT資産をリアルタイムで追跡します。",
+        "lifecycleManagement": "ライフサイクル管理",
+        "performanceMonitoring": "パフォーマンスモニタリング",
+        "performanceMonitoringDesc": "資産のパフォーマンスを監視し、最適化の機会を特定する。",
+        "costOptimization": "コスト最適化",
+        "complianceReporting": "コンプライアンスレポート",
+        "inventoryManagement": "在庫管理",
+        "disposalServices": "安全な廃棄サービス",
+        "assetDiscovery": "自動資産検出",
+        "assetDiscoveryDesc": "ネットワーク内のIT資産の自動検出とカタログ化。",
+        "realTimeTrackingDesc": "組織全体のすべてのIT資産をリアルタイムで追跡・監視。",
+        "lifecycleManagementDesc": "IT資産の調達から廃棄までの完全管理。",
+        "costOptimizationDesc": "資産の有効活用とライフサイクル・プランニングの改善により、コストを最適化する。",
+        "complianceReportingDesc": "規制遵守と監査のための包括的なレポート。",
+        "inventoryManagementDesc": "すべてのIT資産の正確な在庫を管理する。",
+        "disposalServicesDesc": "使用済み資産の安全でコンプライアンスに準拠した廃棄。"
+      },
+      "benefits": {
+        "reducedCosts": "資産利用の最適化によるITコストの削減",
+        "improvedEfficiencyTitle": "効率性の向上",
+        "improvedCompliance": "ライセンスと規制へのコンプライアンスの向上",
+        "betterPlanning": "技術更新サイクルのより良い計画",
+        "enhancedSecurity": "適切な資産廃棄によるセキュリティの強化",
+        "costReductionTitle": "コスト削減",
+        "enhancedDecisionTitle": "意思決定の強化",
+        "improvedEfficiencyDesc": "資産の可視性を高めることで、業務を効率化し、生産性を向上させます。"
+      },
+      "cta": {
+        "title": "IT資産を管理する",
+        "description": "Akrinがお客様の技術投資の価値を最大化するお手伝いをします。",
+        "button": "詳細を見る"
+      }
+    },
+    "cloudServices": {
+      "title": "クラウドソリューション",
+      "subtitle": "スケーラブルで安全なクラウドインフラストラクチャと移行サービスでビジネスを変革します。",
+      "mainDescription": "Akrinのクラウドソリューションは、スケーラビリティ、柔軟性、コスト効率の向上のためにクラウドコンピューティングの力を活用できるようにします。戦略と移行から継続的な管理と最適化まで、クラウドジャーニーのあらゆる段階で専門家がガイドします。",
+      "sections": {
+        "services": "クラウドサービス",
+        "approach": "私たちのアプローチ",
+        "benefits": "クラウドのメリット",
+        "whyChoose": "クラウド・ソリューションが選ばれる理由"
+      },
+      "features": {
+        "cloudMigration": "クラウド移行",
+        "hybridCloud": "ハイブリッドクラウドソリューション",
+        "hybridCloudDesc": "オンプレミスとクラウドリソースを組み合わせた柔軟なハイブリッドクラウドアーキテクチャ。",
+        "cloudManagement": "クラウド管理",
+        "cloudSecurity": "クラウドセキュリティ",
+        "cloudSecurityDesc": "クラウドインフラストラクチャとデータを保護する高度なセキュリティ対策。",
+        "disasterRecovery": "災害復旧",
+        "disasterRecoveryDesc": "ビジネス継続性を確保する堅牢なバックアップと災害復旧ソリューション。",
+        "cloudOptimization": "コスト最適化",
+        "cloudOptimizationDesc": "クラウドコストを削減し、効率を向上させるための継続的な監視と最適化。",
+        "cloudStorage": "クラウドストレージ",
+        "cloudStorageDesc": "すべてのデータニーズに対応するスケーラブルで安全なストレージソリューション。"
+      },
+      "approach": {
+        "assessment": "包括的なクラウド準備状況評価",
+        "strategy": "カスタマイズされたクラウド戦略の開発",
+        "migration": "最小限の中断でシームレスな移行",
+        "optimization": "継続的な最適化とサポート"
+      },
+      "benefits": {
+        "scalability": "成長する需要に対応する無制限のスケーラビリティ",
+        "scalabilityTitle": "スケーラビリティ",
+        "costSavings": "インフラストラクチャコストの削減",
+        "costTitle": "コスト効率",
+        "flexibility": "ビジネスの俊敏性と柔軟性の向上",
+        "flexibilityTitle": "ビジネスの俊敏性",
+        "security": "エンタープライズグレードのセキュリティとコンプライアンス"
+      },
+      "cta": {
+        "title": "クラウドへの移行準備はできていますか？",
+        "description": "今すぐAkrinとクラウド変革の旅を始めましょう。",
+        "button": "クラウド準備を整える"
+      },
+      "mainSection": {
+        "description": "包括的なクラウドソリューションと専門知識でお客様のビジネスを変革します。"
+      }
+    },
+    "customSolutions": {
+      "title": "カスタムソリューション",
+      "subtitle": "お客様固有のビジネス課題に対応するために設計されたカスタマイズされたITソリューション。",
+      "mainDescription": "Akrinでは、すべてのビジネスには独自の要件があることを理解しています。カスタムソリューションサービスは、お客様の特定のニーズ、業界要件、ビジネス目標に完全に合致するオーダーメイドの技術ソリューションを提供します。",
+      "sections": {
+        "process": "開発プロセス",
+        "expertise": "専門分野",
+        "whyCustom": "なぜカスタムソリューションを選ぶのか？"
+      },
+      "process": {
+        "consultation": "ニーズを理解するための詳細なコンサルテーション",
+        "design": "カスタムソリューションの設計とアーキテクチャ",
+        "development": "定期的な更新を伴うアジャイル開発",
+        "testing": "包括的なテストと品質保証",
+        "deployment": "スムーズな展開と統合",
+        "support": "継続的なサポートとメンテナンス",
+        "discoveryTitle": "発見と分析",
+        "designTitle": "設計とアーキテクチャ",
+        "developmentTitle": "開発",
+        "testingTitle": "テストと品質保証",
+        "deploymentTitle": "配備"
+      },
+      "expertise": {
+        "webApps": "カスタムWebアプリケーション",
+        "webAppsDesc": "ビジネスプロセスと要件に合わせたスケーラブルなWebアプリケーション。",
+        "mobileApps": "モバイルアプリ開発",
+        "systemIntegration": "システム統合",
+        "systemIntegrationDesc": "統一された運用のための異種システムのシームレスな統合。",
+        "automation": "ビジネスプロセス自動化",
+        "apiDevelopment": "API開発",
+        "dataAnalytics": "データ分析ソリューション",
+        "cybersecurity": "カスタムセキュリティソリューション",
+        "cybersecurityDesc": "独自のデジタル資産を保護するためのカスタマイズされたセキュリティソリューション。"
+      },
+      "benefits": {
+        "perfectFit": "要件に完全に一致するソリューション",
+        "competitive": "独自の機能による競争優位性",
+        "scalable": "ビジネスと共に成長するスケーラブルなアーキテクチャ",
+        "integration": "既存システムとのシームレスな統合"
+      },
+      "cta": {
+        "title": "カスタムソリューションが必要ですか？",
+        "description": "お客様のビジネスに最適なソリューションの構築方法について話し合いましょう。",
+        "button": "プロジェクトを開始"
+      },
+      "features": {
+        "webApplicationsDesc": "お客様のビジネスニーズに合わせたスケーラブルなウェブアプリケーション。",
+        "mobileAppDevelopmentDesc": "ネイティブおよびクロスプラットフォームのモバイルアプリケーション。",
+        "systemIntegrationDesc": "異なるシステムをシームレスに統合し、統一されたオペレーションを実現。",
+        "businessAutomationDesc": "お客様のワークフローに合わせたインテリジェントな自動化ソリューションで業務を合理化します。",
+        "apiDevelopmentDesc": "シームレスなシステム接続のための堅牢なAPI開発と統合。",
+        "dataAnalyticsDesc": "カスタム分析およびレポートソリューションで、データを実用的な洞察に変換します。",
+        "customSecurityDesc": "お客様独自のインフラストラクチャを保護するためにカスタマイズされたセキュリティソリューション。"
+      }
+    },
+    "cyberSecurity": {
+      "title": "サイバーセキュリティ",
+      "subtitle": "進化するデジタル脅威とサイバー攻撃に対する包括的な保護。",
+      "mainDescription": "Akrinのサイバーセキュリティサービスは、デジタル資産に多層的な保護を提供します。セキュリティ専門家チームが高度な技術と実証済みの方法論を使用して、洗練されたサイバー脅威から防御し、ビジネスの安全性とコンプライアンスを確保します。",
+      "sections": {
+        "services": "セキュリティサービス",
+        "approach": "セキュリティアプローチ",
+        "threats": "保護対象"
+      },
+      "services": {
+        "assessment": "セキュリティ評価＆監査",
+        "assessmentDesc": "脆弱性とリスクを特定するためのセキュリティ態勢の包括的な評価。",
+        "monitoring": "24時間365日セキュリティモニタリング",
+        "monitoringDesc": "リアルタイムで脅威を検出し対応するためのシステムの24時間監視。",
+        "incidentResponse": "インシデント対応",
+        "incidentResponseDesc": "セキュリティ侵害による被害を最小限に抑えるための迅速な対応と復旧サービス。",
+        "penetrationTesting": "ペネトレーションテスト",
+        "penetrationTestingDesc": "悪意のある攻撃者が悪用する前に脆弱性を特定するためのシミュレート攻撃。",
+        "securityTraining": "セキュリティ意識向上トレーニング",
+        "complianceManagement": "コンプライアンス管理",
+        "complianceManagementDesc": "組織が業界固有のセキュリティ基準と規制を満たすことを保証します。",
+        "dataEncryption": "データ暗号化",
+        "dataEncryptionDesc": "保存中および転送中の機密データを保護する高度な暗号化技術。"
+      },
+      "threats": {
+        "malware": "マルウェアとランサムウェア",
+        "phishing": "フィッシングとソーシャルエンジニアリング",
+        "dataBreaches": "データ侵害",
+        "insiderThreats": "内部脅威",
+        "ddos": "DDoS攻撃",
+        "zeroDay": "ゼロデイエクスプロイト"
+      },
+      "approach": {
+        "prevention": "プロアクティブな脅威防止",
+        "preventionTitle": "プロアクティブな防止",
+        "detection": "リアルタイム脅威検出",
+        "detectionTitle": "高度な検出",
+        "response": "迅速なインシデント対応",
+        "responseTitle": "迅速な対応",
+        "recovery": "事業継続計画"
+      },
+      "cta": {
+        "title": "今すぐビジネスを保護",
+        "description": "侵害を待たないでください。Akrinでサイバー防御を強化しましょう。",
+        "button": "保護を受ける"
+      }
+    },
+    "eWaste": {
+      "title": "電子廃棄物管理",
+      "subtitle": "環境コンプライアンスに準拠した電子機器の責任ある廃棄とリサイクル。",
+      "mainDescription": "Akrinの電子廃棄物管理サービスは、電子機器の安全、確実、環境に責任ある廃棄を保証します。厳格なデータセキュリティプロトコルと環境規制に従い、お客様のビジネスと地球を保護します。",
+      "sections": {
+        "process": "プロセス",
+        "services": "取り扱い対象",
+        "certifications": "コンプライアンスと認証",
+        "whyChoose": "なぜAkrinの電子廃棄物管理を選ぶのか？",
+        "whyChooseDesc": "環境への責任とデータセキュリティを組み合わせて、ビジネスと地球を保護する包括的な電子廃棄物管理ソリューションを提供します。",
+        "benefitsTitle": "電子廃棄物管理サービスの利点"
+      },
+      "process": {
+        "collection": "お客様の施設からの安全な収集",
+        "dataDestruction": "データ破棄",
+        "sorting": "材料の分類と分別",
+        "recycling": "責任あるリサイクルと廃棄",
+        "reporting": "詳細な廃棄証明書",
+        "compliance": "完全な規制準拠"
+      },
+      "equipment": {
+        "computers": "コンピューターとラップトップ",
+        "servers": "サーバーとネットワーク機器",
+        "mobile": "モバイルデバイス",
+        "printers": "プリンターとスキャナー",
+        "storage": "ストレージデバイス",
+        "peripherals": "IT周辺機器"
+      },
+      "benefits": {
+        "dataProtection": "認定破壊による完全なデータ保護",
+        "dataProtectionTitle": "データセキュリティ",
+        "dataProtectionDesc": "認定データ破壊により、機密情報が完全に消去されることを保証します。",
+        "environmental": "環境責任と持続可能性",
+        "environmentalTitle": "環境責任",
+        "environmentalDesc": "生態系への影響を最小限に抑えるため、厳格な環境ガイドラインに従います。",
+        "compliance": "電子廃棄物規制への完全準拠",
+        "complianceTitle": "規制遵守",
+        "complianceDesc": "すべての地域および国際的な電子廃棄物処分規制に準拠します。",
+        "certificates": "詳細な廃棄証明書",
+        "certificatesTitle": "認定廃棄",
+        "certificatesDesc": "機器の安全な廃棄を文書化した詳細な証明書を受け取ります。",
+        "environmentalImpact": "環境への影響",
+        "carbonFootprintDesc": "責任ある電子廃棄物管理を通じて、二酸化炭素排出量を削減しましょう。"
+      },
+      "cta": {
+        "title": "責任ある廃棄を",
+        "description": "電子廃棄物管理サービスでデータと環境を保護します。",
+        "button": "回収を予約"
+      },
+      "features": {
+        "dataDestructionDesc": "機密情報を保護するための、安全で認証されたデータ破壊。",
+        "recyclingDesc": "環境に配慮した電子部品のリサイクル",
+        "complianceDesc": "国内および国際的な電子廃棄物規制の完全遵守。",
+        "certificateIssuanceDesc": "監査およびコンプライアンス目的のための正式な廃棄証明書。",
+        "assetRecoveryDesc": "可能な限り貴重な素材や部品を回収する。",
+        "pickupServiceDesc": "電子機器廃棄物の便利な引き取りサービス。"
+      }
+    },
+    "hardwareMaintenance": {
+      "title": "ハードウェアメンテナンス",
+      "subtitle": "プロアクティブなメンテナンスサービスでIT機器を最高のパフォーマンスで稼働させ続けます。",
+      "mainDescription": "Akrinのハードウェアメンテナンスサービスは、ITインフラストラクチャが確実かつ効率的に動作することを保証します。認定技術者が予防保守、修理、アップグレードを提供し、ダウンタイムを最小限に抑え、機器の寿命を延ばします。",
+      "sections": {
+        "services": "メンテナンスサービス",
+        "coverage": "対象機器",
+        "benefits": "サービスの利点"
+      },
+      "services": {
+        "preventive": "予防保守",
+        "preventiveDesc": "機器の故障を防ぎ、ハードウェアの寿命を延ばすための定期的なメンテナンス。",
+        "repairs": "オンサイトおよびオフサイト修理",
+        "repairsDesc": "ダウンタイムを最小限に抑え、機能を回復するための迅速で効率的な修理サービス。",
+        "upgrades": "ハードウェアアップグレード",
+        "upgradesDesc": "機器を最新の状態に保ち、最適に動作させるための戦略的アップグレード。",
+        "diagnostics": "パフォーマンス診断",
+        "diagnosticsDesc": "パフォーマンスの問題を特定して解決するための包括的な診断。",
+        "replacement": "部品交換",
+        "replacementDesc": "信頼性の高いパフォーマンスのための保証付き純正部品交換。",
+        "emergency": "緊急サポート",
+        "emergencyDesc": "重要なハードウェア障害に対する24時間365日の緊急サポート。",
+        "dataProtection": "データ保護サービス",
+        "dataProtectionDesc": "メンテナンスおよび修理手順中のデータ整合性を確保します。"
+      },
+      "coverage": {
+        "servers": "サーバーとストレージシステム",
+        "networking": "ネットワーク機器",
+        "workstations": "ワークステーションとPC",
+        "printers": "プリンターと周辺機器",
+        "ups": "UPSと電源システム",
+        "cooling": "冷却システム"
+      },
+      "benefits": {
+        "uptime": "最大の稼働時間と信頼性",
+        "lifespan": "機器寿命の延長",
+        "performance": "最適なパフォーマンス",
+        "costSavings": "修理コストの削減",
+        "sla": "保証されたSLA応答時間",
+        "uptimeTitle": "最大稼働時間",
+        "costTitle": "コスト削減",
+        "expertSupportTitle": "専門家サポート",
+        "expertSupport": "豊富なハードウェア専門知識を持つ認定技術者へのアクセス。"
+      },
+      "cta": {
+        "title": "ハードウェアパフォーマンスを最大化",
+        "description": "専門家にITインフラストラクチャのメンテナンスをお任せください。",
+        "button": "メンテナンスプランを取得"
+      },
+      "features": {
+        "preventiveDesc": "定期的なメンテナンスにより、故障を未然に防ぐ。",
+        "repairsDesc": "あらゆるITハードウェアの専門修理サービス。",
+        "emergencyDesc": "24時間365日の緊急サポート。",
+        "dataProtectionDesc": "すべてのメンテナンス手順において、データの完全性を確保する。",
+        "upgradesDesc": "パフォーマンスを向上させ、寿命を延ばすためのハードウェアのアップグレード。",
+        "diagnosticsDesc": "問題を特定し、解決するための包括的な診断。"
+      }
+    },
+    "itConsulting": {
+      "title": "ITコンサルティング",
+      "subtitle": "ITをビジネス目標に合わせるための戦略的技術ガイダンス。",
+      "mainDescription": "AkrinのITコンサルティングサービスは、複雑な技術の意思決定をナビゲートし、ビジネス成長を促進する戦略を開発するのに役立ちます。経験豊富なコンサルタントがお客様と密接に協力して課題を理解し、実用的で革新的なソリューションを提供します。",
+      "sections": {
+        "services": "コンサルティングサービス",
+        "approach": "アプローチ",
+        "expertise": "業界専門知識"
+      },
+      "services": {
+        "strategy": "IT戦略開発",
+        "strategyDesc": "ビジネス目標と成長計画に合わせた包括的なIT戦略を開発します。",
+        "transformation": "デジタルトランスフォーメーション",
+        "transformationDesc": "実証済みの方法論で組織のデジタル変革をガイドします。",
+        "architecture": "エンタープライズアーキテクチャ",
+        "architectureDesc": "ビジネスオペレーションをサポートするスケーラブルなエンタープライズアーキテクチャを設計します。",
+        "projectManagement": "プロジェクト管理",
+        "projectManagementDesc": "ITイニシアチブの実装を成功させるための専門的なプロジェクト管理。",
+        "vendorManagement": "ベンダー管理",
+        "vendorManagementDesc": "ベンダー関係を最適化し、組織に有利な条件を交渉します。",
+        "budgetOptimization": "IT予算最適化",
+        "budgetOptimizationDesc": "戦略的な予算計画とコスト最適化によりIT ROIを最大化します。"
+      },
+      "approach": {
+        "assessment": "包括的なビジネスとIT評価",
+        "assessmentTitle": "評価と発見",
+        "assessmentDesc": "現在のITランドスケープとビジネス要件の徹底的な評価。",
+        "strategy": "戦略的ロードマップの開発",
+        "strategyTitle": "戦略開発",
+        "strategyDesc": "ビジネス目標に合わせた詳細なロードマップを作成します。",
+        "implementation": "実装計画とサポート",
+        "implementationTitle": "実装サポート",
+        "implementationDesc": "実装プロセス全体を通じて実践的なガイダンス。",
+        "optimization": "継続的な改善と最適化",
+        "optimizationTitle": "継続的な最適化",
+        "optimizationDesc": "IT投資から最大価値を確保するための継続的な改善。"
+      },
+      "expertise": {
+        "finance": "金融サービス",
+        "healthcare": "ヘルスケア",
+        "retail": "小売＆Eコマース",
+        "manufacturing": "製造業",
+        "education": "教育",
+        "government": "政府"
+      },
+      "cta": {
+        "title": "IT戦略を変革",
+        "description": "Akrinと提携して、技術の潜在能力を最大限に引き出しましょう。",
+        "button": "相談を予約"
+      }
+    },
+    "itEquipment": {
+      "title": "IT機器",
+      "subtitle": "ビジネスニーズに対応する高品質なハードウェアソリューションと調達サービス。",
+      "mainDescription": "Akrinは調達から展開まで、包括的なIT機器ソリューションを提供します。大手メーカーと提携して、パフォーマンス要件と予算に合った高品質なハードウェアを提供します。",
+      "sections": {
+        "products": "製品カテゴリー",
+        "services": "機器サービス",
+        "brands": "信頼できるブランド",
+        "whyChoose": "なぜAkrinのIT機器＆サービスを選ぶのか？"
+      },
+      "products": {
+        "computers": "デスクトップとラップトップ",
+        "computersDesc": "あらゆるビジネスニーズと予算に対応する高性能コンピューター。",
+        "servers": "サーバーとストレージ",
+        "serversDesc": "信頼性の高いデータ管理のためのエンタープライズグレードのサーバーとストレージソリューション。",
+        "networking": "ネットワーク機器",
+        "networkingDesc": "シームレスな接続とパフォーマンスのための高度なネットワークハードウェア。",
+        "security": "セキュリティデバイス",
+        "securityDesc": "デジタルインフラストラクチャを保護する最先端のセキュリティハードウェア。",
+        "printers": "プリンターとスキャナー",
+        "accessories": "ITアクセサリー"
+      },
+      "services": {
+        "consultation": "機器の相談と選択",
+        "consultationDesc": "特定のニーズに適した機器を選択するための専門的なガイダンス。",
+        "procurement": "調達とソーシング",
+        "procurementDesc": "競争力のある価格と迅速な配送を実現する合理化された調達プロセス。",
+        "configuration": "事前設定サービス",
+        "configurationDesc": "即座に展開できるように仕様に合わせて事前設定された機器。",
+        "deployment": "展開とインストール",
+        "deploymentDesc": "認定技術者によるプロフェッショナルなインストールとセットアップ。",
+        "warranty": "保証管理",
+        "warrantyDesc": "包括的な保証管理とサポートサービス。",
+        "leasing": "リースオプション利用可能",
+        "leasingDesc": "キャッシュフローと技術更新を管理するための柔軟なリースオプション。",
+        "printersDesc": "あらゆるビジネスニーズに対応するプロフェッショナルプリンター、スキャナー、複合機。"
+      },
+      "benefits": {
+        "quality": "信頼できるブランドのエンタープライズグレード機器",
+        "qualityTitle": "品質保証",
+        "pricing": "パートナー関係による競争力のある価格設定",
+        "pricingTitle": "最適な価格",
+        "support": "フルライフサイクルサポート",
+        "flexibility": "柔軟な調達オプション",
+        "supportTitle": "ライフサイクルサポート"
+      },
+      "cta": {
+        "title": "IT機器をアップグレード",
+        "description": "最適な価格でビジネスに適したハードウェアを入手しましょう。",
+        "button": "見積もりを依頼"
+      },
+      "features": {
+        "procurementDesc": "適切なIT機器の選択と調達のための専門家によるガイダンス。",
+        "deploymentDesc": "ITハードウェアの専門的な展開と設定",
+        "lifecycleManagementDesc": "調達から廃棄までの完全なライフサイクル管理。",
+        "vendorManagementDesc": "複数のIT機器ベンダーとの関係管理",
+        "warrantyManagementDesc": "すべてのIT機器の保証の追跡と管理。",
+        "leaseManagementDesc": "IT機器のリースおよび更新の管理。",
+        "procurementSourcing": "調達",
+        "warrantyManagement": "保証管理"
+      }
+    },
+    "itSecurity": {
+      "title": "ITセキュリティサービス",
+      "subtitle": "Akrinは専門的なモニタリング、脅威検出、プロアクティブな防御対策でデジタル資産を保護する包括的なITセキュリティサービスを提供します。",
+      "mainDescription": "今日のデジタル環境では、セキュリティが最重要です。AkrinのITセキュリティサービスは、インフラストラクチャ、データ、アプリケーションに堅牢な保護を提供し、進化する脅威に対してビジネスの安全を確保します。",
+      "sections": {
+        "services": "セキュリティサービス",
+        "whyChoose": "なぜAkrinのITセキュリティを選ぶのか？",
+        "features": "セキュリティ機能"
+      },
+      "features": {
+        "networkSecurity": "ネットワークセキュリティ",
+        "networkSecurityDesc": "不正アクセスと脅威に対するネットワークインフラストラクチャの包括的な保護。",
+        "dataEncryption": "データ暗号化",
+        "dataEncryptionDesc": "機密データを保護する最先端の暗号化技術。",
+        "monitoring": "24時間365日モニタリング",
+        "monitoringDesc": "セキュリティインシデントをリアルタイムで検出し対応するための継続的な監視。",
+        "threatDetection": "脅威インテリジェンス",
+        "threatIntelligenceDesc": "新たなサイバー脅威の先を行く高度な脅威インテリジェンスサービス。",
+        "compliance": "コンプライアンス管理",
+        "complianceDesc": "組織が業界固有のセキュリティ基準と規制を満たすことを保証します。",
+        "incidentResponse": "インシデント対応",
+        "incidentResponseDesc": "セキュリティ侵害が発生した場合の迅速な対応と復旧サービス。",
+        "threatDetectionDesc": "高度なセキュリティ・インテリジェンスを活用した、プロアクティブな脅威の検知と対応。"
+      },
+      "services": {
+        "networkSecurity": {
+          "title": "ネットワークセキュリティ",
+          "description": "不正アクセスとサイバー脅威からネットワークインフラストラクチャを保護します。"
+        },
+        "dataEncryption": {
+          "title": "データ暗号化",
+          "description": "最先端の暗号化技術で機密データを保護します。"
+        },
+        "monitoring": {
+          "title": "24時間365日モニタリング",
+          "description": "セキュリティインシデントをリアルタイムで検出し対応するためのシステムの継続的な監視。"
+        },
+        "threatIntelligence": {
+          "title": "脅威インテリジェンス",
+          "description": "高度な脅威インテリジェンスサービスで新たな脅威の先を行きます。"
+        },
+        "compliance": {
+          "title": "コンプライアンス管理",
+          "description": "組織が業界固有のセキュリティ基準と規制を満たすことを保証します。"
+        },
+        "incidentResponse": {
+          "title": "インシデント対応",
+          "description": "セキュリティ侵害が発生した場合の迅速な対応と復旧サービス。"
+        }
+      },
+      "whyChoose": {
+        "expertTeam": {
+          "title": "専門家チーム",
+          "description": "セキュリティスペシャリストは、サイバーセキュリティで長年の経験を持つ認定プロフェッショナルです。"
+        },
+        "cuttingEdge": {
+          "title": "最先端技術",
+          "description": "進化するサイバー脅威の先を行くために最新のセキュリティ技術を採用しています。"
+        },
+        "tailored": {
+          "title": "カスタマイズされたソリューション",
+          "description": "セキュリティサービスは、組織の特定のニーズに合わせてカスタマイズされます。"
+        }
+      },
+      "cta": {
+        "title": "ビジネスを保護する準備はできていますか？",
+        "description": "セキュリティ侵害が発生するのを待たないでください。今すぐAkrinのITセキュリティサービスでビジネスを保護しましょう。",
+        "button": "今すぐお問い合わせ"
+      }
+    },
+    "itSupport": {
+      "title": "ITサポートサービス",
+      "subtitle": "24時間365日ビジネスをスムーズに稼働させるプロフェッショナルな技術サポート。",
+      "mainDescription": "AkrinのITサポートサービスは、すべての技術ニーズに対する包括的な技術支援を提供します。経験豊富なサポートチームが問題の迅速な解決を保証し、ダウンタイムを最小限に抑え、生産性を最大化します。",
+      "sections": {
+        "levels": "サポートレベル",
+        "coverage": "サポート対象",
+        "features": "サポート機能"
+      },
+      "levels": {
+        "tier1": {
+          "title": "ティア1サポート",
+          "description": "基本的なトラブルシューティングと一般的な問題の解決"
+        },
+        "tier2": {
+          "title": "ティア2サポート",
+          "description": "高度な技術サポートとシステム構成"
+        },
+        "tier3": {
+          "title": "ティア3サポート",
+          "description": "複雑な問題に対するエキスパートレベルのサポート"
+        }
+      },
+      "coverage": {
+        "desktop": "デスクトップとラップトップのサポート",
+        "software": "ソフトウェアのインストールとトラブルシューティング",
+        "network": "ネットワーク接続の問題",
+        "email": "メールと通信システム",
+        "printing": "プリンターと周辺機器のサポート",
+        "mobile": "モバイルデバイス管理"
+      },
+      "features": {
+        "availability": "24時間365日対応",
+        "multichannel": "マルチチャネルサポート（電話、メール、チャット）",
+        "ticketing": "高度なチケットシステム",
+        "sla": "保証されたSLA応答時間",
+        "remote": "リモートアシスタンス機能",
+        "reporting": "詳細なレポートと分析",
+        "onsiteSupportDesc": "専門家による現場での設置、メンテナンス、技術サポートサービス。",
+        "networkSupportDesc": "コンフィギュレーションと最適化を含む、ネットワーク・インフラの完全サポート",
+        "relocationDesc": "ビジネスの中断を最小限に抑えたシームレスなITインフラ移転。",
+        "eWasteDesc": "環境に配慮した電子機器の責任ある廃棄とリサイクル。",
+        "systemMigrationsDesc": "ダウンタイムを最小限に抑えながら、ハードウェアとソフトウェアシステムをシームレスに移行。",
+        "audioVisualSupportDesc": "プロフェッショナルなオーディオビジュアルシステムのサポートとメンテナンスサービス。",
+        "accessControlSystemsDesc": "セキュリティ・アクセス・コントロール・システムの設置、設定、サポート。",
+        "networkSupport": "ネットワークサポート",
+        "systemMigrations": "システム移行",
+        "audioVisualSupport": "オーディオ・ビジュアル・サポート",
+        "accessControlSystems": "入退室管理システム",
+        "title": "包括的なITサポートソリューション",
+        "subtitle": "エンドツーエンドのITサポートにより、お客様のビジネスを円滑にサポートします。"
+      },
+      "services": {
+        "desktopManagement": {
+          "title": "デスクトップ管理",
+          "description": "更新、セキュリティ、パフォーマンス最適化を含むデスクトップコンピューターの包括的な管理。"
+        },
+        "cloudBackup": {
+          "title": "クラウドバックアップ",
+          "description": "重要なデータを保護し、ビジネス継続性を確保する自動クラウドバックアップソリューション。"
+        },
+        "remoteSupport": {
+          "title": "リモートサポート",
+          "description": "オンサイト訪問なしで問題を迅速に解決するための即座のリモートアシスタンス。"
+        },
+        "userSupport": {
+          "title": "ユーザーサポート",
+          "description": "生産性を維持するためのすべてのIT関連の問い合わせと問題に対するエンドユーザーサポート。"
+        },
+        "systemAdmin": {
+          "title": "システム管理",
+          "description": "ITインフラストラクチャを維持および最適化するプロフェッショナルなシステム管理サービス。"
+        },
+        "networkSupport": {
+          "title": "ネットワークサポート",
+          "description": "構成、トラブルシューティング、最適化を含む完全なネットワークサポート。"
+        },
+        "emailSupport": {
+          "title": "メールサポート",
+          "description": "セットアップ、トラブルシューティング、セキュリティ構成を含むメールシステム管理。"
+        },
+        "securitySupport": {
+          "title": "セキュリティサポート",
+          "description": "セキュリティ監視、インシデント対応、脆弱性管理サービス。"
+        },
+        "printerSupport": {
+          "title": "プリンターサポート",
+          "description": "セットアップ、メンテナンス、トラブルシューティングを含むプリンターと周辺機器のサポート。"
+        },
+        "softwareSupport": {
+          "title": "ソフトウェアサポート",
+          "description": "インストール、更新、トラブルシューティングを含むすべてのビジネスアプリケーションのサポート。"
+        },
+        "mobileSupport": {
+          "title": "モバイルデバイスサポート",
+          "description": "スマートフォンとタブレットのモバイルデバイス管理とサポート。"
+        },
+        "itNetworking": {
+          "title": "ITネットワーキング",
+          "description": "堅牢なネットワークインフラストラクチャの設計、実装、メンテナンス。"
+        },
+        "databaseSupport": {
+          "title": "データベースサポート",
+          "description": "データベース管理、最適化、トラブルシューティングサービス。"
+        },
+        "backupRecovery": {
+          "title": "バックアップ＆リカバリー",
+          "description": "包括的なバックアップソリューションと災害復旧計画。"
+        },
+        "hardwareMigration": {
+          "title": "ハードウェア＆ソフトウェア移行",
+          "description": "最小限のダウンタイムでハードウェアとソフトウェアシステムのシームレスな移行。"
+        },
+        "audioVisual": {
+          "title": "オーディオビジュアルソリューション",
+          "description": "現代の職場向けのプロフェッショナルなAVシステムの設計、インストール、サポート。"
+        },
+        "accessControl": {
+          "title": "アクセス制御＆監視ソリューション",
+          "description": "アクセス制御とビデオ監視を含む高度なセキュリティシステム。"
+        }
+      },
+      "cta": {
+        "title": "信頼できるITサポートを体験",
+        "description": "Akrinのサポートチームに技術的な課題をお任せください。",
+        "button": "サポートを受ける"
+      }
+    },
+    "onsiteSupport": {
+      "title": "オンサイトサポート",
+      "subtitle": "必要なときに直接お客様の場所で提供されるプロフェッショナルなITサポート。",
+      "mainDescription": "Akrinのオンサイトサポートサービスは、専門技術者を直接お客様の施設に派遣します。ハードウェアのインストール、ネットワークのトラブルシューティング、緊急修理など、チームが実践的な支援を提供し、問題を迅速かつ効率的に解決します。",
+      "sections": {
+        "services": "オンサイトサービス",
+        "coverage": "対象エリア",
+        "response": "応答時間",
+        "additionalStaffing": "追加のIT人材ソリューション"
+      },
+      "services": {
+        "installation": "ハードウェアのインストールとセットアップ",
+        "troubleshooting": "現地でのトラブルシューティング",
+        "maintenance": "予防保守",
+        "upgrades": "システムのアップグレードと移行",
+        "training": "ユーザートレーニングセッション",
+        "emergency": "緊急対応"
+      },
+      "coverage": {
+        "tokyo": "首都圏",
+        "osaka": "大阪地域",
+        "national": "全国対応可能",
+        "international": "リクエストに応じて国際サポート"
+      },
+      "response": {
+        "critical": "クリティカル：2〜4時間",
+        "high": "高優先度：同営業日",
+        "standard": "標準：翌営業日",
+        "scheduled": "予定訪問可能"
+      },
+      "features": {
+        "expertTechnicians": "専門技術者",
+        "flexibleScheduling": "柔軟なスケジューリング",
+        "comprehensiveSupport": "包括的なITサポート",
+        "comprehensiveSupportDesc": "ハードウェアの修理からソフトウェアの構成まで、オンサイトチームがすべてのITニーズを効率的に処理します。",
+        "emergencyResponse": "緊急対応",
+        "preventiveMaintenance": "予防保守",
+        "userTraining": "ユーザートレーニング",
+        "expertTechniciansDesc": "多様なIT環境での豊富な経験を持つ認定プロフェッショナル。",
+        "rapidResponseDesc": "ダウンタイムを最小限に抑え、事業継続性を維持するための迅速な対応。",
+        "preventiveMaintenanceDesc": "定期的なメンテナンスにより、ビジネスへの影響を未然に防ぎます。",
+        "hardwareRepairDesc": "あらゆるITハードウェアの専門的な診断と修理。",
+        "projectImplementationDesc": "プロフェッショナルなITプロジェクトの実施",
+        "flexibleSchedulingDesc": "お客様のビジネスニーズに合わせ、混乱を最小限に抑える柔軟なスケジュールオプション。",
+        "emergencyResponseDesc": "重要なIT問題や障害に対する迅速な緊急対応サービス。",
+        "userTrainingDesc": "テクノロジーへの投資を最大限に活用するための包括的なユーザートレーニング。",
+        "hardwareInstallation": "ハードウェアのインストール",
+        "hardwareInstallationDesc": "ハードウェア・コンポーネントやシステムの専門的なインストールとセットアップ。",
+        "systemTroubleshooting": "システムのトラブルシューティング",
+        "systemTroubleshootingDesc": "複雑なITシステム問題の専門的なトラブルシューティングと解決。"
+      },
+      "cta": {
+        "title": "オンサイト支援が必要ですか？",
+        "description": "技術者がお客様の場所でお手伝いする準備ができています。",
+        "button": "オンサイトサポートを依頼"
+      }
+    },
+    "recruitment": {
+      "title": "IT人材採用",
+      "subtitle": "ビジネスを前進させる適切なIT人材を見つけます。",
+      "mainDescription": "AkrinのIT採用サービスは、トップクラスの技術プロフェッショナルとお客様を結びつけます。専門採用チームはITランドスケープを理解し、組織が必要とする技術スキルと文化的適合性を持つ候補者をマッチングします。",
+      "sections": {
+        "services": "採用サービス",
+        "positions": "募集職種",
+        "process": "プロセス",
+        "whyChoose": "なぜ採用でAkrinを選ぶのか？"
+      },
+      "services": {
+        "permanent": "正社員採用",
+        "permanentTitle": "正社員採用",
+        "permanentDesc": "企業文化と目標に合致する長期的なITプロフェッショナルを見つけます。",
+        "contract": "契約スタッフ",
+        "contractTitle": "契約スタッフ",
+        "contractDesc": "プロジェクトベースまたは一時的なニーズに対する柔軟な契約スタッフソリューション。",
+        "contractToHire": "契約から正社員へ",
+        "contractToHireTitle": "契約から正社員へ",
+        "contractToHireDesc": "契約から正社員への配置オプションで採用前に試すことができます。",
+        "executive": "エグゼクティブサーチ",
+        "executiveTitle": "エグゼクティブサーチ",
+        "executiveDesc": "シニアITリーダーシップポジション向けの専門的な検索サービス。",
+        "projectBased": "プロジェクトベースの人材配置",
+        "projectBasedTitle": "プロジェクトベースの人材配置",
+        "projectBasedDesc": "適切なスキルと経験のミックスを持つ完全なプロジェクトチーム。",
+        "teamBuilding": "完全なチーム構築",
+        "teamBuildingTitle": "チーム構築",
+        "teamBuildingDesc": "補完的なスキルと専門知識を持つIT部門全体を構築します。",
+        "marketAnalysis": "IT市場分析",
+        "marketAnalysisTitle": "市場分析",
+        "marketAnalysisDesc": "IT人材市場のトレンドと給与ベンチマークに関する洞察を得ます。",
+        "employerBranding": "雇用主ブランディング",
+        "employerBrandingTitle": "雇用主ブランディング",
+        "employerBrandingDesc": "トップIT人材を引き付けるために雇用主ブランドを強化します。"
+      },
+      "positions": {
+        "developers": "ソフトウェア開発者",
+        "developersDesc": "現代技術の専門知識を持つフルスタック、フロントエンド、バックエンド、モバイル開発者。",
+        "engineers": "システムエンジニア",
+        "engineersDesc": "システムを構築および維持するインフラストラクチャ、クラウド、DevOpsエンジニア。",
+        "administrators": "IT管理者",
+        "administratorsDesc": "ITインフラストラクチャをスムーズに稼働させるシステムおよびネットワーク管理者。",
+        "security": "セキュリティスペシャリスト",
+        "securityDesc": "デジタル資産を保護し、コンプライアンスを確保するサイバーセキュリティの専門家。",
+        "projectManagers": "プロジェクトマネージャー",
+        "projectManagersDesc": "技術イニシアチブをリードする経験豊富なITプロジェクトマネージャー。",
+        "analysts": "ビジネスアナリスト",
+        "analystsDesc": "技術とビジネスニーズの間のギャップを埋めるビジネスおよびシステムアナリスト。",
+        "cloudArchitects": "クラウド・アーキテクツ"
+      },
+      "process": {
+        "consultation": "要件相談",
+        "sourcing": "候補者のソーシングとスクリーニング",
+        "assessment": "技術評価",
+        "interviews": "面接調整",
+        "onboarding": "オンボーディングサポート",
+        "followUp": "配置後のフォローアップ",
+        "candidateSourcing": "候補者ソーシング",
+        "technicalAssessment": "技術評価"
+      },
+      "benefits": {
+        "industryExpertise": "深いIT業界知識",
+        "industryExpertiseDesc": "採用担当者は技術を理解し、技術スキルを正確に評価できます。",
+        "extensiveNetwork": "広範な人材ネットワーク",
+        "extensiveNetworkDesc": "事前にスクリーニングされたITプロフェッショナルの幅広いネットワークへのアクセス。",
+        "timeToHire": "採用時間の短縮",
+        "timeToHireDesc": "迅速にポジションを埋めるための合理化された採用プロセス。"
+      },
+      "cta": {
+        "title": "理想のITチームを構築",
+        "description": "完璧なITプロフェッショナルを見つけるお手伝いをさせてください。",
+        "button": "採用を開始"
+      },
+      "features": {
+        "technicalScreeningDesc": "厳密な技術審査で最適な候補者を見つける。",
+        "cultureFitDesc": "組織との文化的適合性の評価",
+        "contractStaffingDesc": "プロジェクトのニーズに合わせた柔軟な契約スタッフ・ソリューション。",
+        "permanentPlacementDesc": "正社員のITプロフェッショナルを探す",
+        "executiveSearchDesc": "ITリーダー職に特化したサーチ",
+        "skillsAssessmentDesc": "総合的な技能評価と検証。"
+      }
+    },
+    "relocation": {
+      "title": "IT移転",
+      "subtitle": "ビジネスの中断を最小限に抑えたシームレスなITインフラストラクチャの移転。",
+      "mainDescription": "AkrinのIT移転サービスは、技術インフラストラクチャの新しい場所へのスムーズな移行を保証します。経験豊富なチームが計画から実行まですべてを処理し、ダウンタイムを最小限に抑え、ビジネスの継続性を確保します。",
+      "sections": {
+        "services": "移転サービス",
+        "process": "プロセス",
+        "benefits": "主な利点"
+      },
+      "services": {
+        "planning": "包括的な移転計画",
+        "planningTitle": "移転計画",
+        "planningDesc": "IT移転のあらゆる側面をカバーする詳細な計画。",
+        "inventory": "資産在庫と文書化",
+        "inventoryTitle": "資産在庫",
+        "inventoryDesc": "移転のためのすべてのIT資産の完全な在庫と文書化。",
+        "decommissioning": "安全な機器の撤去",
+        "decommissioningTitle": "機器の撤去",
+        "decommissioningDesc": "敏感なIT機器の慎重な撤去と梱包。",
+        "transport": "安全な輸送",
+        "transportTitle": "安全な輸送",
+        "transportDesc": "すべてのIT機器を保険に加入し、安全に取り扱います。",
+        "reinstallation": "プロフェッショナルな再インストール",
+        "reinstallationTitle": "再インストールサービス",
+        "reinstallationDesc": "新しい場所での専門的な再インストールと構成。",
+        "testing": "システムテストと検証",
+        "testingTitle": "テストと検証",
+        "testingDesc": "すべてのシステムが完全に動作することを確認する包括的なテスト。",
+        "networkSetup": "ネットワークインフラストラクチャのセットアップ",
+        "networkSetupTitle": "ネットワークセットアップ",
+        "networkSetupDesc": "新しい場所での完全なネットワークインフラストラクチャの設計と実装。",
+        "equipmentPacking": "プロフェッショナルな機器梱包",
+        "equipmentPackingTitle": "機器梱包",
+        "equipmentPackingDesc": "輸送中の敏感な機器を保護する専門的な梱包技術。",
+        "packingDesc": "すべてのIT機器の専門的な梱包と在庫管理。"
+      },
+      "process": {
+        "assessment": "移転前の評価と計画",
+        "assessmentTitle": "初期評価",
+        "schedule": "詳細な移転スケジュール",
+        "scheduleTitle": "スケジューリング",
+        "backup": "データのバックアップと保護",
+        "backupTitle": "データ保護",
+        "execution": "調整された移転実行",
+        "executionTitle": "移転実行",
+        "validation": "移転後の検証",
+        "support": "移転後のサポート"
+      },
+      "benefits": {
+        "minimal": "ビジネスの中断を最小限に",
+        "minimalTitle": "最小限のダウンタイム",
+        "minimalDesc": "移転中のビジネスの中断を最小限に抑える戦略的計画。",
+        "secure": "機器の安全な取り扱い",
+        "secureTitle": "安全な取り扱い",
+        "secureDesc": "完全な保険適用を備えたすべてのIT機器のプロフェッショナルな取り扱い。",
+        "professional": "プロフェッショナルなプロジェクト管理",
+        "professionalTitle": "プロジェクト管理",
+        "professionalDesc": "移転のあらゆる側面を監督する専任のプロジェクトマネージャー。",
+        "insurance": "完全な保険適用",
+        "insuranceTitle": "保険適用",
+        "insuranceDesc": "輸送中のすべての機器に対する包括的な保険適用。",
+        "weekend": "週末と時間外オプション",
+        "weekendTitle": "柔軟なスケジューリング",
+        "weekendDesc": "ビジネスへの影響を最小限に抑える週末と時間外の移転オプション。",
+        "businessContinuity": "事業継続"
+      },
+      "cta": {
+        "title": "オフィス移転を計画していますか？",
+        "description": "AkrinにITインフラストラクチャの安全で効率的な移転をお任せください。",
+        "button": "移転を計画"
+      },
+      "features": {
+        "preMoveAssessmentDesc": "移転前の包括的な評価と計画。",
+        "secureTransportDesc": "機密性の高いIT機器の安全な梱包と輸送。",
+        "installationSetupDesc": "移転先でのプロフェッショナルな設置とセットアップ。",
+        "testingValidationDesc": "すべてが完璧に機能することを確認するための徹底的なテスト。",
+        "minimizeDisruptionDesc": "移転中のビジネスの混乱を最小限に抑えるための戦略。",
+        "weekendServiceDesc": "週末および時間外の移転サービスあり。"
+      }
+    },
+    "wirelessSurvey": {
+      "title": "ワイヤレスサーベイ",
+      "subtitle": "プロフェッショナルなサイト調査と分析でワイヤレスネットワークのパフォーマンスを最適化します。",
+      "mainDescription": "Akrinのワイヤレスサーベイサービスは、ワイヤレス環境の包括的な分析を提供します。高度なツールと方法論を使用して、カバレッジギャップ、干渉源、最適化の機会を特定し、信頼性の高いワイヤレス接続を確保します。",
+      "sections": {
+        "types": "調査タイプ",
+        "deliverables": "提供物",
+        "benefits": "調査の利点",
+        "whyMatter": "なぜワイヤレス調査が重要なのか",
+        "process": "ワイヤレス調査プロセス"
+      },
+      "types": {
+        "predictive": {
+          "title": "予測調査",
+          "description": "新規展開のための仮想モデリング"
+        },
+        "passive": {
+          "title": "パッシブ調査",
+          "description": "既存のワイヤレスネットワークの分析"
+        },
+        "active": {
+          "title": "アクティブ調査",
+          "description": "実世界のパフォーマンステスト"
+        },
+        "spectrum": {
+          "title": "スペクトラム分析",
+          "description": "干渉の特定と軽減"
+        }
+      },
+      "deliverables": {
+        "heatmaps": "カバレッジヒートマップ",
+        "reports": "詳細な調査レポート",
+        "recommendations": "最適化の推奨事項",
+        "apPlacement": "アクセスポイント配置計画",
+        "channelPlan": "チャネル計画",
+        "documentation": "完全なドキュメント"
+      },
+      "benefits": {
+        "coverage": "最適なワイヤレスカバレッジ",
+        "performance": "ネットワークパフォーマンスの向上",
+        "reliability": "信頼性の向上",
+        "capacity": "ユーザー容量の増加",
+        "troubleshooting": "プロアクティブな問題防止",
+        "security": "セキュリティの強化と脆弱性の削減"
+      },
+      "services": {
+        "siteAnalysis": "包括的なサイト分析",
+        "siteAnalysisTitle": "サイト分析",
+        "siteAnalysisDesc": "物理環境とワイヤレス要件の徹底的な分析。",
+        "networkDesign": "ワイヤレスネットワーク設計",
+        "networkDesignTitle": "ネットワーク設計",
+        "networkDesignDesc": "特定のニーズに最適化されたカスタムワイヤレスネットワーク設計。",
+        "postDeployment": "展開後の検証",
+        "postDeploymentTitle": "展開検証",
+        "postDeploymentDesc": "ワイヤレスネットワークが設計仕様を満たすことを確認する検証調査。"
+      },
+      "whyMatter": {
+        "content": "プロフェッショナルなワイヤレス調査は、最適なネットワークパフォーマンスを確保し、ユーザーに影響を与える前に潜在的な問題を特定し、ワイヤレスインフラストラクチャ投資を最大化するために不可欠です。",
+        "issues": {
+          "deadZones": "デッドゾーンとカバレッジギャップを排除",
+          "interference": "干渉源を特定して軽減",
+          "capacity": "ユーザー密度に十分な容量を確保",
+          "performance": "ネットワークパフォーマンスと信頼性を最適化"
+        }
+      },
+      "process": {
+        "requirementsTitle": "要件収集",
+        "requirementsDesc": "ワイヤレスニーズ、ユーザー密度、パフォーマンス要件の理解。",
+        "surveyTitle": "サイト調査",
+        "surveyDesc": "プロフェッショナルグレードの機器を使用した包括的なワイヤレス調査の実施。",
+        "analysisTitle": "データ分析",
+        "analysisDesc": "問題と最適化の機会を特定するための調査データの分析。",
+        "recommendationsTitle": "推奨事項",
+        "recommendationsDesc": "ネットワーク改善と最適化のための詳細な推奨事項の提供。"
+      },
+      "cta": {
+        "title": "ワイヤレスネットワークを最適化",
+        "description": "プロフェッショナルなワイヤレスサーベイでネットワークパフォーマンスを最大化しましょう。",
+        "button": "調査を予約"
+      },
+      "features": {
+        "siteAssessmentDesc": "お客様の物理的なスペースとワイヤレス要件を総合的に評価します。",
+        "coverageMappingDesc": "施設全体の信号強度を示す詳細なヒートマップ。",
+        "performanceTestingDesc": "最適な速度と信頼性を確保するための徹底したテスト。",
+        "securityAnalysisDesc": "ワイヤレスセキュリティプロトコルの評価と推奨事項。",
+        "interferenceMitigationDesc": "信号干渉問題の特定と解決",
+        "capacityPlanningDesc": "現在および将来の無線通信容量のニーズを計画する。"
+      },
+      "surveyTypes": {
+        "coverage": "カバレッジ分析",
+        "performance": "パフォーマンスの最適化",
+        "capacity": "キャパシティ・プランニング"
+      }
+    },
+    "workforceSolutions": {
+      "title": "ワークフォースソリューション",
+      "subtitle": "動的なビジネスニーズに対応する柔軟な人材ソリューション。",
+      "mainDescription": "Akrinのワークフォースソリューションは、あらゆる規模のビジネスに柔軟な人材配置オプションを提供します。一時的な割り当てから専門的なプロジェクトチームまで、ビジネス目標の達成を支援するために適切な時期に適切な人材を提供します。",
+      "sections": {
+        "services": "サービス",
+        "industries": "対象業界",
+        "benefits": "クライアントの利点"
+      },
+      "services": {
+        "temporary": "一時的な人材配置",
+        "temporaryTitle": "一時的な人材配置",
+        "temporaryDesc": "季節的なピークや特別なプロジェクトのための短期的な人材配置ソリューション。",
+        "projectBased": "プロジェクトベースのチーム",
+        "projectBasedTitle": "プロジェクトチーム",
+        "projectBasedDesc": "適切なスキルと経験のミックスを持つ完全なプロジェクトチーム。",
+        "managed": "管理されたワークフォースサービス",
+        "managedTitle": "管理サービス",
+        "managedDesc": "採用、給与、コンプライアンスを含む包括的なワークフォース管理。",
+        "payroll": "給与計算サービス",
+        "payrollTitle": "給与計算サービス",
+        "payrollDesc": "一時的および契約スタッフのための完全な給与処理と管理。",
+        "compliance": "コンプライアンス管理",
+        "complianceTitle": "コンプライアンス管理",
+        "complianceDesc": "すべての労働法と規制への準拠を確保します。",
+        "training": "ワークフォーストレーニング",
+        "trainingTitle": "トレーニングプログラム",
+        "trainingDesc": "ワークフォースをスキルアップするためのカスタマイズされたトレーニングプログラム。",
+        "contractToHire": "契約から採用へのソリューション",
+        "contractToHireTitle": "契約から採用へ",
+        "contractToHireDesc": "柔軟な契約から正社員へのオプションで採用前に試すことができます。",
+        "directPlacement": "直接配置サービス",
+        "directPlacementTitle": "直接配置",
+        "directPlacementDesc": "長期的な人材ニーズのための正社員配置サービス。"
+      },
+      "industries": {
+        "it": "情報技術",
+        "manufacturing": "製造業",
+        "logistics": "物流＆流通",
+        "hospitality": "ホスピタリティ",
+        "retail": "小売",
+        "healthcare": "ヘルスケア"
+      },
+      "benefits": {
+        "flexibility": "ワークフォースの柔軟性",
+        "flexibilityTitle": "柔軟性",
+        "costControl": "コスト管理",
+        "costTitle": "コスト効率",
+        "riskMitigation": "リスク軽減",
+        "riskTitle": "リスク軽減",
+        "expertise": "専門スキルへのアクセス",
+        "scalability": "迅速なスケーラビリティ",
+        "compliance": "規制コンプライアンス"
+      },
+      "cta": {
+        "title": "柔軟なワークフォースを構築",
+        "description": "Akrinが成功に必要な人材ソリューションを提供します。",
+        "button": "始める"
+      }
+    }
+  },
+  "privacy": {
+    "title": "プライバシーポリシー",
+    "lastUpdated": "最終更新日：2025年1月",
+    "introduction": {
+      "title": "はじめに",
+      "content": "Akrin株式会社（以下「当社」）は、お客様のプライバシーを尊重し、個人データの保護に取り組んでいます。このプライバシーポリシーは、当社のサービスをご利用いただく際に、お客様の情報をどのように収集、使用、保護するかを説明しています。"
+    },
+    "informationWeCollect": {
+      "title": "収集する情報",
+      "personal": {
+        "title": "個人情報",
+        "item1": "氏名と連絡先（メールアドレス、電話番号、住所）",
+        "item2": "会社名とビジネス情報",
+        "item3": "支払いおよび請求情報",
+        "item4": "通信履歴とサービスの設定"
+      },
+      "technical": {
+        "title": "技術情報",
+        "item1": "IPアドレスとブラウザ情報",
+        "item2": "デバイスとオペレーティングシステムの詳細",
+        "item3": "利用データと分析"
+      }
+    },
+    "howWeUse": {
+      "title": "情報の使用方法",
+      "item1": "ITサービスの提供と維持のため",
+      "item2": "サービスについてお客様と連絡を取るため",
+      "item3": "支払い処理と請求管理のため",
+      "item4": "サービスと顧客体験の向上のため",
+      "item5": "法的義務を遵守するため"
+    },
+    "dataProtection": {
+      "title": "データ保護",
+      "content": "当社は、お客様の個人データを不正アクセス、改ざん、開示、破壊から保護するために、適切な技術的および組織的対策を実施しています。当社のセキュリティ対策には、暗号化、アクセス制御、定期的なセキュリティ評価が含まれます。"
+    },
+    "dataSharing": {
+      "title": "データ共有",
+      "content": "当社は、お客様の個人情報を第三者に販売または賃貸することはありません。以下の状況でのみ、お客様の情報を共有する場合があります：",
+      "item1": "お客様の同意または指示がある場合",
+      "item2": "当社のビジネス運営を支援する信頼できるサービスプロバイダーと",
+      "item3": "法的義務を遵守するため、または当社の権利を保護するため"
+    },
+    "yourRights": {
+      "title": "お客様の権利",
+      "content": "適用されるデータ保護法の下で、お客様には以下の権利があります：",
+      "item1": "個人データへのアクセス権",
+      "item2": "不正確なデータの訂正権",
+      "item3": "データの削除を要求する権利",
+      "item4": "処理に異議を申し立てるまたは制限する権利"
+    },
+    "cookies": {
+      "title": "クッキー",
+      "content": "当社は、ブラウジング体験を向上させ、サイトトラフィックを分析するために、クッキーと同様の追跡技術を使用しています。ブラウザの設定でクッキーの設定を制御できます。"
+    },
+    "contact": {
+      "title": "お問い合わせ",
+      "content": "このプライバシーポリシーまたは当社のデータ慣行についてご質問がある場合は、お問い合わせください：",
+      "company": "Akrin株式会社",
+      "email": "メール：support@akrin.jp",
+      "phone": "電話：03-6821-1223",
+      "address": "住所：〒107-0062 東京都港区南青山2-4-15"
+    }
+  },
+  "terms": {
+    "title": "利用規約",
+    "lastUpdated": "最終更新日：2025年1月",
+    "acceptance": {
+      "title": "1. 規約の承諾",
+      "content": "Akrinのサービスにアクセスまたは使用することにより、お客様はこれらの利用規約に拘束されることに同意します。これらの規約に同意しない場合は、当社のサービスを使用しないでください。"
+    },
+    "services": {
+      "title": "2. サービス",
+      "content": "Akrinは以下を含む包括的なITソリューションを提供します：",
+      "item1": "マネージドITサービスとサポート",
+      "item2": "サイバーセキュリティとデータ保護",
+      "item3": "クラウドソリューションとインフラストラクチャ",
+      "item4": "ITコンサルティングとデジタルトランスフォーメーション"
+    },
+    "userResponsibilities": {
+      "title": "3. ユーザーの責任",
+      "content": "当社のサービスを使用する際、お客様は以下に同意します：",
+      "item1": "正確で完全な情報を提供すること",
+      "item2": "アカウント資格情報の機密性を維持すること",
+      "item3": "すべての適用法と規制を遵守すること",
+      "item4": "当社のシステムやサービスに害を与える可能性のある活動に従事しないこと"
+    },
+    "payment": {
+      "title": "4. 支払い条件",
+      "content": "当社のサービスの支払い条件は以下の通りです：",
+      "item1": "すべての料金はサービス契約で指定された通りに支払われます",
+      "item2": "支払いの遅延には追加料金が発生する場合があります",
+      "item3": "当社は、未払いに対してサービスを停止する権利を留保します"
+    },
+    "intellectualProperty": {
+      "title": "5. 知的財産",
+      "content": "当社のサービスにおけるすべての知的財産権（ソフトウェア、ドキュメント、資料を含む）は、Akrinまたは当社のライセンサーに帰属します。書面による許可なく、当社の独自資料をコピー、変更、または配布することはできません。"
+    },
+    "confidentiality": {
+      "title": "6. 機密保持",
+      "content": "両当事者は、ビジネス関係の過程で共有される独自または機密情報の機密性を維持することに同意します。"
+    },
+    "limitation": {
+      "title": "7. 責任の制限",
+      "content": "法律で許可される最大限の範囲で、Akrinは当社のサービスの使用から生じる間接的、偶発的、特別、または結果的な損害に対して責任を負いません。"
+    },
+    "termination": {
+      "title": "8. 終了",
+      "content": "いずれかの当事者は、サービス契約を終了することができます：",
+      "item1": "30日前の書面による通知",
+      "item2": "重大な違反の場合は即時",
+      "item3": "サービス契約で指定された通り"
+    },
+    "governingLaw": {
+      "title": "9. 準拠法",
+      "content": "これらの規約は、日本の法律に準拠し、それに従って解釈されます。紛争は東京の裁判所で解決されます。"
+    },
+    "changes": {
+      "title": "10. 規約の変更",
+      "content": "当社は、いつでもこれらの規約を変更する権利を留保します。重要な変更については、メールまたは当社のウェブサイトを通じてお知らせします。"
+    },
+    "contact": {
+      "title": "11. 連絡先情報",
+      "content": "これらの利用規約に関するご質問は、お問い合わせください：",
+      "company": "Akrin株式会社",
+      "email": "メール：support@akrin.jp",
+      "phone": "電話：03-6821-1223",
+      "address": "住所：〒107-0062 東京都港区南青山2-4-15"
+    }
+  },
+  "cookies": {
+    "title": "クッキーを使用しています",
+    "description": "当社では、ブラウジング体験の向上、サイトトラフィックの分析、コンテンツのパーソナライズのためにクッキーを使用しています。「同意する」をクリックすると、クッキーの使用に同意したことになります。",
+    "learnMore": "詳細を見る",
+    "accept": "すべてのクッキーを受け入れる",
+    "decline": "オプションのクッキーを拒否",
+    "customize": "クッキー設定"
+  }
+}

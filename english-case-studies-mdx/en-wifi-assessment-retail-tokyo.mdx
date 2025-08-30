@@ -1,0 +1,56 @@
+---
+title: "Retail Wi‑Fi Assessment & Optimization (Tokyo + Warehouse)"
+slug: "wifi-assessment-retail-tokyo"
+date: "2025-08-16"
+tags: ['wifi', 'ekahau', 'assessment', 'retail']
+locale: "en"
+image: "/case-assets/wifi-assessment-retail-tokyo/hero.webp"
+metaDescription: "Ekahau‑driven Wi‑Fi assessment and redesign for a Tokyo retail site and warehouse improved roaming, cut disconnects, and stabilized POS/VoIP."
+gallery:
+  - src: /case-assets/wifi-assessment-retail-tokyo/hero.webp
+    alt: Wi‑Fi survey heatmap (redacted)
+---
+![Wi‑Fi survey heatmap (redacted)](/case-assets/wifi-assessment-retail-tokyo/hero.webp "Survey Heatmap")
+
+# Overview
+We executed an on‑site Wi‑Fi assessment and redesign using Ekahau across four retail floors and an adjacent warehouse in Tokyo. The work eliminated frequent POS disconnects and stabilized roaming for scanners and voice, improving both customer checkout and back‑of‑house operations.
+
+**Client.** Retail chain operating four floors plus a warehouse in Tokyo
+
+## Context
+The environment mixed legacy AP placements with recent renovations, producing coverage gaps, excessive co‑channel interference, and inconsistent band‑steering. Warehouse aisles created reflective paths and hidden‑node scenarios. Troubleshooting was reactive, with little baseline for RSSI, SNR, channel utilization, or interference.
+
+## Challenge
+- Reduce disconnects at POS and voice dropouts during roaming
+- Improve scanner performance in long warehouse aisles with high multipath
+- Establish a repeatable assessment baseline and acceptance criteria
+- Make changes without disrupting store hours or safety procedures
+
+## Approach
+Our Ekahau assessment combined passive/active surveys and spectrum analysis to map RF conditions. We designed a 20/40 MHz channel plan that balanced capacity and co‑channel contention, enabled 802.11k/v for assisted roaming, and introduced Target Wake Time where appropriate. Directional antennas were applied to aisles to focus energy and reduce reflections.
+
+## Implementation
+- Survey and baselining: passive/active Ekahau surveys; captured RSSI, SNR, channel utilization, and interference; spectrum analyzed for non‑Wi‑Fi noise
+- AP and RF tuning: relocated APs, adjusted Tx power, tightened band‑steering, and set 20/40 MHz channels per floor plan; enabled 802.11k/v and TWT
+- Warehouse optimizations: directional antennas along aisles to limit multipath and hidden nodes; aisle‑end placement patterns standardized
+- Validation: post‑cutover surveys confirmed KPIs and acceptance thresholds per area
+
+## Outcomes
+- Disconnects reduced by 62% and VoIP re‑association under 1.5 seconds during roaming
+- Average time per stock‑take scan reduced by 29% thanks to improved roaming stability
+- Staff satisfaction improved; incidents dropped after proactive monitoring and clearer runbooks
+
+## Operations and runbooks
+We documented RF baselines by area, set alert thresholds for utilization and retries, and created a light runbook for store teams covering scanner checks, AP health, and when to escalate to network operations.
+
+## Safety and change windows
+Warehouse work complied with safety aisles and lift policies, and retail hours were protected. Changes were staged by floor with spot checks for POS, scanners, and voice before moving to the next area. Acceptance criteria were agreed with store management.
+
+## Business impact
+Checkout lines moved faster and stock‑take accuracy improved as roaming stabilized; store staff spent less time retrying scans. The revised RF plan also reduced interference complaints from nearby tenants, and proactive monitoring cut incident volume. Store teams reported fewer radio resets and more consistent scan‑to‑post times during inventory peaks and deliveries. We also documented a concise RF change checklist to keep performance steady during seasonal floor resets.
+
+## Timeline
+Six‑week engagement including acceptance after post‑survey validation
+
+## Technology
+Wi‑Fi assessment and design with Ekahau, controller analytics, on‑site validation

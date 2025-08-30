@@ -1,0 +1,110 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Enhanced gradients for a more beautiful look -->
+    <radialGradient id="primaryGlow" cx="0.3" cy="0.3" r="0.8">
+      <stop offset="0%" stop-color="#7A28FF" stop-opacity="0.15"/>
+      <stop offset="50%" stop-color="#14b8a6" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#7A28FF" stop-opacity="0.03"/>
+    </radialGradient>
+    
+    <radialGradient id="secondaryGlow" cx="0.7" cy="0.8" r="0.9">
+      <stop offset="0%" stop-color="#EC4899" stop-opacity="0.12"/>
+      <stop offset="60%" stop-color="#7A28FF" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#14b8a6" stop-opacity="0.02"/>
+    </radialGradient>
+    
+    <!-- Elegant flowing curve gradient -->
+    <linearGradient id="flowingLine" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7A28FF" stop-opacity="0.4"/>
+      <stop offset="30%" stop-color="#14b8a6" stop-opacity="0.6"/>
+      <stop offset="70%" stop-color="#EC4899" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#7A28FF" stop-opacity="0.3"/>
+    </linearGradient>
+    
+    <!-- Mesh pattern for subtle texture -->
+    <pattern id="meshPattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+      <circle cx="20" cy="20" r="1" fill="#7A28FF" opacity="0.05"/>
+      <circle cx="60" cy="40" r="0.8" fill="#14b8a6" opacity="0.04"/>
+      <circle cx="40" cy="70" r="1.2" fill="#EC4899" opacity="0.03"/>
+      <circle cx="80" cy="90" r="0.6" fill="#7A28FF" opacity="0.06"/>
+    </pattern>
+    
+    <!-- Animated floating particles -->
+    <g id="particle">
+      <circle r="2" fill="#7A28FF" opacity="0.3">
+        <animate attributeName="opacity" values="0.1;0.6;0.1" dur="4s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </defs>
+  
+  <!-- Clean white background -->
+  <rect width="1920" height="1080" fill="white"/>
+  
+  <!-- Subtle mesh texture overlay -->
+  <rect width="1920" height="1080" fill="url(#meshPattern)" opacity="0.3"/>
+  
+  <!-- Primary glow element - top left -->
+  <ellipse cx="400" cy="300" rx="600" ry="400" fill="url(#primaryGlow)"/>
+  
+  <!-- Secondary glow element - bottom right -->
+  <ellipse cx="1520" cy="780" rx="700" ry="500" fill="url(#secondaryGlow)"/>
+  
+  <!-- Elegant flowing curves -->
+  <path d="M-100 800 Q400 600 800 500 Q1200 400 1600 300 Q1800 250 2000 200" 
+        stroke="url(#flowingLine)" 
+        stroke-width="2" 
+        fill="none" 
+        opacity="0.6"/>
+        
+  <path d="M-50 850 Q450 650 850 550 Q1250 450 1650 350 Q1850 300 2050 250" 
+        stroke="url(#flowingLine)" 
+        stroke-width="1.5" 
+        fill="none" 
+        opacity="0.4"/>
+        
+  <path d="M0 900 Q500 700 900 600 Q1300 500 1700 400 Q1900 350 2100 300" 
+        stroke="url(#flowingLine)" 
+        stroke-width="1" 
+        fill="none" 
+        opacity="0.2"/>
+  
+  <!-- Floating geometric shapes -->
+  <g opacity="0.1">
+    <!-- Triangular elements echoing the A-shape -->
+    <path d="M200 200 L240 160 L240 240 Z" fill="#7A28FF"/>
+    <path d="M1600 600 L1640 560 L1640 640 Z" fill="#14b8a6"/>
+    <path d="M800 900 L840 860 L840 940 Z" fill="#EC4899"/>
+    
+    <!-- Parallelogram elements -->
+    <path d="M1200 150 L1250 150 L1270 190 L1220 190 Z" fill="#7A28FF"/>
+    <path d="M600 750 L650 750 L670 790 L620 790 Z" fill="#14b8a6"/>
+  </g>
+  
+  <!-- Animated floating particles -->
+  <g opacity="0.4">
+    <use href="#particle" x="300" y="400">
+      <animateTransform attributeName="transform" type="translate" 
+                        values="0,0; 20,-30; 0,0" dur="6s" repeatCount="indefinite"/>
+    </use>
+    <use href="#particle" x="800" y="200">
+      <animateTransform attributeName="transform" type="translate" 
+                        values="0,0; -15,25; 0,0" dur="8s" repeatCount="indefinite"/>
+    </use>
+    <use href="#particle" x="1400" y="500">
+      <animateTransform attributeName="transform" type="translate" 
+                        values="0,0; 25,-20; 0,0" dur="7s" repeatCount="indefinite"/>
+    </use>
+    <use href="#particle" x="500" y="700">
+      <animateTransform attributeName="transform" type="translate" 
+                        values="0,0; -20,15; 0,0" dur="5s" repeatCount="indefinite"/>
+    </use>
+  </g>
+  
+  <!-- Subtle radial overlay for depth -->
+  <radialGradient id="depthOverlay" cx="0.5" cy="0.5" r="0.8">
+    <stop offset="0%" stop-color="white" stop-opacity="0"/>
+    <stop offset="70%" stop-color="white" stop-opacity="0"/>
+    <stop offset="100%" stop-color="white" stop-opacity="0.1"/>
+  </radialGradient>
+  <rect width="1920" height="1080" fill="url(#depthOverlay)"/>
+</svg>

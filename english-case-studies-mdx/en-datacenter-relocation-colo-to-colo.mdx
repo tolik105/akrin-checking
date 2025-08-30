@@ -1,0 +1,76 @@
+---
+title: "Data Center Relocation & Consolidation (Metro Tokyo)"
+slug: "datacenter-relocation-colo-to-colo"
+date: "2025-08-16"
+tags: ['datacenter', 'relocation', 'colo', 'bgp', 'storage']
+locale: "en"
+image: "/case-assets/datacenter-relocation-colo-to-colo/hero.webp"
+metaDescription: "Dual-running colos with staged BGP cutover and storage replication enabled a controlled move with under 45 minutes downtime and lower power/maintenance."
+---
+![Staged BGP cutover diagram (abstracted)](/case-assets/datacenter-relocation-colo-to-colo/hero.webp "BGP Cutover")
+
+# Overview
+Dual‑running two colos with staged BGP cutover and storage replication enabled a controlled move with minimal downtime.
+
+**Client.** Enterprise colo migration within the Tokyo metro
+
+## Context
+Ageing facilities, rising opex, and complex cabling made growth difficult. Minimal windows for change required a rehearsed approach and verifiable rollback.
+
+## Challenge
+We also measured baseline performance (latency, throughput) between colos and established thresholds so we could validate no degradation during and after the move. Facility readiness (power, cooling, and access) was signed off before equipment was scheduled.
+
+- Move critical workloads with no data loss and minimal downtime
+- Maintain services during physical relocation and reduce recurring opex
+- Validate network performance and facility readiness prior to physical moves
+
+
+## Approach and rationale
+We operated both colos in parallel with staged L3/BGP cutover, replicated storage to minimize the final delta, and used rehearsed failover to validate runbooks before the move.
+We balanced move groups by service criticality and rack density, rehearsed runbooks in a lab environment, and prepared back‑out plans for each wave. Power and cooling envelopes were validated before any physical moves.
+
+
+## Implementation
+Additionally, we validated failover in a pilot wave and captured timings (cut, validate, back‑out) to calibrate maintenance windows for subsequent waves.
+
+- Parallel operation; staged L3/BGP cutover
+- Storage replication (snap/incremental) with short final delta
+- Hot/cold aisle layout, dual power, 8–9 new racks then consolidation
+
+## Implementation details
+- Pre‑cabled structured cabling, PDU mapping, and labeling
+- Structured labeling and audit checklist shortened rack rebuild times and reduced post‑move troubleshooting
+- Environmental monitoring trended before and after to confirm improved airflow and heat distribution
+
+- BGP policies and maintenance windows sequenced by service
+- Asset inventory and PDU mapping validated against labels; Fluke tests for copper and light OTDR for critical fiber
+
+- Back‑out plans, comms matrix, and night‑shift coordination
+- Change windows sequenced per service with stakeholder comms templates and explicit back‑out paths
+- Final delta windows rehearsed; monitoring thresholds tightened during cutover to detect anomalies early
+
+## Risks and controls
+- Night‑shift fatigue and change overload mitigated with shorter waves and checkpoints
+- Facility‑level dependencies (PDU, access) tracked as first‑class items in the runbook
+
+
+## Outcomes
+- Zero data loss; total downtime <45 minutes (overnight)
+- Rack footprint 6 → 4; −22% power/maintenance opex
+We captured cutover timings and post‑move incident rates to refine the runbook for future relocations and inform power/cooling capacity plans.
+
+- Improved airflow and maintenance accessibility
+
+## Lessons learned
+- Rehearsed failover scripts compress real downtime and reduce stress on night shifts
+- Labeling quality determines rebuild speed; invest early
+- Keep BGP and storage cutovers decoupled to simplify rollback paths
+
+## Timeline
+Planned over 6 weeks with rehearsed failover
+
+## Technology
+BGP, enterprise storage replication, DC facilities
+
+## Next steps
+Decommission legacy gear and optimize power; related services: [ITAD](/services/itad-japan-apac-us), [Cloud Infrastructure](/services/cloud-infrastructure).

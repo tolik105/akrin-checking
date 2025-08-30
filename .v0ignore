@@ -1,0 +1,9 @@
+# Ignore large videos for v0 upload
+public/video/*.mp4
+assets/videos/*.mp4
+
+public/video
+assets/videos
+screenshots
+assets/videos
+public/video

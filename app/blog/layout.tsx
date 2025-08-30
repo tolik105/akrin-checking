@@ -1,0 +1,48 @@
+import type { Metadata } from "next"
+import { Footer } from "@/components/footer"
+import type React from "react"
+import { LanguageProvider } from "@/contexts/language-context"
+import { I18nProvider } from "@/components/i18n-provider"
+import { Toaster } from "@/components/ui/toaster"
+import { CookieConsent } from "@/components/cookie-consent"
+import { GoogleAnalytics } from "@/components/google-analytics"
+import { RecaptchaScript } from "@/components/recaptcha-script"
+import { HreflangLinks } from "@/components/hreflang-links"
+import { BrowserExtensionSafeWrapper } from "@/components/hydration-boundary"
+import { HydrationErrorBoundary } from "@/components/hydration-error-boundary"
+import { MobilePerformanceOptimizer } from "@/components/mobile-performance"
+import PrelineInit from "@/components/preline-init"
+
+export const metadata: Metadata = {
+  title: {
+    default: 'AKRIN IT Blog - Expert Insights & Technology Trends',
+    template: '%s | AKRIN IT Blog'
+  },
+  description: 'Expert insights on IT infrastructure, cybersecurity, and digital transformation in Japan from AKRIN technology specialists.',
+}
+
+interface BlogLayoutProps {
+  children: React.ReactNode
+}
+
+export default function BlogLayout({ children }: BlogLayoutProps) {
+  return (
+    <HydrationErrorBoundary>
+      <BrowserExtensionSafeWrapper>
+        <div suppressHydrationWarning={true} data-blog-page>
+          <I18nProvider>
+            <LanguageProvider>
+              <PrelineInit />
+              <MobilePerformanceOptimizer />
+              {/* No main site navigation - blog pages have their own navigation */}
+              <main id="main-content" className="flex-grow min-h-screen">{children}</main>
+              <Footer />
+              <Toaster />
+              <CookieConsent />
+            </LanguageProvider>
+          </I18nProvider>
+        </div>
+      </BrowserExtensionSafeWrapper>
+    </HydrationErrorBoundary>
+  )
+}

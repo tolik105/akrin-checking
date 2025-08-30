@@ -1,0 +1,524 @@
+/* Mobile-specific refinements for the home Case Studies strip */
+@media (hover: none) and (pointer: coarse) {
+  /* Keep overlay visible on touch devices */
+  .cs-card .panel { transform: translateX(0) !important; opacity: 1 !important; }
+}
+
+/* Fine-tune typography for mobile like NSC */
+@media (max-width: 640px) {
+  .cs-card div[class*="text-lg"] {
+    font-size: 1rem !important;
+    line-height: 1.3 !important;
+    word-break: break-word;
+  }
+}
+
+@media (max-width: 425px) {
+  .cs-card div[class*="text-lg"] {
+    font-size: 0.9rem !important;
+    line-height: 1.25 !important;
+  }
+  .cs-card .cta {
+    font-size: 0.8125rem !important;
+    padding: 0.5rem 0.875rem !important;
+  }
+}
+
+/* Mobile-First Optimizations for AKRIN Website */
+
+/* ===================================
+   1. MOBILE-FIRST BASE STYLES
+   =================================== */
+
+/* Reset box-sizing for all elements */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Prevent horizontal scrolling on mobile without breaking sticky */
+body {
+  overflow-x: clip;
+  width: 100%;
+  position: relative;
+}
+
+/* Mobile-first typography */
+html {
+  /* Base font size that scales better on mobile */
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* ===================================
+   2. RESPONSIVE TYPOGRAPHY
+   =================================== */
+
+/* Fluid typography using clamp() */
+:root {
+  /* Heading sizes - mobile first */
+  --h1-size: clamp(1.75rem, 5vw + 1rem, 3.5rem);
+  --h2-size: clamp(1.5rem, 4vw + 0.75rem, 2.5rem);
+  --h3-size: clamp(1.25rem, 3vw + 0.5rem, 1.875rem);
+  --h4-size: clamp(1.125rem, 2vw + 0.5rem, 1.5rem);
+  --h5-size: clamp(1rem, 1.5vw + 0.5rem, 1.25rem);
+  --h6-size: clamp(0.875rem, 1vw + 0.5rem, 1.125rem);
+  
+  /* Body text sizes */
+  --text-base: clamp(0.875rem, 1vw + 0.75rem, 1rem);
+  --text-sm: clamp(0.75rem, 0.5vw + 0.625rem, 0.875rem);
+  --text-lg: clamp(1rem, 1.5vw + 0.75rem, 1.125rem);
+  
+  /* Spacing - mobile first */
+  --space-xs: clamp(0.25rem, 1vw, 0.5rem);
+  --space-sm: clamp(0.5rem, 2vw, 1rem);
+  --space-md: clamp(1rem, 3vw, 1.5rem);
+  --space-lg: clamp(1.5rem, 4vw, 2.5rem);
+  --space-xl: clamp(2rem, 5vw, 4rem);
+  
+  /* Container padding */
+  --container-padding: clamp(1rem, 5vw, 3rem);
+}
+
+/* Apply fluid typography */
+h1 { 
+  font-size: var(--h1-size);
+  line-height: 1.2;
+  margin-bottom: var(--space-md);
+}
+
+h2 { 
+  font-size: var(--h2-size);
+  line-height: 1.25;
+  margin-bottom: var(--space-md);
+}
+
+h3 { 
+  font-size: var(--h3-size);
+  line-height: 1.3;
+  margin-bottom: var(--space-sm);
+}
+
+p, .text-base {
+  font-size: var(--text-base);
+  line-height: 1.6;
+  margin-bottom: var(--space-sm);
+}
+
+/* ===================================
+   3. TOUCH-FRIENDLY INTERACTIVE ELEMENTS
+   =================================== */
+
+/* Minimum touch target size (48x48px) */
+button, 
+a, 
+input[type="button"],
+input[type="submit"],
+.btn,
+.button {
+  min-height: 48px;
+  min-width: 48px;
+  padding: 12px 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+/* Increase clickable area for small links */
+a {
+  position: relative;
+  padding: 4px 8px;
+  margin: -4px -8px;
+}
+
+/* Form inputs mobile optimization */
+input,
+textarea,
+select {
+  font-size: 16px; /* Prevents zoom on iOS */
+  padding: 12px 16px;
+  width: 100%;
+  border-radius: 8px;
+  border: 2px solid #e5e7eb;
+  transition: border-color 0.2s;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #6366f1;
+}
+
+/* ===================================
+   4. MOBILE NAVIGATION FIXES
+   =================================== */
+
+/* Mobile menu button */
+.mobile-menu-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 12px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+@media (min-width: 1024px) {
+  .mobile-menu-button {
+    display: none;
+  }
+}
+
+/* Mobile navigation menu */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 80%;
+  max-width: 320px;
+  height: 100vh;
+  background: white;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  transition: left 0.3s ease;
+  z-index: 999;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.mobile-nav.open {
+  left: 0;
+}
+
+/* Mobile overlay */
+.mobile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 998;
+}
+
+.mobile-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ===================================
+   5. RESPONSIVE CONTAINERS
+   =================================== */
+
+.container,
+.responsive-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+/* Full-width sections with internal padding */
+.section {
+  padding: var(--space-xl) 0;
+}
+
+/* ===================================
+   6. RESPONSIVE GRID SYSTEM
+   =================================== */
+
+/* Mobile-first grid */
+.grid {
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: 1fr;
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+  .grid-md-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .grid-md-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Desktop and up */
+@media (min-width: 1024px) {
+  .grid-lg-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .grid-lg-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ===================================
+   7. MOBILE-OPTIMIZED CARDS
+   =================================== */
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: var(--space-md);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* ===================================
+   8. RESPONSIVE IMAGES
+   =================================== */
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Aspect ratio containers */
+.aspect-16-9 {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.aspect-16-9 img,
+.aspect-16-9 video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===================================
+   9. MOBILE TABLE OPTIMIZATION
+   =================================== */
+
+/* Make tables responsive */
+.table-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0 calc(var(--container-padding) * -1);
+  padding: 0 var(--container-padding);
+}
+
+table {
+  min-width: 100%;
+  border-collapse: collapse;
+}
+
+/* Stack table on very small screens */
+@media (max-width: 640px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  
+  tr {
+    border: 1px solid #e5e7eb;
+    margin-bottom: 10px;
+  }
+  
+  td {
+    border: none;
+    position: relative;
+    padding-left: 50%;
+  }
+  
+  td:before {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    white-space: nowrap;
+    font-weight: 600;
+    content: attr(data-label);
+  }
+}
+
+/* ===================================
+   10. PERFORMANCE OPTIMIZATIONS
+   =================================== */
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Hardware acceleration for smooth scrolling */
+.smooth-scroll {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+/* Optimize font loading */
+.font-display-swap {
+  font-display: swap;
+}
+
+/* ===================================
+   11. UTILITY CLASSES
+   =================================== */
+
+/* Hide on mobile */
+@media (max-width: 767px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+/* Show only on mobile */
+.show-mobile {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .show-mobile {
+    display: none !important;
+  }
+}
+
+/* Text alignment utilities */
+.text-center-mobile {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .text-center-mobile {
+    text-align: left;
+  }
+}
+
+/* Margin/padding utilities */
+.p-mobile {
+  padding: var(--space-sm);
+}
+
+.m-mobile {
+  margin: var(--space-sm);
+}
+
+/* ===================================
+   12. FIXES FOR COMMON ISSUES
+   =================================== */
+
+/* Fix horizontal scroll issues */
+.overflow-x-hidden {
+  overflow-x: hidden;
+}
+
+/* Fix iOS button styling */
+input[type="submit"],
+input[type="button"],
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Fix iOS input zoom */
+@media (max-width: 767px) {
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"],
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+}
+
+/* Fix sticky hover states on touch devices */
+@media (hover: hover) and (pointer: fine) {
+  a:hover,
+  button:hover {
+    opacity: 0.8;
+  }
+}
+
+/* ===================================
+   13. LOADING STATES
+   =================================== */
+
+/* Skeleton loading for better perceived performance */
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ===================================
+   14. ACCESSIBILITY IMPROVEMENTS
+   =================================== */
+
+/* Focus visible for keyboard navigation */
+:focus-visible {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+}
+
+/* Skip to content link */
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #6366f1;
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 0 0 4px 0;
+  z-index: 100;
+}
+
+.skip-to-content:focus {
+  top: 0;
+}
+
+/* Screen reader only content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

@@ -1,0 +1,35 @@
+/* AKRIN Brand Colors - Based on Logo */
+:root {
+  /* Primary Brand Colors from Logo */
+  --akrin-purple: #7A28FF;
+  --akrin-black: #1a1a1a;
+  --akrin-white: #FFFFFF;
+  
+  /* Shades of Purple (Primary) */
+  --akrin-purple-50: #f3ebff;
+  --akrin-purple-100: #e6d7ff;
+  --akrin-purple-200: #cdb0ff;
+  --akrin-purple-300: #b388ff;
+  --akrin-purple-400: #9a61ff;
+  --akrin-purple-500: #7A28FF; /* Main */
+  --akrin-purple-600: #6220cc;
+  --akrin-purple-700: #4a1899;
+  --akrin-purple-800: #311066;
+  --akrin-purple-900: #190833;
+  
+  /* Shades of Black/Gray */
+  --akrin-gray-50: #f8f8f8;
+  --akrin-gray-100: #f0f0f0;
+  --akrin-gray-200: #e0e0e0;
+  --akrin-gray-300: #c0c0c0;
+  --akrin-gray-400: #808080;
+  --akrin-gray-500: #606060;
+  --akrin-gray-600: #404040;
+  --akrin-gray-700: #303030;
+  --akrin-gray-800: #202020;
+  --akrin-gray-900: #1a1a1a; /* Main */
+  
+  /* Allowed Accent Colors (sparingly) */
+  --akrin-accent-light: #e6d7ff; /* Light purple for backgrounds */
+  --akrin-accent-dark: #190833; /* Dark purple for text */
+}

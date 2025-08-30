@@ -1,0 +1,53 @@
+---
+title: "SD‑WAN for Insurance (Nationwide, 30+ Sites)"
+slug: "sdwan-insurance-30-sites-japan"
+date: "2025-08-16"
+tags: ['sd-wan', 'insurance', 'ztp', 'japan', 'mpls-replacement']
+locale: "en"
+image: "/case-assets/sdwan-insurance-30-sites-japan/hero.webp"
+metaDescription: "Controller‑based SD‑WAN replaced MPLS across 30+ branches with ZTP, app‑aware routing, and LTE/5G failover—lower TCO, faster rollout, better SaaS."
+---
+![SD‑WAN controller overview (anonymized)](/case-assets/sdwan-insurance-30-sites-japan/hero.webp "SD‑WAN Overview")
+
+# Overview
+We migrated a nationwide insurance network from MPLS to controller‑based SD‑WAN. The program standardized edge policy, introduced Zero‑Touch Provisioning (ZTP) for new and brownfield sites, and enabled application‑aware routing with sub‑second failover across Internet and LTE/5G. The initiative reduced total cost of ownership while improving SaaS user experience.
+
+**Client.** Major insurance company operating Japan‑wide with regional hubs and branch offices
+
+## Context
+The legacy MPLS footprint delivered predictable latency but at high recurring cost and slow change lead times. SaaS adoption outpaced the WAN’s ability to prioritize modern traffic, and the business needed a rollout model that could add sites quickly without heavy on‑site engineering. Operationally, the team sought unified observability and simpler change control.
+
+## Challenge
+- Reduce recurring circuit costs without compromising reliability or security
+- Improve SaaS performance and voice resilience during access outages
+- Standardize segmentation between payment systems, office traffic, and guests
+- Deploy at scale with minimal on‑site work and measurable, low‑risk cutovers
+
+## Approach
+We designed a dual‑access underlay combining primary Internet with LTE/5G for continuity and placed SD‑WAN edges under a central controller. A reference policy defined business‑intent traffic classes (SaaS, voice, payment, admin) with thresholds for loss/jitter/latency, and dynamic path control steered flows per real‑time telemetry. ZTP was used to stage devices so branches could come online with remote assistance only.
+
+## Implementation
+- Provisioning: ZTP templates bound to site profiles (bandwidth, carrier, segmentation). Controller enforced consistent device posture and software baselines.
+- Routing and security: App identification, SLA‑based path selection, automatic failover; IPSec overlays to regional hubs where required.
+- Segmentation: PCI‑minded separation for payment devices; office and guest networks isolated with strict east‑west controls.
+- Observability: Centralized dashboards, threshold‑based alerts, and runbooks; change windows rehearsed in a pilot wave to validate rollback.
+
+## Outcomes
+- Network TCO reduced by 28% after carrier rationalization and MPLS exit
+- Failover under one second (median) maintained POS and voice continuity; SaaS latency improved by 18% on average
+- New‑site lead time decreased by 45% through ZTP and standardized profiles; troubleshooting MTTR dropped due to unified telemetry
+
+## Operations and training
+Operations received runbooks, alert thresholds, and a change calendar aligned to business events. A light training program scaled local hands for basic troubleshooting, reserving escalations for regional hubs.
+
+## Risk management and change control
+We rehearsed cutovers in a pilot lab with realistic latency and packet‑loss profiles, validated rollback for each policy change, and scheduled windows outside payroll and month‑end. A backout plan covered provider faults and CPE failures. Success criteria included traffic acceptance tests for POS, voice MOS baselines, and SaaS KPIs captured before/after to verify improvement.
+
+## Business impact
+Branches experienced fewer escalations during access incidents, new‑site turn‑ups were more predictable, and SaaS adoption increased once latency and jitter stabilized. Unified telemetry and standardized policy improved audit readiness and reduced configuration drift.
+
+## Timeline
+Three‑quarter phased rollout. A pilot established templates and KPIs, followed by regional waves. Each wave concluded with acceptance and knowledge transfer to operations.
+
+## Technology
+SD‑WAN controller, IPSec overlays, LTE/5G uplinks, centralized observability/alerting, ZTP templates

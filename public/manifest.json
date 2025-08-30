@@ -1,0 +1,22 @@
+{
+  "name": "Akrin IT Solutions - Leading IT Services Provider in Japan",
+  "short_name": "Akrin",
+  "description": "Transform your business with Akrin's comprehensive IT solutions. We offer managed services, cybersecurity, cloud migration, and 24/7 support for businesses in Japan and globally.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#00b3a5",
+  "orientation": "portrait-primary",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["business", "productivity", "utilities"],
+  "icons": [
+    {
+      "src": "/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    // Add a 512x512 PNG later for better PWA install icon support
+  ]
+}

@@ -1,0 +1,70 @@
+---
+title: "Manufacturing Cloud Migration (Kantō / Osaka)"
+slug: "cloud-migration-manufacturing"
+date: "2025-08-16"
+tags: ['cloud', 'azure', 'dr', 'manufacturing']
+locale: "en"
+image: "/case-assets/cloud-migration-manufacturing/hero.webp"
+metaDescription: "Governed Azure Landing Zone and ASR-based DR delivered zero-downtime cutovers, 23% lower TCO, and faster nightly processing for a Japan manufacturer."
+---
+![Azure landing zone high‑level architecture](/case-assets/cloud-migration-manufacturing/hero.webp "Azure Landing Zone")
+
+# Overview
+We built a governed Azure Landing Zone and executed a phased migration with ASR‑based DR—no unplanned downtime during cutovers. The focus was resilience, cost transparency, and an operations baseline the internal team could own.
+
+**Client.** Japanese manufacturer (plant in Kantō, office in Osaka), ~700 users
+
+## Context
+The client ran mixed workloads on aging on‑prem infrastructure with limited monitoring and fragmented backup. Growth in engineering workloads and supplier portals increased pressure on uptime and recovery objectives. Different teams applied inconsistent tagging and backup policies, which made cost allocation and recovery audits hard to trust.
+
+## Challenge
+- Aging on‑prem hardware and rising refresh costs
+- No defined RPO/RTO and limited DR capability
+- Limited observability and inconsistent backup success rates
+- Fragmented ownership and undocumented runbooks across teams
+
+## Approach and rationale
+We created a Landing Zone to institutionalize governance: subscription hierarchy, RBAC/PIM, policies, security baselines, and monitoring. Workloads were grouped by migration strategy (re‑host, refactor, replace) to reduce risk and capture cloud benefits where it mattered most. We also cataloged dependencies and sequencing to avoid noisy cutovers and spread risk across waves. Where refactoring was justified, we used light‑touch patterns first to avoid long critical paths.
+
+We aligned the approach with the client’s operating model—establishing clear owners, defining escalation paths, and planning quarterly DR drills. This ensured the platform didn’t outpace the organization. We also built a gradual handover plan so the internal team could operate without external dependency.
+
+
+## Implementation
+- Landing Zone with subscription design, RBAC/PIM, policy and monitoring baselines
+- Re‑host plus SaaS replacements for collaboration and file sharing
+- Tiered storage/backup and Azure Site Recovery to a secondary region
+- Observability with Azure Monitor, Log Analytics, and cost alerts; weekly ops reviews with action trackers
+
+## Implementation details
+- Network: hub‑and‑spoke with private endpoints; ExpressRoute later phase
+- Identity: Azure AD as control plane; conditional access for admin roles
+- Backup/DR: vault policies by tier, quarterly DR drills; RPO <15m, RTO <2h validated
+- Security: Defender for Cloud recommendations triaged and remediated during waves
+
+- Cost guardrails: budget alerts, reserved instances opportunities review, and rightsizing schedules
+
+- Operations: roles and responsibilities transitioned to internal team with runbooks, action trackers, and monthly governance checkpoints
+
+- Governance: quarterly policy/audit reviews and posture baselines expressed as IaC to keep drift low
+
+## Outcomes
+- −23% infrastructure TCO; −42% backup cost
+- −38% nightly batch runtime
+- Zero unplanned downtime during cutovers; DR objectives verified in drills
+- Improved recovery confidence: after two drills, teams reduced recovery steps and measured RPO/RTO with runbooks and dashboards
+
+
+## Business impact
+- Lower run costs (−23% TCO) and faster nightly processing (−38%), improving SLAs for production planning
+- Quarterly DR drills validated RPO <15m / RTO <2h and increased recovery confidence across teams
+- Standardized monitoring and runbooks reduced toil for on‑call engineers and improved audit readiness across factories
+- Cost visibility dashboards and reserved‑instance planning helped finance forecast and control cloud spend more accurately
+
+## Timeline
+9 months, phased with zero downtime during cutovers
+
+## Technology
+Azure, ASR, Azure Monitor, Defender for Cloud, Microsoft 365
+
+## Next steps
+Phase 2: cost optimization (rightsizing, schedules), data platform modernization, and IaC standardization. Related services: [Cloud Infrastructure](/services/cloud-infrastructure), [Cybersecurity](/services/it-security). Read more on our [blog](/blog).
