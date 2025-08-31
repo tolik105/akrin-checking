@@ -70,7 +70,8 @@ export function HeroSlider() {
                   fill
                   className="object-cover"
                   priority={slide.id === 1}
-                  quality={95}
+                  loading={slide.id === 1 ? "eager" : "lazy"}
+                  quality={80}
                   sizes="100vw"
                 />
                 {/* Professional Gradient Overlay */}

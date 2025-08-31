@@ -201,11 +201,7 @@ body {
   }
 }
 
-/* Import mobile optimizations */
-@import url("./mobile-optimizations.css");
-
-/* Import mobile-first foundation */
-@import '../styles/mobile-first.css';
+/* Consolidated mobile optimizations - removed external imports for performance */
 
 /* Mobile-First Utility Classes */
 @layer utilities {

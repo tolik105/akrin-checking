@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next"
 // Using local variable fonts instead of Google Fonts imports
 import "./globals.css"
-import "./mobile-optimizations.css"
 
 import { NavbarSimple } from "@/components/navbar-simple"
 import { Footer } from "@/components/footer"

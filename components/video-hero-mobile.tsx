@@ -155,51 +155,54 @@ export function VideoHeroMobile() {
         {/* Enhanced Background with better mobile performance */}
         <div className="absolute inset-0 w-full h-full z-0">
           {isMobile ? (
-            // Mobile: Optimized video background with smaller file size
+            // Mobile: Optimized video background with smaller file size and lazy loading
             <div className="w-full h-full relative">
               <video
                 autoPlay
                 muted
                 loop
                 playsInline
-                preload="metadata"
+                preload="none"
                 poster="/og-image.png"
                 className="absolute inset-0 w-full h-full object-cover"
                 style={{ filter: 'brightness(0.6)' }}
+                loading="lazy"
               >
                 <source src="/video/AKRINKK-M.mp4" type="video/mp4" />
               </video>
                <div className="absolute inset-0 bg-black/30" />
             </div>
           ) : isTablet ? (
-            // Tablet: Video background with overlay (using full quality)
+            // Tablet: Video background with overlay and optimized loading
             <div className="w-full h-full relative">
               <video
                 autoPlay
                 muted
                 loop
                 playsInline
-                preload="metadata"
+                preload="none"
                 poster="/og-image.png"
                 className="absolute inset-0 w-full h-full object-cover"
                 style={{ filter: 'brightness(0.7)' }}
+                loading="lazy"
               >
                 <source src="/video/AKRINKK.mp4" type="video/mp4" />
               </video>
                <div className="absolute inset-0 bg-black/25" />
             </div>
           ) : (
-            // Desktop: Full video background with subtle overlay (using full quality)
+            // Desktop: Full video background with optimized loading
             <div className="w-full h-full relative">
               <video
                 autoPlay
                 muted
                 loop
                 playsInline
-                preload="metadata"
+                preload="none"
                 poster="/og-image.png"
                 className="absolute inset-0 w-full h-full object-cover"
                 style={{ filter: 'brightness(0.8) contrast(1.1)' }}
+                loading="lazy"
               >
                 <source src="/video/AKRINKK.mp4" type="video/mp4" />
               </video>

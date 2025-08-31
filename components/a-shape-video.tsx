@@ -92,9 +92,11 @@ export function AShapeVideo({
             muted
             loop
             playsInline
+            preload="none"
+            loading="lazy"
             className="w-full h-full object-cover"
-            style={{ 
-              width: config.width, 
+            style={{
+              width: config.width,
               height: config.height,
             }}
           >

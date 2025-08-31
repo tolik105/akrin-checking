@@ -139,6 +139,8 @@ export function VideoHero() {
               muted
               loop
               playsInline
+              preload="none"
+              loading="lazy"
               style={{
                 width: '1920px',
                 height: '1080px',

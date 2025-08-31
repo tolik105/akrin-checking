@@ -47,9 +47,10 @@ export function HeroServicesRow() {
                   alt={s.title}
                   fill
                   className="object-cover rounded-lg"
-                  priority={s.id === 1}
+                  priority={false}
+                  loading="lazy"
                   sizes="(min-width: 1024px) 50vw, 100vw"
-                  quality={85}
+                  quality={75}
                 />
                 <div className="absolute inset-0 rounded-lg ring-1 ring-gray-200" />
               </div>
