@@ -14,28 +14,17 @@ import { cn } from "@/lib/utils"
 import { useState } from "react"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { useTranslation } from "react-i18next"
-import { RecaptchaV2 } from "@/components/recaptcha-v2"
 import { useToast } from "@/hooks/use-toast"
 
 export default function BookReservationPage() {
   const { t } = useTranslation('common')
   const [date, setDate] = useState<Date>()
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null)
   const [selectedService, setSelectedService] = useState<string>('')
   const { toast } = useToast()
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    
-    if (!recaptchaToken) {
-      toast({
-        title: "Error",
-        description: "Please complete the reCAPTCHA verification",
-        variant: "destructive",
-      })
-      return
-    }
     
     if (!date) {
       toast({
@@ -68,7 +57,6 @@ export default function BookReservationPage() {
       preferredDate: date.toISOString(),
       service: selectedService,
       message: formData.get('message') as string,
-      recaptchaToken,
     }
     
     try {
@@ -89,7 +77,6 @@ export default function BookReservationPage() {
         })
         // Reset form
         form.reset()
-        setRecaptchaToken(null)
         setDate(undefined)
         setSelectedService('')
       } else {
@@ -185,8 +172,7 @@ export default function BookReservationPage() {
                     placeholder={t('booking.form.placeholders.additionalInfo')}
                   />
                 </div>
-                <RecaptchaV2 onVerify={setRecaptchaToken} />
-                <Button type="submit" className="w-full" disabled={isSubmitting || !date || !selectedService || !recaptchaToken}>
+                <Button type="submit" className="w-full" disabled={isSubmitting || !date || !selectedService}>
                   {isSubmitting ? 'Submitting...' : t('booking.form.submitButton')}
                 </Button>
               </form>

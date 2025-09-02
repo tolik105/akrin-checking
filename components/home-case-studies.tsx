@@ -105,8 +105,9 @@ export function HomeCaseStudies() {
                       fill
                       className="object-cover object-center transform transition duration-200 ease-out md:group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:transform-none"
                       sizes="(min-width: 1536px) 25vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                      quality={95}
-                      priority={index === 0}
+                      quality={80}
+                      priority={false}
+                      loading="lazy"
                     />
                   ) : (
                     <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-300" />

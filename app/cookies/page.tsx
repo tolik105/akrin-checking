@@ -65,7 +65,6 @@ export default function CookiesPage() {
             </p>
             <ul className="list-disc list-inside text-gray-700 space-y-2 mb-4">
               <li><strong>Google Analytics:</strong> Usage analytics</li>
-              <li><strong>Google reCAPTCHA:</strong> Spam prevention and security</li>
               <li><strong>LinkedIn:</strong> Social media integration</li>
             </ul>
           </section>

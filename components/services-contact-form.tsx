@@ -201,11 +201,10 @@ export function ServicesContactForm() {
                 <span className="text-red-500 text-sm">*</span>
               </div>
 
-              {/* reCAPTCHA Placeholder */}
+              {/* Anti-spam consent */}
               <div className="flex items-center gap-3 py-4">
                 <input type="checkbox" className="w-5 h-5" required />
-                <span className="text-sm text-gray-600">I'm not a robot</span>
-                <div className="ml-auto text-xs text-gray-500">reCAPTCHA</div>
+                <span className="text-sm text-gray-600">I agree not to send spam</span>
               </div>
 
               {/* Submit Button */}

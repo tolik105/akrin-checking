@@ -78,7 +78,6 @@ export default function JapaneseCookiesPage() {
             </p>
             <ul className="list-disc list-inside text-gray-700 space-y-2 mb-4">
               <li><strong>Google Analytics:</strong> ウェブサイトの使用状況分析</li>
-              <li><strong>Google reCAPTCHA:</strong> スパム防止とセキュリティ</li>
               <li><strong>LinkedIn:</strong> ソーシャルメディア統合</li>
             </ul>
           </section>

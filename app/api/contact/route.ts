@@ -6,51 +6,49 @@ interface ContactFormData {
   name: string
   email: string
   message: string
-  recaptchaToken: string
-}
-
-async function verifyRecaptcha(token: string): Promise<boolean> {
-  // Skip reCAPTCHA verification if not configured
-  const secretKey = process.env.RECAPTCHA_SECRET_KEY
-  if (!secretKey || secretKey === 'your-secret-key') {
-    console.warn('reCAPTCHA verification skipped - not configured')
-    return true
-  }
-
-  try {
-    const response = await fetch('https://www.google.com/recaptcha/api/siteverify', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: `secret=${secretKey}&response=${token}`,
-    })
-
-    const data = await response.json()
-    return data.success
-  } catch (error) {
-    console.error('reCAPTCHA verification error:', error)
-    return false
-  }
+  [key: string]: any
 }
 
 export async function POST(request: NextRequest) {
   try {
-    const body: ContactFormData = await request.json()
-    
-    // Verify reCAPTCHA if token provided
-    if (body.recaptchaToken) {
-      const isValidRecaptcha = await verifyRecaptcha(body.recaptchaToken)
-      
-      if (!isValidRecaptcha) {
-        return NextResponse.json(
-          { error: 'Invalid reCAPTCHA. Please try again.' },
-          { status: 400 }
-        )
+    const contentType = request.headers.get('content-type') || ''
+    let body: ContactFormData = { name: '', email: '', message: '' }
+
+    if (contentType.includes('application/json')) {
+      body = await request.json()
+    } else if (contentType.includes('application/x-www-form-urlencoded')) {
+      const form = await request.formData()
+      form.forEach((v, k) => (body[k] = v as string))
+    } else {
+      try { body = await request.json() } catch {
+        const form = await request.formData()
+        form.forEach((v, k) => (body[k] = v as string))
       }
     }
 
-    // Prepare email data
+    const token = body['cf-turnstile-response'] || body['cfTurnstileResponse']
+    if (!token) {
+      return NextResponse.json({ success: false, error: 'Missing CAPTCHA token' }, { status: 400 })
+    }
+
+    const secret = process.env.TURNSTILE_SECRET_KEY
+    if (!secret) {
+      return NextResponse.json({ success: false, error: 'Server CAPTCHA secret not set' }, { status: 500 })
+    }
+
+    const verifyRes = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({ secret, response: token as string })
+    })
+
+    const verify = await verifyRes.json()
+
+    if (!verify.success) {
+      return NextResponse.json({ success: false, error: 'Invalid CAPTCHA' }, { status: 400 })
+    }
+
+    // Existing logic continues
     const timestamp = new Date().toLocaleString('en-US', {
       dateStyle: 'full',
       timeStyle: 'short',
@@ -64,18 +62,16 @@ export async function POST(request: NextRequest) {
       timestamp
     }
 
-    // Send email to support team
     const salesEmail = process.env.SALES_EMAIL || 'support@akrin.jp'
     const emailHtml = createContactEmailTemplate(emailData)
     const emailText = createContactEmailTextTemplate(emailData)
 
     let emailSent = false
 
-    // Check if email is properly configured
     if (!process.env.SMTP_USER || process.env.SMTP_USER === 'your_email@example.com') {
       console.log('⚠️  Email not configured - skipping email send (form data saved)')
       console.log('📧 Would send to:', salesEmail)
-      emailSent = true // Mark as sent for testing purposes
+      emailSent = true
     } else {
       try {
         emailSent = await sendEmail({
@@ -97,7 +93,6 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // Log the submission
     console.log('Contact form submission:', {
       name: body.name,
       email: body.email,

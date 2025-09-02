@@ -128,6 +128,8 @@ export function LogosWithBlurFlip({ showHeading = false, title, description, cla
                 width="100"
                 height="100"
                 className="h-10 w-20 object-contain filter md:h-20 md:w-40 dark:invert"
+                priority={false}
+                loading="lazy"
               />
             </motion.div>
           ))}

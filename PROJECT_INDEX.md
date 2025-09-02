@@ -14,8 +14,8 @@
 - `middleware.ts`: strips trailing slashes except root, matcher excludes `api`, `_next`, and static files
 
 ## Environment Variables (found in code)
-- Public: `NEXT_PUBLIC_BASE_URL`, `NEXT_PUBLIC_RECAPTCHA_SITE_KEY`
-- Server: `GOOGLE_VERIFICATION_CODE`, `SERANKING_API_KEY`, `SERANKING_API_BASE_URL`, `SMTP_HOST`, `SMTP_PORT`, `SMTP_SECURE`, `SMTP_USER`, `SMTP_PASS`, `SALES_EMAIL`, `BUSINESS_EMAIL`, `RECAPTCHA_SECRET_KEY`, `CALENDLY_LINK`, `DEEPL_API_KEY`
+- Public: `NEXT_PUBLIC_BASE_URL`
+- Server: `GOOGLE_VERIFICATION_CODE`, `SERANKING_API_KEY`, `SERANKING_API_BASE_URL`, `SMTP_HOST`, `SMTP_PORT`, `SMTP_SECURE`, `SMTP_USER`, `SMTP_PASS`, `SALES_EMAIL`, `BUSINESS_EMAIL`, `CALENDLY_LINK`, `DEEPL_API_KEY`
 
 ## App Routes (`/app`)
 - Root: `/` → `app/page.tsx`
@@ -94,7 +94,7 @@
 - Blog: newsletter form, reading progress, social share, TOC
 - Services: `service-*`, `professional-*`, `services-contact-form.tsx`
 - Media: `media/media-library.tsx`
-- ReCAPTCHA: `recaptcha*.tsx`
+- (No reCAPTCHA components)
 - Visuals: `video-hero*.tsx`, `hero-visual-singularity.tsx`, `particle-background.tsx`, `MonogramReactor.tsx`, `hero-slider.tsx`, `premium-hero-slider.tsx`
 
 ## Libraries (`/lib`)
@@ -117,6 +117,6 @@
 ## Notes
 - Trailing-slash redirect via middleware
 - i18n via route segments under `/ja` + `i18next`
-- Recaptcha v2/v3 supported; env-required endpoints log missing config
+- No reCAPTCHA used
 - Type and lint errors ignored at build; ensure CI coverage if enabling
 

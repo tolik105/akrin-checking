@@ -56,3 +56,6 @@ Thumbs.db
 .netlify
 
 /lib/generated/prisma
+
+# Local env for Netlify
+netlify.env

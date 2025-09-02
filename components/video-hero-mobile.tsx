@@ -12,6 +12,7 @@ export function VideoHeroMobile() {
   const { t } = useTranslation('common')
   const [isMobile, setIsMobile] = useState(false)
   const [isTablet, setIsTablet] = useState(false)
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false)
 
   useEffect(() => {
     const checkScreenSize = () => {
@@ -24,6 +25,16 @@ export function VideoHeroMobile() {
     window.addEventListener('resize', checkScreenSize)
     
     return () => window.removeEventListener('resize', checkScreenSize)
+  }, [])
+
+  useEffect(() => {
+    try {
+      const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
+      setPrefersReducedMotion(mq.matches)
+      const handler = (e: MediaQueryListEvent) => setPrefersReducedMotion(e.matches)
+      mq.addEventListener?.('change', handler)
+      return () => mq.removeEventListener?.('change', handler)
+    } catch {}
   }, [])
 
   // Enhanced animation variants with better mobile performance
@@ -61,6 +72,24 @@ export function VideoHeroMobile() {
     className?: string;
     delay?: number;
   } & AnimationProps) => {
+    const reduceAnimations = prefersReducedMotion || isMobile
+    if (reduceAnimations) {
+      return (
+        <h1
+          className={cn("font-black text-white leading-[0.9] sm:leading-[0.95] tracking-tight text-center", className)}
+          style={{
+            fontFamily: "'Inter Var', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
+            fontSize: 'clamp(2.5rem, 10vw, 6rem)',
+            lineHeight: 'clamp(0.9, 0.95, 1.0)',
+            textShadow: '0 2px 4px rgba(0,0,0,0.3)',
+            fontFeatureSettings: '"kern" 1, "liga" 1, "clig" 1, "calt" 1, "cv02" 1, "cv03" 1, "cv04" 1, "cv11" 1',
+            letterSpacing: '-0.025em'
+          }}
+        >
+          {children}
+        </h1>
+      );
+    }
     return (
       <motion.h1
         {...animationProps}
@@ -111,6 +140,24 @@ export function VideoHeroMobile() {
     className?: string;
     delay?: number;
   } & AnimationProps) => {
+    const reduceAnimations = prefersReducedMotion || isMobile
+    if (reduceAnimations) {
+      return (
+        <p
+          className={cn("text-gray-200 leading-relaxed max-w-2xl text-center font-medium mb-6 sm:mb-8 md:mb-10 lg:mb-12", className)}
+          style={{
+            fontFamily: "'Inter Var', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
+            fontSize: 'clamp(1.125rem, 3.5vw, 1.75rem)',
+            lineHeight: 'clamp(1.5, 1.6, 1.7)',
+            textShadow: '0 1px 2px rgba(0,0,0,0.2)',
+            fontFeatureSettings: '"kern" 1, "liga" 1, "clig" 1, "calt" 1, "cv02" 1, "cv03" 1, "cv04" 1, "cv11" 1',
+            letterSpacing: '-0.011em'
+          }}
+        >
+          {children}
+        </p>
+      );
+    }
     return (
       <motion.p
         {...animationProps}
@@ -164,7 +211,7 @@ export function VideoHeroMobile() {
                 fill
                 className="object-cover"
                 priority={true}
-                quality={90}
+                quality={60}
                 sizes="100vw"
                 style={{ filter: 'brightness(0.6)' }}
               />

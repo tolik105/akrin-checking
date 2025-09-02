@@ -4,6 +4,7 @@ import { useState } from "react"
 import { useToast } from "@/hooks/use-toast"
 import { motion } from "framer-motion"
 import { ChevronDownIcon } from "@heroicons/react/16/solid"
+import TurnstileWidget from "@/components/turnstile-widget"
 
 export function EmbeddedContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -49,6 +50,10 @@ export function EmbeddedContactForm() {
     setIsSubmitting(true)
 
     try {
+      const nativeForm = e.currentTarget
+      const fd = new FormData(nativeForm)
+      const captchaToken = (fd.get('cf-turnstile-response') as string) || ''
+
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
@@ -58,7 +63,7 @@ export function EmbeddedContactForm() {
           name: `${formData.firstName} ${formData.lastName}`,
           email: formData.email,
           message: `Company: ${formData.company}\nPhone: ${formData.phone} (${formData.country})\nService Type: ${formData.serviceType}\nHow did you hear about us: ${formData.hearAboutUs}\n\nMessage:\n${formData.message}`,
-          recaptchaToken: ''
+          'cf-turnstile-response': captchaToken
         }),
       })
 
@@ -246,6 +251,9 @@ export function EmbeddedContactForm() {
                   </label>
                   {errors.agreeToPrivacy && <p className="mt-1 text-[12px] leading-[18px] text-[#EF4444]">{errors.agreeToPrivacy}</p>}
                 </div>
+              </div>
+              <div className="pt-2">
+                <TurnstileWidget />
               </div>
               <div className="flex items-center justify-between">
                 <button

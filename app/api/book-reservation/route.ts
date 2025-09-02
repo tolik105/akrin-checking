@@ -10,49 +10,12 @@ interface BookingFormData {
   preferredDate: string
   service: string
   message?: string
-  recaptchaToken: string
-}
-
-async function verifyRecaptcha(token: string): Promise<boolean> {
-  // Skip reCAPTCHA verification if not configured
-  const secretKey = process.env.RECAPTCHA_SECRET_KEY
-  if (!secretKey || secretKey === 'your-secret-key') {
-    console.warn('reCAPTCHA verification skipped - not configured')
-    return true
-  }
-
-  try {
-    const response = await fetch('https://www.google.com/recaptcha/api/siteverify', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: `secret=${secretKey}&response=${token}`,
-    })
-
-    const data = await response.json()
-    return data.success
-  } catch (error) {
-    console.error('reCAPTCHA verification error:', error)
-    return false
-  }
 }
 
 export async function POST(request: NextRequest) {
   try {
     const body: BookingFormData = await request.json()
     
-    // Verify reCAPTCHA if token provided
-    if (body.recaptchaToken) {
-      const isValidRecaptcha = await verifyRecaptcha(body.recaptchaToken)
-      
-      if (!isValidRecaptcha) {
-        return NextResponse.json(
-          { error: 'Invalid reCAPTCHA. Please try again.' },
-          { status: 400 }
-        )
-      }
-    }
 
     // Prepare email data
     const timestamp = new Date().toLocaleString('en-US', {

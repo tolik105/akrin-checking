@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { motion } from "framer-motion"
+import TurnstileWidget from "@/components/turnstile-widget"
 
 export function PartnerWithUsSection() {
   const [formData, setFormData] = useState({
@@ -27,6 +28,10 @@ export function PartnerWithUsSection() {
     setIsSubmitting(true)
     
     try {
+      const formEl = e.currentTarget as HTMLFormElement
+      const fd = new FormData(formEl)
+      const captchaToken = (fd.get('cf-turnstile-response') as string) || ''
+
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
@@ -36,6 +41,7 @@ export function PartnerWithUsSection() {
           name: `${formData.firstName} ${formData.lastName}`,
           email: formData.emailAddress,
           message: `Job Title: ${formData.jobTitle}\nCompany: ${formData.companyName}\nPhone: ${formData.phoneNumber}\nWebsite: ${formData.websiteUrl || 'Not provided'}\n\nEnquiry:\n${formData.enquiry}`,
+          'cf-turnstile-response': captchaToken,
         }),
       })
 
@@ -273,6 +279,10 @@ export function PartnerWithUsSection() {
               <div className="mt-4 p-3 bg-yellow-50 rounded-md">
                 <p className="text-sm text-yellow-700 font-medium">reCAPTCHA temporarily unavailable</p>
                 <p className="text-xs text-yellow-600 mt-1">Please proceed without verification. We'll validate your submission manually.</p>
+              </div>
+
+              <div className="pt-2">
+                <TurnstileWidget />
               </div>
 
               <div className="mt-4 grid">

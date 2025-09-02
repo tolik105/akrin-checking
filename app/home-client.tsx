@@ -3,7 +3,8 @@ import { HeroServicesRow } from "@/components/hero-services-row"
 import { VideoHeroMobile } from "@/components/video-hero-mobile"
 
 import { motion } from "framer-motion"
-import { LogosWithBlurFlip } from "@/components/ui/logos-with-blur-flip"
+import dynamic from "next/dynamic"
+const LogosWithBlurFlip = dynamic(() => import("@/components/ui/logos-with-blur-flip").then(m => m.LogosWithBlurFlip), { ssr: false, loading: () => null })
 import { IndustryStatsMetrics } from "@/components/ui/industry-stats-metrics"
 import { ClientOnly } from "@/hooks/use-mounted"
 import { HomeFAQSection } from "@/components/ui/home-faq-section"

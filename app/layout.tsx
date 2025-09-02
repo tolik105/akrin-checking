@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next"
+import Script from "next/script"
 // Using local variable fonts instead of Google Fonts imports
 import "./globals.css"
 
@@ -10,13 +11,14 @@ import { I18nProvider } from "@/components/i18n-provider"
 import { Toaster } from "@/components/ui/toaster"
 import { CookieConsent } from "@/components/cookie-consent"
 import { GoogleAnalytics } from "@/components/google-analytics"
-import { RecaptchaScript } from "@/components/recaptcha-script"
+import { AnalyticsConsent } from "@/components/analytics-consent"
 import { HreflangLinks } from "@/components/hreflang-links"
 import { BrowserExtensionSafeWrapper } from "@/components/hydration-boundary"
 import { HydrationErrorBoundary } from "@/components/hydration-error-boundary"
 import { MobilePerformanceOptimizer } from "@/components/mobile-performance"
 import PrelineInit from "@/components/preline-init"
 import { WebVitals } from "@/components/web-vitals"
+import { WhatsAppFloat } from "@/components/whatsapp-float"
 
 // Variable fonts are loaded via CSS @font-face declarations in globals.css
 
@@ -243,6 +245,11 @@ export default function RootLayout({
 
       </head>
       <body className="min-h-screen flex flex-col bg-background text-foreground font-sans" data-lang={undefined}>
+        <Script
+          src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+          async
+          defer
+        />
         <link rel="preconnect" href="https://img.logo.dev" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="//img.logo.dev" />
         <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="anonymous" />
@@ -253,8 +260,8 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        <GoogleAnalytics />
-        <RecaptchaScript />
+        {/* Defer GA until user interaction to reduce unused JS in LCP */}
+        <AnalyticsConsent />
 
         {/* Browser Extension Cleanup Script - Runs before React hydration */}
         <script
@@ -335,6 +342,8 @@ export default function RootLayout({
                   <NavbarSimple />
                   <main id="main-content" className="flex-grow">{children}</main>
                   <Footer />
+	                  <WhatsAppFloat />
+
                   <Toaster />
                   <CookieConsent />
                   <WebVitals />
