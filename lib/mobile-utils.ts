@@ -218,6 +218,56 @@ export const touchEvents = {
   end: isTouchDevice() ? 'touchend' : 'mouseup'
 }
 
+// Image format optimization utilities
+export function getOptimizedImageSrc(originalSrc: string): string {
+  // If it's already an AVIF file, return as is
+  if (originalSrc.endsWith('.avif')) {
+    return originalSrc
+  }
+
+  // Convert file extensions to AVIF first
+  const avifSrc = originalSrc.replace(/\.(jpeg|jpg|png|webp)$/i, '.avif')
+  return avifSrc
+}
+
+// Get image fallback sources in order of preference
+export function getImageFallbacks(originalSrc: string): string[] {
+  const fallbacks: string[] = []
+
+  // Add AVIF version (best compression)
+  const avifSrc = originalSrc.replace(/\.(jpeg|jpg|png|webp)$/i, '.avif')
+  fallbacks.push(avifSrc)
+
+  // Add WebP version (good compression)
+  const webpSrc = originalSrc.replace(/\.(jpeg|jpg|png)$/i, '.webp')
+  fallbacks.push(webpSrc)
+
+  // Add original (fallback)
+  fallbacks.push(originalSrc)
+
+  return fallbacks
+}
+
+// Check if browser supports AVIF
+export function supportsAVIF(): Promise<boolean> {
+  return new Promise((resolve) => {
+    const avif = new Image()
+    avif.onload = () => resolve(true)
+    avif.onerror = () => resolve(false)
+    avif.src = 'data:image/avif;base64,AAAAIGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZk1BMUIAAADybWV0YQAAAAAAAAAoaGRscgAAAAAAAAAAcGljdAAAAAAAAAAAAAAAAGxpYmF2aWYAAAAADnBpdG0AAAAAAAEAAAAeaWxvYwAAAABEAAABAAEAAAABAAABGgAAAB0AAAAoaWluZgAAAAAAAQAAABppbmZlAgAAAAABAABhdjAxQ29sb3IAAAAAamlwcnAAAABLaXBjbwAAABRpc3BlAAAAAAAAAAIAAAACAAAAEHBpeGkAAAAAAwgICAAAAAxhdjFDgQ0MAAAAABNjb2xybmNseAACAAIAAYAAAAAXaXBtYQAAAAAAAAABAAEEAQKDBAAAACVtZGF0EgAKCBgABogQEAwgMg8f8D///8WfhwB8+ErK42A='
+  })
+}
+
+// Check if browser supports WebP
+export function supportsWebP(): Promise<boolean> {
+  return new Promise((resolve) => {
+    const webp = new Image()
+    webp.onload = () => resolve(true)
+    webp.onerror = () => resolve(false)
+    webp.src = 'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA'
+  })
+}
+
 // Get safe area insets for modern phones
 export function getSafeAreaInsets() {
   if (typeof window === 'undefined') return { top: 0, bottom: 0, left: 0, right: 0 }

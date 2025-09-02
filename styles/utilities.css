@@ -1,0 +1,7 @@
+:root {}
+
+/* Offscreen rendering optimization without visual changes */
+.cv-auto {
+  content-visibility: auto;
+}
+

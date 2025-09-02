@@ -5,9 +5,13 @@ import { lazyLoadImages, isMobileDevice, shouldReduceData } from '@/lib/mobile-u
 
 export function MobilePerformanceOptimizer() {
   useEffect(() => {
-    // Initialize lazy loading for images
-    lazyLoadImages()
-    
+    // Initialize lazy loading for images (deferred to idle to avoid blocking LCP/TBT)
+    if (typeof (window as any).requestIdleCallback === 'function') {
+      (window as any).requestIdleCallback(() => { try { lazyLoadImages() } catch {} })
+    } else {
+      setTimeout(() => { try { lazyLoadImages() } catch {} }, 1)
+    }
+
     // Add mobile-specific performance optimizations
     if (isMobileDevice()) {
       // Reduce animation complexity on mobile
@@ -19,9 +23,43 @@ export function MobilePerformanceOptimizer() {
       }
     }
     
-    // Add touch-specific classes
+    // Add touch-specific classes and optimizations
     if ('ontouchstart' in window) {
       document.documentElement.classList.add('touch-device')
+
+      // Add mobile touch optimizations
+      const style = document.createElement('style')
+      style.textContent = `
+        /* Mobile touch optimizations */
+        * {
+          -webkit-tap-highlight-color: transparent;
+          -webkit-touch-callout: none;
+        }
+
+        /* Touch optimization for better responsiveness */
+        button, a, [role="button"] {
+          touch-action: manipulation;
+          cursor: pointer;
+        }
+
+        /* Reduce input delay */
+        input, textarea, select {
+          touch-action: manipulation;
+        }
+
+        /* Optimize scrolling performance */
+        body {
+          -webkit-overflow-scrolling: touch;
+          overscroll-behavior: none;
+        }
+
+        /* Optimize images for mobile */
+        img {
+          image-rendering: -webkit-optimize-contrast;
+          image-rendering: crisp-edges;
+        }
+      `
+      document.head.appendChild(style)
     }
     
     // Handle viewport height changes (for mobile browsers with dynamic toolbars)

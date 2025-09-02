@@ -135,7 +135,7 @@ export function TableOfContents({ content, className, language = 'en' }: TableOf
           className={cn(
             "w-full text-left flex items-center justify-between mb-4",
             isMobile ? "text-base" : "text-lg",
-            "font-semibold text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-md p-1"
+            "font-semibold text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#21B3AA] focus:ring-offset-2 rounded-md p-1"
           )}
           aria-expanded={!isCollapsed}
           aria-controls="toc-list"

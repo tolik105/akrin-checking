@@ -1,0 +1,382 @@
+[
+  {
+    "url": "http://localhost:3000/robots.txt",
+    "score": null,
+    "durationMs": 5839
+  },
+  {
+    "url": "http://localhost:3000/book-consultation",
+    "score": 63,
+    "durationMs": 11076
+  },
+  {
+    "url": "http://localhost:3000/case-studies/cloud-migration-manufacturing",
+    "score": 78,
+    "durationMs": 11390
+  },
+  {
+    "url": "http://localhost:3000/case-studies/datacenter-relocation-colo-to-colo",
+    "score": 75,
+    "durationMs": 11327
+  },
+  {
+    "url": "http://localhost:3000/case-studies/itad-tokyo-kobe-consolidation",
+    "score": 77,
+    "durationMs": 11140
+  },
+  {
+    "url": "http://localhost:3000/case-studies/managed-it-services-cpg-tokyo",
+    "score": 78,
+    "durationMs": 11269
+  },
+  {
+    "url": "http://localhost:3000/case-studies/nationwide-wifi-30-offices",
+    "score": 76,
+    "durationMs": 11472
+  },
+  {
+    "url": "http://localhost:3000/case-studies/pentest-fintech-tokyo",
+    "score": 78,
+    "durationMs": 11206
+  },
+  {
+    "url": "http://localhost:3000/case-studies/rack-buildout-9racks-campus",
+    "score": 77,
+    "durationMs": 11271
+  },
+  {
+    "url": "http://localhost:3000/case-studies/sdwan-insurance-30-sites-japan",
+    "score": 75,
+    "durationMs": 11153
+  },
+  {
+    "url": "http://localhost:3000/case-studies/wifi-assessment-retail-tokyo",
+    "score": 78,
+    "durationMs": 11106
+  },
+  {
+    "url": "http://localhost:3000/case-studies",
+    "score": 64,
+    "durationMs": 11553
+  },
+  {
+    "url": "http://localhost:3000/about",
+    "score": 74,
+    "durationMs": 11166
+  },
+  {
+    "url": "http://localhost:3000/cookies",
+    "score": 80,
+    "durationMs": 11193
+  },
+  {
+    "url": "http://localhost:3000/fortitude-demo",
+    "score": 79,
+    "durationMs": 10864
+  },
+  {
+    "url": "http://localhost:3000/privacy",
+    "score": 79,
+    "durationMs": 11013
+  },
+  {
+    "url": "http://localhost:3000/",
+    "score": 77,
+    "durationMs": 11104
+  },
+  {
+    "url": "http://localhost:3000/services/cybersecurity",
+    "score": 75,
+    "durationMs": 11517
+  },
+  {
+    "url": "http://localhost:3000/services/it-managed-services-v2",
+    "score": 74,
+    "durationMs": 11358
+  },
+  {
+    "url": "http://localhost:3000/services/it-consulting-project-management",
+    "score": 76,
+    "durationMs": 11024
+  },
+  {
+    "url": "http://localhost:3000/services/it-managed-services",
+    "score": 75,
+    "durationMs": 11644
+  },
+  {
+    "url": "http://localhost:3000/book-reservation",
+    "score": 79,
+    "durationMs": 11100
+  },
+  {
+    "url": "http://localhost:3000/services",
+    "score": 74,
+    "durationMs": 11773
+  },
+  {
+    "url": "http://localhost:3000/services/cloud-infrastructure",
+    "score": 74,
+    "durationMs": 11522
+  },
+  {
+    "url": "http://localhost:3000/services/wifi-design",
+    "score": 75,
+    "durationMs": 11052
+  },
+  {
+    "url": "http://localhost:3000/services/wifi-assessment",
+    "score": 75,
+    "durationMs": 11289
+  },
+  {
+    "url": "http://localhost:3000/services/it-security",
+    "score": 77,
+    "durationMs": 10965
+  },
+  {
+    "url": "http://localhost:3000/ja/about",
+    "score": 77,
+    "durationMs": 11240
+  },
+  {
+    "url": "http://localhost:3000/terms",
+    "score": 74,
+    "durationMs": 11514
+  },
+  {
+    "url": "http://localhost:3000/contact",
+    "score": 73,
+    "durationMs": 13111
+  },
+  {
+    "url": "http://localhost:3000/ja/contact",
+    "score": 72,
+    "durationMs": 11409
+  },
+  {
+    "url": "http://localhost:3000/ja/cookies",
+    "score": 79,
+    "durationMs": 11377
+  },
+  {
+    "url": "http://localhost:3000/blog",
+    "score": 76,
+    "durationMs": 11514
+  },
+  {
+    "url": "http://localhost:3000/ja/privacy",
+    "score": 74,
+    "durationMs": 11242
+  },
+  {
+    "url": "http://localhost:3000/ja",
+    "score": 76,
+    "durationMs": 11255
+  },
+  {
+    "url": "http://localhost:3000/services/network-penetration-testing",
+    "score": 75,
+    "durationMs": 13567
+  },
+  {
+    "url": "http://localhost:3000/ja/contact-form",
+    "score": 73,
+    "durationMs": 11402
+  },
+  {
+    "url": "http://localhost:3000/ja/services/cybersecurity",
+    "score": 76,
+    "durationMs": 11436
+  },
+  {
+    "url": "http://localhost:3000/ja/services/it-managed-services",
+    "score": 74,
+    "durationMs": 11487
+  },
+  {
+    "url": "http://localhost:3000/ja/services/network-penetration-testing",
+    "score": 75,
+    "durationMs": 11240
+  },
+  {
+    "url": "http://localhost:3000/ja/services/it-security",
+    "score": 76,
+    "durationMs": 11405
+  },
+  {
+    "url": "http://localhost:3000/ja/services/itad-japan-apac-us",
+    "score": 78,
+    "durationMs": 11162
+  },
+  {
+    "url": "http://localhost:3000/ja/services",
+    "score": 61,
+    "durationMs": 11649
+  },
+  {
+    "url": "http://localhost:3000/ja/services/wifi-design",
+    "score": 77,
+    "durationMs": 11501
+  },
+  {
+    "url": "http://localhost:3000/ja/case-studies/cloud-migration-manufacturing",
+    "score": 77,
+    "durationMs": 11094
+  },
+  {
+    "url": "http://localhost:3000/ja/case-studies/datacenter-relocation-colo-to-colo",
+    "score": 78,
+    "durationMs": 11476
+  },
+  {
+    "url": "http://localhost:3000/ja/case-studies/itad-tokyo-kobe-consolidation",
+    "score": 77,
+    "durationMs": 11336
+  },
+  {
+    "url": "http://localhost:3000/ja/case-studies/managed-it-services-cpg-tokyo",
+    "score": 77,
+    "durationMs": 11165
+  },
+  {
+    "url": "http://localhost:3000/ja/case-studies/nationwide-wifi-30-offices",
+    "score": 77,
+    "durationMs": 11305
+  },
+  {
+    "url": "http://localhost:3000/ja/case-studies/pentest-fintech-tokyo",
+    "score": 77,
+    "durationMs": 11437
+  },
+  {
+    "url": "http://localhost:3000/ja/case-studies/rack-buildout-9racks-campus",
+    "score": 77,
+    "durationMs": 11410
+  },
+  {
+    "url": "http://localhost:3000/ja/case-studies/sdwan-insurance-30-sites-japan",
+    "score": 77,
+    "durationMs": 11317
+  },
+  {
+    "url": "http://localhost:3000/ja/case-studies/wifi-assessment-retail-tokyo",
+    "score": 78,
+    "durationMs": 11304
+  },
+  {
+    "url": "http://localhost:3000/ja/terms",
+    "score": 79,
+    "durationMs": 11321
+  },
+  {
+    "url": "http://localhost:3000/ja/services/wifi-assessment",
+    "score": 78,
+    "durationMs": 11305
+  },
+  {
+    "url": "http://localhost:3000/ja/case-studies",
+    "score": 75,
+    "durationMs": 11436
+  },
+  {
+    "url": "http://localhost:3000/ja/services/it-consulting-project-management",
+    "score": 76,
+    "durationMs": 12255
+  },
+  {
+    "url": "http://localhost:3000/ja/book-consultation",
+    "score": 74,
+    "durationMs": 11440
+  },
+  {
+    "url": "http://localhost:3000/ja/services/cloud-infrastructure",
+    "score": 77,
+    "durationMs": 12128
+  },
+  {
+    "url": "http://localhost:3000/blog/5g-impact-business-operations",
+    "score": 75,
+    "durationMs": 11186
+  },
+  {
+    "url": "http://localhost:3000/blog/ai-transforming-it-support",
+    "score": 75,
+    "durationMs": 11539
+  },
+  {
+    "url": "http://localhost:3000/blog/cloud-migration-success-stories",
+    "score": 75,
+    "durationMs": 11026
+  },
+  {
+    "url": "http://localhost:3000/blog/cybersecurity-best-practices-2025",
+    "score": 77,
+    "durationMs": 11184
+  },
+  {
+    "url": "http://localhost:3000/blog/future-of-it-infrastructure-japan",
+    "score": 75,
+    "durationMs": 11415
+  },
+  {
+    "url": "http://localhost:3000/blog/phishing-prevention-guide-2025",
+    "score": 75,
+    "durationMs": 11401
+  },
+  {
+    "url": "http://localhost:3000/blog/remote-work-security-guide",
+    "score": 75,
+    "durationMs": 11148
+  },
+  {
+    "url": "http://localhost:3000/ja/blog/5g-impact-business-operations",
+    "score": 75,
+    "durationMs": 11430
+  },
+  {
+    "url": "http://localhost:3000/ja/blog/ai-transforming-it-support",
+    "score": 75,
+    "durationMs": 11080
+  },
+  {
+    "url": "http://localhost:3000/ja/blog/cloud-migration-success-stories",
+    "score": 75,
+    "durationMs": 11335
+  },
+  {
+    "url": "http://localhost:3000/ja/blog/cybersecurity-best-practices-2025",
+    "score": 77,
+    "durationMs": 11432
+  },
+  {
+    "url": "http://localhost:3000/ja/blog/future-of-it-infrastructure-japan",
+    "score": 75,
+    "durationMs": 11669
+  },
+  {
+    "url": "http://localhost:3000/ja/blog/phishing-prevention-guide-2025",
+    "score": 75,
+    "durationMs": 11363
+  },
+  {
+    "url": "http://localhost:3000/ja/blog/remote-work-security-guide",
+    "score": 75,
+    "durationMs": 11092
+  },
+  {
+    "url": "http://localhost:3000/services/itad-japan-apac-us",
+    "score": 79,
+    "durationMs": 11238
+  },
+  {
+    "url": "http://localhost:3000/ja/blog",
+    "score": 76,
+    "durationMs": 11538
+  },
+  {
+    "url": "http://localhost:3000/contact-form",
+    "score": 73,
+    "durationMs": 11346
+  }
+]

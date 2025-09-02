@@ -49,7 +49,7 @@ export default function CaseStudiesGrid() {
                   fill
                   className="object-cover"
                   sizes="(min-width: 1280px) calc(100vw / 3), (min-width: 640px) calc(100vw / 2), 100vw"
-                  quality={95}
+                  quality={50}
                   priority={false}
                 />
 

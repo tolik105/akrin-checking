@@ -5,6 +5,7 @@ import Script from "next/script"
 import Link from "next/link"
 
 import { HeroDiagonal } from "@/components/hero-diagonal"
+import Image from "next/image"
 
 export default function ITSecurityClient() {
 
@@ -33,7 +34,7 @@ export default function ITSecurityClient() {
               { label: 'Services', href: '/services' },
               { label: 'IT Security' }
             ]}
-            imageSrc="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+            imageSrc="/images/banners/cybersecurity/banner1.avif"
             imageAlt="IT Security Solutions"
           />
         </section>
@@ -83,10 +84,13 @@ export default function ITSecurityClient() {
 
               {/* Right Image */}
               <div>
-                <img
-                  src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                <Image
+                  src="/images/banners/cybersecurity/Security-Assessment.avif"
                   alt="Endpoint Security and Device Management"
+                  width={1024}
+                  height={768}
                   className="w-full h-auto rounded-lg shadow-lg"
+                  quality={70}
                 />
               </div>
             </div>
@@ -98,10 +102,13 @@ export default function ITSecurityClient() {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               {/* Left Image */}
               <div className="order-2 lg:order-1">
-                <img
-                  src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                <Image
+                  src="/images/banners/cybersecurity/detection-response.avif"
                   alt="Network Security and Firewall Management"
+                  width={1024}
+                  height={768}
                   className="w-full h-auto rounded-lg shadow-lg"
+                  quality={70}
                 />
               </div>
 
@@ -188,10 +195,13 @@ export default function ITSecurityClient() {
 
               {/* Right Image */}
               <div>
-                <img
-                  src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                <Image
+                  src="/images/banners/cybersecurity/Cybersecurity-Partner.avif"
                   alt="IT Security Partnership"
+                  width={1024}
+                  height={768}
                   className="w-full h-auto rounded-lg shadow-lg"
+                  quality={70}
                 />
               </div>
             </div>

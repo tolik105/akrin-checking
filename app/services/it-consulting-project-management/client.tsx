@@ -79,6 +79,7 @@ const FAQItem = ({
     </div>
   );
 };
+import Image from "next/image"
 
 export default function ITConsultingProjectManagementClient() {
   const [openFaq, setOpenFaq] = useState<string | null>(null)
@@ -141,7 +142,7 @@ export default function ITConsultingProjectManagementClient() {
               { label: 'Services', href: '/services' },
               { label: 'IT Consulting & Project Management' }
             ]}
-            imageSrc="/images/banners/it-consulting-project-management/hero-banner.webp"
+            imageSrc="/images/banners/it-consulting-project-management/hero-banner.avif"
             imageAlt="IT Consulting Team Meeting"
           />
         </section>
@@ -191,10 +192,13 @@ export default function ITConsultingProjectManagementClient() {
 
               {/* Right Image */}
               <div>
-                <img
-                  src="/images/banners/it-consulting-project-management/ITInfrastructureProjectManagement.webp"
+                <Image
+                  src="/images/banners/it-consulting-project-management/ITInfrastructureProjectManagement.avif"
                   alt="IT Infrastructure Project Management"
+                  width={1024}
+                  height={768}
                   className="w-full h-auto rounded-lg shadow-lg"
+                  quality={70}
                 />
               </div>
             </div>

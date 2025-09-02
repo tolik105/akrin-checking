@@ -3,6 +3,7 @@
 import React from "react"
 import Script from "next/script"
 import Link from "next/link"
+import Image from "next/image"
 
 import { HeroDiagonal } from "@/components/hero-diagonal"
 
@@ -96,7 +97,7 @@ export default function CloudInfrastructureJaClient() {
               { label: 'Services', href: '/ja/services' },
               { label: 'Cloud Infrastructure' }
             ]}
-            imageSrc="/images/banners/cloud-infrastructure/banner.webp"
+            imageSrc="/images/banners/cloud-infrastructure/banner.avif"
             imageAlt="クラウドインフラストラクチャ"
           />
         </section>
@@ -140,10 +141,14 @@ export default function CloudInfrastructureJaClient() {
                 </p>
               </div>
               <div>
-                <img
-                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                <Image
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=70"
                   alt="クラウドアセスメントと計画"
+                  width={1200}
+                  height={800}
                   className="w-full h-auto rounded-lg shadow-lg"
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  quality={70}
                 />
               </div>
             </div>
@@ -155,10 +160,14 @@ export default function CloudInfrastructureJaClient() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="order-2 lg:order-1">
-                <img
-                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                <Image
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=70"
                   alt="移行とモダナイゼーション"
+                  width={1200}
+                  height={800}
                   className="w-full h-auto rounded-lg shadow-lg"
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  quality={70}
                 />
               </div>
               <div className="order-1 lg:order-2">
@@ -273,10 +282,14 @@ export default function CloudInfrastructureJaClient() {
                 </div>
               </div>
               <div>
-                <img
-                  src="https://res.cloudinary.com/dtmdovevn/image/upload/v1753316524/roadmap_avxbss.png"
+                <Image
+                  src="/images/banners/cloud-infrastructure/banner.avif"
                   alt="クラウド変革のロードマップ"
+                  width={1280}
+                  height={720}
                   className="w-full h-auto rounded-lg shadow-lg"
+                  sizes="(min-width: 1024px) 60vw, 100vw"
+                  quality={70}
                 />
               </div>
             </div>

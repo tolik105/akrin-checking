@@ -2,9 +2,9 @@
 
 import { Splide, SplideSlide } from '@splidejs/react-splide'
 import '@splidejs/splide/css'
-import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
+import { OptimizedImage } from '@/components/ui/optimized-image'
 
 const heroSlides = [
   {
@@ -16,13 +16,13 @@ const heroSlides = [
   {
     id: 2,
     title: "Cybersecurity",
-    image: "/images/banners/cybersecurity/banner1.jpeg",
+    image: "/images/banners/cybersecurity/banner1.avif",
     link: "/services/cybersecurity"
   },
   {
     id: 3,
     title: "IT Consulting & Project Management",
-    image: "/images/banners/it-consulting-project-management/hero-banner.webp",
+    image: "/images/banners/it-consulting-project-management/hero-banner.avif",
     link: "/services/it-consulting-project-management"
   }
 ]
@@ -64,7 +64,7 @@ export function HeroSlider() {
             <div className="relative h-[450px] sm:h-[500px] lg:h-[550px] flex items-center">
               {/* Background Image */}
               <div className="absolute inset-0">
-                <Image
+                <OptimizedImage
                   src={slide.image}
                   alt={slide.title}
                   fill

@@ -114,7 +114,7 @@ export default function CookiesPage() {
                 <strong>AKRIN K.K.</strong><br />
                 Email: <a href="mailto:privacy@akrin.jp" className="underline text-primary hover:text-primary">privacy@akrin.jp</a><br />
                 Phone: +81-3-6821-1223<br />
-                Address: 2-4-15 Minamiaoyama 4F, Minato City, Tokyo 107-0062, Japan
+                Address: 〒107-0062 Tokyo, Minato City, Minami Aoyama 2-4-15, Japan
               </p>
             </div>
           </section>

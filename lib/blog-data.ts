@@ -669,16 +669,16 @@ export const blogPostsEN = {
   "remote-work-security-guide": {
     id: 5,
     slug: "remote-work-security-guide",
-    title: "リモートワークセキュリティ：包括的ガイド | AKRIN",
-    metaDescription: "日本企業向けのリモートワークセキュリティ完全ガイド。VPN、エンドポイント保護、ゼロトラストなど、分散チームを守るための実践を解説。",
-    excerpt: "リモートワークは新常態となりましたが、固有のセキュリティ課題を伴います。本ガイドでは、分散チームに最適化した包括的な対策を解説します。",
+    title: "Complete Guide to Remote Work Security | AKRIN",
+    metaDescription: "Complete remote work security guide for Japanese businesses: VPN, endpoint protection, Zero Trust, home office hardening, and practical policies to protect distributed teams.",
+    excerpt: "Remote work is here to stay—and it brings specific security challenges. This guide outlines practical, comprehensive measures to protect your distributed workforce.",
     image: "/blog-images/remote-work.webp",
     content: `
-      <h1>リモートワークセキュリティ：包括的ガイド</h1>
-      <p>リモートワークへの移行は、サイバーセキュリティの考え方を根本から変えました。日本の伝統的なオフィス文化は当初この変化に慎重でしたが、近年の世界的な出来事をきっかけに柔軟な働き方が急速に広がりました。それに伴い、データ・システム・従業員を守るため、あらゆる組織が取り組むべき新たな課題が生まれています。</p>
+      <h1>Complete Guide to Remote Work Security</h1>
+      <p>Remote work has fundamentally reshaped enterprise security. As Japanese companies adopt flexible work styles, security must extend beyond the office to homes, public networks, and personal devices. This guide outlines practical steps to protect data, systems, and people while keeping teams productive.</p>
 
-      <h2>新しいセキュリティ境界</h2>
-      <p>従来のオフィスでは、物理境界の保護や入退室管理、ネットワーク監視が中心でした。リモートワークでは境界が溶け、従業員の自宅や外出先のWi‑Fi、個人デバイスにまでセキュリティ境界が広がります。</p>
+      <h2>The New Security Perimeter</h2>
+      <p>Traditional office security relied on physical boundaries, access control, and centralized network monitoring. In remote work, those boundaries dissolve—your perimeter now spans home Wi‑Fi, public hotspots, and mixed‑use devices.</p>
 
       <p>この分散環境には、次のような特有の脆弱性があります。</p>
       <ul>
@@ -689,9 +689,9 @@ export const blogPostsEN = {
         <li>Physical security risks in home offices</li>
       </ul>
 
-      <h2>リモートワークの脅威を理解する</h2>
+      <h2>Understanding Remote Work Threats</h2>
       
-      <h3>1. ネットワークの脆弱性</h3>
+      <h3>1. Network Vulnerabilities</h3>
       <p>自宅のネットワークは、企業環境ほど堅牢な対策が講じられていないことが一般的です。</p>
       <ul>
         <li><strong>脆弱なルーター設定：</strong> 初期パスワードのまま、古いファームウェア</li>
@@ -700,7 +700,7 @@ export const blogPostsEN = {
         <li><strong>中間者攻撃：</strong> 公衆Wi‑Fiで特にリスクが高い</li>
       </ul>
 
-      <h3>2. エンドポイントの課題</h3>
+      <h3>2. Endpoint Challenges</h3>
       <p>個人端末の利用には固有のリスクがあります。</p>
       <ul>
         <li>OSやソフトウェアの更新遅延</li>
@@ -710,7 +710,7 @@ export const blogPostsEN = {
         <li>ローカルデータの未暗号化</li>
       </ul>
 
-      <h3>3. ヒューマンリスク</h3>
+      <h3>3. Human Risks</h3>
       <p>リモート環境では、人に起因する脆弱性が顕在化しやすくなります。</p>
       <ul>
         <li><strong>孤立：</strong> ITサポートへの即時アクセスが難しい</li>
@@ -723,7 +723,7 @@ export const blogPostsEN = {
       
       <h3>Essential Security Measures</h3>
       
-      <h4>1. 仮想プライベートネットワーク（VPN）</h4>
+      <h4>1. Virtual Private Network (VPN)</h4>
       <p>リモートワークのセキュリティにVPNは不可欠です。</p>
       <ul>
         <li><strong>常時接続VPN：</strong> 端末起動時に自動接続</li>
@@ -732,7 +732,7 @@ export const blogPostsEN = {
         <li><strong>キルスイッチ：</strong> VPN切断時のインターネット遮断</li>
       </ul>
 
-      <h4>2. エンドポイント保護</h4>
+      <h4>2. Endpoint Protection</h4>
       <p>包括的なエンドポイント対策には次が含まれます。</p>
       <ul>
         <li><strong>EDR：</strong> 高度脅威向けの検知・対応</li>
@@ -741,7 +741,7 @@ export const blogPostsEN = {
         <li><strong>アプリケーション制御：</strong> 許可ソフトのみ実行</li>
       </ul>
 
-      <h4>3. ゼロトラスト・アーキテクチャ</h4>
+      <h4>3. Zero Trust Architecture</h4>
       <p>リモートアクセスにはゼロトラストの原則を適用します。</p>
       <ul>
         <li>すべてのユーザー／デバイスを毎回検証</li>
@@ -1312,27 +1312,27 @@ export const blogPostsEN = {
   "phishing-prevention-guide-2025": {
     id: 7,
     slug: "phishing-prevention-guide-2025",
-    title: "フィッシングメール防止ガイド 2025 | AKRIN",
-    metaTitle: "フィッシング対策 2025年版：日本企業向け完全ガイド | AKRIN",
-    metaDescription: "AI強化型フィッシングからビジネスを保護する最新対策。日本企業向けの実践、コンプライアンス、実装ロードマップを解説。",
+    title: "Phishing Prevention Guide 2025 | AKRIN",
+    metaTitle: "Phishing Prevention 2025: Complete Guide for Japanese Businesses | AKRIN",
+    metaDescription: "Protect your business from AI‑enhanced phishing in 2025. Practical defenses, compliance considerations, and an implementation roadmap for Japanese enterprises.",
     focusKeywords: ["フィッシング対策", "メールセキュリティ 日本", "サイバーセキュリティ 企業", "APPI コンプライアンス", "フィッシング 2025"],
-    excerpt: "フィッシング攻撃は高度化が進み、日本企業も標的となっています。進化する脅威に対して、包括的な防御を構築する方法を解説します。",
+    excerpt: "Phishing attacks are rapidly evolving. This guide explains how to build layered, effective defenses suited to modern threats.",
     image: "/blog-images/phishing.webp",
     content: `
-      <h1>フィッシングメール防止ガイド 2025</h1>
-      <p>フィッシング攻撃は世界的に最も一般的かつ深刻な侵入経路であり、日本も例外ではありません。2025年現在、攻撃者はAI生成メールや偽装サイト、巧妙なソーシャルエンジニアリングを用いて従来のフィルターをすり抜け、従業員に悪意あるリンクのクリックや機密情報の送信を促します。</p>
+      <h1>Phishing Prevention Guide 2025</h1>
+      <p>Phishing remains one of the most common and damaging attack vectors worldwide. In 2025, adversaries use AI‑generated emails, convincing fake sites, and sophisticated social engineering to bypass traditional filters and trick users into clicking links or sharing sensitive data.</p>
 
-      <p>本ガイドでは、フィッシングの定義と進化、そして最新のサイバーセキュリティ実践に基づく有効な対策について解説します。</p>
+      <p>This guide explains what phishing is, how it has evolved, and the proven defenses modern organizations should implement.</p>
 
-      <h2>フィッシングメールとは</h2>
-      <p>フィッシングメールは、機密情報の入力、悪意のあるリンクのクリック、感染ファイルのダウンロードなどを誘導する欺瞞的なメッセージです。正規の企業やサービス、社内担当者になりすます手口が一般的です。</p>
+      <h2>What Is Phishing?</h2>
+      <p>Phishing messages attempt to trick users into entering credentials, clicking malicious links, or downloading infected files. Attackers often impersonate trusted companies, services, or internal staff.</p>
 
-      <p>主な手口：</p>
+      <p>Common techniques:</p>
       <ul>
-        <li><strong>スピアフィッシング：</strong> 個人や役職を狙った高度な個別化</li>
-        <li><strong>クローンフィッシング：</strong> 本物のスレッドを模倣して悪性要素を挿入</li>
-        <li><strong>請求書詐欺：</strong> 取引先や経理になりすまし送金先を変更</li>
-        <li><strong>AI生成フィッシング：</strong> AIで極めて説得力のある文面を生成</li>
+        <li><strong>Spear phishing:</strong> Highly targeted, personalized attacks on specific people or roles</li>
+        <li><strong>Clone phishing:</strong> Replicating real threads and injecting malicious elements</li>
+        <li><strong>Invoice fraud:</strong> Impersonating vendors or finance to change payment details</li>
+        <li><strong>AI‑generated phishing:</strong> AI‑crafted, highly convincing content at scale</li>
       </ul>
 
       <h2>Why Phishing Still Works in 2025</h2>

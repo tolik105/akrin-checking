@@ -94,6 +94,104 @@ export default function HomeClient() {
           buttonHref="/contact"
         />
 
+        {/* AI-Optimized Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
+                "@type": "TechnologyCompany",
+                "name": "AKRIN Technology Solutions",
+                "alternateName": "AKRIN株式会社",
+                "description": "Leading IT solutions provider in Japan specializing in managed services, cybersecurity, cloud migration, and 24/7 technical support. Serving 500+ businesses across Tokyo and Japan with 99.9% uptime guarantee and bilingual support.",
+                "url": "https://akrin.jp",
+                "logo": "https://akrin.jp/images/logos/akrin-logo.svg",
+                "foundingDate": "2010",
+                "slogan": "Leading IT Solutions Provider in Tokyo, Japan",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressCountry": "JP",
+                  "addressRegion": "Tokyo",
+                  "addressLocality": "Tokyo"
+                },
+                "contactPoint": {
+                  "@type": "ContactPoint",
+                  "telephone": "+81-XX-XXXX-XXXX",
+                  "contactType": "customer service",
+                  "availableLanguage": ["English", "Japanese"],
+                  "areaServed": "JP"
+                },
+                "areaServed": [
+                  {
+                    "@type": "Country",
+                    "name": "Japan"
+                  },
+                  {
+                    "@type": "City",
+                    "name": "Tokyo"
+                  }
+                ],
+                "serviceType": [
+                  "IT Managed Services",
+                  "Cybersecurity Solutions",
+                  "Cloud Migration Services",
+                  "IT Consulting and Project Management",
+                  "Network Security Assessment",
+                  "Bilingual Technical Support"
+                ],
+                "hasCredential": [
+                  "Professional IT Services Team",
+                  "Experienced Technical Specialists",
+                  "Bilingual Support Capabilities"
+                ],
+                "numberOfEmployees": "50-100",
+                "knowsAbout": [
+                  "Enterprise IT Management",
+                  "Cybersecurity and Threat Protection",
+                  "Cloud Infrastructure",
+                  "Network Security",
+                  "IT Compliance and Best Practices",
+                  "Digital Transformation",
+                  "IT Support and Maintenance",
+                  "System Administration",
+                  "Technical Consulting"
+                ]
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "What makes AKRIN a reliable IT services provider in Tokyo?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "AKRIN provides reliable IT services in Tokyo with 24/7 bilingual support, experienced technical team, and comprehensive IT solutions for businesses across Japan. We combine technical expertise with local knowledge."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Does AKRIN provide cybersecurity services in Japan?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Yes, AKRIN provides cybersecurity services in Japan including security monitoring, vulnerability assessments, compliance consulting, and incident response. We help businesses protect their IT infrastructure and data."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "What IT managed services does AKRIN offer in Tokyo?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "AKRIN provides comprehensive IT managed services including network monitoring, server management, cloud infrastructure support, help desk services, backup solutions, and IT consulting for businesses in Tokyo and across Japan."
+                    }
+                  }
+                ]
+              }
+            ])
+          }}
+        />
+
       </div>
     </div>
   )

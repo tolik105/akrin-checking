@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Footer } from "@/components/footer"
+// import { Footer } from "@/components/footer"
 import type React from "react"
 import { LanguageProvider } from "@/contexts/language-context"
 import { I18nProvider } from "@/components/i18n-provider"
@@ -36,9 +36,7 @@ export default function BlogLayout({ children }: BlogLayoutProps) {
               <MobilePerformanceOptimizer />
               {/* No main site navigation - blog pages have their own navigation */}
               <main id="main-content" className="flex-grow min-h-screen">{children}</main>
-              <Footer />
-              <Toaster />
-              <CookieConsent />
+              {/* Footer, Toaster, CookieConsent are provided by root layout */}
             </LanguageProvider>
           </I18nProvider>
         </div>

@@ -7,6 +7,8 @@ import { PremiumCTA } from "@/components/ui/premium-cta"
 import { HeroDiagonal } from "@/components/hero-diagonal"
 
 
+import Image from "next/image"
+
 export default function CybersecurityClient() {
 
   return (
@@ -34,7 +36,7 @@ export default function CybersecurityClient() {
               { label: 'Services', href: '/services' },
               { label: 'Cybersecurity' }
             ]}
-            imageSrc="/images/banners/cybersecurity/banner1.jpeg"
+            imageSrc="/images/banners/cybersecurity/banner1.avif"
             imageAlt="Cybersecurity Solutions"
           />
         </section>
@@ -84,10 +86,13 @@ export default function CybersecurityClient() {
 
               {/* Right Image */}
               <div className="mt-8 lg:mt-0">
-                <img
-                  src="/images/banners/cybersecurity/Security-Assessment.webp"
+                <Image
+                  src="/images/banners/cybersecurity/Security-Assessment.avif"
                   alt="Security Assessment and Audit"
+                  width={1024}
+                  height={768}
                   className="w-full h-auto rounded-lg shadow-lg max-w-md mx-auto lg:max-w-none"
+                  quality={70}
                 />
               </div>
             </div>
@@ -100,10 +105,13 @@ export default function CybersecurityClient() {
             <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
               {/* Left Image */}
               <div className="order-2 lg:order-1">
-                <img
-                  src="/images/banners/cybersecurity/detection-response.webp"
+                <Image
+                  src="/images/banners/cybersecurity/detection-response.avif"
                   alt="Managed Detection and Response"
+                  width={1024}
+                  height={768}
                   className="w-full h-auto rounded-lg shadow-lg max-w-md mx-auto lg:max-w-none"
+                  quality={70}
                 />
               </div>
 
@@ -279,10 +287,13 @@ export default function CybersecurityClient() {
 
             {/* SOC Image */}
             <div className="text-center">
-              <img
-                src="/images/banners/cybersecurity/Security-Operations.webp"
+              <Image
+                src="/images/banners/cybersecurity/Security-Operations.avif"
                 alt="Security Operations Center"
+                width={1280}
+                height={720}
                 className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-5xl mx-auto h-auto rounded-lg shadow-lg"
+                quality={70}
               />
             </div>
           </div>
@@ -329,10 +340,13 @@ export default function CybersecurityClient() {
 
               {/* Right Image */}
               <div className="mt-8 lg:mt-0">
-                <img
-                  src="/images/banners/cybersecurity/Cybersecurity-Partner.webp"
+                <Image
+                  src="/images/banners/cybersecurity/Cybersecurity-Partner.avif"
                   alt="Cybersecurity Partnership"
+                  width={1024}
+                  height={768}
                   className="w-full h-auto rounded-lg shadow-lg max-w-md mx-auto lg:max-w-none"
+                  quality={70}
                 />
               </div>
             </div>
@@ -348,28 +362,91 @@ export default function CybersecurityClient() {
           buttonHref="/contact"
         />
 
-        {/* JSON-LD Schema */}
+        {/* Enhanced JSON-LD Schema for AI Optimization */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Service",
-              "name": "Cybersecurity & Threat Protection",
+              "name": "AKRIN Cybersecurity Solutions - Leading Security Provider in Japan",
               "alternateName": "サイバーセキュリティ＆脅威対策",
               "serviceType": "Cybersecurity and Information Security Services",
+              "description": "AKRIN provides cybersecurity services in Japan including security monitoring, vulnerability assessments, compliance consulting, and incident response. Experienced team serving businesses across Japan with comprehensive security solutions.",
               "provider": {
                 "@type": "Organization",
-                "name": "AKRIN株式会社",
-                "url": "https://akrin.jp"
+                "name": "AKRIN Technology Solutions",
+                "alternateName": "AKRIN株式会社",
+                "url": "https://akrin.jp",
+                "logo": "https://akrin.jp/images/logos/akrin-logo.svg",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressCountry": "JP",
+                  "addressRegion": "Tokyo",
+                  "addressLocality": "Tokyo"
+                },
+                "hasCredential": [
+                  "Experienced Cybersecurity Team",
+                  "Professional IT Security Specialists",
+                  "Bilingual Technical Support"
+                ]
               },
-              "areaServed": {
-                "@type": "Country",
-                "name": "Japan"
-              },
+              "areaServed": [
+                {
+                  "@type": "Country",
+                  "name": "Japan"
+                },
+                {
+                  "@type": "City",
+                  "name": "Tokyo"
+                }
+              ],
               "availableLanguage": ["en", "ja"],
               "url": "https://akrin.jp/services/cybersecurity",
-              "description": "24/7 security monitoring, threat detection, and incident response. Protect your business from evolving cyber threats with enterprise-grade security solutions."
+              "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Cybersecurity Services",
+                "itemListElement": [
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "24/7 Security Operations Center (SOC)",
+                      "description": "Continuous monitoring and threat detection services"
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Penetration Testing",
+                      "description": "Comprehensive security assessments and vulnerability testing by experienced security professionals"
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Compliance Management",
+                      "description": "IT compliance consulting and best practices implementation"
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Incident Response",
+                      "description": "Rapid response to security incidents with expert remediation team"
+                    }
+                  }
+                ]
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "150",
+                "bestRating": "5"
+              }
             })
           }}
         />

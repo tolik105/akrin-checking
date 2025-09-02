@@ -17,7 +17,7 @@ export default function ITADJaClient() {
             IT資産処分（ITAD）
           </>}
           breadcrumbs={[{ label: 'Services', href: '/ja/services' }, { label: 'ITAD Japan/APAC/US' }]}
-          imageSrc="/images/banners/itad/itad.webp"
+          imageSrc="/images/banners/itad/itad.avif"
           imageAlt="ITAD ヒーロー背景"
         />
 

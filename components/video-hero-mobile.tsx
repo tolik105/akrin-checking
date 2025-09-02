@@ -155,22 +155,19 @@ export function VideoHeroMobile() {
         {/* Enhanced Background with better mobile performance */}
         <div className="absolute inset-0 w-full h-full z-0">
           {isMobile ? (
-            // Mobile: Optimized video background with smaller file size and lazy loading
+            // Mobile: Static image only for maximum performance (no video)
             <div className="w-full h-full relative">
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="none"
-                poster="/og-image.png"
-                className="absolute inset-0 w-full h-full object-cover"
+              <Image
+                src="/og-image.png"
+                alt="AKRIN Technology Background"
+                fill
+                className="object-cover"
+                priority={true}
+                quality={90}
+                sizes="100vw"
                 style={{ filter: 'brightness(0.6)' }}
-                loading="lazy"
-              >
-                <source src="/video/AKRINKK-M.mp4" type="video/mp4" />
-              </video>
-               <div className="absolute inset-0 bg-black/30" />
+              />
+              <div className="absolute inset-0 bg-black/30" />
             </div>
           ) : isTablet ? (
             // Tablet: Video background with overlay and optimized loading

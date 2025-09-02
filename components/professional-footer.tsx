@@ -136,8 +136,8 @@ export function ProfessionalFooter() {
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-gray-400 mt-1" />
                 <div className="text-gray-300">
-                  <div>2-4-15 Minamiaoyama 4F</div>
-                  <div>Minato City, Tokyo 107-0062</div>
+                  <div>〒107-0062 Tokyo, Minato City</div>
+                  <div>Minami Aoyama 2-4-15</div>
                   <div>Japan</div>
                 </div>
               </div>

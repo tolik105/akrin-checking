@@ -5,6 +5,7 @@ import Script from "next/script"
 import Link from "next/link"
 
 import { HeroDiagonal } from "@/components/hero-diagonal"
+import Image from "next/image"
 
 export default function NetworkPenetrationTestingClient() {
 
@@ -33,7 +34,7 @@ export default function NetworkPenetrationTestingClient() {
               { label: 'Services', href: '/services' },
               { label: 'Network Penetration Testing' }
             ]}
-            imageSrc="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+            imageSrc="/images/banners/penetration-testing/penetation-testing.avif"
             imageAlt="Network Penetration Testing"
           />
         </section>
@@ -83,10 +84,13 @@ export default function NetworkPenetrationTestingClient() {
 
               {/* Right Image */}
               <div>
-                <img
-                  src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                <Image
+                  src="/images/banners/penetration-testing/Vulnerability-Assessment.avif"
                   alt="Network Vulnerability Assessment"
+                  width={1024}
+                  height={768}
                   className="w-full h-auto rounded-lg shadow-lg"
+                  quality={70}
                 />
               </div>
             </div>
@@ -99,10 +103,13 @@ export default function NetworkPenetrationTestingClient() {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               {/* Left Image */}
               <div className="order-2 lg:order-1">
-                <img
-                  src="https://images.unsplash.com/photo-1551808525-51a94da548ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                <Image
+                  src="/images/banners/penetration-testing/penetation-testing.avif"
                   alt="Ethical Hacking and Penetration Testing"
+                  width={1024}
+                  height={768}
                   className="w-full h-auto rounded-lg shadow-lg"
+                  quality={70}
                 />
               </div>
 
@@ -277,10 +284,14 @@ export default function NetworkPenetrationTestingClient() {
 
             {/* Testing Image */}
             <div className="text-center">
-              <img
-                src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+              <Image
+                src="/images/banners/cloud-infrastructure/banner.avif"
                 alt="Security Testing Methodology"
+                width={1440}
+                height={810}
                 className="w-full max-w-5xl mx-auto h-auto rounded-lg shadow-lg"
+                sizes="(min-width: 1024px) 60vw, 100vw"
+                quality={70}
               />
             </div>
           </div>
@@ -327,34 +338,92 @@ export default function NetworkPenetrationTestingClient() {
 
               {/* Right Image */}
               <div>
-                <img
-                  src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                <Image
+                  src="/images/banners/penetration-testing/partnership.avif"
                   alt="Security Testing Partnership"
+                  width={1024}
+                  height={768}
                   className="w-full h-auto rounded-lg shadow-lg"
+                  quality={70}
                 />
               </div>
             </div>
           </div>
         </div>
 
-        {/* CTA Section - EireSystems Style */}
+        {/* CTA Section with Cal.com Booking */}
         <div className="bg-[#20B2AA] py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-              Ready to Test Your Security Defenses?
-            </h2>
-            <p className="text-xl text-white/90 mb-10 max-w-4xl mx-auto leading-relaxed">
-              Discover vulnerabilities before attackers do. Get comprehensive security testing and expert recommendations to strengthen your security posture.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center px-12 py-4 bg-white text-[#20B2AA] font-bold text-xl rounded-sm hover:bg-gray-100 transition-all duration-200 shadow-lg hover:shadow-xl"
-            >
-              Start Security Assessment
-              <svg className="ml-3 h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </Link>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+                Ready to transform your IT infrastructure?
+              </h2>
+              <p className="text-xl text-white/90 max-w-4xl mx-auto leading-relaxed">
+                Get expert consultation and discover how our solutions can drive your business forward with enterprise-grade reliability and startup agility.
+              </p>
+            </div>
+
+            {/* Cal.com Booking Widget */}
+            <div className="bg-white rounded-lg p-8 shadow-xl">
+              <h3 className="text-2xl font-bold text-[#2C2C2C] mb-6 text-center">
+                Schedule Consultation
+              </h3>
+
+              {/* Cal inline embed code begins */}
+              <div style={{width:'100%', height:'600px', overflow:'scroll'}} id="my-cal-inline-30min"></div>
+              <script
+                type="text/javascript"
+                dangerouslySetInnerHTML={{
+                  __html: `
+                    (function (C, A, L) {
+                      let p = function (a, ar) { a.q.push(ar); };
+                      let d = C.document;
+                      C.Cal = C.Cal || function () {
+                        let cal = C.Cal;
+                        let ar = arguments;
+                        if (!cal.loaded) {
+                          cal.ns = {};
+                          cal.q = cal.q || [];
+                          d.head.appendChild(d.createElement("script")).src = A;
+                          cal.loaded = true;
+                        }
+                        if (ar[0] === L) {
+                          const api = function () { p(api, arguments); };
+                          const namespace = ar[1];
+                          api.q = api.q || [];
+                          if(typeof namespace === "string"){
+                            cal.ns[namespace] = cal.ns[namespace] || api;
+                            p(cal.ns[namespace], ar);
+                            p(cal, ["initNamespace", namespace]);
+                          } else p(cal, ar);
+                          return;
+                        }
+                        p(cal, ar);
+                      };
+                    })(window, "https://app.cal.com/embed/embed.js", "init");
+
+                    Cal("init", "30min", {origin:"https://app.cal.com"});
+
+                    Cal.ns["30min"]("inline", {
+                      elementOrSelector:"#my-cal-inline-30min",
+                      config: {"layout":"month_view","theme":"light"},
+                      calLink: "akrinsupport/30min",
+                    });
+
+                    Cal.ns["30min"]("ui", {
+                      "theme":"light",
+                      "cssVarsPerTheme":{
+                        "light":{"cal-brand":"#21B3AA"},
+                        "dark":{"cal-brand":"#21B3AA"}
+                      },
+                      "hideEventTypeDetails":false,
+                      "layout":"month_view"
+                    });
+                  `
+                }}
+              />
+              {/* Cal inline embed code ends */}
+            </div>
           </div>
         </div>
 

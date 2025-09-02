@@ -1,22 +1,87 @@
 "use client"
 
-import { motion } from "framer-motion"
-import { CalendlyPopupButton } from "@/components/calendly-widget"
+import { motion, AnimatePresence } from "framer-motion"
+import Script from "next/script"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { ArrowLeft, Calendar, Clock, Users, CheckCircle } from "lucide-react"
+import { useState } from "react"
+import { cn } from "@/lib/utils"
+
+const FAQItem = ({
+  question,
+  answer,
+  setOpen,
+  open,
+}: {
+  question: string;
+  answer: string;
+  open: string | null;
+  setOpen: (open: string | null) => void;
+}) => {
+  const isOpen = open === question;
+
+  return (
+    <div
+      className="mb-3 w-full rounded-xl border border-[#EEF2F6] bg-white p-5 md:p-6 cursor-pointer"
+      onClick={() => {
+        if (isOpen) {
+          setOpen(null);
+        } else {
+          setOpen(question);
+        }
+      }}
+    >
+      <div className="flex items-center justify-between">
+        <h3 className="text-lg font-medium text-neutral-800 dark:text-neutral-200">
+          {question}
+        </h3>
+        <div className="relative h-6 w-6 flex-shrink-0">
+          <span
+            className={cn(
+              "absolute left-1/2 top-1/2 block h-[2px] w-5 -translate-x-1/2 -translate-y-1/2 bg-slate-700 transition-opacity duration-200",
+              "opacity-100"
+            )}
+          />
+          <span
+            className={cn(
+              "absolute left-1/2 top-1/2 block h-5 w-[2px] -translate-x-1/2 -translate-y-1/2 bg-slate-700 transition-all duration-200",
+              isOpen ? "opacity-0 scale-75" : "opacity-100 scale-100"
+            )}
+          />
+        </div>
+      </div>
+      <AnimatePresence initial={false}>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="overflow-hidden"
+          >
+            <div className="text-slate-600 pt-3">
+              {answer}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
 
 export default function BookConsultationClient() {
+  const [openFaq, setOpenFaq] = useState<string | null>(null)
   return (
     <main className="flex min-h-screen flex-col">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[hsl(var(--primary))] via-[hsl(var(--primary))] to-[hsl(var(--primary))] text-white">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[hsl(var(--primary))] via-[hsl(var(--primary))] to-[hsl(var(--primary))] text-white will-change-transform">
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="relative z-10 px-8 md:px-16 lg:px-24 py-24 md:py-32"
+          className="relative z-10 px-8 md:px-16 lg:px-24 py-8 md:py-12"
         >
           <div className="max-w-7xl mx-auto">
             <Link href="/contact" className="inline-flex items-center text-white/70 hover:text-white mb-8 transition-colors">
@@ -42,7 +107,7 @@ export default function BookConsultationClient() {
                 transition={{ delay: 0.4, duration: 0.8 }}
                 className="text-xl md:text-2xl text-white/80 leading-relaxed mb-12 max-w-3xl"
               >
-                Let's discuss your IT challenges and explore how our AI-powered solutions can transform your technology infrastructure.
+                Let's discuss your IT challenges and explore how our comprehensive solutions can transform your technology infrastructure.
               </motion.p>
             </div>
           </div>
@@ -125,18 +190,47 @@ export default function BookConsultationClient() {
               Ready to Get Started?
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-12">
-              Click below to choose a convenient time for your consultation. We'll send you a confirmation with all the meeting details.
+              Choose a convenient time for your consultation. We'll send you a confirmation with all the meeting details.
             </p>
-            
-            <CalendlyPopupButton
-              text="Schedule Your Free Consultation"
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground px-12 py-8 text-xl font-medium rounded-none shadow-2xl hover:shadow-3xl transition-all duration-300"
-            />
+
+            {/* Cal.com Booking Button */}
+            <button
+              data-cal-link="akrinsupport/30min"
+              data-cal-namespace="30min"
+              data-cal-config='{"layout":"month_view"}'
+              className="inline-flex items-center px-12 py-6 bg-[#21B3AA] hover:bg-[#1a9891] text-white font-bold text-xl rounded-lg shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105"
+            >
+              <Calendar className="mr-3 h-6 w-6" />
+              Schedule Your Free Consultation
+            </button>
 
             <p className="text-gray-600 dark:text-gray-400 mt-8">
               Can't find a suitable time? Contact us directly and we'll work around your schedule.
             </p>
+
+            {/* Cal element-click embed code (robust Next.js Script init) */}
+            <Script 
+              id="cal-embed" 
+              src="https://app.cal.com/embed/embed.js" 
+              strategy="afterInteractive"
+              onLoad={() => {
+                // Ensure global is present then init namespace and UI
+                // @ts-ignore
+                if (typeof Cal !== 'undefined') {
+                  // @ts-ignore
+                  Cal('init', '30min', { origin: 'https://app.cal.com' });
+                  // @ts-ignore
+                  Cal.ns['30min']('ui', {
+                    cssVarsPerTheme: {
+                      light: { 'cal-brand': '#21B3AA' },
+                      dark: { 'cal-brand': '#21B3AA' }
+                    },
+                    hideEventTypeDetails: false,
+                    layout: 'month_view'
+                  });
+                }
+              }}
+            />
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-4">
               <Button
                 variant="outline"
@@ -161,8 +255,8 @@ export default function BookConsultationClient() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="px-8 md:px-16 lg:px-24 py-20 bg-gray-50 dark:bg-gray-800">
+      {/* FAQ Section - Matching Website Design */}
+      <section className="px-8 md:px-16 lg:px-24 py-20 bg-white">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -176,7 +270,7 @@ export default function BookConsultationClient() {
             </h2>
           </motion.div>
 
-          <div className="space-y-6">
+          <div className="space-y-3">
             {[
               {
                 question: "How long is the consultation?",
@@ -195,17 +289,13 @@ export default function BookConsultationClient() {
                 answer: "No, our consultations are completely free with no obligation. We believe in earning your business through value, not pressure."
               }
             ].map((faq, index) => (
-              <motion.div
+              <FAQItem
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-                className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow"
-              >
-                <h3 className="text-lg font-semibold mb-2">{faq.question}</h3>
-                <p className="text-gray-600 dark:text-gray-400">{faq.answer}</p>
-              </motion.div>
+                question={faq.question}
+                answer={faq.answer}
+                open={openFaq}
+                setOpen={setOpenFaq}
+              />
             ))}
           </div>
         </div>

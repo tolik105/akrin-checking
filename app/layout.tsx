@@ -220,6 +220,27 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/favicon-32x32.v3.png" type="image/png" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" type="image/png" />
 
+        {/* Critical CSS for mobile performance */}
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            /* Critical mobile-first styles */
+            @media (max-width: 768px) {
+              body { font-size: 16px; line-height: 1.5; }
+              .hero-section { min-height: 100vh; }
+              .hero-content { padding: 1rem; }
+              .hero-title { font-size: clamp(2.5rem, 10vw, 6rem); }
+              .hero-subtitle { font-size: clamp(1.125rem, 3.5vw, 1.75rem); }
+              .btn-primary { padding: 0.75rem 1.5rem; font-size: 1rem; }
+              video { display: none !important; }
+            }
+            /* Prevent layout shift */
+            img, video { max-width: 100%; height: auto; }
+            .hero-section { contain: layout style paint; }
+            /* Font display optimization */
+            @font-face { font-display: swap; }
+          `
+        }} />
+
       </head>
       <body className="min-h-screen flex flex-col bg-background text-foreground font-sans" data-lang={undefined}>
         <link rel="preconnect" href="https://img.logo.dev" crossOrigin="anonymous" />

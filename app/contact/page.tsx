@@ -84,7 +84,7 @@ const contactSchema = {
     ],
     address: {
       '@type': 'PostalAddress',
-      streetAddress: '2-4-15 Minamiaoyama 4F',
+      streetAddress: '2-4-15 Minami Aoyama',
       addressLocality: 'Minato City',
       addressRegion: 'Tokyo',
       postalCode: '107-0062',

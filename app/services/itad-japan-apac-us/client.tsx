@@ -119,7 +119,7 @@ export default function ITADPageClient() {
             Services
           </>}
           breadcrumbs={[{ label: 'Services', href: '/services' }, { label: 'ITAD Japan/APAC/US' }]}
-          imageSrc="/images/banners/itad/itad.webp"
+          imageSrc="/images/banners/itad/itad.avif"
           imageAlt="ITAD hero backdrop"
         />
 

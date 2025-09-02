@@ -9,23 +9,30 @@ export type Breadcrumb = { label: string; href?: string }
 export type HeroDiagonalProps = {
   title: React.ReactNode
   breadcrumbs: Breadcrumb[]
-  imageSrc: string
+  // Prefer AVIF with optional WebP fallback. If not provided, imageSrc is used with Next/Image.
+  imageAvif?: string
+  imageWebp?: string
+  imageSrc?: string
   imageAlt: string
   imageObjectPosition?: string
   maxWidthClass?: string
   className?: string
   imageScale?: number
+  imagePriority?: boolean
 }
 
 export function HeroDiagonal({
   title,
   breadcrumbs,
+  imageAvif,
+  imageWebp,
   imageSrc,
   imageAlt,
   imageObjectPosition = "center bottom",
   maxWidthClass = "max-w-[1280px]",
   className = "",
-  imageScale = 1
+  imageScale = 1,
+  imagePriority = true,
 }: HeroDiagonalProps) {
   return (
     <section className={`relative bg-white overflow-hidden ${className}`} aria-labelledby="hero-heading">
@@ -71,14 +78,15 @@ export function HeroDiagonal({
           }}
         >
           <div className="absolute inset-0">
+            {/* Use Next/Image with AVIF source when available; Next will serve WebP fallback per next.config images.formats */}
             <Image
-              src={imageSrc}
+              src={(imageSrc || imageAvif || imageWebp) ?? ''}
               alt={imageAlt}
               fill
               className="object-cover"
               style={{ objectPosition: imageObjectPosition, transform: `scale(${imageScale})` }}
-              priority={false}
-              loading="lazy"
+              priority={imagePriority}
+              loading={imagePriority ? 'eager' : 'lazy'}
               quality={75}
               sizes="100vw"
             />

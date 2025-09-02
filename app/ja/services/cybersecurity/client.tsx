@@ -5,6 +5,7 @@ import Script from "next/script"
 import Link from "next/link"
 import { PremiumCTA } from "@/components/ui/premium-cta"
 import { HeroDiagonal } from "@/components/hero-diagonal"
+import Image from "next/image"
 
 
 export default function CybersecurityJaClient() {
@@ -57,7 +58,7 @@ export default function CybersecurityJaClient() {
               { label: 'Services', href: '/ja/services' },
               { label: 'Cybersecurity' }
             ]}
-            imageSrc="/images/banners/cybersecurity/banner1.jpeg"
+            imageSrc="/images/banners/cybersecurity/banner1.avif"
             imageAlt="サイバーセキュリティソリューション"
           />
         </section>
@@ -107,10 +108,14 @@ export default function CybersecurityJaClient() {
 
               {/* Right Image */}
               <div className="mt-8 lg:mt-0">
-                <img
-                  src="/images/banners/cybersecurity/Security-Assessment.webp"
+                <Image
+                  src="/images/banners/cybersecurity/Security-Assessment.avif"
                   alt="セキュリティ評価・監査"
+                  width={1200}
+                  height={800}
                   className="w-full h-auto rounded-lg shadow-lg max-w-md mx-auto lg:max-w-none"
+                  sizes="(max-width: 1024px) 100vw, 600px"
+                  quality={70}
                 />
               </div>
             </div>
@@ -123,10 +128,14 @@ export default function CybersecurityJaClient() {
             <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
               {/* Left Image */}
               <div className="order-2 lg:order-1">
-                <img
-                  src="/images/banners/cybersecurity/detection-response.webp"
+                <Image
+                  src="/images/banners/cybersecurity/detection-response.avif"
                   alt="マネージド検知・対応"
+                  width={1200}
+                  height={800}
                   className="w-full h-auto rounded-lg shadow-lg max-w-md mx-auto lg:max-w-none"
+                  sizes="(max-width: 1024px) 100vw, 600px"
+                  quality={70}
                 />
               </div>
 
@@ -302,10 +311,13 @@ export default function CybersecurityJaClient() {
 
             {/* SOC Image */}
             <div className="text-center">
-              <img
-                src="/images/banners/cybersecurity/Security-Operations.webp"
+              <Image
+                src="/images/banners/cybersecurity/Security-Operations.avif"
                 alt="セキュリティオペレーションセンター"
+                width={1280}
+                height={720}
                 className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-5xl mx-auto h-auto rounded-lg shadow-lg"
+                quality={70}
               />
             </div>
           </div>
@@ -352,10 +364,14 @@ export default function CybersecurityJaClient() {
 
               {/* Right Image */}
               <div className="mt-8 lg:mt-0">
-                <img
-                  src="/images/banners/cybersecurity/Cybersecurity-Partner.webp"
+                <Image
+                  src="/images/banners/cybersecurity/Cybersecurity-Partner.avif"
                   alt="サイバーセキュリティ・パートナーシップ"
+                  width={1200}
+                  height={800}
                   className="w-full h-auto rounded-lg shadow-lg max-w-md mx-auto lg:max-w-none"
+                  sizes="(max-width: 1024px) 100vw, 600px"
+                  quality={70}
                 />
               </div>
             </div>

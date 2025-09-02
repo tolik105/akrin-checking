@@ -9,6 +9,7 @@ import { ChevronDownIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
 import { ServiceProcessCard } from "@/components/service-process-card"
 import { cn } from "@/lib/utils"
+
 function ManagedServicesHero() {
   return (
     <div className="w-full bg-white" aria-labelledby="hero-heading" role="banner" aria-label="IT Managed Services hero">
@@ -52,10 +53,15 @@ function ManagedServicesHero() {
           }}
         >
           <div className="absolute inset-0">
-            <img
+            <Image
               src="/images/banners/it-managed-services/banner.avif"
               alt="Burgundy/purple metallic ribbons on a dark background"
-              className="w-full h-full object-cover"
+              fill
+              className="object-cover"
+              sizes="100vw"
+              priority
+              fetchPriority="high"
+              quality={70}
               style={{
                 objectPosition: 'center bottom'
               }}
@@ -245,6 +251,7 @@ const MobileFriendlyFAQItem = ({
           setOpen(question);
         }
       }}
+
     >
       <div className="flex items-start">
         <div className="relative mr-3 sm:mr-4 mt-1 h-5 w-5 sm:h-6 sm:w-6 flex-shrink-0">
@@ -364,11 +371,12 @@ export default function ITManagedServicesClient() {
               {/* Right Image */}
               <div className="mt-8 lg:mt-0">
                 <Image
-                  src="/images/banners/it-managed-services/monitoring.webp"
+                  src="/images/banners/it-managed-services/monitoring.avif"
                   alt="Network Monitoring Dashboard"
                   width={1024}
                   height={768}
                   className="w-full h-auto rounded-lg shadow-lg max-w-md mx-auto lg:max-w-none"
+                  quality={70}
                 />
               </div>
             </div>
@@ -382,11 +390,12 @@ export default function ITManagedServicesClient() {
               {/* Left Image */}
               <div className="order-2 lg:order-1 mt-8 lg:mt-0">
                 <Image
-                  src="/images/banners/it-managed-services/Help-Desk-Support.webp"
+                  src="/images/banners/it-managed-services/Help-Desk-Support.avif"
                   alt="Help Desk Support Team"
                   width={1024}
                   height={768}
                   className="w-full h-auto rounded-lg shadow-lg max-w-md mx-auto lg:max-w-none brightness-105 saturate-90"
+                  quality={70}
                 />
               </div>
 
@@ -562,11 +571,12 @@ export default function ITManagedServicesClient() {
             {/* Infrastructure Image */}
             <div className="text-center">
               <Image
-                src="/images/banners/it-managed-services/Infrastructure-Management.webp"
+                src="/images/banners/it-managed-services/Infrastructure-Management.avif"
                 alt="IT Infrastructure Management"
                 width={1440}
                 height={810}
                 className="w-full max-w-5xl mx-auto h-auto rounded-lg shadow-lg"
+                quality={70}
               />
             </div>
           </div>
@@ -609,11 +619,12 @@ export default function ITManagedServicesClient() {
             {/* Strategic Planning Visual */}
             <div className="text-center mb-12">
               <Image
-                src="/images/banners/it-managed-services/board-room.webp"
+                src="/images/banners/it-managed-services/board-room.avif"
                 alt="Strategic IT Planning Board Room"
                 width={1280}
                 height={720}
                 className="w-full max-w-4xl mx-auto h-auto rounded-lg shadow-lg"
+                quality={70}
               />
             </div>
 
@@ -669,17 +680,18 @@ export default function ITManagedServicesClient() {
 
               {/* Right Image */}
               <div>
-                <img
-                  src="/images/banners/it-managed-services/trusted-partner.webp"
+                <Image
+                  src="/images/banners/it-managed-services/trusted-partner.avif"
                   alt="IT Partnership and Strategy"
+                  width={1024}
+                  height={768}
                   className="w-full h-auto rounded-lg shadow-lg"
+                  quality={70}
                 />
               </div>
             </div>
           </div>
         </div>
-
-
 
         {/* FAQ Section - Original Style with Mobile Improvements */}
         <div className="bg-white py-16 sm:py-24">

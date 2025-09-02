@@ -1,7 +1,7 @@
 "use client"
 import Link from 'next/link'
-import Image from 'next/image'
 import { useTranslation } from 'react-i18next'
+import { OptimizedImage } from '@/components/ui/optimized-image'
 
 export function HeroServicesRow() {
   const { t } = useTranslation('common')
@@ -17,14 +17,14 @@ export function HeroServicesRow() {
     {
       id: 2,
       title: t('nav.cybersecurity'),
-      image: '/images/banners/cybersecurity/banner1.jpeg',
+      image: '/images/banners/cybersecurity/banner1.avif',
       link: '/services/cybersecurity',
       blurb: t('services.cyberSecurity.description')
     },
     {
       id: 3,
       title: t('nav.itConsultingProjectManagement'),
-      image: '/images/banners/it-consulting-project-management/hero-banner.webp',
+      image: '/images/banners/it-consulting-project-management/hero-banner.avif',
       link: '/services/it-consulting-project-management',
       blurb: t('services.consulting.description')
     }
@@ -42,15 +42,17 @@ export function HeroServicesRow() {
             >
               {/* Image */}
               <div className={`relative h-64 sm:h-80 lg:h-96 ${isReversed ? 'md:order-2' : ''}`}>
-                <Image
+                <OptimizedImage
                   src={s.image}
                   alt={s.title}
                   fill
                   className="object-cover rounded-lg"
                   priority={false}
                   loading="lazy"
-                  sizes="(min-width: 1024px) 50vw, 100vw"
-                  quality={75}
+                  sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
+                  quality={85}
+                  placeholder="blur"
+                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
                 />
                 <div className="absolute inset-0 rounded-lg ring-1 ring-gray-200" />
               </div>

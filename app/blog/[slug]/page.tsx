@@ -8,6 +8,7 @@ import { TableOfContents } from '@/components/blog/table-of-contents'
 import { ReadingProgress } from '@/components/blog/reading-progress'
 import { AboutAuthor } from '@/components/blog/about-author'
 import { AkrinIcon } from '@/components/akrin-logo'
+import { preferAvif } from '@/lib/image-format'
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -598,7 +599,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <div className="relative h-[250px] xs:h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] bg-gray-100 rounded-xl overflow-hidden">
               {post.image ? (
                 <Image
-                  src={post.image}
+                  src={preferAvif(post.image) as string}
                   alt={`${post.title} - Expert insights on IT infrastructure and technology trends in Japan by AKRIN`}
                   fill
                   className="object-cover object-center"
@@ -623,7 +624,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               {/* Main Article Content */}
               <div className="lg:col-span-2">
                 <article
-                  className="prose prose-lg max-w-none prose-headings:scroll-mt-20 prose-headings:font-semibold prose-headings:text-gray-800 prose-p:text-gray-600 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline prose-blockquote:text-gray-600 prose-blockquote:border-gray-300"
+                  className="prose prose-lg max-w-none prose-headings:scroll-mt-20 prose-headings:font-semibold prose-headings:text-gray-800 prose-p:text-gray-600 prose-a:text-[#21B3AA] prose-a:no-underline hover:prose-a:underline prose-blockquote:text-gray-600 prose-blockquote:border-gray-300"
                   itemProp="articleBody"
                 >
                   <div dangerouslySetInnerHTML={{ __html: processedContent }} />
@@ -684,12 +685,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                         style={fullRelatedPost?.image ? { backgroundImage: `url(${fullRelatedPost.image})`, backgroundSize: 'cover', backgroundPosition: 'center' } : undefined}
                       >
                         {fullRelatedPost?.image ? (
-                          <img
-                            src={fullRelatedPost.image}
+                          <Image
+                            src={preferAvif(fullRelatedPost.image) as string}
                             alt={`${relatedPost.title} - AKRIN IT Blog`}
-                            className="block !w-full !h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
-                            width={1200}
-                            height={630}
+                            fill
+                            className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
+                            unoptimized={false}
                           />
                         ) : (
                           <div className="w-full h-full bg-gray-100 flex items-center justify-center">
@@ -700,12 +702,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                       <div className="p-4 md:p-6 flex-1 flex flex-col">
                         {fullRelatedPost?.category && (
                           <div className="mb-1">
-                            <span className="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                            <span className="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-teal-100 text-teal-800">
                               {fullRelatedPost.category}
                             </span>
                           </div>
                         )}
-                        <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-2 group-hover:text-blue-600 leading-tight">
+                        <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-2 group-hover:text-[#21B3AA] transition-colors leading-tight">
                           {relatedPost.title}
                         </h3>
                         <div className="mt-auto flex items-center gap-x-3 text-sm text-gray-500">

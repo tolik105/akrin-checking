@@ -21,7 +21,7 @@ const heroSlides = [
     title: "Cybersecurity Solutions", 
     subtitle: "Advanced Threat Protection",
     description: "Comprehensive security assessments, threat detection, and compliance solutions to safeguard your digital assets from evolving cyber threats.",
-    image: "/images/banners/cybersecurity/banner1.jpeg",
+    image: "/images/banners/cybersecurity/banner1.avif",
     link: "/services/cybersecurity",
     ctaText: "Secure Your Business"
   },

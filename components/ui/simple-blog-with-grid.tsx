@@ -1,10 +1,30 @@
-"use client";
+
+  // Stable description derivation to avoid hydration mismatches
+  function deriveDescription(post: any): string {
+    // Prefer a stable excerpt or metaDescription if available
+    const src = typeof post.excerpt === 'string' && post.excerpt.trim().length > 0
+      ? post.excerpt
+      : (typeof post.metaDescription === 'string' && post.metaDescription.trim().length > 0
+        ? post.metaDescription
+        : (typeof post.content === 'string' ? post.content : ''))
+
+    // Strip HTML if content chosen, normalize whitespace, and clamp length
+    const plain = src
+      .replace(/<[^>]*>/g, ' ') // remove tags
+      .replace(/\s+/g, ' ')    // collapse whitespace including newlines
+      .trim()
+
+    const max = 200
+    return plain.length > max ? plain.slice(0, max) + '...' : plain
+  }
+
 import React from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { blogPostsEN } from "@/lib/blog-data";
 import { AkrinIcon } from "@/components/akrin-logo";
 import Image from "next/image";
+import { preferAvif } from "@/lib/image-format";
 
 // Blog type definition
 interface Blog {
@@ -29,7 +49,7 @@ export function SimpleBlogWithGrid({ language = 'en' }: SimpleBlogWithGridProps 
   // Convert blog data to the format expected by the component
   const blogs = Object.values(blogData).map((post: any) => ({
     title: post.title,
-    description: post.content.replace(/<[^>]*>/g, '').substring(0, 200) + '...',
+    description: deriveDescription(post),
     slug: post.slug,
     date: post.date,
     readTime: post.readTime,
@@ -91,12 +111,14 @@ export function SimpleBlogWithGrid({ language = 'en' }: SimpleBlogWithGridProps 
                   <div className="flex-shrink-0 relative w-full lg:w-96 h-36 xs:h-40 lg:h-64 rounded-t-xl lg:rounded-t-none lg:rounded-l-xl overflow-hidden">
                     {featuredPost.image ? (
                       <Image
-                        src={featuredPost.image}
+                        src={preferAvif(featuredPost.image) as string}
                         alt={featuredPost.title}
                         fill
                         className={featuredPost.slug === 'phishing-prevention-guide-2025' ? "object-contain object-center p-2 w-full h-full" : "object-cover object-center transition-transform duration-700 w-full h-full lg:group-hover:scale-105"}
                         priority
-                        sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
+                        fetchPriority="high"
+                        sizes="(max-width: 1024px) 100vw, 384px"
+                        quality={50}
                         unoptimized={false}
                       />
                     ) : (
@@ -108,12 +130,12 @@ export function SimpleBlogWithGrid({ language = 'en' }: SimpleBlogWithGridProps 
                   <div className="flex flex-col h-full p-3 sm:p-7">
                     <div className="mb-3">
                       {featuredPost.category && (
-                        <span className="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
+                        <span className="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-teal-100 text-teal-800">
                           {featuredPost.category}
                         </span>
                       )}
                     </div>
-                    <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-800 group-hover:text-gray-600 leading-tight">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-800 group-hover:text-[#21B3AA] transition-colors leading-tight">
                       {featuredPost.title}
                     </h3>
                     <p className="mt-2 text-sm sm:text-base text-gray-600 line-clamp-2 sm:line-clamp-3 md:line-clamp-none">
@@ -154,7 +176,9 @@ export function SimpleBlogWithGrid({ language = 'en' }: SimpleBlogWithGridProps 
         <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 lg:py-20">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {remainingPosts.map((blog, index) => (
-              <BlogCard blog={blog} key={blog.slug} variant="grid" language={language} />
+              <div key={blog.slug} className={index > 2 ? 'cv-auto' : undefined}>
+                <BlogCard blog={blog} variant="grid" language={language} />
+              </div>
             ))}
           </div>
         </div>
@@ -177,7 +201,7 @@ export function SimpleBlogWithGrid({ language = 'en' }: SimpleBlogWithGridProps 
               <div className="relative flex-1">
                 <input
                   type="email"
-                  className="peer p-4 block w-full border-gray-200 rounded-lg text-sm placeholder:text-transparent focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none
+                  className="peer p-4 block w-full border-gray-200 rounded-lg text-sm placeholder:text-transparent focus:border-[#21B3AA] focus:ring-[#21B3AA] disabled:opacity-50 disabled:pointer-events-none
                   focus:pt-6
                   focus:pb-2
                   [&:not(:placeholder-shown)]:pt-6
@@ -198,7 +222,7 @@ export function SimpleBlogWithGrid({ language = 'en' }: SimpleBlogWithGridProps 
               </div>
               <button
                 type="submit"
-                className="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-[#21B3AA] text-white hover:bg-[#1ea497] disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:ring-2 focus:ring-[#21B3AA]"
               >
                 {t.subscribeButton}
                 <svg className="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -232,11 +256,11 @@ export const BlogCard = ({ blog, variant = "grid", language = "en" }: { blog: Bl
         <div className="relative w-full h-32 xs:h-36 sm:h-40 md:h-52 overflow-hidden rounded-t-xl">
           {blog.image ? (
             <Image
-              src={blog.image}
+              src={preferAvif(blog.image) as string}
               alt={blog.title}
               fill
               className={isPhishing ? "object-contain object-center p-1 w-full h-full" : "object-cover object-center transition-transform duration-700 w-full h-full sm:group-hover:scale-105"}
-              sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1200px) 33vw, 400px"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
               unoptimized={false}
             />
           ) : (
@@ -248,12 +272,12 @@ export const BlogCard = ({ blog, variant = "grid", language = "en" }: { blog: Bl
         <div className="p-4 md:p-6 flex-1 flex flex-col">
           <div className="mb-1">
             {blog.category && (
-              <span className="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+              <span className="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-teal-100 text-teal-800">
                 {blog.category}
               </span>
             )}
           </div>
-          <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-2 group-hover:text-blue-600 leading-tight">
+          <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-2 group-hover:text-[#21B3AA] transition-colors leading-tight">
             {truncate(blog.title, 85)}
           </h3>
           <p className="text-gray-600 text-sm mb-4 line-clamp-2 flex-1">
@@ -287,7 +311,7 @@ export const BlogCard = ({ blog, variant = "grid", language = "en" }: { blog: Bl
     return (
       <Link href={`/blog/${blog.slug}`} className="group flex items-center gap-x-4">
         <div className="flex-1">
-          <h3 className="text-sm font-semibold text-gray-800 group-hover:text-blue-600">
+          <h3 className="text-sm font-semibold text-gray-800 group-hover:text-[#21B3AA] transition-colors">
             {blog.title}
           </h3>
           <p className="text-xs text-gray-600 mt-1">
@@ -310,12 +334,12 @@ export const BlogCard = ({ blog, variant = "grid", language = "en" }: { blog: Bl
           <div className="flex-1">
             <div className="mb-3">
               {blog.category && (
-                <span className="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
+                <span className="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-teal-100 text-teal-800">
                   {blog.category}
                 </span>
               )}
             </div>
-            <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2 group-hover:text-blue-600 leading-tight">
+            <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2 group-hover:text-[#21B3AA] transition-colors leading-tight">
               {blog.title}
             </h3>
             <p className="text-sm sm:text-base text-gray-600 mb-4 line-clamp-2">
@@ -341,7 +365,7 @@ export const BlogCard = ({ blog, variant = "grid", language = "en" }: { blog: Bl
           {blog.image && (
             <div className="relative w-32 xs:w-36 sm:w-40 md:w-48 h-24 xs:h-28 sm:h-32 rounded-lg overflow-hidden flex-shrink-0">
               <Image
-                src={blog.image}
+                src={preferAvif(blog.image) as string}
                 alt={blog.title}
                 fill
                 className="object-cover object-center group-hover:scale-105 transition-transform duration-700"

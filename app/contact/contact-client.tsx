@@ -181,9 +181,8 @@ export default function ContactClient() {
                 <div>
                   <p className="text-lg font-semibold text-gray-900 mb-2">Corporate Headquarters</p>
                   <address className="text-gray-600 space-y-1 not-italic">
-                    <p>2-4-15 Minamiaoyama 4F</p>
-                    <p>Minato City</p>
-                    <p>Tokyo 107-0062</p>
+                    <p>〒107-0062 Tokyo, Minato City</p>
+                    <p>Minami Aoyama 2-4-15</p>
                     <p>Japan</p>
                   </address>
                 </div>

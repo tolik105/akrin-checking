@@ -140,7 +140,7 @@ export default function ITConsultingProjectManagementJaClient() {
               { label: 'Services', href: '/ja/services' },
               { label: 'ITコンサルティング＆プロジェクト管理' }
             ]}
-            imageSrc="/images/banners/it-consulting-project-management/hero-banner.webp"
+            imageSrc="/images/banners/it-consulting-project-management/hero-banner.avif"
             imageAlt="ITコンサルティングチームミーティング"
           />
         </section>

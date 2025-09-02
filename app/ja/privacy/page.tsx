@@ -95,7 +95,7 @@ export default function JapanesePrivacyPage() {
                 <strong>AKRIN株式会社</strong><br />
                 メール: support@akrin.jp<br />
                 電話: 03-6821-1223<br />
-                住所: 〒107-0062 東京都港区南青山2-4-15 4F
+                住所: 〒107-0062 東京都港区南青山2-4-15
               </p>
             </div>
           </section>

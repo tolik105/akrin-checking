@@ -21,6 +21,10 @@ export const metadata: Metadata = generatePageMetadata({
   image: '/og-image.png'
 })
 
+// Route-level performance hints: static HTML with hourly ISR
+export const dynamic = 'force-static'
+export const revalidate = 3600
+
 // Generate structured data for blog listing
 function generateBlogStructuredData() {
   const posts = Object.values(blogPostsEN)

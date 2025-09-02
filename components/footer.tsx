@@ -139,8 +139,8 @@ export function Footer() {
               <div className="flex items-start gap-3 text-sm text-gray-700/90">
                 <div className="w-5 h-5 text-gray-700"><LocationIcon /></div>
                 <div>
-                  <p>2-4-15 Minamiaoyama 4F, Minato City, Tokyo 107-0062</p>
-                  <a href="https://maps.google.com/?q=2-4-15 Minamiaoyama 4F, Minato City, Tokyo 107-0062" target="_blank" rel="noopener noreferrer" className="text-gray-700/90 hover:text-gray-900">View on map</a>
+                  <p>〒107-0062 Tokyo, Minato City, Minami Aoyama 2-4-15</p>
+                  <a href="https://share.google/q4RmURkp1eOTFtFUN" target="_blank" rel="noopener noreferrer" className="text-gray-700/90 hover:text-gray-900">View on map</a>
                 </div>
               </div>
               <div className="flex items-center gap-3 text-sm text-gray-700/90">
@@ -250,7 +250,7 @@ export function Footer() {
               <div className="w-5 h-5 text-gray-700"><LocationIcon /></div>
               <div>
                 <p>{t('contact.info.addressText')}</p>
-                <a href="https://maps.google.com/?q=2-4-15 Minamiaoyama 4F, Minato City, Tokyo 107-0062" target="_blank" rel="noopener noreferrer" className="text-gray-700/90 hover:text-gray-900">{t('footer.viewOnMap', { defaultValue: 'View on map' })}</a>
+                <a href="https://share.google/q4RmURkp1eOTFtFUN" target="_blank" rel="noopener noreferrer" className="text-gray-700/90 hover:text-gray-900">{t('footer.viewOnMap', { defaultValue: 'View on map' })}</a>
               </div>
             </div>
             <div className="flex items-center gap-3 text-sm text-gray-700/90">
