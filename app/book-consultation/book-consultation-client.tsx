@@ -1,7 +1,6 @@
 "use client"
 
 import { motion, AnimatePresence } from "framer-motion"
-import Script from "next/script"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { ArrowLeft, Calendar, Clock, Users, CheckCircle } from "lucide-react"
@@ -193,82 +192,22 @@ export default function BookConsultationClient() {
               Choose a convenient time for your consultation. We'll send you a confirmation with all the meeting details.
             </p>
 
-            {/* Cal.com Booking Button */}
-            <button
-              type="button"
-              data-cal-link="akrinsupport/30min"
-              data-cal-namespace="30min"
-              data-cal-config='{"layout":"month_view"}'
+            {/* Cal.com Booking Button - open in new tab (perf-friendly) */}
+            <a
+              href="https://cal.com/akrinsupport/30min"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center px-12 py-6 bg-[#21B3AA] hover:bg-[#1a9891] text-white font-bold text-xl rounded-lg shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105"
-              onClick={(e) => {
-                e.preventDefault();
-                // @ts-ignore
-                if (typeof Cal !== 'undefined' && Cal?.ns?.['30min']) {
-                  // Prefer element-click behavior to ensure in-page popup
-                  const el = document.querySelector('[data-cal-link="akrinsupport/30min"]');
-                  if (el) {
-                    el.dispatchEvent(new Event('click', { bubbles: true }));
-                  } else {
-                    // @ts-ignore
-                    Cal.ns['30min']('ui', { open: true, layout: 'month_view', calLink: 'akrinsupport/30min' });
-                  }
-                }
-              }}
             >
               <Calendar className="mr-3 h-6 w-6" />
               Schedule Your Free Consultation
-            </button>
+            </a>
 
             <p className="text-gray-600 dark:text-gray-400 mt-8">
               Can't find a suitable time? Contact us directly and we'll work around your schedule.
             </p>
 
-            {/* Cal element-click embed code (robust Next.js Script init) */}
-            <Script
-              id="cal-embed-init"
-              strategy="afterInteractive"
-              dangerouslySetInnerHTML={{
-                __html: `
-                  (function (C, A, L) {
-                    let p = function (a, ar) { a.q.push(ar); };
-                    let d = C.document;
-                    C.Cal = C.Cal || function () {
-                      let cal = C.Cal;
-                      let ar = arguments;
-                      if (!cal.loaded) {
-                        cal.ns = {};
-                        cal.q = cal.q || [];
-                        d.head.appendChild(d.createElement("script")).src = A;
-                        cal.loaded = true;
-                      }
-                      if (ar[0] === L) {
-                        const api = function () { p(api, arguments); };
-                        const namespace = ar[1];
-                        api.q = api.q || [];
-                        if (typeof namespace === "string") {
-                          cal.ns[namespace] = cal.ns[namespace] || api;
-                          p(cal.ns[namespace], ar);
-                          p(cal, ["initNamespace", namespace]);
-                        } else p(cal, ar);
-                        return;
-                      }
-                      p(cal, ar);
-                    };
-                  })(window, "https://app.cal.com/embed/embed.js", "init");
 
-                  Cal("init", "30min", { origin: "https://app.cal.com" });
-
-                  Cal.ns["30min"]("ui", {
-                    theme: "light",
-                    cssVarsPerTheme: {
-                      light: { "cal-brand": "#21B3AA" },
-                      dark: { "cal-brand": "#21B3AA" }
-                    },
-                    layout: "month_view"
-                  });
-                `
-              }}
-            />
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-4">
               <Button
                 variant="outline"
