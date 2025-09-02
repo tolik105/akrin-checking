@@ -1,9 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   compress: true,
+  productionBrowserSourceMaps: true,
   // Performance optimizations
   experimental: {
-    optimizePackageImports: ['@heroicons/react', 'lucide-react', 'framer-motion'],
+    // Removing 'framer-motion' here avoids Next 15 vendor-chunks resolution issues in production builds
+    optimizePackageImports: ['@heroicons/react', 'lucide-react'],
   },
   // Bundle optimization
   webpack: (config, { dev, isServer }) => {

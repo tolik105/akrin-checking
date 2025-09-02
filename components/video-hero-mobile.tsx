@@ -5,6 +5,7 @@ import Link from "next/link"
 import { motion, AnimationProps } from "framer-motion"
 import { useTranslation } from "react-i18next"
 import { useEffect, useState } from 'react'
+import Image from 'next/image'
 import { cn } from "@/lib/utils"
 
 export function VideoHeroMobile() {
@@ -158,7 +159,7 @@ export function VideoHeroMobile() {
             // Mobile: Static image only for maximum performance (no video)
             <div className="w-full h-full relative">
               <Image
-                src="/og-image.png"
+                src="/images/mobile-background/mobile-background.avif"
                 alt="AKRIN Technology Background"
                 fill
                 className="object-cover"
