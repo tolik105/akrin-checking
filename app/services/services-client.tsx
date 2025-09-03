@@ -113,14 +113,14 @@ export default function ServicesClient() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group relative block rounded-xl overflow-hidden"
             >
-              <div className={`aspect-w-12 aspect-h-7 sm:aspect-h-8 lg:aspect-h-9 overflow-hidden ${
+              <div className={`relative overflow-hidden rounded-xl ${
                 index === 0 ? 'bg-gradient-to-br from-pink-400 to-pink-600' :
                 index === 1 ? 'bg-gradient-to-br from-blue-400 to-blue-600' :
                 index === 2 ? 'bg-gradient-to-br from-teal-400 to-teal-600' :
                 index === 3 ? 'bg-gradient-to-br from-yellow-400 to-yellow-600' :
                 index === 4 ? 'bg-gradient-to-br from-purple-400 to-purple-600' :
                 'bg-gradient-to-br from-green-400 to-green-600'
-              }`}>
+              } aspect-[12/7] sm:aspect-[12/8] lg:aspect-[12/9]`}>
                 <Image
                   className="group-hover:scale-105 transition-transform duration-500 ease-in-out absolute top-0 start-0 object-cover rounded-xl opacity-80"
                   src={service.image}
@@ -173,7 +173,7 @@ export default function ServicesClient() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group flex flex-col h-full bg-white border border-gray-200 shadow-sm rounded-xl hover:shadow-md transition-all duration-300"
             >
-              <div className="aspect-w-16 aspect-h-11 rounded-t-xl overflow-hidden">
+              <div className="relative aspect-[16/11] rounded-t-xl overflow-hidden">
                 <Image
                   className="object-cover rounded-t-xl group-hover:scale-105 transition-transform duration-500"
                   src={service.image}
