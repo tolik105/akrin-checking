@@ -29,25 +29,37 @@ function getOptimizedImageSrc(originalSrc: string): string {
   if (originalSrc.endsWith('.avif')) {
     return originalSrc
   }
-  
-  // Convert file extensions to AVIF first, then WebP fallback
-  const avifSrc = originalSrc
-    .replace(/\.(jpeg|jpg|png|webp)$/i, '.avif')
-  
-  return avifSrc
+  // Convert .webp or .jpg/.png to .avif if possible (basic heuristic)
+  if (originalSrc.endsWith('.webp')) {
+    return originalSrc.replace('.webp', '.avif')
+  }
+  if (originalSrc.endsWith('.jpg')) {
+    return originalSrc.replace('.jpg', '.avif')
+  }
+  if (originalSrc.endsWith('.jpeg')) {
+    return originalSrc.replace('.jpeg', '.avif')
+  }
+  if (originalSrc.endsWith('.png')) {
+    return originalSrc.replace('.png', '.avif')
+  }
+  return originalSrc
 }
 
-// Function to get fallback image sources
 function getImageFallbacks(originalSrc: string): string[] {
   const fallbacks: string[] = []
-  
-  // Add AVIF version
-  const avifSrc = originalSrc.replace(/\.(jpeg|jpg|png|webp)$/i, '.avif')
-  fallbacks.push(avifSrc)
-  
-  // Add WebP version
-  const webpSrc = originalSrc.replace(/\.(jpeg|jpg|png)$/i, '.webp')
-  fallbacks.push(webpSrc)
+
+  // Prefer AVIF
+  const avif = getOptimizedImageSrc(originalSrc)
+  if (avif !== originalSrc) fallbacks.push(avif)
+
+  // WebP fallback
+  if (!originalSrc.endsWith('.webp')) {
+    if (originalSrc.endsWith('.avif')) {
+      fallbacks.push(originalSrc.replace('.avif', '.webp'))
+    } else {
+      fallbacks.push(originalSrc.replace(/\.(jpg|jpeg|png)$/i, '.webp'))
+    }
+  }
   
   // Add original
   fallbacks.push(originalSrc)
@@ -113,19 +125,16 @@ export function OptimizedImage({
     blurDataURL: blurDataURL || "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q==",
     sizes,
     className: cn(
-      "transition-opacity duration-300",
+      "transition-opacity duration-300 object-cover",
       hasError && "opacity-50",
       className
     ),
-    style: {
-      objectFit: fill ? objectFit : undefined,
-      objectPosition: fill ? objectPosition : undefined,
-    },
+    // Avoid inline style differences between SSR and client to prevent hydration mismatches
     onLoad: handleLoad,
     onError: handleError,
     loading: priority ? "eager" : loading,
     ...props
-  }
+  } as const
 
   if (fill) {
     return (
@@ -156,16 +165,9 @@ export function ResponsiveOptimizedImage({
   containerClassName,
   ...imageProps
 }: ResponsiveOptimizedImageProps) {
-  const aspectRatioClass = {
-    '16/9': 'aspect-video',
-    '4/3': 'aspect-[4/3]',
-    '1/1': 'aspect-square',
-    '3/4': 'aspect-[3/4]',
-    '9/16': 'aspect-[9/16]',
-  }[aspectRatio]
-
+  const [w, h] = aspectRatio.split('/')
   return (
-    <div className={cn('relative w-full overflow-hidden rounded-lg', aspectRatioClass, containerClassName)}>
+    <div className={cn('relative w-full rounded-md overflow-hidden', containerClassName, `aspect-[${w}/${h}]`)}>
       <OptimizedImage {...imageProps} fill />
     </div>
   )
@@ -192,7 +194,6 @@ export function HeroOptimizedImage({
         alt={alt}
         fill
         priority={priority}
-        sizes="100vw"
         className={className}
         quality={90}
       />
