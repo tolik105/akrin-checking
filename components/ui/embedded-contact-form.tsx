@@ -52,7 +52,10 @@ export function EmbeddedContactForm() {
     try {
       const nativeForm = e.currentTarget
       const fd = new FormData(nativeForm)
-      const captchaToken = (fd.get('cf-turnstile-response') as string) || ''
+      let captchaToken = (fd.get('cf-turnstile-response') as string) || ''
+      if (!captchaToken && typeof window !== 'undefined' && (window as any).turnstile && (window as any).__tsWidgetId) {
+        try { captchaToken = (window as any).turnstile.getResponse((window as any).__tsWidgetId) || '' } catch {}
+      }
 
       const response = await fetch('/api/contact', {
         method: 'POST',

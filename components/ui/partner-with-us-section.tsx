@@ -30,7 +30,10 @@ export function PartnerWithUsSection() {
     try {
       const formEl = e.currentTarget as HTMLFormElement
       const fd = new FormData(formEl)
-      const captchaToken = (fd.get('cf-turnstile-response') as string) || ''
+      let captchaToken = (fd.get('cf-turnstile-response') as string) || ''
+      if (!captchaToken && typeof window !== 'undefined' && (window as any).turnstile && (window as any).__tsWidgetId) {
+        try { captchaToken = (window as any).turnstile.getResponse((window as any).__tsWidgetId) || '' } catch {}
+      }
 
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -274,11 +277,6 @@ export function PartnerWithUsSection() {
                     required
                   />
                 </div>
-              </div>
-
-              <div className="mt-4 p-3 bg-yellow-50 rounded-md">
-                <p className="text-sm text-yellow-700 font-medium">reCAPTCHA temporarily unavailable</p>
-                <p className="text-xs text-yellow-600 mt-1">Please proceed without verification. We'll validate your submission manually.</p>
               </div>
 
               <div className="pt-2">

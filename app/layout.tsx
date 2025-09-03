@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next"
 import Script from "next/script"
+import { headers as nextHeaders } from "next/headers"
 // Using local variable fonts instead of Google Fonts imports
 import "./globals.css"
 
@@ -126,7 +127,7 @@ export default function RootLayout({
 }) {
   // During SSR, read the middleware-injected header to set html lang
   // Fallback to 'en' when not available (static export or client nav)
-  const lang = (typeof headers === 'function' ? (require('next/headers').headers().get('x-akrin-lang') as string | null) : null) || 'en'
+  const lang = (typeof nextHeaders === 'function' ? (nextHeaders().get('x-akrin-lang') as string | null) : null) || 'en'
   return (
     <html lang={lang} suppressHydrationWarning>
       <head>
