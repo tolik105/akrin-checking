@@ -55,7 +55,7 @@ export default function ServicesClient() {
   return (
     <div className="bg-white">
       {/* Professional Header */}
-      <header className="relative bg-white border-b border-gray-100">
+      <div className="relative bg-white border-b border-gray-100">
         <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <div className="grid gap-8 md:grid-cols-2 md:items-center">
             <div>
@@ -97,7 +97,7 @@ export default function ServicesClient() {
             </div>
           </div>
         </div>
-      </header>
+      </div>
 
       {/* Colorful Services Grid - optimized */}
       <main aria-labelledby="services-heading" className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">

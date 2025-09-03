@@ -50,7 +50,7 @@ export function HeroServicesRow() {
                   priority={false}
                   loading="lazy"
                   sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
-                  quality={70}
+                  quality={85}
                   placeholder="empty"
                 />
                 <div className="absolute inset-0 rounded-lg ring-1 ring-gray-200" />
