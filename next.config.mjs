@@ -7,29 +7,8 @@ const nextConfig = {
     // Removing 'framer-motion' here avoids Next 15 vendor-chunks resolution issues in production builds
     optimizePackageImports: ['@heroicons/react', 'lucide-react'],
   },
-  // Bundle optimization
-  webpack: (config, { dev, isServer }) => {
-    if (!dev && !isServer) {
-      // Split chunks for better caching
-      config.optimization.splitChunks = {
-        chunks: 'all',
-        cacheGroups: {
-          vendor: {
-            test: /[\\/]node_modules[\\/]/,
-            name: 'vendors',
-            chunks: 'all',
-          },
-          common: {
-            name: 'common',
-            minChunks: 2,
-            chunks: 'all',
-            enforce: true,
-          },
-        },
-      }
-    }
-    return config
-  },
+  // Turbopack config (Next.js 16 uses Turbopack by default)
+  turbopack: {},
   async redirects() {
     return [
       // Normalize accidental double JA prefix
@@ -62,9 +41,6 @@ const nextConfig = {
       },
     ]
   },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -87,9 +63,7 @@ const nextConfig = {
   images: {
     unoptimized: false, // Enable Next.js image optimization for better performance
     formats: ['image/avif', 'image/webp'], // Prefer modern formats for crispness
-    deviceSizes: [
-      360, 414, 640, 750, 828, 960, 1080, 1200, 1280, 1440, 1536, 1600, 1920, 2048, 2160, 2304, 2400, 2560, 2880, 3200, 3840
-    ],
+    deviceSizes: [360, 640, 750, 828, 1080, 1200, 1536, 1920, 2048],
     remotePatterns: [
       {
         protocol: 'https',
