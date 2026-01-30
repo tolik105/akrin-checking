@@ -5,10 +5,8 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { useTranslation } from "react-i18next"
-import { motion } from "framer-motion"
+import { LazyMotion, domAnimation, m } from "framer-motion"
 import { ClientOnly } from "@/hooks/use-mounted"
-
-import { EmailIcon, LinkedInIcon, TwitterIcon } from "@/components/icons/social"
 
 // Custom sophisticated footer icons
 const EmailIcon = () => (
@@ -36,8 +34,6 @@ const LocationIcon = () => (
   </svg>
 )
 
-
-
 const LinkedInIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
     <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
@@ -61,6 +57,7 @@ const SendIcon = () => (
 export function Footer() {
   const { t } = useTranslation('common')
   return (
+    <LazyMotion features={domAnimation}>
     <footer className="relative bg-white text-gray-900 mt-auto overflow-hidden border-t border-gray-100/80">
       {/* Clean background with subtle pattern */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-50/50 to-white"></div>
@@ -78,7 +75,7 @@ export function Footer() {
             />
           </Link>
           <div className="flex items-center gap-responsive-sm">
-            <motion.a
+            <m.a
               href="https://www.linkedin.com/company/akrin-kk"
               className="text-gray-600/80 hover:text-gray-900 transition-all duration-300 p-1 group"
               target="_blank"
@@ -90,8 +87,8 @@ export function Footer() {
               <div className="w-5 h-5 group-hover:text-gray-900 transition-colors">
                 <LinkedInIcon />
               </div>
-            </motion.a>
-            <motion.a
+            </m.a>
+            <m.a
               href="https://twitter.com/akrin_kk"
               className="text-gray-600/80 hover:text-gray-900 transition-all duration-300 p-1 group"
               target="_blank"
@@ -103,7 +100,7 @@ export function Footer() {
               <div className="w-5 h-5 group-hover:text-gray-900 transition-colors">
                 <TwitterIcon />
               </div>
-            </motion.a>
+            </m.a>
           </div>
         </div>
 
@@ -154,14 +151,14 @@ export function Footer() {
             </div>
           </div>
         }>
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 lg:gap-12 mb-10 sm:mb-12 lg:mb-16 antialiased">
           {/* Company Column */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -181,9 +178,9 @@ export function Footer() {
                 <Link href="/contact" className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block focus:outline-none focus:ring-2 focus:ring-violet-600 rounded">{t('nav.contact')}</Link>
               </li>
             </ul>
-          </motion.div>
+          </m.div>
           {/* Services Column */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -213,9 +210,9 @@ export function Footer() {
                 <Link href="/services/itad-japan-apac-us" className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block focus:outline-none focus:ring-2 focus:ring-violet-600 rounded">ITAD (Japan/APAC/US)</Link>
               </li>
             </ul>
-          </motion.div>
+          </m.div>
           {/* Resources Column */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -236,9 +233,9 @@ export function Footer() {
                 <Link href="/terms" className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block focus:outline-none focus:ring-2 focus:ring-violet-600 rounded">{t('footer.termsOfService')}</Link>
               </li>
             </ul>
-          </motion.div>
+          </m.div>
           {/* Contact Column */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -261,8 +258,8 @@ export function Footer() {
               <div className="w-5 h-5 text-gray-700"><PhoneIcon /></div>
               <a href="tel:+81-3-6821-1223" className="hover:text-gray-900">+81-3-6821-1223</a>
             </div>
-          </motion.div>
-        </motion.div>
+          </m.div>
+        </m.div>
         </ClientOnly>
 
         {/* Bottom copyright bar - responsive */}
@@ -284,7 +281,7 @@ export function Footer() {
             </div>
           </div>
         }>
-        <motion.div
+        <m.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -304,9 +301,10 @@ export function Footer() {
               </Link>
             </div>
           </div>
-        </motion.div>
+        </m.div>
         </ClientOnly>
       </div>
     </footer>
+    </LazyMotion>
   )
 }

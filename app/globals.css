@@ -858,12 +858,12 @@ header[class*="navbar-fixed"],
 }
 
 /* Mobile menu specific styles */
-.mobile-menu-container .sm\\:hidden {
+.mobile-menu-container [class*="sm:hidden"] {
   display: block !important;
 }
 
 @media (min-width: 640px) {
-  .mobile-menu-container .sm\\:hidden {
+  .mobile-menu-container [class*="sm:hidden"] {
     display: none !important;
   }
 }
