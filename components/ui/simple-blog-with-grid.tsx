@@ -6,7 +6,7 @@
       ? post.excerpt
       : (typeof post.metaDescription === 'string' && post.metaDescription.trim().length > 0
         ? post.metaDescription
-        : (typeof post.content === 'string' ? post.content : ''))
+        : (typeof post.htmlContent === 'string' ? post.htmlContent : (typeof post.content === 'string' ? post.content : '')))
 
     // Strip HTML if content chosen, normalize whitespace, and clamp length
     const plain = src
@@ -21,7 +21,6 @@
 import React from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { blogPostsEN } from "@/lib/blog-data";
 import { AkrinIcon } from "@/components/akrin-logo";
 import Image from "next/image";
 import { preferAvif } from "@/lib/image-format";
@@ -38,25 +37,61 @@ interface Blog {
   image?: string | null;
 }
 
-interface SimpleBlogWithGridProps {
-  language?: 'en' | 'ja';
+// Sanity post type
+interface SanityPost {
+  _id: string;
+  title: string;
+  slug: { current: string };
+  metaDescription?: string;
+  excerpt?: string;
+  mainImage?: { asset?: { url?: string }; alt?: string };
+  imageUrl?: string;
+  htmlContent?: string;
+  author?: string;
+  authorRole?: string;
+  publishedAt?: string;
+  readTime?: string;
+  category?: string;
+  tags?: string[];
 }
 
-export function SimpleBlogWithGrid({ language = 'en' }: SimpleBlogWithGridProps = {}) {
-  // Select the appropriate blog data based on language
-  const blogData = language === 'ja' ? require('@/lib/blog-data').blogPostsJA : blogPostsEN;
+interface SimpleBlogWithGridProps {
+  language?: 'en' | 'ja';
+  posts?: SanityPost[];
+}
 
-  // Convert blog data to the format expected by the component
-  const blogs = Object.values(blogData).map((post: any) => ({
+export function SimpleBlogWithGrid({ language = 'en', posts }: SimpleBlogWithGridProps = {}) {
+  // Convert Sanity posts to the format expected by the component
+  const blogs = (posts || []).map((post: SanityPost) => ({
     title: post.title,
     description: deriveDescription(post),
-    slug: post.slug,
-    date: post.date,
+    slug: post.slug?.current || '',
+    date: post.publishedAt,
     readTime: post.readTime,
     category: post.category,
-    featured: post.featured || false,
-    image: post.image || null
+    featured: false,
+    image: post.mainImage?.asset?.url || post.imageUrl || null
   }));
+
+  // Guard against empty posts
+  if (blogs.length === 0) {
+    return (
+      <div className="relative overflow-hidden bg-white">
+        <section className="bg-white">
+          <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 lg:py-20">
+            <div className="max-w-2xl mx-auto text-center">
+              <h2 className="text-xl sm:text-2xl font-bold md:text-3xl lg:text-4xl md:leading-tight text-gray-800">
+                {language === 'ja' ? 'ブログ記事がありません' : 'No blog posts available'}
+              </h2>
+              <p className="mt-4 text-gray-600">
+                {language === 'ja' ? 'まもなくコンテンツを追加します。' : 'Content coming soon.'}
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    );
+  }
 
   // Separate featured post (first one) from the rest
   const featuredPost = blogs[0];

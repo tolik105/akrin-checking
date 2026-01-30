@@ -2,13 +2,24 @@ import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
-import { blogPostsEN } from '@/lib/blog-data'
+import { client } from '@/lib/sanity.client'
+import { postBySlugQuery, postsQuery } from '@/lib/sanity.queries'
 import { SocialShareButtons } from '@/components/blog/social-share-buttons'
 import { TableOfContents } from '@/components/blog/table-of-contents'
 import { ReadingProgress } from '@/components/blog/reading-progress'
 import { AboutAuthor } from '@/components/blog/about-author'
 import { AkrinIcon } from '@/components/akrin-logo'
 import { preferAvif } from '@/lib/image-format'
+
+// Fetch single post from Sanity
+async function getPost(slug: string) {
+  return await client.fetch(postBySlugQuery, { slug })
+}
+
+// Fetch all posts for related posts
+async function getAllPosts() {
+  return await client.fetch(postsQuery)
+}
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -18,6 +29,7 @@ interface BlogPostPageProps {
 
 // Generate dynamic keywords based on post content and category
 const generateKeywords = (post: any) => {
+  const slugStr = post.slug?.current || post.slug || ''
   const baseKeywords = [
     ...(post.tags || []),
     'AKRIN',
@@ -27,7 +39,7 @@ const generateKeywords = (post: any) => {
   ]
 
   // Add category-specific keywords
-  if (post.category === 'Security' || post.slug.includes('cybersecurity')) {
+  if (post.category === 'Security' || slugStr.includes('cybersecurity')) {
     return [
       ...baseKeywords,
       'cybersecurity Japan',
@@ -47,7 +59,7 @@ const generateKeywords = (post: any) => {
     ]
   }
 
-  if (post.category === 'Technology Trends' || post.slug.includes('infrastructure')) {
+  if (post.category === 'Technology Trends' || slugStr.includes('infrastructure')) {
     return [
       ...baseKeywords,
       'IT infrastructure Japan',
@@ -62,7 +74,7 @@ const generateKeywords = (post: any) => {
   }
 
   // AI and Innovation specific keywords
-  if (post.category === 'Innovation' || post.slug.includes('ai')) {
+  if (post.category === 'Innovation' || slugStr.includes('ai')) {
     return [
       ...baseKeywords,
       'artificial intelligence Japan',
@@ -99,7 +111,7 @@ const generateKeywords = (post: any) => {
 // Generate metadata for SEO
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
   const resolvedParams = await params
-  const post = blogPostsEN[resolvedParams.slug as keyof typeof blogPostsEN]
+  const post = await getPost(resolvedParams.slug)
 
   if (!post) {
     return {
@@ -109,7 +121,8 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   }
 
   // Extract clean description from content
-  const cleanDescription = post.content
+  const contentSource = post.htmlContent || ''
+  const cleanDescription = contentSource
     .replace(/<[^>]*>/g, '')
     .replace(/\s+/g, ' ')
     .trim()
@@ -120,6 +133,10 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   const normalizedTitle = baseTitle.length > 65 ? `${baseTitle.slice(0, 62)}...` : baseTitle
   const normalizedDescription = (post.metaDescription || cleanDescription)
     .slice(0, 170)
+
+  const postSlug = post.slug?.current || post.slug
+  const postImage = post.mainImage?.asset?.url || post.imageUrl || post.image
+  const postDate = post.publishedAt || post.date
 
   return {
     title: normalizedTitle,
@@ -136,28 +153,28 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     },
     metadataBase: new URL('https://akrin.jp'),
     alternates: {
-      canonical: `/blog/${post.slug}`,
+      canonical: `/blog/${postSlug}`,
       languages: {
-        en: `/blog/${post.slug}`,
-        ja: `/ja/blog/${post.slug}`,
-        'x-default': `/blog/${post.slug}`,
+        en: `/blog/${postSlug}`,
+        ja: `/ja/blog/${postSlug}`,
+        'x-default': `/blog/${postSlug}`,
       },
     },
     openGraph: {
       title: normalizedTitle,
       description: normalizedDescription,
-      url: `https://akrin.jp/blog/${post.slug}`,
+      url: `https://akrin.jp/blog/${postSlug}`,
       siteName: 'AKRIN',
       locale: 'en_US',
       type: 'article',
-      publishedTime: post.date,
-      modifiedTime: post.date,
+      publishedTime: postDate,
+      modifiedTime: postDate,
       authors: ['AKRIN Technology Experts'],
       section: post.category || 'Technology',
       tags: post.tags || [],
-      images: post.image ? [
+      images: postImage ? [
         {
-          url: post.image,
+          url: postImage,
           width: 1200,
           height: 630,
           alt: `${post.title} - AKRIN IT Blog`,
@@ -170,7 +187,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       description: normalizedDescription,
       site: '@AKRIN_JP',
       creator: '@AKRIN_JP',
-      images: post.image ? [post.image] : [],
+      images: postImage ? [postImage] : [],
     },
     robots: {
       index: true,
@@ -184,15 +201,16 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       },
     },
     verification: {
-      google: 'your-google-verification-code',
+      google: process.env.GOOGLE_VERIFICATION_CODE || '',
     },
   }
 }
 
 // Generate static params for all blog posts
 export async function generateStaticParams() {
-  return Object.keys(blogPostsEN).map((slug) => ({
-    slug,
+  const posts = await client.fetch(postsQuery)
+  return posts.map((post: any) => ({
+    slug: post.slug?.current || post.slug,
   }))
 }
 
@@ -222,33 +240,45 @@ function normalizeHeadings(content: string): string {
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const resolvedParams = await params
-  const post = blogPostsEN[resolvedParams.slug as keyof typeof blogPostsEN]
+  const post = await getPost(resolvedParams.slug)
 
   if (!post) {
     notFound()
   }
 
-  // Adjust media behavior for specific posts (kept simple for consistent visuals)
+  // Get all posts for related posts section
+  const allPosts = await getAllPosts()
+
+  // Get the post content (use htmlContent from Sanity migration)
+  const postContent = post.htmlContent || ''
+  const postSlug = post.slug?.current || post.slug
+  const postImage = post.mainImage?.asset?.url || post.imageUrl || post.image
+  const postDate = post.publishedAt || post.date
 
   // Add IDs to headings for better navigation
-  const processedContent = normalizeHeadings(post.content);
+  const processedContent = normalizeHeadings(postContent);
 
   // Generate enhanced structured data with category-specific schema
   const generateStructuredData = (post: any) => {
+    const contentSource = post.htmlContent || post.content || ''
+    const imgUrl = post.mainImage?.asset?.url || post.imageUrl || post.image
+    const pubDate = post.publishedAt || post.date
+    const slug = post.slug?.current || post.slug
+    
     const baseSchema = {
       '@context': 'https://schema.org',
       '@type': 'BlogPosting',
       headline: post.title,
-      description: post.metaDescription || post.content.replace(/<[^>]*>/g, '').substring(0, 160),
-      image: post.image ? {
+      description: post.metaDescription || contentSource.replace(/<[^>]*>/g, '').substring(0, 160),
+      image: imgUrl ? {
         '@type': 'ImageObject',
-        url: post.image,
+        url: imgUrl,
         width: 1200,
         height: 630,
         caption: `${post.title} - AKRIN IT Blog`
       } : undefined,
-      datePublished: post.date,
-      dateModified: post.date,
+      datePublished: pubDate,
+      dateModified: pubDate,
       author: {
         '@type': 'Person',
         name: post.author || 'AKRIN Technology Expert',
@@ -280,7 +310,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       },
       mainEntityOfPage: {
         '@type': 'WebPage',
-        '@id': `https://akrin.jp/blog/${post.slug}`,
+        '@id': `https://akrin.jp/blog/${slug}`,
         breadcrumb: {
           '@type': 'BreadcrumbList',
           itemListElement: [
@@ -300,15 +330,15 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               '@type': 'ListItem',
               position: 3,
               name: post.title,
-              item: `https://akrin.jp/blog/${post.slug}`
+              item: `https://akrin.jp/blog/${slug}`
             }
           ]
         }
       },
       articleSection: post.category || 'Technology',
       keywords: generateKeywords(post).join(', '),
-      wordCount: post.content.replace(/<[^>]*>/g, '').split(/\s+/).length,
-      url: `https://akrin.jp/blog/${post.slug}`,
+      wordCount: contentSource.replace(/<[^>]*>/g, '').split(/\s+/).length,
+      url: `https://akrin.jp/blog/${slug}`,
       isPartOf: {
         '@type': 'Blog',
         name: 'AKRIN IT Blog',
@@ -316,7 +346,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         description: 'Expert insights on IT infrastructure, cybersecurity, and digital transformation in Japan'
       },
       inLanguage: 'en-US',
-      copyrightYear: new Date(post.date).getFullYear(),
+      copyrightYear: pubDate ? new Date(pubDate).getFullYear() : new Date().getFullYear(),
       copyrightHolder: {
         '@type': 'Organization',
         name: 'AKRIN'
@@ -324,7 +354,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     }
 
     // Add category-specific schema enhancements
-    if (post.category === 'Security' || post.slug.includes('cybersecurity')) {
+    if (post.category === 'Security' || slug.includes('cybersecurity')) {
       return {
         ...baseSchema,
         about: [
@@ -365,7 +395,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     }
 
     // Add AI-specific schema enhancements
-    if (post.category === 'Innovation' || post.slug.includes('ai')) {
+    if (post.category === 'Innovation' || slug.includes('ai')) {
       return {
         ...baseSchema,
         about: [
@@ -411,7 +441,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const structuredData = generateStructuredData(post)
 
   // Generate FAQ structured data for AI posts
-  const faqStructuredData = (post.category === 'Innovation' || post.slug.includes('ai')) ? {
+  const faqStructuredData = (post.category === 'Innovation' || postSlug.includes('ai')) ? {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: [
@@ -448,7 +478,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         }
       }
     ]
-  } : (post.category === 'Security' || post.slug.includes('cybersecurity')) ? {
+  } : (post.category === 'Security' || postSlug.includes('cybersecurity')) ? {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: [
@@ -553,7 +583,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                     <p className="text-sm font-semibold text-gray-900 mb-1 leading-5">AKRIN</p>
                     <div className="flex items-center gap-x-3 text-xs text-gray-500">
                       <span>
-                        {post.date && new Date(post.date).toLocaleDateString('en-US', {
+                        {postDate && new Date(postDate).toLocaleDateString('en-US', {
                           year: 'numeric',
                           month: 'short',
                           day: 'numeric'
@@ -587,7 +617,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   <span itemProp="url">https://akrin.jp/akrin-logo.svg</span>
                 </span>
               </span>
-              <meta itemProp="url" content={`https://akrin.jp/blog/${post.slug}`} />
+              <meta itemProp="url" content={`https://akrin.jp/blog/${postSlug}`} />
               {post.metaDescription && <meta itemProp="description" content={post.metaDescription} />}
             </div>
           </div>
@@ -597,9 +627,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         <div className="mt-10 sm:mt-16">
           <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="relative h-[250px] xs:h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] bg-gray-100 rounded-xl overflow-hidden">
-              {post.image ? (
+              {postImage ? (
                 <Image
-                  src={preferAvif(post.image) as string}
+                  src={preferAvif(postImage) as string}
                   alt={`${post.title} - Expert insights on IT infrastructure and technology trends in Japan by AKRIN`}
                   fill
                   className="object-cover object-center"
@@ -663,69 +693,79 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         {/* Removed Security FAQ section per request */}
 
         {/* Preline Style Related Posts Section */}
-        {post.relatedPosts && post.relatedPosts.length > 0 && (
-          <section className="bg-gray-50 py-10 sm:py-16" aria-labelledby="related-posts">
-            <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="max-w-2xl text-center mx-auto mb-10 lg:mb-14">
-                <h2 className="text-xl sm:text-2xl font-bold md:text-3xl lg:text-4xl md:leading-tight text-gray-800">
-                  Related Articles
-                </h2>
-                <p className="mt-1 text-sm sm:text-base text-gray-600">
-                  Continue reading more insights from our experts
-                </p>
-              </div>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {post.relatedPosts.map((relatedPost, index) => {
-                  const fullRelatedPost = blogPostsEN[relatedPost.slug as keyof typeof blogPostsEN]
+        {(() => {
+          // Get related posts from allPosts, excluding current post
+          const relatedPosts = allPosts
+            .filter((p: any) => (p.slug?.current || p.slug) !== postSlug)
+            .slice(0, 3)
+          
+          if (relatedPosts.length === 0) return null
+          
+          return (
+            <section className="bg-gray-50 py-10 sm:py-16" aria-labelledby="related-posts">
+              <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="max-w-2xl text-center mx-auto mb-10 lg:mb-14">
+                  <h2 className="text-xl sm:text-2xl font-bold md:text-3xl lg:text-4xl md:leading-tight text-gray-800">
+                    Related Articles
+                  </h2>
+                  <p className="mt-1 text-sm sm:text-base text-gray-600">
+                    Continue reading more insights from our experts
+                  </p>
+                </div>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {relatedPosts.map((relatedPost: any, index: number) => {
+                    const relatedSlug = relatedPost.slug?.current || relatedPost.slug
+                    const relatedImage = relatedPost.mainImage?.asset?.url || relatedPost.imageUrl || relatedPost.image
 
-                  return (
-                    <Link key={index} href={`/blog/${relatedPost.slug}`} className="group flex flex-col h-full bg-white border border-gray-200 hover:border-transparent hover:shadow-lg transition-all duration-300 rounded-xl">
-                      <div
-                        className="relative h-40 xs:h-44 sm:h-48 md:h-52 overflow-hidden rounded-t-xl"
-                        style={fullRelatedPost?.image ? { backgroundImage: `url(${fullRelatedPost.image})`, backgroundSize: 'cover', backgroundPosition: 'center' } : undefined}
-                      >
-                        {fullRelatedPost?.image ? (
-                          <Image
-                            src={preferAvif(fullRelatedPost.image) as string}
-                            alt={`${relatedPost.title} - AKRIN IT Blog`}
-                            fill
-                            className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
-                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
-                            unoptimized={false}
-                          />
-                        ) : (
-                          <div className="w-full h-full bg-gray-100 flex items-center justify-center">
-                            <AkrinIcon className="w-16 h-16 text-gray-300" />
-                          </div>
-                        )}
-                      </div>
-                      <div className="p-4 md:p-6 flex-1 flex flex-col">
-                        {fullRelatedPost?.category && (
-                          <div className="mb-1">
-                            <span className="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-teal-100 text-teal-800">
-                              {fullRelatedPost.category}
-                            </span>
-                          </div>
-                        )}
-                        <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-2 group-hover:text-[#21B3AA] transition-colors leading-tight">
-                          {relatedPost.title}
-                        </h3>
-                        <div className="mt-auto flex items-center gap-x-3 text-sm text-gray-500">
-                          <span className="font-medium text-gray-800">AKRIN Team</span>
-                          {fullRelatedPost?.readTime && (
-                            <div className="flex items-center gap-x-2 ml-auto">
-                              <span>{fullRelatedPost.readTime}</span>
+                    return (
+                      <Link key={index} href={`/blog/${relatedSlug}`} className="group flex flex-col h-full bg-white border border-gray-200 hover:border-transparent hover:shadow-lg transition-all duration-300 rounded-xl">
+                        <div
+                          className="relative h-40 xs:h-44 sm:h-48 md:h-52 overflow-hidden rounded-t-xl"
+                          style={relatedImage ? { backgroundImage: `url(${relatedImage})`, backgroundSize: 'cover', backgroundPosition: 'center' } : undefined}
+                        >
+                          {relatedImage ? (
+                            <Image
+                              src={preferAvif(relatedImage) as string}
+                              alt={`${relatedPost.title} - AKRIN IT Blog`}
+                              fill
+                              className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
+                              unoptimized={false}
+                            />
+                          ) : (
+                            <div className="w-full h-full bg-gray-100 flex items-center justify-center">
+                              <AkrinIcon className="w-16 h-16 text-gray-300" />
                             </div>
                           )}
                         </div>
-                      </div>
-                    </Link>
-                  )
-                })}
+                        <div className="p-4 md:p-6 flex-1 flex flex-col">
+                          {relatedPost.category && (
+                            <div className="mb-1">
+                              <span className="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-teal-100 text-teal-800">
+                                {relatedPost.category}
+                              </span>
+                            </div>
+                          )}
+                          <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-2 group-hover:text-[#21B3AA] transition-colors leading-tight">
+                            {relatedPost.title}
+                          </h3>
+                          <div className="mt-auto flex items-center gap-x-3 text-sm text-gray-500">
+                            <span className="font-medium text-gray-800">AKRIN Team</span>
+                            {relatedPost.readTime && (
+                              <div className="flex items-center gap-x-2 ml-auto">
+                                <span>{relatedPost.readTime}</span>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      </Link>
+                    )
+                  })}
+                </div>
               </div>
-            </div>
-          </section>
-        )}
+            </section>
+          )
+        })()}
 
         {/* Removed Security CTA section per request */}
 

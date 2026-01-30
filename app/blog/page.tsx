@@ -2,7 +2,8 @@ import { Metadata } from 'next'
 import { generatePageMetadata } from '@/lib/metadata-helpers'
 import React from "react"
 import { SimpleBlogWithGrid } from "@/components/ui/simple-blog-with-grid"
-import { blogPostsEN } from "@/lib/blog-data"
+import { client } from "@/lib/sanity.client"
+import { postsQuery } from "@/lib/sanity.queries"
 
 // Enhanced SEO metadata for blog listing page
 export const metadata: Metadata = generatePageMetadata({
@@ -21,14 +22,16 @@ export const metadata: Metadata = generatePageMetadata({
   image: '/og-image.png'
 })
 
-// Route-level performance hints: static HTML with hourly ISR
-export const dynamic = 'force-static'
+// Route-level performance hints: ISR with hourly revalidation
 export const revalidate = 3600
 
-// Generate structured data for blog listing
-function generateBlogStructuredData() {
-  const posts = Object.values(blogPostsEN)
+// Fetch posts from Sanity
+async function getPosts() {
+  return await client.fetch(postsQuery)
+}
 
+// Generate structured data for blog listing
+function generateBlogStructuredData(posts: any[]) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Blog',
@@ -50,9 +53,9 @@ function generateBlogStructuredData() {
       '@type': 'BlogPosting',
       headline: post.title,
       description: post.metaDescription,
-      url: `https://akrin.jp/blog/${post.slug}`,
-      datePublished: post.date,
-      dateModified: post.date,
+      url: `https://akrin.jp/blog/${post.slug?.current || post.slug}`,
+      datePublished: post.publishedAt || post.date,
+      dateModified: post.publishedAt || post.date,
       author: {
         '@type': 'Person',
         name: post.author || 'AKRIN Expert'
@@ -65,9 +68,9 @@ function generateBlogStructuredData() {
           url: 'https://akrin.jp/akrin-logo.svg'
         }
       },
-      image: post.image ? {
+      image: post.mainImage?.asset?.url || post.image ? {
         '@type': 'ImageObject',
-        url: post.image,
+        url: post.mainImage?.asset?.url || post.image,
         width: 1200,
         height: 630
       } : undefined,
@@ -77,8 +80,9 @@ function generateBlogStructuredData() {
   }
 }
 
-export default function BlogPage() {
-  const structuredData = generateBlogStructuredData()
+export default async function BlogPage() {
+  const posts = await getPosts()
+  const structuredData = generateBlogStructuredData(posts)
 
   return (
     <>
@@ -100,7 +104,7 @@ export default function BlogPage() {
 
           {/* Blog content with semantic structure */}
           <section aria-label="Blog posts and articles">
-            <SimpleBlogWithGrid language="en" />
+            <SimpleBlogWithGrid language="en" posts={posts} />
           </section>
         </div>
       </main>
