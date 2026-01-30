@@ -11,7 +11,7 @@ export const caseStudyHeroMap: Record<string, string> = {
 
   // Present as WEBP under public; still prefer public path for consistency
   'managed-it-services-cpg-tokyo': '/images/case-studies/managed-it-services-cpg-tokyo/managed-it.avif',
-  'nationwide-wifi-30-offices': '/images/case-studies/nationwide-wifi-30-offices/hero.webp',
+  'nationwide-wifi-30-offices': '/images/case-studies/nationwide-wifi-30-offices/hero.avif',
   'wifi-assessment-retail-tokyo': '/images/case-studies/wifi-assessment-retail-tokyo/wifi-assessment.avif',
 }
 

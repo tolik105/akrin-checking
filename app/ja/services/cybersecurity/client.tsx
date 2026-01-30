@@ -312,7 +312,7 @@ export default function CybersecurityJaClient() {
             {/* SOC Image */}
             <div className="text-center">
               <Image
-                src="/images/banners/cybersecurity/Security-Operations.avif"
+                src="/images/banners/cybersecurity/Security-Operations.webp"
                 alt="セキュリティオペレーションセンター"
                 width={1280}
                 height={720}

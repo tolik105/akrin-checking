@@ -10,7 +10,8 @@ export const metadata = generatePageMetadata({
     canonical: 'https://akrin.jp/ja/services/it-managed-services',
     languages: {
       'en': 'https://akrin.jp/services/it-managed-services',
-      'ja': 'https://akrin.jp/ja/services/it-managed-services'
+      'ja': 'https://akrin.jp/ja/services/it-managed-services',
+      'x-default': 'https://akrin.jp/services/it-managed-services'
     }
   },
   robots: {

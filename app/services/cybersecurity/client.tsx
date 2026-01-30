@@ -288,7 +288,7 @@ export default function CybersecurityClient() {
             {/* SOC Image */}
             <div className="text-center">
               <Image
-                src="/images/banners/cybersecurity/Security-Operations.avif"
+                src="/images/banners/cybersecurity/Security-Operations.webp"
                 alt="Security Operations Center"
                 width={1280}
                 height={720}

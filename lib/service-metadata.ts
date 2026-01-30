@@ -28,7 +28,7 @@ export const serviceMetadata: Record<string, ServiceMetadata> = {
   },
   'cybersecurity': {
     slug: 'cybersecurity',
-    title: 'Cybersecurity Services & Managed Security Operations | AKRIN',
+    title: 'Cybersecurity Services & SOC Operations | AKRIN Japan',
     description: 'Security audits, continuous monitoring, SOC, and incident response. AKRIN protects your business with proactive cybersecurity in Japan.',
     keywords: ['cybersecurity Japan', 'security operations center', 'SOC services', 'incident response', 'security monitoring', 'SIEM XDR', 'ISO 27001', 'security audit Japan']
   },
@@ -52,7 +52,7 @@ export const serviceMetadata: Record<string, ServiceMetadata> = {
   },
   'it-security': {
     slug: 'it-security',
-    title: 'IT Security Services: Endpoint, Email & Data Protection | AKRIN',
+    title: 'IT Security: Endpoint, Email & Data Protection | AKRIN',
     description: 'Shield endpoints, email, and data with AKRIN\'s layered IT security—EDR, M365 security, backup, and policy enforcement.',
     keywords: ['IT security Japan', 'endpoint protection', 'EDR services', 'email security', 'M365 security', 'backup disaster recovery', 'security policies', 'data protection Japan']
   }
@@ -99,6 +99,7 @@ export function getServiceMetadata(slug: string): Metadata {
       languages: {
         'en': `https://akrin.jp/services/${slug}`,
         'ja': `https://akrin.jp/ja/services/${slug}`,
+        'x-default': `https://akrin.jp/services/${slug}`
       }
     },
   }

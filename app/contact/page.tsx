@@ -3,8 +3,8 @@ import { generateBreadcrumbSchema } from '@/lib/seo'
 import { generatePageMetadata } from '@/lib/metadata-helpers'
 
 export const metadata = generatePageMetadata({
-  title: 'Contact AKRIN – IT Consulting & Managed Services in Japan | Tokyo Office',
-  description: 'Contact AKRIN for expert IT consulting and managed services in Japan. Professional IT solutions, cloud migration, cybersecurity, and 24/7 support. Tokyo-based with nationwide coverage.',
+  title: 'Contact AKRIN – IT Consulting & Managed Services Japan',
+  description: 'Contact AKRIN for IT consulting and managed services in Japan. Cloud migration, cybersecurity, and 24/7 support. Tokyo office with nationwide coverage.',
   keywords: [
     'contact AKRIN',
     'IT consulting Japan',
