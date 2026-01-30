@@ -13,7 +13,6 @@ import { Toaster } from "@/components/ui/toaster"
 import { CookieConsent } from "@/components/cookie-consent"
 import { GoogleAnalytics } from "@/components/google-analytics"
 import { AnalyticsConsent } from "@/components/analytics-consent"
-import { HreflangLinks } from "@/components/hreflang-links"
 import { BrowserExtensionSafeWrapper } from "@/components/hydration-boundary"
 import { HydrationErrorBoundary } from "@/components/hydration-error-boundary"
 import { MobilePerformanceOptimizer } from "@/components/mobile-performance"
@@ -120,18 +119,38 @@ export const metadata: Metadata = {
   }
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   // During SSR, read the middleware-injected header to set html lang
   // Fallback to 'en' when not available (static export or client nav)
-  const lang = (typeof nextHeaders === 'function' ? (nextHeaders().get('x-akrin-lang') as string | null) : null) || 'en'
+  let lang = 'en'
+  try {
+    const headersList = await nextHeaders()
+    lang = headersList.get('x-akrin-lang') || 'en'
+  } catch {
+    // Fallback if headers not available
+  }
   return (
     <html lang={lang} suppressHydrationWarning>
       <head>
-        <HreflangLinks />
+        {/* Critical resource preloads for better LCP */}
+        <link
+          rel="preload"
+          href="/images/mobile-background/mobile-background.avif"
+          as="image"
+          type="image/avif"
+          media="(max-width: 767px)"
+        />
+        <link
+          rel="preload"
+          href="/fonts/Inter.var.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -222,39 +241,38 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="shortcut icon" href="/favicon-32x32.v3.png" type="image/png" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" type="image/png" />
+        <link rel="preconnect" href="https://img.logo.dev" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="//img.logo.dev" />
+        <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
 
-        {/* Critical CSS for mobile performance */}
+        {/* Critical CSS for mobile performance and immediate hero rendering */}
         <style dangerouslySetInnerHTML={{
           __html: `
+            /* Critical: Ensure hero text renders immediately with system fonts */
+            h1, h2, p { 
+              font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+              visibility: visible !important;
+            }
             /* Critical mobile-first styles */
             @media (max-width: 768px) {
               body { font-size: 16px; line-height: 1.5; }
-              .hero-section { min-height: 100vh; }
-              .hero-content { padding: 1rem; }
-              .hero-title { font-size: clamp(2.5rem, 10vw, 6rem); }
-              .hero-subtitle { font-size: clamp(1.125rem, 3.5vw, 1.75rem); }
-              .btn-primary { padding: 0.75rem 1.5rem; font-size: 1rem; }
               video { display: none !important; }
             }
             /* Prevent layout shift */
             img, video { max-width: 100%; height: auto; }
-            .hero-section { contain: layout style paint; }
-            /* Font display optimization */
-            @font-face { font-display: swap; }
+            /* Font-face with swap */
+            @font-face {
+              font-family: "Inter Var";
+              src: url("/fonts/Inter.var.woff2") format("woff2");
+              font-display: swap;
+              font-weight: 100 900;
+            }
           `
         }} />
 
       </head>
       <body className="min-h-screen flex flex-col bg-background text-foreground font-sans" data-lang={undefined}>
-        <Script
-          src="https://challenges.cloudflare.com/turnstile/v0/api.js"
-          async
-          defer
-        />
-        <link rel="preconnect" href="https://img.logo.dev" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="//img.logo.dev" />
-        <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-[hsl(var(--primary))] focus:text-white focus:rounded-md focus:shadow-lg"
@@ -264,69 +282,10 @@ export default function RootLayout({
         {/* Defer GA until user interaction to reduce unused JS in LCP */}
         <AnalyticsConsent />
 
-        {/* Browser Extension Cleanup Script - Runs before React hydration */}
+        {/* Browser Extension Cleanup Script - Minified for performance */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                // Clean up browser extension attributes immediately
-                function cleanupExtensionAttributes() {
-                  var body = document.body;
-                  if (body) {
-                    var extensionAttributes = [
-                      'cz-shortcut-listen',
-                      'data-new-gr-c-s-check-loaded',
-                      'data-gr-ext-installed',
-                      'spellcheck',
-                      'data-gramm',
-                      'data-gramm_editor',
-                      'data-enable-grammarly',
-                      'data-lt-installed'
-                    ];
-
-                    extensionAttributes.forEach(function(attr) {
-                      if (body.hasAttribute(attr)) {
-                        body.removeAttribute(attr);
-                      }
-                    });
-                  }
-                }
-
-                // Run cleanup immediately
-                cleanupExtensionAttributes();
-
-                // Run cleanup when DOM is ready
-                if (document.readyState === 'loading') {
-                  document.addEventListener('DOMContentLoaded', cleanupExtensionAttributes);
-                } else {
-                  cleanupExtensionAttributes();
-                }
-
-                // Set up a mutation observer to prevent future extension modifications
-                if (typeof MutationObserver !== 'undefined') {
-                  var observer = new MutationObserver(function(mutations) {
-                    mutations.forEach(function(mutation) {
-                      if (mutation.type === 'attributes' && mutation.target === document.body) {
-                        cleanupExtensionAttributes();
-                      }
-                    });
-                  });
-
-                  observer.observe(document.body, {
-                    attributes: true,
-                    attributeFilter: [
-                      'cz-shortcut-listen',
-                      'data-new-gr-c-s-check-loaded',
-                      'data-gr-ext-installed',
-                      'spellcheck',
-                      'data-gramm',
-                      'data-gramm_editor',
-                      'data-enable-grammarly'
-                    ]
-                  });
-                }
-              })();
-            `
+            __html: `(function(){var a=['cz-shortcut-listen','data-new-gr-c-s-check-loaded','data-gr-ext-installed','spellcheck','data-gramm','data-gramm_editor','data-enable-grammarly','data-lt-installed'];function c(){var b=document.body;if(b)a.forEach(function(x){b.hasAttribute(x)&&b.removeAttribute(x)})}c();document.readyState==='loading'?document.addEventListener('DOMContentLoaded',c):c();typeof MutationObserver!=='undefined'&&new MutationObserver(function(m){m.forEach(function(x){x.type==='attributes'&&x.target===document.body&&c()})}).observe(document.body,{attributes:true,attributeFilter:a.slice(0,7)})})();`
           }}
         />
 
