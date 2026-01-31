@@ -1,6 +1,7 @@
 "use client"
 
 import React, { Component, ErrorInfo, ReactNode } from 'react'
+import { logger } from '@/lib/logger'
 
 interface Props {
   children: ReactNode
@@ -40,13 +41,13 @@ export class HydrationErrorBoundary extends Component<Props, State> {
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     // Log hydration errors for debugging
     if (this.state.isHydrationError) {
-      console.warn('Hydration error caught by boundary:', error.message)
-      console.warn('Error info:', errorInfo)
+      logger.warn('Hydration error caught by boundary:', error.message)
+      logger.log('Error info:', errorInfo)
       
       // Clean up browser extension attributes when hydration error occurs
       this.cleanupBrowserExtensions()
     } else {
-      console.error('Non-hydration error caught:', error, errorInfo)
+      logger.error('Non-hydration error caught:', error, errorInfo)
     }
   }
 
@@ -76,7 +77,7 @@ export class HydrationErrorBoundary extends Component<Props, State> {
         })
       }
     } catch (e) {
-      console.warn('Failed to cleanup browser extension attributes:', e)
+      logger.warn('Failed to cleanup browser extension attributes:', e)
     }
   }
 
@@ -117,7 +118,7 @@ export function useHydrationErrorHandler() {
         event.message.includes('Hydration') ||
         event.message.includes('server rendered HTML')
       ) {
-        console.warn('Hydration error detected:', event.message)
+        logger.warn('Hydration error detected:', event.message)
         
         // Clean up browser extension attributes
         const body = document.body

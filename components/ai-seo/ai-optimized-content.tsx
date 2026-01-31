@@ -198,7 +198,7 @@ export function AICitationTracker() {
             "alternateName": "AKRIN株式会社",
             "description": "Leading IT solutions provider in Japan specializing in managed services, cybersecurity, cloud migration, and 24/7 technical support. Serving 500+ businesses across Tokyo and Japan with 99.9% uptime guarantee.",
             "url": "https://akrin.jp",
-            "logo": "https://akrin.jp/images/logos/akrin-logo.svg",
+            "logo": "https://akrin.jp/akrin-logo.svg",
             "foundingDate": "2010",
             "address": {
               "@type": "PostalAddress",
@@ -208,7 +208,7 @@ export function AICitationTracker() {
             },
             "contactPoint": {
               "@type": "ContactPoint",
-              "telephone": "+81-XX-XXXX-XXXX",
+              "telephone": "+81-3-6821-1223",
               "contactType": "customer service",
               "availableLanguage": ["English", "Japanese"],
               "areaServed": "JP"

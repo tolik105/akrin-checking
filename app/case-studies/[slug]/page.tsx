@@ -239,7 +239,7 @@ export default async function CaseStudyDetail({ params }: { params: Promise<{ sl
         {/* Hero Image */}
         <figure className="mb-8 overflow-hidden rounded-xl border border-gray-200 bg-white">
           <div className="relative aspect-[16/9] w-full">
-            <Image src={getCaseStudyHero(slug)} alt={data?.hero?.alt || cs?.titleEN || ''} fill className="object-cover" priority sizes="(max-width: 1280px) 100vw, 1600px" quality={95} />
+            <Image src={getCaseStudyHero(slug)} alt={data?.hero?.alt || cs?.titleEN || 'Case study hero image'} fill className="object-cover" priority sizes="(max-width: 1280px) 100vw, 1600px" quality={95} />
           </div>
           {(data?.hero?.caption || data?.hero?.alt) && (
             <figcaption className="p-3 text-xs text-gray-600">{data?.hero?.caption || data?.hero?.alt}</figcaption>
@@ -316,7 +316,7 @@ export default async function CaseStudyDetail({ params }: { params: Promise<{ sl
               {safe.map((g, idx) => (
                 <figure key={idx} className="overflow-hidden rounded-xl border border-gray-200 bg-white">
                   <div className="relative aspect-[16/9] w-full">
-                    <Image src={g.src} alt={g.alt || ''} fill className="object-cover object-center" quality={95} sizes="(min-width: 1280px) 33vw, (min-width: 640px) 50vw, 100vw" />
+                    <Image src={g.src} alt={g.alt || g.caption || `Case study image ${idx + 1}`} fill className="object-cover object-center" quality={95} sizes="(min-width: 1280px) 33vw, (min-width: 640px) 50vw, 100vw" />
                   </div>
                   {(g.caption || g.alt) && (
                     <figcaption className="p-3 text-xs text-gray-600">{g.caption || g.alt}</figcaption>

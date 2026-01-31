@@ -1,5 +1,7 @@
 import { generatePageMetadata } from "@/lib/metadata-helpers"
 import HomeClient from "../home-client"
+import { HeroStatic } from "@/components/hero-static"
+import jaCommon from "../../public/locales/ja/common.json"
 
 export const metadata = generatePageMetadata({
   title: 'AKRIN株式会社 - 日本をリードするITソリューションプロバイダー | マネージドサービス＆サポート',
@@ -53,6 +55,7 @@ const faqSchemaJA = {
 }
 
 export default function JapaneseHomePage() {
+  const heroCopy = jaCommon.hero
   return (
     <>
       {/* Structured Data for Japanese FAQ */}
@@ -63,6 +66,13 @@ export default function JapaneseHomePage() {
         }}
       />
       
+      <HeroStatic
+        title={heroCopy.title}
+        subtitle={heroCopy.subtitle}
+        ctaLabel={heroCopy.cta}
+        ctaHref="/ja/contact"
+      />
+
       {/* Use the same home client component */}
       <HomeClient />
     </>

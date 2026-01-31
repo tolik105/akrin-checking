@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { sendEmail } from '@/lib/email-service'
 import { createContactEmailTemplate, createContactEmailTextTemplate } from '@/lib/email-templates'
+import { logger } from '@/lib/logger'
 
 interface ContactFormData {
   name: string
@@ -69,8 +70,7 @@ export async function POST(request: NextRequest) {
     let emailSent = false
 
     if (!process.env.SMTP_USER || process.env.SMTP_USER === 'your_email@example.com') {
-      console.log('⚠️  Email not configured - skipping email send (form data saved)')
-      console.log('📧 Would send to:', salesEmail)
+      logger.log('Email not configured - skipping email send')
       emailSent = true
     } else {
       try {
@@ -83,30 +83,24 @@ export async function POST(request: NextRequest) {
         })
 
         if (!emailSent) {
-          console.error('Email function returned false')
+          logger.error('Email function returned false')
         } else {
-          console.log('Email sent successfully')
+          logger.log('Email sent successfully')
         }
       } catch (emailError) {
-        console.error('Email sending error:', emailError)
+        logger.error('Email sending error:', emailError)
         // Continue anyway - don't fail the whole submission
       }
     }
 
-    console.log('Contact form submission:', {
-      name: body.name,
-      email: body.email,
-      message: body.message,
-      emailSent,
-      timestamp
-    })
+    logger.log('Contact form submission received')
 
     return NextResponse.json(
       { message: 'Thank you for your message. We will get back to you soon!' },
       { status: 200 }
     )
   } catch (error) {
-    console.error('Contact form error:', error)
+    logger.error('Contact form error:', error)
     return NextResponse.json(
       { error: 'An error occurred. Please try again later.' },
       { status: 500 }

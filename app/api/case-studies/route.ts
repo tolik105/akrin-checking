@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server'
 import { caseStudiesEN } from '@/lib/case-studies-data'
 
+export const dynamic = 'force-static'
+
 type CaseItem = { title: string; slug: string; locale: 'en' | 'ja' }
 
 export async function GET(request: Request) {
@@ -29,8 +31,6 @@ export async function GET(request: Request) {
     headers: { 'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=300' },
   })
 }
-
-export const dynamic = 'force-dynamic'
 
 
 

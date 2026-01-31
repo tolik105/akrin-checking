@@ -14,7 +14,9 @@ const config = {
     '/500',
     '/book-consultation/success',
     '/book-reservation/success',
+    '/book-reservation',
     '/ja/ja*',
+    '/services/it-managed-services-v2',
   ],
   // Use default transform. hreflang is handled in head via <HreflangLinks />.
 }

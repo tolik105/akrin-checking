@@ -112,8 +112,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://akrin.jp',
     languages: {
-      en: 'https://akrin.jp',
-      ja: 'https://akrin.jp/ja',
+      'en-US': 'https://akrin.jp',
+      'ja-JP': 'https://akrin.jp/ja',
       'x-default': 'https://akrin.jp'
     }
   }

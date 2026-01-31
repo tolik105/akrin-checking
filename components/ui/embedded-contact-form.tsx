@@ -2,9 +2,10 @@
 
 import { useState } from "react"
 import { useToast } from "@/hooks/use-toast"
-import { motion } from "framer-motion"
+import { LazyMotion, domAnimation, m } from "framer-motion"
 import { ChevronDownIcon } from "@heroicons/react/16/solid"
 import TurnstileWidget from "@/components/turnstile-widget"
+import { logger } from "@/lib/logger"
 
 export function EmbeddedContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -92,7 +93,7 @@ export function EmbeddedContactForm() {
         throw new Error(result.error || 'Failed to send message')
       }
     } catch (error) {
-      console.error('Contact form error:', error)
+      logger.error('Contact form error:', error)
       toast({
         title: "Error",
         description: error instanceof Error ? error.message : "Failed to send message. Please try again.",
@@ -105,19 +106,20 @@ export function EmbeddedContactForm() {
 
   return (
     <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-3 sm:p-4 md:p-5 lg:p-6 mt-4 sm:mt-6 w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl mx-auto">
-      {submitted ? (
-        <div className="rounded-xl bg-white dark:bg-gray-700 p-6 text-center">
-          <p className="text-lg font-medium text-gray-900 dark:text-white mb-2">Thanks, your message is on its way.</p>
-          <p className="text-gray-600 dark:text-gray-300">We reply within 1 business day.</p>
-        </div>
-      ) : (
-        <motion.form
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          onSubmit={handleSubmit}
-          className="space-y-4"
-        >
+      <LazyMotion features={domAnimation}>
+        {submitted ? (
+          <div className="rounded-xl bg-white dark:bg-gray-700 p-6 text-center">
+            <p className="text-lg font-medium text-gray-900 dark:text-white mb-2">Thanks, your message is on its way.</p>
+            <p className="text-gray-600 dark:text-gray-300">We reply within 1 business day.</p>
+          </div>
+        ) : (
+          <m.form
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            onSubmit={handleSubmit}
+            className="space-y-4"
+          >
           {step === 1 && (
             <div className="space-y-4">
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -286,8 +288,9 @@ export function EmbeddedContactForm() {
               </div>
             </div>
           )}
-        </motion.form>
-      )}
+          </m.form>
+        )}
+      </LazyMotion>
     </div>
   )
 }

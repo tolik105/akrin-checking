@@ -1,6 +1,5 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -11,9 +10,13 @@ interface SectionHeroProps {
   ctaLabel: string
   ctaHref: string
   imageSrc: string
+  headingLevel?: 'h1' | 'h2'
+  imageAlt?: string
 }
 
-export function SectionHero({ title, subtitle, ctaLabel, ctaHref, imageSrc }: SectionHeroProps) {
+export function SectionHero({ title, subtitle, ctaLabel, ctaHref, imageSrc, headingLevel = 'h1', imageAlt }: SectionHeroProps) {
+  const Heading = headingLevel
+  const altText = imageAlt || `Hero image for ${title}`
   return (
     <section className="relative w-full overflow-hidden">
       <div className="h-[500px] sm:h-[550px] lg:h-[600px] flex items-center">
@@ -47,7 +50,7 @@ export function SectionHero({ title, subtitle, ctaLabel, ctaHref, imageSrc }: Se
               <div className="w-full h-full">
                 <Image
                   src={imageSrc}
-                  alt={title}
+                  alt={altText}
                   fill
                   className="object-cover"
                   sizes="65vw"
@@ -62,14 +65,14 @@ export function SectionHero({ title, subtitle, ctaLabel, ctaHref, imageSrc }: Se
         <div className="relative z-20 flex items-center h-full max-w-[1400px] mx-auto px-8 lg:px-12 xl:px-16">
           <div className="w-full">
             <div className="max-w-[45%] pr-8">
-              {/* Clean H1 Typography - FNG Style */}
-              <h1 className="font-bold mb-6 lg:mb-8 text-gray-900 leading-tight" style={{ 
+              {/* Clean Typography - FNG Style */}
+              <Heading className="font-bold mb-6 lg:mb-8 text-gray-900 leading-tight" style={{ 
                 fontSize: 'clamp(2.5rem, 4vw, 4rem)',
                 lineHeight: '1.1',
                 fontWeight: '700'
               }}>
                 {title}
-              </h1>
+              </Heading>
 
               {/* Brand-colored subtitle - Like FNG's pink text */}
             <p className="text-[hsl(var(--primary))] font-medium mb-8 lg:mb-10 leading-relaxed" style={{ 
@@ -104,12 +107,12 @@ export function SectionHero({ title, subtitle, ctaLabel, ctaHref, imageSrc }: Se
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Content First - FNG Style */}
             <div className="order-1">
-              <h1 className="font-bold mb-6 md:mb-8 leading-tight text-gray-900" style={{ 
+              <Heading className="font-bold mb-6 md:mb-8 leading-tight text-gray-900" style={{ 
                 fontSize: 'clamp(2rem, 4vw, 2.75rem)',
                 lineHeight: '1.1'
               }}>
                 {title}
-              </h1>
+              </Heading>
             <p className="text-[hsl(var(--primary))] font-medium mb-8 md:mb-10 leading-relaxed" style={{ 
                 fontSize: 'clamp(1rem, 2vw, 1.25rem)',
                 lineHeight: '1.5'
@@ -136,7 +139,7 @@ export function SectionHero({ title, subtitle, ctaLabel, ctaHref, imageSrc }: Se
               <div className="relative h-64 md:h-80 overflow-hidden">
                 <Image
                   src={imageSrc}
-                  alt={title}
+                  alt={altText}
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -157,13 +160,13 @@ export function SectionHero({ title, subtitle, ctaLabel, ctaHref, imageSrc }: Se
         <div className="px-4 sm:px-6 max-w-[1200px] mx-auto w-full">
           {/* Text First - Clean FNG Style */}
           <div className="mb-6 text-center sm:text-left">
-            {/* Bold H1 Typography - FNG Style */}
-            <h1 className="font-bold mb-6 sm:mb-8 leading-tight text-gray-900" style={{ 
+            {/* Bold Typography - FNG Style */}
+            <Heading className="font-bold mb-6 sm:mb-8 leading-tight text-gray-900" style={{ 
               fontSize: 'clamp(1.75rem, 6vw, 2.5rem)',
               lineHeight: '1.1'
             }}>
               {title}
-            </h1>
+            </Heading>
 
             {/* Brand-colored subtitle - Like FNG's approach */}
           <p className="text-[hsl(var(--primary))] font-medium mb-6 sm:mb-8 max-w-2xl mx-auto sm:mx-0 leading-relaxed" style={{ 

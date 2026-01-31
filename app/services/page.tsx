@@ -4,8 +4,8 @@ import ServicesClient from './services-client'
 import { generateBreadcrumbSchema } from '@/lib/seo'
 
 export const metadata: Metadata = generatePageMetadata({
-  title: "IT Services - Comprehensive Technology Solutions | Akrin",
-  description: "Explore our IT services: managed IT, cybersecurity, cloud, consulting, and 24/7 support.",
+  title: "IT Services for Businesses in Japan | Akrin",
+  description: "Explore our comprehensive IT services including Managed IT, Cybersecurity, Cloud Solutions, and IT Consulting. We also offer specialized services in Penetration Testing, WiFi Assessment, and IT Security.",
   keywords: [
     'IT services Japan',
     'managed IT services',

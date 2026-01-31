@@ -195,7 +195,7 @@ export default async function CaseStudyDetailJA({ params }: { params: Promise<{ 
 
         <figure className="mb-8 overflow-hidden rounded-xl border border-gray-200 bg-white">
           <div className="relative aspect-[16/9] w-full">
-            <Image src={getCaseStudyHero(slug)} alt={data?.hero?.alt || cs?.titleJA || ''} fill className="object-cover" priority sizes="(max-width: 1280px) 100vw, 1600px" quality={95} />
+            <Image src={getCaseStudyHero(slug)} alt={data?.hero?.alt || cs?.titleJA || '導入事例ヒーロー画像'} fill className="object-cover" priority sizes="(max-width: 1280px) 100vw, 1600px" quality={95} />
           </div>
           {(data?.hero?.caption || data?.hero?.alt) && (
             <figcaption className="p-3 text-xs text-gray-600">{data?.hero?.caption || data?.hero?.alt}</figcaption>
@@ -268,7 +268,7 @@ export default async function CaseStudyDetailJA({ params }: { params: Promise<{ 
               {safe.map((g: any, idx: number) => (
                 <figure key={idx} className="overflow-hidden rounded-xl border border-gray-200 bg-white">
                   <div className="relative aspect-[16/9] w-full">
-                    <Image src={g.src} alt={g.alt || ''} fill className="object-cover object-center" quality={95} sizes="(min-width: 1280px) 33vw, (min-width: 640px) 50vw, 100vw" />
+                    <Image src={g.src} alt={g.alt || g.caption || `導入事例画像 ${idx + 1}`} fill className="object-cover object-center" quality={95} sizes="(min-width: 1280px) 33vw, (min-width: 640px) 50vw, 100vw" />
                   </div>
                   {(g.caption || g.alt) && (
                     <figcaption className="p-3 text-xs text-gray-600">{g.caption || g.alt}</figcaption>

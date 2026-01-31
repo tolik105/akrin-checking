@@ -2,9 +2,8 @@
 
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { motion } from "framer-motion"
+import { LazyMotion, domAnimation, m } from "framer-motion"
 import { useTranslation } from "react-i18next"
-import HeroVisualSingularity from "./hero-visual-singularity"
 import { useState, useEffect } from "react"
 
 export function VideoHero() {
@@ -47,7 +46,8 @@ export function VideoHero() {
   }
 
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-white pt-24 sm:pt-28">
+    <LazyMotion features={domAnimation}>
+      <section className="relative min-h-screen w-full overflow-hidden bg-white pt-24 sm:pt-28">
       {/* Hero Background SVG - Responsive */}
       <div className="absolute inset-0 w-full h-full z-0">
         <picture>
@@ -67,28 +67,28 @@ export function VideoHero() {
       <div className="relative z-10 flex flex-col lg:flex-row min-h-screen w-full">
         {/* Content Panel - Full width on mobile, left side on desktop */}
         <div className="relative z-20 flex w-full lg:w-[55%] items-center justify-center lg:justify-start">
-          <motion.div 
+          <m.div 
             variants={containerVariants}
             initial="hidden"
             animate="visible"
             className="px-6 sm:px-8 md:px-12 lg:px-16 xl:px-24 py-12 lg:py-16 max-w-2xl w-full"
           >
-            <motion.div variants={itemVariants} className="mb-6 lg:mb-8">
+            <m.div variants={itemVariants} className="mb-6 lg:mb-8">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
                 <span className="text-pink-600">Rewiring</span><br />
                 enterprise <span className="text-pink-600">IT</span><br />
                 with <span className="text-pink-600">AI</span>
               </h1>
-            </motion.div>
+            </m.div>
             
-            <motion.p
+            <m.p
               variants={itemVariants}
               className="text-base sm:text-lg md:text-xl text-gray-600 mb-8 lg:mb-12 leading-relaxed"
             >
               Expert managed services, cybersecurity, and 24/7 support.
-            </motion.p>
+            </m.p>
 
-            <motion.div 
+            <m.div 
               variants={itemVariants}
               className="flex flex-col sm:flex-row gap-4 w-full"
             >
@@ -112,8 +112,8 @@ export function VideoHero() {
                   {t('hero.requestConsultation')}
                 </Link>
               </Button>
-            </motion.div>
-          </motion.div>
+            </m.div>
+          </m.div>
         </div>
 
         {/* Right Panel - Hidden on mobile, visible on desktop */}
@@ -152,6 +152,7 @@ export function VideoHero() {
           </foreignObject>
         </svg>
       </div>
-    </section>
+      </section>
+    </LazyMotion>
   )
 }

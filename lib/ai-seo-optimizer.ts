@@ -40,7 +40,7 @@ export function generateAIOptimizedSchema(): AISchemaMarkup {
     name: 'AKRIN Technology Solutions',
     description: 'Leading IT solutions provider in Japan specializing in managed services, cybersecurity, cloud migration, and 24/7 technical support for businesses across Tokyo and Japan.',
     url: 'https://akrin.jp',
-    logo: 'https://akrin.jp/images/logos/akrin-logo.svg',
+    logo: 'https://akrin.jp/akrin-logo.svg',
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'JP',
@@ -50,7 +50,7 @@ export function generateAIOptimizedSchema(): AISchemaMarkup {
     },
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+81-XX-XXXX-XXXX',
+      telephone: '+81-3-6821-1223',
       contactType: 'customer service',
       availableLanguage: ['English', 'Japanese'],
       areaServed: 'JP'

@@ -5,6 +5,8 @@
  * for performing SEO analysis, website audits, and optimization recommendations.
  */
 
+import { logger } from './logger'
+
 interface SEOAnalysisResult {
   domain: string;
   score: number;
@@ -155,7 +157,7 @@ class SERankingAPIClient {
         // No-op mode: return empty results to avoid breaking callers
         return ([] as unknown) as T;
       }
-      console.log(`SEranking API Request: ${method} ${url}`);
+      logger.log(`SEranking API Request: ${method} ${url}`);
       const response = await fetch(url, config);
 
       if (!response.ok) {

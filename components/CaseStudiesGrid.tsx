@@ -45,7 +45,7 @@ export default function CaseStudiesGrid() {
                 {/* Show actual case study hero image; fall back visually with noise overlay */}
                 <Image
                   src={getCaseStudyHero(cs.slug)}
-                  alt={(isJa ? cs.titleJA : cs.titleEN) || ''}
+                  alt={(isJa ? cs.titleJA : cs.titleEN) || 'Case study'}
                   fill
                   className="object-cover"
                   sizes="(min-width: 1280px) calc(100vw / 3), (min-width: 640px) calc(100vw / 2), 100vw"

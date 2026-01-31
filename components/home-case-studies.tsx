@@ -22,7 +22,7 @@ export function HomeCaseStudies() {
     let cancelled = false
     const fetchData = async () => {
       try {
-        const res = await fetch(`/api/case-studies?locale=${isJa ? 'ja' : 'en'}&limit=4`, { cache: 'no-store' })
+        const res = await fetch(`/api/case-studies?locale=${isJa ? 'ja' : 'en'}&limit=4`, { cache: 'force-cache' })
         const data: CaseCard[] = await res.json()
         if (!cancelled) setItems(data)
       } catch {

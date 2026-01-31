@@ -186,7 +186,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       },
     },
     verification: {
-      google: 'your-google-verification-code',
+      google: process.env.GOOGLE_VERIFICATION_CODE || '',
     },
   }
 }

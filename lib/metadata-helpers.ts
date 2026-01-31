@@ -55,8 +55,8 @@ export function generatePageMetadata({
     alternates: {
       canonical: fullUrl,
       languages: {
-        'en': enUrl,
-        'ja': jaUrl,
+        'en-US': enUrl,
+        'ja-JP': jaUrl,
         'x-default': enUrl
       }
     }

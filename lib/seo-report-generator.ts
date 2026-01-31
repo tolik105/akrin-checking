@@ -9,6 +9,7 @@ import { serankingAPI, SEOAnalysisResult, DomainAnalysisResult } from './seranki
 import { analyzeBlogPostSEO, SEOAnalysis, generateMetaDescription } from './seo-utils';
 import { blogPostsEN } from './blog-data';
 import { AKRIN_SEO_CONFIG, analyzePageSEOPerformance } from './global-seo-optimizer';
+import { logger } from './logger';
 
 interface SEOReport {
   generatedAt: string;
@@ -108,7 +109,7 @@ export async function generateSEOReport(options: {
 } = {}): Promise<SEOReport> {
   const { includeDomainAnalysis = true, baseUrl = 'https://akrin.jp' } = options;
   
-  console.log('Generating comprehensive SEO report...');
+  logger.log('Generating comprehensive SEO report...');
 
   // Analyze entire website
   const websiteAnalysis = await analyzeWebsitePages(baseUrl);

@@ -22,25 +22,25 @@ export const serviceMetadata: Record<string, ServiceMetadata> = {
   },
   'cloud-infrastructure': {
     slug: 'cloud-infrastructure',
-    title: 'Cloud Migration & Managed Cloud Services | AKRIN Japan',
+    title: 'Cloud Infrastructure Services in Japan | Akrin',
     description: 'Move to Azure, AWS, or GCP with zero‑downtime migration, 24/7 management, and cost optimization. AKRIN delivers secure, compliant cloud operations in Japan.',
     keywords: ['cloud migration Japan', 'Azure services', 'AWS migration', 'GCP services', 'cloud management', 'cloud optimization', 'FinOps', 'cloud security Japan']
   },
   'cybersecurity': {
     slug: 'cybersecurity',
-    title: 'Cybersecurity Services & SOC Operations | AKRIN Japan',
+    title: 'Cybersecurity Solutions for Japan | Akrin',
     description: 'Security audits, continuous monitoring, SOC, and incident response. AKRIN protects your business with proactive cybersecurity in Japan.',
     keywords: ['cybersecurity Japan', 'security operations center', 'SOC services', 'incident response', 'security monitoring', 'SIEM XDR', 'ISO 27001', 'security audit Japan']
   },
   'network-penetration-testing': {
     slug: 'network-penetration-testing',
-    title: 'Network Penetration Testing & Ethical Hacking | AKRIN Japan',
+    title: 'Network Penetration Testing Japan | Akrin',
     description: 'Identify vulnerabilities before attackers do. AKRIN\'s certified testers deliver actionable pen test reports and remediation guidance.',
     keywords: ['penetration testing Japan', 'pen test', 'ethical hacking', 'vulnerability assessment', 'OSCP certified', 'security testing', 'network security', 'OWASP testing']
   },
   'wifi-assessment': {
     slug: 'wifi-assessment',
-    title: 'Wi‑Fi Site Survey & Performance Optimization | AKRIN Japan',
+    title: 'Professional WiFi Assessment Japan | Akrin',
     description: 'Ekahau-certified Wi‑Fi assessments, spectrum analysis, and remediation plans. Eliminate dead zones and slow speeds across your offices.',
     keywords: ['Wi-Fi site survey Japan', 'wireless assessment', 'Ekahau certified', 'spectrum analysis', 'Wi-Fi optimization', 'wireless network design', 'heatmap analysis', 'Wi-Fi troubleshooting']
   },
@@ -52,7 +52,7 @@ export const serviceMetadata: Record<string, ServiceMetadata> = {
   },
   'it-security': {
     slug: 'it-security',
-    title: 'IT Security: Endpoint, Email & Data Protection | AKRIN',
+    title: 'IT Security Services for Businesses | Akrin',
     description: 'Shield endpoints, email, and data with AKRIN\'s layered IT security—EDR, M365 security, backup, and policy enforcement.',
     keywords: ['IT security Japan', 'endpoint protection', 'EDR services', 'email security', 'M365 security', 'backup disaster recovery', 'security policies', 'data protection Japan']
   }
@@ -97,8 +97,8 @@ export function getServiceMetadata(slug: string): Metadata {
     alternates: {
       canonical: `https://akrin.jp/services/${slug}`,
       languages: {
-        'en': `https://akrin.jp/services/${slug}`,
-        'ja': `https://akrin.jp/ja/services/${slug}`,
+        'en-US': `https://akrin.jp/services/${slug}`,
+        'ja-JP': `https://akrin.jp/ja/services/${slug}`,
         'x-default': `https://akrin.jp/services/${slug}`
       }
     },

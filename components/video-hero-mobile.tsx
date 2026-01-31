@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { motion, AnimationProps } from "framer-motion"
+import { LazyMotion, domAnimation, m, AnimationProps } from "framer-motion"
 import { useTranslation } from "react-i18next"
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
@@ -13,6 +13,7 @@ export function VideoHeroMobile() {
   const [isMobile, setIsMobile] = useState(false)
   const [isTablet, setIsTablet] = useState(false)
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false)
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
     const checkScreenSize = () => {
@@ -25,6 +26,10 @@ export function VideoHeroMobile() {
     window.addEventListener('resize', checkScreenSize)
     
     return () => window.removeEventListener('resize', checkScreenSize)
+  }, [])
+
+  useEffect(() => {
+    setMounted(true)
   }, [])
 
   useEffect(() => {
@@ -72,7 +77,7 @@ export function VideoHeroMobile() {
     className?: string;
     delay?: number;
   } & AnimationProps) => {
-    const reduceAnimations = prefersReducedMotion || isMobile
+    const reduceAnimations = !mounted || prefersReducedMotion || isMobile
     if (reduceAnimations) {
       return (
         <h1
@@ -91,7 +96,7 @@ export function VideoHeroMobile() {
       );
     }
     return (
-      <motion.h1
+      <m.h1
         {...animationProps}
         className={cn("font-black text-white leading-[0.9] sm:leading-[0.95] tracking-tight text-center", className)}
         style={{
@@ -104,7 +109,7 @@ export function VideoHeroMobile() {
         }}
       >
         {children.split(" ").map((word, index) => (
-          <motion.span
+          <m.span
             key={`word-${index}-${word}`}
             initial={{
               opacity: 0,
@@ -123,9 +128,9 @@ export function VideoHeroMobile() {
             className="inline-block"
           >
             {word}&nbsp;
-          </motion.span>
+          </m.span>
         ))}
-      </motion.h1>
+      </m.h1>
     );
   };
 
@@ -140,7 +145,7 @@ export function VideoHeroMobile() {
     className?: string;
     delay?: number;
   } & AnimationProps) => {
-    const reduceAnimations = prefersReducedMotion || isMobile
+    const reduceAnimations = !mounted || prefersReducedMotion || isMobile
     if (reduceAnimations) {
       return (
         <p
@@ -159,7 +164,7 @@ export function VideoHeroMobile() {
       );
     }
     return (
-      <motion.p
+      <m.p
         {...animationProps}
         className={cn("text-gray-200 leading-relaxed max-w-2xl text-center font-medium mb-6 sm:mb-8 md:mb-10 lg:mb-12", className)}
         style={{
@@ -172,7 +177,7 @@ export function VideoHeroMobile() {
         }}
       >
         {children.split(" ").map((word, index) => (
-          <motion.span
+          <m.span
             key={`subtitle-word-${index}-${word}`}
             initial={{
               opacity: 0,
@@ -191,73 +196,70 @@ export function VideoHeroMobile() {
             className="inline-block"
           >
             {word}&nbsp;
-          </motion.span>
+          </m.span>
         ))}
-      </motion.p>
+      </m.p>
     );
   };
 
   return (
-    <section className="relative w-full overflow-hidden bg-white min-h-[100dvh] sm:min-h-[95vh] md:min-h-[90vh] lg:min-h-screen flex items-center justify-center pt-24 sm:pt-24 md:pt-28">
+    <LazyMotion features={domAnimation}>
+      <section className="relative w-full overflow-hidden bg-white min-h-[100dvh] sm:min-h-[95vh] md:min-h-[90vh] lg:min-h-screen flex items-center justify-center pt-24 sm:pt-24 md:pt-28">
 
         {/* Enhanced Background with better mobile performance */}
         <div className="absolute inset-0 w-full h-full z-0">
-          {isMobile ? (
-            // Mobile: Static image only for maximum performance (no video)
-            <div className="w-full h-full relative">
-              <Image
-                src="/images/mobile-background/mobile-background.avif"
-                alt="AKRIN Technology Background"
-                fill
-                className="object-cover"
-                priority={true}
-                quality={60}
-                sizes="100vw"
-                style={{ filter: 'brightness(0.6)' }}
-              />
-              <div className="absolute inset-0 bg-black/30" />
-            </div>
-          ) : isTablet ? (
-            // Tablet: Video background with overlay and optimized loading
-            <div className="w-full h-full relative">
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="none"
-                poster="/og-image.png"
-                className="absolute inset-0 w-full h-full object-cover"
-                style={{ filter: 'brightness(0.7)' }}
-                loading="lazy"
-              >
-                <source src="/video/AKRINKK.mp4" type="video/mp4" />
-              </video>
-               <div className="absolute inset-0 bg-black/25" />
-            </div>
-          ) : (
-            // Desktop: Full video background with optimized loading
-            <div className="w-full h-full relative">
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="none"
-                poster="/og-image.png"
-                className="absolute inset-0 w-full h-full object-cover"
-                style={{ filter: 'brightness(0.8) contrast(1.1)' }}
-                loading="lazy"
-              >
-                <source src="/video/AKRINKK.mp4" type="video/mp4" />
-              </video>
-               <div className="absolute inset-0 bg-black/20" />
-            </div>
-          )}
+          {/* Mobile: Static image only for maximum performance (no video) */}
+          <div className="w-full h-full relative block md:hidden">
+            <Image
+              src="/images/mobile-background/mobile-background.avif"
+              alt="AKRIN Technology Background"
+              fill
+              className="object-cover"
+              priority={true}
+              quality={60}
+              sizes="100vw"
+              style={{ filter: 'brightness(0.6)' }}
+            />
+            <div className="absolute inset-0 bg-black/30" />
+          </div>
+
+          {/* Tablet: Video background with overlay and optimized loading */}
+          <div className="w-full h-full relative hidden md:block lg:hidden">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="none"
+              poster="/og-image.png"
+              className="absolute inset-0 w-full h-full object-cover"
+              style={{ filter: 'brightness(0.7)' }}
+            >
+              <source src="/video/AKRINKK.mp4" type="video/mp4" />
+            </video>
+            <div className="absolute inset-0 bg-black/25" />
+          </div>
+
+          {/* Desktop: Full video background with optimized loading */}
+          <div className="w-full h-full relative hidden lg:block">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="none"
+              poster="/og-image.png"
+              className="absolute inset-0 w-full h-full object-cover"
+              style={{ filter: 'brightness(0.8) contrast(1.1)' }}
+            >
+              <source src="/video/AKRINKK.mp4" type="video/mp4" />
+            </video>
+            <div className="absolute inset-0 bg-black/20" />
+          </div>
         </div>
 
         {/* DIRECT CENTERED CONTENT - NO NESTED CONTAINERS */}
-        <motion.div
+        <m.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -265,18 +267,18 @@ export function VideoHeroMobile() {
         >
               {/* Animated Typography with blur fade-in effect */}
               <div className="mb-4 sm:mb-6 md:mb-8 lg:mb-10">
-                <AnimatedText delay={0.2}>
+                <AnimatedText delay={0.1}>
                   {t('hero.title')}
                 </AnimatedText>
               </div>
 
-              {/* Animated subtitle with blur fade-in effect */}
-              <AnimatedSubtitle delay={1.5}>
+              {/* Animated subtitle with blur fade-in effect - reduced delay for faster LCP */}
+              <AnimatedSubtitle delay={0.3}>
                 {t('hero.subtitle')}
               </AnimatedSubtitle>
 
               {/* CTA button centered below subtitle */}
-              <motion.div
+              <m.div
                 variants={itemVariants}
                 className="mt-2 sm:mt-4 md:mt-6 flex justify-center"
               >
@@ -285,8 +287,8 @@ export function VideoHeroMobile() {
                     {t('hero.cta')}
                   </Link>
                 </Button>
-              </motion.div>
-        </motion.div>
+              </m.div>
+        </m.div>
         
 
 
@@ -297,13 +299,13 @@ export function VideoHeroMobile() {
             {isMobile && (
               <div className="absolute bottom-0 right-0 w-full h-2/5 z-5">
                 <div className="relative w-full h-full">
-                  <motion.div 
+                  <m.div 
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 1.5, delay: 0.5 }}
                     className="absolute bottom-0 right-0 w-48 sm:w-64 h-48 sm:h-64 bg-gradient-to-tl from-pink-400/15 to-[hsl(var(--primary))]/15 rounded-full blur-3xl"
                   />
-                  <motion.div 
+                  <m.div 
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 1.5, delay: 0.8 }}
@@ -317,13 +319,13 @@ export function VideoHeroMobile() {
             {isTablet && (
               <div className="absolute top-1/4 right-0 w-1/2 h-3/4 z-5">
                 <div className="relative w-full h-full">
-                  <motion.div 
+                  <m.div 
                     initial={{ opacity: 0, x: 100 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 1.2, delay: 0.6 }}
                     className="absolute top-1/4 right-0 w-80 h-80 bg-gradient-to-tl from-pink-400/10 to-[hsl(var(--primary))]/10 rounded-full blur-3xl"
                   />
-                  <motion.div 
+                  <m.div 
                     initial={{ opacity: 0, x: 100 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 1.2, delay: 0.9 }}
@@ -335,6 +337,7 @@ export function VideoHeroMobile() {
           </div>
         )}
 
-    </section>
+      </section>
+    </LazyMotion>
   )
 }

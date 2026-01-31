@@ -86,7 +86,7 @@ export default function ServicesClient() {
             <div className="relative hidden md:block">
               <div className="relative aspect-[12/8] rounded-xl overflow-hidden">
                 <Image
-                  src="/hero/it-services-hero.webp"
+                  src="/images/banners/it-managed-services/banner.avif"
                   alt="AKRIN professional IT services"
                   fill
                   className="object-cover"

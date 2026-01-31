@@ -10,6 +10,7 @@ import { ContentStatus, Language } from '@/lib/db';
 import { SEOHead, generateDefaultSEO } from '@/components/seo/seo-head';
 import { generateArticleSchema } from '@/lib/seo';
 import { ContentRenderer } from '@/components/content/content-renderer';
+import { logger } from '@/lib/logger';
 
 interface JapaneseContentPageProps {
   params: Promise<{ slug: string }>;
@@ -85,7 +86,7 @@ async function getContent(slug: string) {
 
     return content;
   } catch (error) {
-    console.error('Failed to fetch Japanese content:', error);
+    logger.error('Failed to fetch Japanese content:', error);
     return null;
   }
 }
@@ -105,7 +106,7 @@ export default async function JapaneseContentPage({ params }: JapaneseContentPag
       data: { viewCount: { increment: 1 } }
     });
   } catch (error) {
-    console.error('Failed to update view count:', error);
+    logger.error('Failed to update view count:', error);
   }
 
   // Generate structured data for Japanese content
@@ -150,7 +151,7 @@ export async function generateStaticParams() {
       slug: content.slug,
     }));
   } catch (error) {
-    console.error('Failed to generate static params for Japanese content (database not available):', error);
+    logger.error('Failed to generate static params for Japanese content (database not available):', error);
     return [];
   }
 }

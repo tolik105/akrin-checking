@@ -1,6 +1,8 @@
 import HomeClient from './home-client'
 import { generateFAQSchema, generateOrganizationSchema, generateLocalBusinessSchema } from '@/lib/seo'
 import { generatePageMetadata } from '@/lib/metadata-helpers'
+import { HeroStatic } from '@/components/hero-static'
+import enCommon from '../public/locales/en/common.json'
 
 export const metadata = generatePageMetadata({
   title: 'Akrin - Leading IT Solutions Provider in Japan | Managed Services & Support',
@@ -53,6 +55,7 @@ const faqData = [
 ]
 
 export default function Home() {
+  const heroCopy = enCommon.hero
   const schemas = [
     generateOrganizationSchema(),
     generateLocalBusinessSchema(),
@@ -70,6 +73,12 @@ export default function Home() {
           }}
         />
       ))}
+      <HeroStatic
+        title={heroCopy.title}
+        subtitle={heroCopy.subtitle}
+        ctaLabel={heroCopy.cta}
+        ctaHref="/contact"
+      />
       <HomeClient />
     </>
   )

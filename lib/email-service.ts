@@ -1,3 +1,5 @@
+import { logger } from './logger'
+
 // Helper function to extract plain text from HTML
 function extractTextFromHtml(html: string): string {
   return html
@@ -33,11 +35,11 @@ export async function sendEmail(options: {
       return false
     }
     
-    console.log('Email configuration:')
-    console.log('- SMTP Host:', process.env.SMTP_HOST)
-    console.log('- SMTP Port:', process.env.SMTP_PORT || '587')
-    console.log('- SMTP User:', process.env.SMTP_USER)
-    console.log('- Sending to:', options.to)
+    logger.log('Email configuration:')
+    logger.log('- SMTP Host:', process.env.SMTP_HOST)
+    logger.log('- SMTP Port:', process.env.SMTP_PORT || '587')
+    logger.log('- SMTP User:', process.env.SMTP_USER ? '[SET]' : '[MISSING]')
+    logger.log('- Sending to:', options.to)
     
     // Create transporter
     const transporter = nodemailer.createTransport({
@@ -53,7 +55,7 @@ export async function sendEmail(options: {
     // Test the connection first
     try {
       await transporter.verify()
-      console.log('SMTP connection verified successfully')
+      logger.log('SMTP connection verified successfully')
     } catch (verifyError) {
       console.error('SMTP connection failed:', verifyError)
       console.error('This usually means:')
@@ -89,25 +91,15 @@ export async function sendEmail(options: {
       }
     }
 
-    console.log('📧 Sending email with options:', {
-      from: mailOptions.from,
-      to: mailOptions.to,
-      subject: mailOptions.subject,
-      replyTo: mailOptions.replyTo
-    })
+    logger.log('Sending email:', { to: mailOptions.to, subject: mailOptions.subject })
 
     // Check if the recipient domain exists
     const recipientDomain = options.to.split('@')[1]
-    console.log('🌐 Recipient domain:', recipientDomain)
+    logger.log('Recipient domain:', recipientDomain)
 
     const info = await transporter.sendMail(mailOptions)
 
-    console.log('✅ Email sent successfully!')
-    console.log('📨 Message ID:', info.messageId)
-    console.log('📤 Response:', info.response)
-    console.log('📬 Accepted recipients:', info.accepted)
-    console.log('❌ Rejected recipients:', info.rejected)
-    console.log('📋 Full info:', JSON.stringify(info, null, 2))
+    logger.log('Email sent successfully, Message ID:', info.messageId)
     return true
   } catch (error) {
     console.error('Email sending failed:', error)

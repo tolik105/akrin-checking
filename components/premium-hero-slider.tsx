@@ -5,6 +5,7 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { useTexture, Html } from '@react-three/drei'
 import * as THREE from 'three'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const heroSlides = [
   {
@@ -371,10 +372,12 @@ export function PremiumHeroSlider() {
                   index === currentSlide ? 'opacity-100' : 'opacity-0'
                 }`}
               >
-                <img
+                <Image
                   src={slide.image}
                   alt={slide.title}
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
+                  sizes="100vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
               </div>

@@ -31,8 +31,9 @@ export function HeroServicesRow() {
   ]
 
   return (
-    <section className="relative py-12 sm:py-16 md:py-20 bg-white">
+    <section className="relative py-12 sm:py-16 md:py-20 bg-white" aria-labelledby="services-heading">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 id="services-heading" className="sr-only">{t('nav.services')}</h2>
         {services.map((s, index) => {
           const isReversed = index % 2 === 1
           return (
@@ -69,8 +70,8 @@ export function HeroServicesRow() {
                 <div className="mt-6">
                   <Link
                     href={s.link}
-                    className="inline-flex items-center gap-2 text-teal-600 hover:text-teal-700 transition-colors"
-                    aria-label={`${s.title} – ${t('common.learnMore')}`}
+                    className="inline-flex items-center gap-2 text-teal-700 hover:text-teal-800 transition-colors"
+                    aria-label={`${t('common.learnMore')} about ${s.title}`}
                   >
                     <span className="text-sm sm:text-base font-medium">{t('common.learnMore')}</span>
                     <svg

@@ -7,7 +7,7 @@ import { postsQuery } from "@/lib/sanity.queries"
 
 // Enhanced SEO metadata for blog listing page
 export const metadata: Metadata = generatePageMetadata({
-  title: 'IT Blog & Resources | AKRIN - Expert Technology Insights',
+  title: 'Akrin IT Blog | Insights on Tech & Security in Japan',
   description: 'Expert insights on IT infrastructure, cybersecurity, cloud solutions, and digital transformation in Japan.',
   keywords: [
     'IT blog Japan',

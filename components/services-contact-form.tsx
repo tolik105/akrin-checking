@@ -4,7 +4,8 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { motion } from "framer-motion"
+import { LazyMotion, domAnimation, m } from "framer-motion"
+import { logger } from "@/lib/logger"
 
 export function ServicesContactForm() {
   const [formData, setFormData] = useState({
@@ -29,16 +30,17 @@ export function ServicesContactForm() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     // Handle form submission here
-    console.log('Form submitted:', formData)
+    logger.log('Form submitted:', formData)
   }
 
   return (
+  <LazyMotion features={domAnimation}>
   <section className="py-16 sm:py-20 md:py-24 bg-gradient-to-br from-[hsl(var(--primary))] via-[hsl(var(--primary))] to-[hsl(var(--primary))]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           
           {/* Left Content - AKRIN Branding */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -76,10 +78,10 @@ export function ServicesContactForm() {
                 </span>
               </a>
             </Button>
-          </motion.div>
+          </m.div>
 
           {/* Right Content - Contact Form */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -218,9 +220,10 @@ export function ServicesContactForm() {
                 </span>
               </Button>
             </form>
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </section>
+  </LazyMotion>
   )
 }

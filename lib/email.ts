@@ -1,5 +1,6 @@
 import * as nodemailer from 'nodemailer'
 import type { Transporter } from 'nodemailer'
+import { logger } from './logger'
 
 // Email configuration type
 interface EmailConfig {
@@ -50,18 +51,18 @@ export async function sendEmail(options: EmailOptions): Promise<boolean> {
       return false
     }
     
-    console.log('Email configuration:')
-    console.log('- SMTP Host:', process.env.SMTP_HOST)
-    console.log('- SMTP Port:', process.env.SMTP_PORT || '587')
-    console.log('- SMTP User:', process.env.SMTP_USER)
-    console.log('- Sending to:', options.to)
+    logger.log('Email configuration:')
+    logger.log('- SMTP Host:', process.env.SMTP_HOST)
+    logger.log('- SMTP Port:', process.env.SMTP_PORT || '587')
+    logger.log('- SMTP User:', process.env.SMTP_USER ? '[SET]' : '[MISSING]')
+    logger.log('- Sending to:', options.to)
     
     const transporter = createTransporter()
     
     // Test the connection first
     try {
       await transporter.verify()
-      console.log('SMTP connection verified successfully')
+      logger.log('SMTP connection verified successfully')
     } catch (verifyError) {
       console.error('SMTP connection failed:', verifyError)
       console.error('This usually means:')
@@ -80,9 +81,7 @@ export async function sendEmail(options: EmailOptions): Promise<boolean> {
     }
 
     const info = await transporter.sendMail(mailOptions)
-    console.log('Email sent successfully!')
-    console.log('Message ID:', info.messageId)
-    console.log('Response:', info.response)
+    logger.log('Email sent successfully, Message ID:', info.messageId)
     return true
   } catch (error) {
     console.error('Email sending failed:', error)
