@@ -5,6 +5,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { useTranslation } from "react-i18next"
+import { usePathname } from "next/navigation"
 import { LazyMotion, domAnimation, m } from "framer-motion"
 import { ClientOnly } from "@/hooks/use-mounted"
 
@@ -56,6 +57,9 @@ const SendIcon = () => (
 
 export function Footer() {
   const { t } = useTranslation('common')
+  const pathname = usePathname()
+  const isJapanese = pathname?.startsWith('/ja')
+  const langPrefix = isJapanese ? '/ja' : ''
   return (
     <LazyMotion features={domAnimation}>
     <footer className="relative bg-white text-gray-900 mt-auto overflow-hidden border-t border-gray-100/80">
@@ -169,15 +173,18 @@ export function Footer() {
             <h3 className="text-base font-bold text-gray-900 mb-3">{t('footer.company', { defaultValue: 'Company' })}</h3>
             <ul className="space-y-1.5 text-sm font-medium">
               <li>
-                <Link href="/about" className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block focus:outline-none focus:ring-2 focus:ring-violet-600 rounded">
+                <Link href={`${langPrefix}/about`} className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block focus:outline-none focus:ring-2 focus:ring-violet-600 rounded">
                   {t('nav.aboutUs')}
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block focus:outline-none focus:ring-2 focus:ring-violet-600 rounded">{t('nav.blog')}</Link>
+                <Link href={`${langPrefix}/blog`} className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block focus:outline-none focus:ring-2 focus:ring-violet-600 rounded">{t('nav.blog')}</Link>
               </li>
               <li>
-                <Link href="/contact" className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block focus:outline-none focus:ring-2 focus:ring-violet-600 rounded">{t('nav.contact')}</Link>
+                <Link href={`${langPrefix}/contact`} className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block focus:outline-none focus:ring-2 focus:ring-violet-600 rounded">{t('nav.contact')}</Link>
+              </li>
+              <li>
+                <Link href={`${langPrefix}/book-consultation`} className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block focus:outline-none focus:ring-2 focus:ring-violet-600 rounded">{isJapanese ? '相談予約' : 'Book Consultation'}</Link>
               </li>
             </ul>
           </m.div>
@@ -191,25 +198,25 @@ export function Footer() {
             <h3 className="text-base font-bold text-gray-900 mb-3">{t('nav.services')}</h3>
             <ul className="space-y-1.5 text-sm font-medium">
               <li>
-                <Link href="/services/it-managed-services" className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block focus:outline-none focus:ring-2 focus:ring-violet-600 rounded">{t('nav.managedItSupport')}</Link>
+                <Link href={`${langPrefix}/services/it-managed-services`} className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block focus:outline-none focus:ring-2 focus:ring-violet-600 rounded">{t('nav.managedItSupport')}</Link>
               </li>
               <li>
-                <Link href="/services/cloud-infrastructure" className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block focus:outline-none focus:ring-2 focus:ring-violet-600 rounded">{t('nav.cloudInfrastructure')}</Link>
+                <Link href={`${langPrefix}/services/cloud-infrastructure`} className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block focus:outline-none focus:ring-2 focus:ring-violet-600 rounded">{t('nav.cloudInfrastructure')}</Link>
               </li>
               <li>
-                <Link href="/services/cybersecurity" className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block focus:outline-none focus:ring-2 focus:ring-violet-600 rounded">{t('nav.cybersecurity')}</Link>
+                <Link href={`${langPrefix}/services/cybersecurity`} className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block focus:outline-none focus:ring-2 focus:ring-violet-600 rounded">{t('nav.cybersecurity')}</Link>
               </li>
               <li>
-                <Link href="/services/it-consulting-project-management" className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block focus:outline-none focus:ring-2 focus:ring-violet-600 rounded">{t('nav.itConsultingProjectManagement')}</Link>
+                <Link href={`${langPrefix}/services/it-consulting-project-management`} className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block focus:outline-none focus:ring-2 focus:ring-violet-600 rounded">{t('nav.itConsultingProjectManagement')}</Link>
               </li>
               <li>
-                <Link href="/services/wifi-assessment" className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block focus:outline-none focus:ring-2 focus:ring-violet-600 rounded">{t('nav.wifiAssessment')}</Link>
+                <Link href={`${langPrefix}/services/wifi-assessment`} className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block focus:outline-none focus:ring-2 focus:ring-violet-600 rounded">{t('nav.wifiAssessment')}</Link>
               </li>
               <li>
-                <Link href="/services/wifi-design" className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block focus:outline-none focus:ring-2 focus:ring-violet-600 rounded">{t('nav.wifiDesign')}</Link>
+                <Link href={`${langPrefix}/services/wifi-design`} className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block focus:outline-none focus:ring-2 focus:ring-violet-600 rounded">{t('nav.wifiDesign')}</Link>
               </li>
               <li>
-                <Link href="/services/itad-japan-apac-us" className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block focus:outline-none focus:ring-2 focus:ring-violet-600 rounded">ITAD (Japan/APAC/US)</Link>
+                <Link href={`${langPrefix}/services/itad-japan-apac-us`} className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block focus:outline-none focus:ring-2 focus:ring-violet-600 rounded">{isJapanese ? 'ITAD（日本・APAC・米国）' : 'ITAD (Japan/APAC/US)'}</Link>
               </li>
             </ul>
           </m.div>
@@ -223,22 +230,25 @@ export function Footer() {
             <h3 className="text-base font-bold text-gray-900 mb-3">{t('footer.quickLinks')}</h3>
             <ul className="space-y-1.5 text-sm font-medium">
               <li>
-                <Link href="/services" className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block focus:outline-none focus:ring-2 focus:ring-violet-600 rounded">{t('nav.services')}</Link>
+                <Link href={`${langPrefix}/services`} className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block focus:outline-none focus:ring-2 focus:ring-violet-600 rounded">{t('nav.services')}</Link>
               </li>
               <li>
-                <Link href="/case-studies" className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block focus:outline-none focus:ring-2 focus:ring-violet-600 rounded">{t('nav.caseStudies', { defaultValue: 'Case Studies' })}</Link>
+                <Link href={`${langPrefix}/case-studies`} className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block focus:outline-none focus:ring-2 focus:ring-violet-600 rounded">{t('nav.caseStudies', { defaultValue: 'Case Studies' })}</Link>
               </li>
               <li>
-                <Link href="/blog" className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block focus:outline-none focus:ring-2 focus:ring-violet-600 rounded">{t('nav.blog')}</Link>
+                <Link href={`${langPrefix}/blog`} className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block focus:outline-none focus:ring-2 focus:ring-violet-600 rounded">{t('nav.blog')}</Link>
               </li>
               <li>
-                <Link href="/privacy" className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block focus:outline-none focus:ring-2 focus:ring-violet-600 rounded">{t('footer.privacyPolicy')}</Link>
+                <Link href={`${langPrefix}/contact-form`} className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block focus:outline-none focus:ring-2 focus:ring-violet-600 rounded">{isJapanese ? 'お問い合わせフォーム' : 'Contact Form'}</Link>
               </li>
               <li>
-                <Link href="/terms" className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block focus:outline-none focus:ring-2 focus:ring-violet-600 rounded">{t('footer.termsOfService')}</Link>
+                <Link href={`${langPrefix}/privacy`} className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block focus:outline-none focus:ring-2 focus:ring-violet-600 rounded">{t('footer.privacyPolicy')}</Link>
               </li>
               <li>
-                <Link href="/cookies" className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block focus:outline-none focus:ring-2 focus:ring-violet-600 rounded">{t('footer.cookiePolicy', { defaultValue: 'Cookie Policy' })}</Link>
+                <Link href={`${langPrefix}/terms`} className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block focus:outline-none focus:ring-2 focus:ring-violet-600 rounded">{t('footer.termsOfService')}</Link>
+              </li>
+              <li>
+                <Link href={`${langPrefix}/cookies`} className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block focus:outline-none focus:ring-2 focus:ring-violet-600 rounded">{t('footer.cookiePolicy', { defaultValue: 'Cookie Policy' })}</Link>
               </li>
             </ul>
           </m.div>
@@ -304,15 +314,15 @@ export function Footer() {
               Copyright © {new Date().getFullYear()} AKRIN株式会社. {t('footer.allRightsReserved')}
             </p>
             <div className="flex items-center gap-3 text-xs text-gray-600">
-              <Link href="/privacy" className="hover:text-gray-900 transition-colors focus:outline-none focus:ring-2 focus:ring-violet-600 rounded px-1">
+              <Link href={`${langPrefix}/privacy`} className="hover:text-gray-900 transition-colors focus:outline-none focus:ring-2 focus:ring-violet-600 rounded px-1">
                 {t('footer.privacyPolicy')}
               </Link>
               <span>•</span>
-              <Link href="/terms" className="hover:text-gray-900 transition-colors focus:outline-none focus:ring-2 focus:ring-violet-600 rounded px-1">
+              <Link href={`${langPrefix}/terms`} className="hover:text-gray-900 transition-colors focus:outline-none focus:ring-2 focus:ring-violet-600 rounded px-1">
                 {t('footer.termsOfService')}
               </Link>
               <span>•</span>
-              <Link href="/cookies" className="hover:text-gray-900 transition-colors focus:outline-none focus:ring-2 focus:ring-violet-600 rounded px-1">
+              <Link href={`${langPrefix}/cookies`} className="hover:text-gray-900 transition-colors focus:outline-none focus:ring-2 focus:ring-violet-600 rounded px-1">
                 {t('footer.cookiePolicy', { defaultValue: 'Cookie Policy' })}
               </Link>
             </div>

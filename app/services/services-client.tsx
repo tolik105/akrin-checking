@@ -2,10 +2,31 @@
 import { motion } from "framer-motion"
 import Link from "next/link"
 import Image from "next/image"
+import { usePathname } from "next/navigation"
 import { PartnerWithUsSection } from "@/components/ui/partner-with-us-section"
 import { PremiumCTA } from "@/components/ui/premium-cta"
 
 export default function ServicesClient() {
+  const pathname = usePathname()
+  const isJapanese = pathname?.startsWith('/ja')
+  
+  // Localized content for H1 and description (SEO fix for duplicate H1 tags)
+  const content = {
+    h1: isJapanese ? 'プロフェッショナルITサービス' : 'Professional IT Services',
+    description: isJapanese 
+      ? '日本および世界中の企業向けに設計された、堅牢でスケーラブルかつ安全なソリューション。下記のコアサービスをご覧ください。'
+      : 'Robust, scalable, and secure solutions designed for enterprises in Japan and worldwide. Explore our core offerings below.',
+    featuresTitle: isJapanese ? '総合ITサービス' : 'Comprehensive IT Services',
+    featuresDescription: isJapanese
+      ? '当社のエキスパートがビジネスクリティカルなネットワーク運用、セキュリティ、クラウドをエンドツーエンドで管理します。'
+      : 'Our experts handle business-critical network operations, security, and cloud—end to end.',
+    ctaTitle: isJapanese ? 'IT運用の最適化をお考えですか？' : 'Ready to optimize your IT operations?',
+    ctaDescription: isJapanese
+      ? 'ワイヤレスネットワーク設計からグローバルIT展開まで、セキュリティ強化と効率化を実現するカスタマイズソリューションを提供します。'
+      : 'From wireless network design to global IT deployments, our services are tailored to enhance security and drive efficiency.',
+    ctaButton: isJapanese ? '今すぐ始める' : 'Get Started Today',
+  }
+
   // AKRIN Services - ONLY existing services
   const services = [
     {
@@ -65,7 +86,7 @@ export default function ServicesClient() {
                 transition={{ duration: 0.5 }}
                 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-gray-900"
               >
-                Professional IT Services
+                {content.h1}
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 16 }}
@@ -73,7 +94,7 @@ export default function ServicesClient() {
                 transition={{ duration: 0.5, delay: 0.1 }}
                 className="mt-4 text-gray-600 text-base lg:text-lg max-w-2xl"
               >
-                Robust, scalable, and secure solutions designed for enterprises in Japan and worldwide. Explore our core offerings below.
+                {content.description}
               </motion.p>
               <nav className="mt-6 flex flex-wrap gap-2" aria-label="Quick links">
                 {services.slice(0, 4).map((s) => (
@@ -160,8 +181,8 @@ export default function ServicesClient() {
       {/* Services Features Grid - SEO-friendly */}
       <section aria-labelledby="features-heading" className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
         <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
-          <h2 id="features-heading" className="text-2xl font-bold md:text-4xl md:leading-tight text-gray-800">Comprehensive IT Services</h2>
-          <p className="mt-1 text-gray-600">Our experts handle business-critical network operations, security, and cloud—end to end.</p>
+          <h2 id="features-heading" className="text-2xl font-bold md:text-4xl md:leading-tight text-gray-800">{content.featuresTitle}</h2>
+          <p className="mt-1 text-gray-600">{content.featuresDescription}</p>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -209,10 +230,10 @@ export default function ServicesClient() {
       {/* Premium CTA Section */}
       <PremiumCTA
         variant="dark"
-        title="Ready to optimize your IT operations?"
-        description="From wireless network design to global IT deployments, our services are tailored to enhance security and drive efficiency."
-        buttonText="Get Started Today"
-        buttonHref="/contact"
+        title={content.ctaTitle}
+        description={content.ctaDescription}
+        buttonText={content.ctaButton}
+        buttonHref={isJapanese ? "/ja/contact" : "/contact"}
       />
 
       {/* Partner With Us Section */}

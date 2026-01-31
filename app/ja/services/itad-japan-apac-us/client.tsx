@@ -111,8 +111,8 @@ export default function ITADJaClient() {
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 leading-tight">安心して撤去を進めませんか？</h2>
           <p className="text-white/90 mb-6">日本・APAC・米国に最適化したプランをご提案します。</p>
           <div className="flex flex-wrap gap-3 justify-center">
-            <Link href="https://calendly.com/akrin/itad-consult" className="inline-flex items-center px-8 py-3 bg-white text-[#20B2AA] font-semibold rounded-md hover:bg-gray-100 transition-colors">ITADプロジェクトを開始</Link>
-            <a href="#pickup-quote" className="inline-flex items-center px-8 py-3 border border-white/80 text-white font-semibold rounded-md hover:bg-white/10 transition-colors">質問する</a>
+            <Link href="/ja/contact?service=itad" className="inline-flex items-center px-8 py-3 bg-white text-[#20B2AA] font-semibold rounded-md hover:bg-gray-100 transition-colors">ITADプロジェクトを開始</Link>
+            <Link href="/ja/contact-form" className="inline-flex items-center px-8 py-3 border border-white/80 text-white font-semibold rounded-md hover:bg-white/10 transition-colors">質問する</Link>
           </div>
         </div>
       </section>

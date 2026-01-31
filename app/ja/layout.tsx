@@ -7,8 +7,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://akrin.jp/ja',
     languages: {
-      'en-US': 'https://akrin.jp',
-      'ja-JP': 'https://akrin.jp/ja',
+      'en': 'https://akrin.jp',
+      'ja': 'https://akrin.jp/ja',
       'x-default': 'https://akrin.jp'
     }
   },
@@ -24,5 +24,15 @@ interface MainLayoutProps {
 
 export default function MainLayout({ children }: MainLayoutProps) {
   // NavbarSimple is already rendered in the root layout, so we just pass through children
-  return <>{children}</>
+  // Inject script to ensure lang="ja" for Japanese pages (SEO fix for hreflang/lang mismatch)
+  return (
+    <>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `if(document.documentElement.lang!=='ja')document.documentElement.lang='ja';`
+        }}
+      />
+      {children}
+    </>
+  )
 }
