@@ -1,8 +1,11 @@
 "use client"
 
+import { usePathname } from "next/navigation"
 import { motion } from "framer-motion"
 
 export default function ContactClient() {
+  const pathname = usePathname()
+  const isJapanese = pathname?.startsWith('/ja')
 
   return (
     <main className="bg-white">
@@ -28,7 +31,7 @@ export default function ContactClient() {
                     WebkitFontSmoothing: 'antialiased',
                     MozOsxFontSmoothing: 'grayscale'
                   }}>
-                Contact AKRIN
+                {isJapanese ? 'AKRINにお問い合わせ' : 'Contact AKRIN'}
               </h1>
               <p className="text-sm sm:text-base md:text-lg font-medium text-gray-600 leading-relaxed antialiased"
                  style={{
@@ -40,7 +43,7 @@ export default function ContactClient() {
                    WebkitFontSmoothing: 'antialiased',
                    MozOsxFontSmoothing: 'grayscale'
                  }}>
-                IT Consulting & Managed Services in Japan
+                {isJapanese ? '日本のITコンサルティング＆マネージドサービス' : 'IT Consulting & Managed Services in Japan'}
               </p>
               <p className="text-xs sm:text-sm md:text-base text-gray-500 leading-relaxed antialiased mt-2 sm:mt-3"
                  style={{
@@ -52,7 +55,7 @@ export default function ContactClient() {
                    WebkitFontSmoothing: 'antialiased',
                    MozOsxFontSmoothing: 'grayscale'
                  }}>
-                Get answers to your questions about anything AKRIN
+                {isJapanese ? 'AKRINのサービスについてお気軽にご相談ください' : 'Get answers to your questions about anything AKRIN'}
               </p>
             </motion.div>
           </div>

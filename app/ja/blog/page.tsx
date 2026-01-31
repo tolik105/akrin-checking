@@ -3,6 +3,8 @@ import { generatePageMetadata } from '@/lib/metadata-helpers'
 import React from "react"
 import { SimpleBlogWithGrid } from "@/components/ui/simple-blog-with-grid"
 import { blogPostsJA } from "@/lib/blog-data"
+import { client } from "@/lib/sanity.client"
+import { postsQuery } from "@/lib/sanity.queries"
 
 // Enhanced SEO metadata for Japanese blog listing page
 export const metadata: Metadata = generatePageMetadata({
@@ -19,6 +21,33 @@ export const metadata: Metadata = generatePageMetadata({
   path: '/ja/blog',
   image: '/og-image.png'
 })
+
+// Route-level performance hints: ISR with hourly revalidation
+export const revalidate = 3600
+
+// Fetch posts from Sanity, fallback to static data if empty
+async function getPosts() {
+  const sanityPosts = await client.fetch(postsQuery)
+  if (sanityPosts && sanityPosts.length > 0) {
+    return sanityPosts
+  }
+  // Fallback to static Japanese blog data
+  return Object.values(blogPostsJA).map(post => ({
+    _id: String(post.id),
+    title: post.title,
+    slug: { current: post.slug },
+    metaDescription: (post as any).metaDescription || post.content?.slice(0, 160),
+    excerpt: (post as any).excerpt,
+    mainImage: post.image ? { asset: { url: post.image }, alt: post.title } : undefined,
+    htmlContent: post.content,
+    author: post.author,
+    authorRole: post.authorRole,
+    publishedAt: post.date,
+    readTime: post.readTime,
+    category: post.category,
+    tags: post.tags
+  }))
+}
 
 // Generate structured data for Japanese blog listing
 function generateBlogStructuredData() {
@@ -72,7 +101,8 @@ function generateBlogStructuredData() {
   }
 }
 
-export default function BlogPageJA() {
+export default async function BlogPageJA() {
+  const posts = await getPosts()
   const structuredData = generateBlogStructuredData()
 
   return (
@@ -95,7 +125,7 @@ export default function BlogPageJA() {
 
           {/* Blog content with semantic structure */}
           <section aria-label="ブログ記事">
-            <SimpleBlogWithGrid language="ja" />
+            <SimpleBlogWithGrid language="ja" posts={posts} />
           </section>
         </div>
       </main>

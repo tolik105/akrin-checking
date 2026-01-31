@@ -1,6 +1,7 @@
 "use client"
 
 import { motion, AnimatePresence } from "framer-motion"
+import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { ArrowLeft, Calendar, Clock, Users, CheckCircle } from "lucide-react"
@@ -71,6 +72,8 @@ const FAQItem = ({
 
 export default function BookConsultationClient() {
   const [openFaq, setOpenFaq] = useState<string | null>(null)
+  const pathname = usePathname()
+  const isJapanese = pathname?.startsWith('/ja')
   return (
     <main className="flex min-h-screen flex-col">
       {/* Hero Section */}
@@ -83,9 +86,9 @@ export default function BookConsultationClient() {
           className="relative z-10 px-8 md:px-16 lg:px-24 py-8 md:py-12"
         >
           <div className="max-w-7xl mx-auto">
-            <Link href="/contact" className="inline-flex items-center text-white/70 hover:text-white mb-8 transition-colors">
+            <Link href={isJapanese ? "/ja/contact" : "/contact"} className="inline-flex items-center text-white/70 hover:text-white mb-8 transition-colors">
               <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Contact
+              {isJapanese ? 'お問い合わせに戻る' : 'Back to Contact'}
             </Link>
             
             <div className="max-w-4xl">
@@ -95,9 +98,9 @@ export default function BookConsultationClient() {
                 transition={{ delay: 0.2, duration: 0.8 }}
                 className="text-5xl md:text-6xl lg:text-7xl font-light leading-tight mb-8"
               >
-                Book Your Free
+                {isJapanese ? '無料ITコンサルテーション' : 'Book Your Free'}
                 <span className="block font-semibold bg-gradient-to-r from-white/80 to-white bg-clip-text text-transparent">
-                  IT Consultation
+                  {isJapanese ? 'ご予約' : 'IT Consultation'}
                 </span>
               </motion.h1>
               <motion.p
@@ -106,7 +109,9 @@ export default function BookConsultationClient() {
                 transition={{ delay: 0.4, duration: 0.8 }}
                 className="text-xl md:text-2xl text-white/80 leading-relaxed mb-12 max-w-3xl"
               >
-                Let's discuss your IT challenges and explore how our comprehensive solutions can transform your technology infrastructure.
+                {isJapanese 
+                  ? 'ITの課題についてご相談いただき、包括的なソリューションがどのようにテクノロジーインフラを変革できるかをご説明します。'
+                  : "Let's discuss your IT challenges and explore how our comprehensive solutions can transform your technology infrastructure."}
               </motion.p>
             </div>
           </div>

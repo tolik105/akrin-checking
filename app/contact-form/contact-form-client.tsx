@@ -1,12 +1,15 @@
 "use client"
 
 import { useState } from "react"
+import { usePathname } from "next/navigation"
 import { useToast } from "@/hooks/use-toast"
 import { motion } from "framer-motion"
 import { ChevronDownIcon } from "@heroicons/react/16/solid"
 import TurnstileWidget from "@/components/turnstile-widget"
 
 export default function ContactFormClient() {
+  const pathname = usePathname()
+  const isJapanese = pathname?.startsWith('/ja')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const [step, setStep] = useState<1 | 2>(1)
@@ -132,7 +135,7 @@ export default function ContactFormClient() {
               transition={{ duration: 0.8 }}
               className="text-5xl font-light tracking-tight text-gray-900 sm:text-6xl"
             >
-              Contact AKRIN
+              {isJapanese ? 'お問い合わせフォーム' : 'Send Us a Message'}
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 30 }}
@@ -140,7 +143,9 @@ export default function ContactFormClient() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="mt-6 text-lg leading-8 text-gray-600"
             >
-              Get answers to your questions about our IT solutions and services.
+              {isJapanese 
+                ? 'ITソリューションやサービスについてお気軽にご相談ください。' 
+                : 'Get answers to your questions about our IT solutions and services.'}
             </motion.p>
           </div>
         </div>
