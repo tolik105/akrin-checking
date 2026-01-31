@@ -5,8 +5,8 @@ import { schemaTypes } from './sanity/schemas'
 
 export default defineConfig({
   basePath: '/studio',
-  name: 'akrin_blog',
-  title: 'Akrin Blog Studio',
+  name: 'akrin_content',
+  title: 'Akrin Content Studio',
   projectId: 't424dnfi',
   dataset: 'production',
   plugins: [deskTool(), visionTool()],

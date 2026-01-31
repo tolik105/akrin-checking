@@ -1,7 +1,9 @@
 import { NextResponse } from 'next/server'
-import { caseStudiesEN } from '@/lib/case-studies-data'
+import { client } from '@/lib/sanity.client'
+import { caseStudiesQuery } from '@/lib/sanity.queries'
 
-export const dynamic = 'force-static'
+// Revalidate every 5 minutes
+export const revalidate = 300
 
 type CaseItem = { title: string; slug: string; locale: 'en' | 'ja' }
 
@@ -11,19 +13,14 @@ export async function GET(request: Request) {
   const limitParam = searchParams.get('limit')
   const limit = limitParam ? Math.max(1, Math.min(12, Number(limitParam))) : undefined
 
-  const EXCLUDED = new Set([
-    'enterprise-wifi-hq-koujimachi',
-    'office-relocation-tokyo-hq-move',
-    'sdwan-retail-40-sites',
-  ])
+  // Fetch from Sanity
+  const caseStudies = await client.fetch(caseStudiesQuery)
 
-  const all: CaseItem[] = caseStudiesEN
-    .filter((i) => !EXCLUDED.has(i.slug))
-    .map((i) => ({
-      slug: i.slug,
-      title: locale === 'ja' ? i.titleJA : i.titleEN,
-      locale,
-    }))
+  const all: CaseItem[] = caseStudies.map((cs: any) => ({
+    slug: typeof cs.slug === 'string' ? cs.slug : cs.slug?.current || '',
+    title: locale === 'ja' ? cs.titleJA : cs.titleEN,
+    locale,
+  }))
 
   const limited = typeof limit === 'number' ? all.slice(0, limit) : all
 

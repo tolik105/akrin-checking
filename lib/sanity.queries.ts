@@ -41,3 +41,56 @@ export const postBySlugQuery = groq`*[_type == "post" && slug.current == $slug][
   category,
   tags
 }`
+
+// Case Studies Queries
+export const caseStudiesQuery = groq`*[_type == "caseStudy"] | order(order asc, publishedAt desc) {
+  _id,
+  slug,
+  titleEN,
+  titleJA,
+  categoryEN,
+  categoryJA,
+  excerptEN,
+  excerptJA,
+  metaDescriptionEN,
+  metaDescriptionJA,
+  "mainImage": mainImage{
+    "asset": asset->{url},
+    alt,
+    altJA,
+    caption
+  },
+  imageUrl,
+  metrics,
+  tags,
+  publishedAt,
+  order,
+  featured
+}`
+
+export const caseStudyBySlugQuery = groq`*[_type == "caseStudy" && slug.current == $slug][0] {
+  _id,
+  slug,
+  titleEN,
+  titleJA,
+  categoryEN,
+  categoryJA,
+  excerptEN,
+  excerptJA,
+  metaDescriptionEN,
+  metaDescriptionJA,
+  "mainImage": mainImage{
+    "asset": asset->{url},
+    alt,
+    altJA,
+    caption
+  },
+  imageUrl,
+  htmlContentEN,
+  htmlContentJA,
+  metrics,
+  tags,
+  publishedAt,
+  order,
+  featured
+}`
