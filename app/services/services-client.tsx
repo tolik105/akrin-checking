@@ -2,12 +2,77 @@
 import { motion } from "framer-motion"
 import Link from "next/link"
 import Image from "next/image"
+import { usePathname } from "next/navigation"
 import { PartnerWithUsSection } from "@/components/ui/partner-with-us-section"
 import { PremiumCTA } from "@/components/ui/premium-cta"
 
 export default function ServicesClient() {
+  const pathname = usePathname()
+  const isJapanese = pathname.startsWith('/ja')
+
+  // Language-specific content to fix duplicate H1 issue
+  const content = {
+    h1: isJapanese ? 'プロフェッショナルITサービス' : 'Professional IT Services',
+    description: isJapanese 
+      ? '日本および世界中の企業向けに設計された、堅牢でスケーラブルかつ安全なソリューション。以下のコアサービスをご覧ください。'
+      : 'Robust, scalable, and secure solutions designed for enterprises in Japan and worldwide. Explore our core offerings below.',
+    servicesHeading: isJapanese ? '包括的なITサービス' : 'Comprehensive IT Services',
+    servicesDescription: isJapanese 
+      ? '当社の専門家がビジネスクリティカルなネットワーク運用、セキュリティ、クラウドをエンドツーエンドで管理します。'
+      : 'Our experts handle business-critical network operations, security, and cloud—end to end.',
+    ctaTitle: isJapanese ? 'IT運用の最適化をお考えですか？' : 'Ready to optimize your IT operations?',
+    ctaDescription: isJapanese 
+      ? 'ワイヤレスネットワーク設計からグローバルIT展開まで、セキュリティ強化と効率化のためのサービスを提供します。'
+      : 'From wireless network design to global IT deployments, our services are tailored to enhance security and drive efficiency.',
+    ctaButton: isJapanese ? '今すぐ始める' : 'Get Started Today',
+    readMore: isJapanese ? '詳細を見る' : 'Read more about',
+  }
+
   // AKRIN Services - ONLY existing services
-  const services = [
+  const services = isJapanese ? [
+    {
+      title: "マネージドITサポート",
+      description: "24時間365日のモニタリングとプロアクティブなメンテナンスによる、ビジネス運用のための完全なIT管理とサポート。",
+      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=60",
+      href: "/ja/services/it-managed-services",
+      buttonText: "マネージドITサポート"
+    },
+    {
+      title: "ITコンサルティング・プロジェクト管理",
+      description: "複雑なITイニシアチブの戦略、PMO、デリバリーでビジネスを前進させます。",
+      image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=60",
+      href: "/ja/services/it-consulting-project-management",
+      buttonText: "コンサルティング・PMO"
+    },
+    {
+      title: "クラウドインフラソリューション",
+      description: "Azure、AWS、GCPの専門知識を活かした、現代のビジネス向けスケーラブルなクラウドインフラと移行サービス。",
+      image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=60",
+      href: "/ja/services/cloud-infrastructure",
+      buttonText: "クラウドインフラ"
+    },
+    {
+      title: "サイバーセキュリティ・ITセキュリティ",
+      description: "包括的な保護でサイバー脅威からデジタル資産を守る高度なセキュリティ対策。",
+      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=60",
+      href: "/ja/services/it-security",
+      buttonText: "サイバーセキュリティ"
+    },
+    {
+      title: "ネットワーク侵入テスト",
+      description: "脆弱性を特定し、ネットワーク防御を強化するための包括的なセキュリティテスト。",
+      image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=60",
+      href: "/ja/services/network-penetration-testing",
+      buttonText: "侵入テスト"
+    },
+    {
+      title: "ITセキュリティサービス",
+      description: "AKRINの多層ITセキュリティでエンドポイント、メール、データを保護—EDR、M365セキュリティ、バックアップ、ポリシー適用。",
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=60",
+      href: "/ja/services/it-security",
+      buttonText: "ITセキュリティ"
+    }
+  ] : [
     {
       title: "Managed IT Support",
       description: "Complete IT management and support for your business operations with 24/7 monitoring and proactive maintenance.",
@@ -65,7 +130,7 @@ export default function ServicesClient() {
                 transition={{ duration: 0.5 }}
                 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-gray-900"
               >
-                Professional IT Services
+                {content.h1}
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 16 }}
@@ -73,7 +138,7 @@ export default function ServicesClient() {
                 transition={{ duration: 0.5, delay: 0.1 }}
                 className="mt-4 text-gray-600 text-base lg:text-lg max-w-2xl"
               >
-                Robust, scalable, and secure solutions designed for enterprises in Japan and worldwide. Explore our core offerings below.
+                {content.description}
               </motion.p>
               <nav className="mt-6 flex flex-wrap gap-2" aria-label="Quick links">
                 {services.slice(0, 4).map((s) => (
@@ -101,7 +166,7 @@ export default function ServicesClient() {
 
       {/* Colorful Services Grid - optimized */}
       <main aria-labelledby="services-heading" className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-        <h2 id="services-heading" className="sr-only">Our Services</h2>
+        <h2 id="services-heading" className="sr-only">{isJapanese ? '当社のサービス' : 'Our Services'}</h2>
         <section className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" aria-label="Service categories">
           {services.map((service, index) => (
             <article
@@ -143,7 +208,7 @@ export default function ServicesClient() {
                   <Link 
                     className="inline-flex items-center gap-x-2 text-sm font-medium text-[hsl(var(--primary))] hover:underline"
                     href={service.href}
-                    aria-label={`Read more about ${service.title}`}
+                    aria-label={`${content.readMore} ${service.title}`}
                   >
                     {service.buttonText}
                     <svg className="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -160,8 +225,8 @@ export default function ServicesClient() {
       {/* Services Features Grid - SEO-friendly */}
       <section aria-labelledby="features-heading" className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
         <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
-          <h2 id="features-heading" className="text-2xl font-bold md:text-4xl md:leading-tight text-gray-800">Comprehensive IT Services</h2>
-          <p className="mt-1 text-gray-600">Our experts handle business-critical network operations, security, and cloud—end to end.</p>
+          <h2 id="features-heading" className="text-2xl font-bold md:text-4xl md:leading-tight text-gray-800">{content.servicesHeading}</h2>
+          <p className="mt-1 text-gray-600">{content.servicesDescription}</p>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -209,10 +274,10 @@ export default function ServicesClient() {
       {/* Premium CTA Section */}
       <PremiumCTA
         variant="dark"
-        title="Ready to optimize your IT operations?"
-        description="From wireless network design to global IT deployments, our services are tailored to enhance security and drive efficiency."
-        buttonText="Get Started Today"
-        buttonHref="/contact"
+        title={content.ctaTitle}
+        description={content.ctaDescription}
+        buttonText={content.ctaButton}
+        buttonHref={isJapanese ? "/ja/contact" : "/contact"}
       />
 
       {/* Partner With Us Section */}
