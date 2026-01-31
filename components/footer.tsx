@@ -127,8 +127,10 @@ export function Footer() {
               <h3 className="text-base font-bold text-gray-900 mb-3">Quick Links</h3>
               <ul className="space-y-1.5 text-sm font-medium">
                 <li><Link href="/services" className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block">Services</Link></li>
+                <li><Link href="/case-studies" className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block">Case Studies</Link></li>
                 <li><Link href="/blog" className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block">Blog</Link></li>
                 <li><Link href="/privacy" className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block">Privacy Policy</Link></li>
+                <li><Link href="/cookies" className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block">Cookie Policy</Link></li>
               </ul>
             </div>
             <div className="space-y-3">
@@ -224,6 +226,9 @@ export function Footer() {
                 <Link href="/services" className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block focus:outline-none focus:ring-2 focus:ring-violet-600 rounded">{t('nav.services')}</Link>
               </li>
               <li>
+                <Link href="/case-studies" className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block focus:outline-none focus:ring-2 focus:ring-violet-600 rounded">{t('nav.caseStudies', { defaultValue: 'Case Studies' })}</Link>
+              </li>
+              <li>
                 <Link href="/blog" className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block focus:outline-none focus:ring-2 focus:ring-violet-600 rounded">{t('nav.blog')}</Link>
               </li>
               <li>
@@ -231,6 +236,9 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/terms" className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block focus:outline-none focus:ring-2 focus:ring-violet-600 rounded">{t('footer.termsOfService')}</Link>
+              </li>
+              <li>
+                <Link href="/cookies" className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block focus:outline-none focus:ring-2 focus:ring-violet-600 rounded">{t('footer.cookiePolicy', { defaultValue: 'Cookie Policy' })}</Link>
               </li>
             </ul>
           </m.div>
@@ -277,6 +285,10 @@ export function Footer() {
                 <Link href="/terms" className="hover:text-gray-900 transition-colors focus:outline-none focus:ring-2 focus:ring-violet-600 rounded px-1">
                   Terms of Service
                 </Link>
+                <span>•</span>
+                <Link href="/cookies" className="hover:text-gray-900 transition-colors focus:outline-none focus:ring-2 focus:ring-violet-600 rounded px-1">
+                  Cookie Policy
+                </Link>
               </div>
             </div>
           </div>
@@ -298,6 +310,10 @@ export function Footer() {
               <span>•</span>
               <Link href="/terms" className="hover:text-gray-900 transition-colors focus:outline-none focus:ring-2 focus:ring-violet-600 rounded px-1">
                 {t('footer.termsOfService')}
+              </Link>
+              <span>•</span>
+              <Link href="/cookies" className="hover:text-gray-900 transition-colors focus:outline-none focus:ring-2 focus:ring-violet-600 rounded px-1">
+                {t('footer.cookiePolicy', { defaultValue: 'Cookie Policy' })}
               </Link>
             </div>
           </div>
