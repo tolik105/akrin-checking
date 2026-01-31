@@ -125,11 +125,21 @@ export default async function RootLayout({
   children: React.ReactNode
 }) {
   // During SSR, read the middleware-injected header to set html lang
-  // Fallback to 'en' when not available (static export or client nav)
+  // Use multiple fallbacks for reliability
   let lang = 'en'
   try {
     const headersList = await nextHeaders()
-    lang = headersList.get('x-akrin-lang') || 'en'
+    // First try the explicit language header
+    const langHeader = headersList.get('x-akrin-lang')
+    if (langHeader) {
+      lang = langHeader
+    } else {
+      // Fallback: check pathname header
+      const pathname = headersList.get('x-pathname') || ''
+      if (pathname.startsWith('/ja')) {
+        lang = 'ja'
+      }
+    }
   } catch {
     // Fallback if headers not available
   }

@@ -22,6 +22,7 @@ export function middleware(request: NextRequest) {
   const inferredLang = url.pathname.startsWith('/ja') ? 'ja' : 'en'
   const res = NextResponse.next()
   res.headers.set('x-akrin-lang', inferredLang)
+  res.headers.set('x-pathname', url.pathname)
   return res
 }
 
