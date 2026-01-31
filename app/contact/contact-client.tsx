@@ -1,8 +1,29 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { usePathname } from "next/navigation"
 
 export default function ContactClient() {
+  const pathname = usePathname()
+  const isJapanese = pathname.startsWith('/ja')
+
+  // Language-specific content to fix duplicate H1 issue
+  const content = {
+    h1: isJapanese ? 'AKRINへのお問い合わせ' : 'Contact AKRIN',
+    subtitle: isJapanese ? '日本のITコンサルティング＆マネージドサービス' : 'IT Consulting & Managed Services in Japan',
+    description: isJapanese ? 'AKRINに関するご質問にお答えします' : 'Get answers to your questions about anything AKRIN',
+    talkToUs: isJapanese ? 'お電話でのお問い合わせ' : 'Talk to us',
+    callsFromJapan: isJapanese ? '国内からのお電話' : 'Calls from Japan',
+    outsideJapan: isJapanese ? '海外からのお電話' : 'Outside Japan',
+    writeToUs: isJapanese ? 'メールでのお問い合わせ' : 'Write to us',
+    emailOrForm: isJapanese ? '（メールまたは下記フォームをご利用ください）' : '(Email us or use the form below)',
+    aboutServices: isJapanese ? 'AKRINのITサービスについて' : 'To know more about AKRIN IT services',
+    otherQueries: isJapanese ? 'その他のお問い合わせ' : 'For any other queries',
+    visitUs: isJapanese ? '所在地' : 'Visit us',
+    headquarters: isJapanese ? '本社' : 'Corporate Headquarters',
+    contactButton: isJapanese ? 'お問い合わせフォーム →' : 'Contact us →',
+    contactFormHref: isJapanese ? '/ja/contact-form' : '/contact-form',
+  }
 
   return (
     <main className="bg-white">
@@ -28,7 +49,7 @@ export default function ContactClient() {
                     WebkitFontSmoothing: 'antialiased',
                     MozOsxFontSmoothing: 'grayscale'
                   }}>
-                Contact AKRIN
+                {content.h1}
               </h1>
               <p className="text-sm sm:text-base md:text-lg font-medium text-gray-600 leading-relaxed antialiased"
                  style={{
@@ -40,7 +61,7 @@ export default function ContactClient() {
                    WebkitFontSmoothing: 'antialiased',
                    MozOsxFontSmoothing: 'grayscale'
                  }}>
-                IT Consulting & Managed Services in Japan
+                {content.subtitle}
               </p>
               <p className="text-xs sm:text-sm md:text-base text-gray-500 leading-relaxed antialiased mt-2 sm:mt-3"
                  style={{
@@ -52,7 +73,7 @@ export default function ContactClient() {
                    WebkitFontSmoothing: 'antialiased',
                    MozOsxFontSmoothing: 'grayscale'
                  }}>
-                Get answers to your questions about anything AKRIN
+                {content.description}
               </p>
             </motion.div>
           </div>
@@ -99,7 +120,7 @@ export default function ContactClient() {
               className=""
             >
               <div className="mb-4">
-                <h3 className="text-2xl font-medium text-gray-900 mb-2">Talk to us</h3>
+                <h3 className="text-2xl font-medium text-gray-900 mb-2">{content.talkToUs}</h3>
                 <div className="w-12 h-0.5 bg-[hsl(var(--primary))]"></div>
               </div>
 
@@ -110,7 +131,7 @@ export default function ContactClient() {
                       03-6821-1223
                     </a>
                   </p>
-                  <p className="text-gray-600">Calls from Japan</p>
+                  <p className="text-gray-600">{content.callsFromJapan}</p>
                 </div>
 
                 <div>
@@ -119,7 +140,7 @@ export default function ContactClient() {
                       +81-3-6821-1223
                     </a>
                   </p>
-                  <p className="text-gray-600">Outside Japan</p>
+                  <p className="text-gray-600">{content.outsideJapan}</p>
                 </div>
               </address>
             </motion.div>
@@ -133,13 +154,13 @@ export default function ContactClient() {
               className=""
             >
               <div className="mb-4">
-                <h3 className="text-2xl font-medium text-gray-900 mb-2">Write to us</h3>
+                <h3 className="text-2xl font-medium text-gray-900 mb-2">{content.writeToUs}</h3>
                 <div className="w-12 h-0.5 bg-[hsl(var(--primary))]"></div>
               </div>
 
               <div className="space-y-6">
                 <div>
-                  <p className="text-gray-600 mb-2">(Email us or use the form below)</p>
+                  <p className="text-gray-600 mb-2">{content.emailOrForm}</p>
 
                   <address className="space-y-4 not-italic">
                     <div>
@@ -148,7 +169,7 @@ export default function ContactClient() {
                           support@akrin.jp
                         </a>
                       </p>
-                      <p className="text-gray-600">To know more about AKRIN IT services</p>
+                      <p className="text-gray-600">{content.aboutServices}</p>
                     </div>
 
                     <div>
@@ -157,7 +178,7 @@ export default function ContactClient() {
                           inquiry@akrin.jp
                         </a>
                       </p>
-                      <p className="text-gray-600">For any other queries</p>
+                      <p className="text-gray-600">{content.otherQueries}</p>
                     </div>
                   </address>
                 </div>
@@ -173,17 +194,27 @@ export default function ContactClient() {
               className=""
             >
               <div className="mb-4">
-                <h3 className="text-2xl font-medium text-gray-900 mb-2">Visit us</h3>
+                <h3 className="text-2xl font-medium text-gray-900 mb-2">{content.visitUs}</h3>
                 <div className="w-12 h-0.5 bg-[hsl(var(--primary))]"></div>
               </div>
 
               <div className="space-y-6">
                 <div>
-                  <p className="text-lg font-semibold text-gray-900 mb-2">Corporate Headquarters</p>
+                  <p className="text-lg font-semibold text-gray-900 mb-2">{content.headquarters}</p>
                   <address className="text-gray-600 space-y-1 not-italic">
-                    <p>〒107-0062 Tokyo, Minato City</p>
-                    <p>Minami Aoyama 2-4-15</p>
-                    <p>Japan</p>
+                    {isJapanese ? (
+                      <>
+                        <p>〒107-0062 東京都港区</p>
+                        <p>南青山2-4-15</p>
+                        <p>日本</p>
+                      </>
+                    ) : (
+                      <>
+                        <p>〒107-0062 Tokyo, Minato City</p>
+                        <p>Minami Aoyama 2-4-15</p>
+                        <p>Japan</p>
+                      </>
+                    )}
                   </address>
                 </div>
               </div>
@@ -197,14 +228,14 @@ export default function ContactClient() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <motion.a
-              href="/contact-form"
+              href={content.contactFormHref}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
               className="px-8 py-3 border-2 border-[hsl(var(--primary))] text-[hsl(var(--primary))] font-medium hover:bg-[hsl(var(--primary))] hover:text-white transition-colors duration-200 inline-block text-center"
             >
-              Contact us →
+              {content.contactButton}
             </motion.a>
 
 

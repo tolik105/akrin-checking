@@ -179,6 +179,12 @@ export function Footer() {
               <li>
                 <Link href="/contact" className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block focus:outline-none focus:ring-2 focus:ring-violet-600 rounded">{t('nav.contact')}</Link>
               </li>
+              <li>
+                <Link href="/book-consultation" className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block focus:outline-none focus:ring-2 focus:ring-violet-600 rounded">{t('nav.bookConsultation', { defaultValue: 'Book Consultation' })}</Link>
+              </li>
+              <li>
+                <Link href="/contact-form" className="text-gray-700/90 hover:text-gray-900 transition-colors duration-300 py-1 block focus:outline-none focus:ring-2 focus:ring-violet-600 rounded">{t('nav.contactForm', { defaultValue: 'Contact Form' })}</Link>
+              </li>
             </ul>
           </m.div>
           {/* Services Column */}
