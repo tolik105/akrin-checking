@@ -111,38 +111,39 @@ function ManagedServicesHero() {
 }
 
 function SpotlightLogoCloud() {
+  // Using Logo.dev API instead of deprecated Clearbit
   const logos = [
     {
       name: "Microsoft",
-      src: "https://logo.clearbit.com/microsoft.com",
+      src: "https://img.logo.dev/microsoft.com?size=128&format=png&token=pk_UEr0qEZTRlmPOWFTe-G1XA",
     },
     {
       name: "Amazon AWS",
-      src: "https://logo.clearbit.com/aws.amazon.com",
+      src: "https://img.logo.dev/aws.amazon.com?size=128&format=png&token=pk_UEr0qEZTRlmPOWFTe-G1XA",
     },
     {
       name: "Google Cloud",
-      src: "https://logo.clearbit.com/cloud.google.com",
+      src: "https://img.logo.dev/cloud.google.com?size=128&format=png&token=pk_UEr0qEZTRlmPOWFTe-G1XA",
     },
     {
       name: "VMware",
-      src: "https://logo.clearbit.com/vmware.com",
+      src: "https://img.logo.dev/vmware.com?size=128&format=png&token=pk_UEr0qEZTRlmPOWFTe-G1XA",
     },
     {
       name: "Cisco",
-      src: "https://logo.clearbit.com/cisco.com",
+      src: "https://img.logo.dev/cisco.com?size=128&format=png&token=pk_UEr0qEZTRlmPOWFTe-G1XA",
     },
     {
       name: "Dell",
-      src: "https://logo.clearbit.com/dell.com",
+      src: "https://img.logo.dev/dell.com?size=128&format=png&token=pk_UEr0qEZTRlmPOWFTe-G1XA",
     },
     {
       name: "HP",
-      src: "https://logo.clearbit.com/hp.com",
+      src: "https://img.logo.dev/hp.com?size=128&format=png&token=pk_UEr0qEZTRlmPOWFTe-G1XA",
     },
     {
       name: "IBM",
-      src: "https://logo.clearbit.com/ibm.com",
+      src: "https://img.logo.dev/ibm.com?size=128&format=png&token=pk_UEr0qEZTRlmPOWFTe-G1XA",
     },
   ];
 
