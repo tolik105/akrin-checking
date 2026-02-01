@@ -106,7 +106,7 @@ export function Navbar() {
         </div>
         
         {/* Desktop Navigation - responsive */}
-        <div className="hidden md:flex items-center">
+        <div className="hidden lg:flex items-center">
           <nav>
             <ul className="flex items-center gap-responsive-sm">
               <li>
@@ -256,7 +256,7 @@ export function Navbar() {
         </div>
         
         {/* Mobile menu button - responsive */}
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <button onClick={toggleMenu} className="focus:outline-none focus:ring-2 focus:ring-teal-600 rounded">
             <svg className="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
@@ -267,7 +267,7 @@ export function Navbar() {
 
       {/* Mobile Menu - responsive */}
       {isMenuOpen && (
-       <div className="md:hidden fixed inset-0 bg-[hsl(var(--primary))] pt-[100px] sm:pt-[115px] z-40 overflow-auto animate-fade-in">
+       <div className="lg:hidden fixed inset-0 bg-[hsl(var(--primary))] pt-[100px] sm:pt-[115px] z-40 overflow-auto animate-fade-in">
           <div className="flex flex-col h-full justify-between w-full mx-auto pb-responsive-md px-responsive-md">
             <ul className="list-none mb-responsive-md pl-0">
               <li className="text-xl sm:text-2xl font-bold flex justify-between items-center pb-responsive-sm">
