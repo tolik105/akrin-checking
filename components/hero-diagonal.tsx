@@ -40,17 +40,17 @@ export function HeroDiagonal({
         {/* Grid Container */}
         <div className={`mx-auto ${maxWidthClass} h-full grid grid-cols-12 gap-6 px-6 pt-32 sm:pt-36 md:pt-32`}>
           {/* Breadcrumbs */}
-          <div className="col-span-12 sm:col-start-2 sm:col-end-12 pt-3 z-20">
-            <nav className="flex items-center space-x-2 text-xs sm:text-sm font-semibold tracking-wide whitespace-nowrap overflow-x-auto pb-2">
+          <div className="col-span-12 pt-3 z-20">
+            <nav className="flex flex-nowrap items-center gap-1 text-xs sm:text-sm font-semibold tracking-wide overflow-x-auto pb-2">
               {breadcrumbs.map((bc, idx) => (
                 <React.Fragment key={idx}>
-                  {idx > 0 && <span className="text-[#6B7280] mx-1">›</span>}
+                  {idx > 0 && <span className="text-[#6B7280] shrink-0">›</span>}
                   {bc.href ? (
-                    <Link href={bc.href} className={`transition-colors whitespace-nowrap ${idx === breadcrumbs.length - 1 ? "text-[#20B2AA] font-semibold" : "text-[#6B7280] hover:text-[#20B2AA]"}`}>
+                    <Link href={bc.href} className={`shrink-0 transition-colors ${idx === breadcrumbs.length - 1 ? "text-[#20B2AA] font-semibold" : "text-[#6B7280] hover:text-[#20B2AA]"}`}>
                       {bc.label}
                     </Link>
                   ) : (
-                    <span className={`whitespace-nowrap ${idx === breadcrumbs.length - 1 ? "text-[#20B2AA] font-semibold" : "text-[#6B7280]"}`}>{bc.label}</span>
+                    <span className={`shrink-0 ${idx === breadcrumbs.length - 1 ? "text-[#20B2AA] font-semibold" : "text-[#6B7280]"}`}>{bc.label}</span>
                   )}
                 </React.Fragment>
               ))}
