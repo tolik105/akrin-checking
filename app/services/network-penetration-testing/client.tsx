@@ -167,17 +167,19 @@ export default function NetworkPenetrationTestingClient() {
               </p>
             </div>
 
-            {/* 4-Column Service Grid - Exact EireSystems Style */}
-            <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8 mb-16">
+            {/* 4-Column Service Grid - Responsive Layout */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-16">
               {/* Column 1: Reconnaissance */}
-              <div className="text-center">
-                <div className="w-20 h-20 bg-[#20B2AA] rounded-full flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                  </svg>
+              <div className="bg-white rounded-lg p-6 shadow-sm">
+                <div className="flex flex-col items-center mb-4">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#20B2AA] rounded-full flex items-center justify-center mb-4">
+                    <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-bold text-[#2C2C2C]">Reconnaissance</h3>
                 </div>
-                <h3 className="text-xl font-bold text-[#2C2C2C] mb-4">Reconnaissance</h3>
-                <ul className="text-[#666666] space-y-2 text-left">
+                <ul className="text-[#666666] space-y-2 text-sm sm:text-base">
                   <li className="flex items-start space-x-2">
                     <div className="w-1.5 h-1.5 bg-[#20B2AA] rounded-full mt-2 flex-shrink-0"></div>
                     <span>Information gathering</span>
@@ -198,14 +200,16 @@ export default function NetworkPenetrationTestingClient() {
               </div>
 
               {/* Column 2: Scanning */}
-              <div className="text-center">
-                <div className="w-20 h-20 bg-[#20B2AA] rounded-full flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
-                  </svg>
+              <div className="bg-white rounded-lg p-6 shadow-sm">
+                <div className="flex flex-col items-center mb-4">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#20B2AA] rounded-full flex items-center justify-center mb-4">
+                    <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-bold text-[#2C2C2C]">Vulnerability Scanning</h3>
                 </div>
-                <h3 className="text-xl font-bold text-[#2C2C2C] mb-4">Vulnerability Scanning</h3>
-                <ul className="text-[#666666] space-y-2 text-left">
+                <ul className="text-[#666666] space-y-2 text-sm sm:text-base">
                   <li className="flex items-start space-x-2">
                     <div className="w-1.5 h-1.5 bg-[#20B2AA] rounded-full mt-2 flex-shrink-0"></div>
                     <span>Automated scanning</span>
@@ -226,14 +230,16 @@ export default function NetworkPenetrationTestingClient() {
               </div>
 
               {/* Column 3: Exploitation */}
-              <div className="text-center">
-                <div className="w-20 h-20 bg-[#20B2AA] rounded-full flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                  </svg>
+              <div className="bg-white rounded-lg p-6 shadow-sm">
+                <div className="flex flex-col items-center mb-4">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#20B2AA] rounded-full flex items-center justify-center mb-4">
+                    <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-bold text-[#2C2C2C]">Exploitation</h3>
                 </div>
-                <h3 className="text-xl font-bold text-[#2C2C2C] mb-4">Exploitation</h3>
-                <ul className="text-[#666666] space-y-2 text-left">
+                <ul className="text-[#666666] space-y-2 text-sm sm:text-base">
                   <li className="flex items-start space-x-2">
                     <div className="w-1.5 h-1.5 bg-[#20B2AA] rounded-full mt-2 flex-shrink-0"></div>
                     <span>Controlled exploitation</span>
@@ -254,14 +260,16 @@ export default function NetworkPenetrationTestingClient() {
               </div>
 
               {/* Column 4: Reporting */}
-              <div className="text-center">
-                <div className="w-20 h-20 bg-[#20B2AA] rounded-full flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
+              <div className="bg-white rounded-lg p-6 shadow-sm">
+                <div className="flex flex-col items-center mb-4">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#20B2AA] rounded-full flex items-center justify-center mb-4">
+                    <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-bold text-[#2C2C2C]">Reporting</h3>
                 </div>
-                <h3 className="text-xl font-bold text-[#2C2C2C] mb-4">Reporting</h3>
-                <ul className="text-[#666666] space-y-2 text-left">
+                <ul className="text-[#666666] space-y-2 text-sm sm:text-base">
                   <li className="flex items-start space-x-2">
                     <div className="w-1.5 h-1.5 bg-[#20B2AA] rounded-full mt-2 flex-shrink-0"></div>
                     <span>Executive summaries</span>
