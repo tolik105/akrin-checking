@@ -646,11 +646,11 @@ export default function ITConsultingProjectManagementClient() {
 
         {/* FAQ Section */}
         <div className="bg-white py-16 sm:py-24">
-          <div className="mx-auto grid max-w-6xl grid-cols-1 gap-4 px-4 py-20 md:grid-cols-2 md:px-8 md:py-40">
-            <h2 className="text-center text-4xl font-bold tracking-tight text-neutral-600 md:text-left md:text-6xl dark:text-neutral-50">
+          <div className="mx-auto max-w-4xl px-4 py-12 sm:py-16 md:px-8">
+            <h2 className="text-center text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-neutral-600 mb-8 sm:mb-12 dark:text-neutral-50">
               Frequently asked questions
             </h2>
-            <div className="divide-y divide-neutral-200 dark:divide-neutral-800">
+            <div className="divide-y divide-neutral-200 dark:divide-neutral-800 max-w-3xl mx-auto">
               <FAQItem
                 question="What size projects do you accept?"
                 answer="We typically handle projects between 20 – 500 seats or 1 – 20 racks, but feel free to ask about other scopes."

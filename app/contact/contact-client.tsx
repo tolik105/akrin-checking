@@ -26,9 +26,9 @@ export default function ContactClient() {
 
   return (
     <main className="bg-white">
-      <section className="bg-[#F8F9FA] min-h-[400px] sm:min-h-[500px] lg:min-h-[500px]" aria-labelledby="contact-heading">
-        <div className="flex flex-col lg:flex-row h-full min-h-[400px] sm:min-h-[500px] lg:min-h-[500px]">
-          <div className="flex-none lg:w-2/5 px-4 sm:px-6 lg:px-16 xl:px-20 flex flex-col justify-center order-2 lg:order-1 py-8 sm:py-12 lg:py-0">
+      <section className="bg-[#F8F9FA] min-h-[400px] sm:min-h-[450px] md:min-h-[500px]" aria-labelledby="contact-heading">
+        <div className="flex flex-col md:flex-row h-full min-h-[400px] sm:min-h-[450px] md:min-h-[500px]">
+          <div className="flex-none md:w-2/5 px-4 sm:px-6 md:px-12 lg:px-16 xl:px-20 flex flex-col justify-center order-2 md:order-1 py-8 sm:py-12 md:py-0">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -75,12 +75,12 @@ export default function ContactClient() {
             </motion.div>
           </div>
 
-          <div className="flex-none lg:w-3/5 order-1 lg:order-2">
+          <div className="flex-none md:w-3/5 order-1 md:order-2">
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-full lg:min-h-[500px]"
+              className="relative w-full h-[250px] sm:h-[300px] md:h-full md:min-h-[500px]"
             >
               <img
                 src="https://res.cloudinary.com/dtmdovevn/image/upload/v1752615791/roma_20454_Two_business_professionals_one_female_one_male_in_sm_c1a6a181-20ef-4379-b3b7-284c27c20233_mc3hkz.png"
