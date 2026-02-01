@@ -247,28 +247,20 @@ export function Navbar() {
           </nav>
           
           {/* Language Switcher and Book a Call button - responsive */}
-          <div className="flex items-center gap-responsive-sm">
+          <div className="flex items-center gap-responsive-sm ml-4">
             <LanguageSelector />
-            <Link href="/book-consultation" className="flex items-center text-white text-xs xl:text-sm font-bold bg-teal-600 rounded-full border-2 border-teal-600 py-2 xl:py-3 px-6 xl:px-8 pl-10 xl:pl-14 relative hover:bg-teal-700 transition-all duration-200 shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-teal-600 focus:ring-offset-2">
-              <span className="absolute left-1 top-1/2 transform -translate-y-1/2 bg-white w-8 h-8 xl:w-10 xl:h-10 rounded-full flex items-center justify-center">
-                <Calendar className="w-4 h-4 xl:w-5 xl:h-5 text-teal-600" />
-              </span>
-              <span className="hidden xl:inline">{t('nav.bookConsultation')}</span>
-              <span className="xl:hidden">{t('nav.bookConsultation')}</span>
+            <Link href="/book-consultation" className="flex items-center text-white text-xs xl:text-sm font-bold bg-teal-600 rounded-full border-2 border-teal-600 py-2 xl:py-3 px-4 md:px-6 xl:px-8 pl-8 md:pl-10 xl:pl-14 relative hover:bg-teal-700 transition-all duration-200 shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-teal-600 focus:ring-offset-2 whitespace-nowrap">
+              {t('nav.bookConsultation')}
             </Link>
           </div>
         </div>
         
         {/* Mobile menu button - responsive */}
         <div className="lg:hidden">
-          <button 
-            name="menu" 
-            type="button" 
-           className="flex items-center justify-center bg-primary h-10 w-10 sm:h-11 sm:w-11 rounded-full border border-[hsl(var(--primary))] transition-all duration-200 hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-[hsl(var(--primary))] focus:ring-offset-2"
-            onClick={toggleMenu}
-            aria-label="Toggle mobile menu"
-          >
-            <span className={`relative bg-white block h-0.5 w-4 rounded-full transition-all duration-300 ${isMenuOpen ? 'transform rotate-45 translate-y-[2px]' : 'before:absolute before:bg-white before:h-0.5 before:w-4 before:rounded-full before:top-[-6px] before:left-0 after:absolute after:bg-white after:h-0.5 after:w-4 after:rounded-full after:top-[6px] after:left-0'}`}></span>
+          <button onClick={toggleMenu} className="focus:outline-none focus:ring-2 focus:ring-teal-600 rounded">
+            <svg className="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
           </button>
         </div>
       </div>

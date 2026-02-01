@@ -161,7 +161,7 @@ export function ProfessionalHome() {
       {/* Stats Section */}
   <section className="py-24 bg-gradient-to-r from-[hsl(var(--primary))]/30 to-indigo-900">
         <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-8 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
               { number: "500+", label: "Clients Served", icon: <Users className="w-8 h-8" /> },
               { number: "99.9%", label: "Uptime Guarantee", icon: <TrendingUp className="w-8 h-8" /> },

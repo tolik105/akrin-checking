@@ -17,36 +17,23 @@ const config = {
       center: true,
       padding: {
         DEFAULT: "1rem",
-        xs: "0.75rem",   // 12px
-        sm: "1rem",      // 16px
-        md: "1.25rem",   // 20px
-        lg: "1.5rem",    // 24px
-        xl: "2rem",      // 32px
-        "2xl": "2.5rem", // 40px
-        "3xl": "3rem",   // 48px
+        sm: "1.5rem",
+        lg: "2rem",
       },
       screens: {
-        xs: "352px",
-        sm: "425px",
-        md: "576px",
-        lg: "768px",
-        xl: "1024px",
-        "2xl": "1280px",
-        "3xl": "1536px",
-        "4xl": "1920px",
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
+        "2xl": "1536px",
       },
     },
     screens: {
-      // Fortitude-inspired breakpoint strategy
-      "xs": "352px",   // Extra small mobile
-      "sm": "425px",   // Small mobile
-      "md": "576px",   // Large mobile/small tablet
-      "lg": "768px",   // Tablet
-      "xl": "1024px",  // Desktop
-      "2xl": "1280px", // Large desktop
-      "3xl": "1536px", // Extra large desktop
-      "4xl": "1920px", // Ultra wide
-      "5xl": "2560px", // 4K displays
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
     },
     extend: {
       fontFamily: {

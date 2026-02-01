@@ -93,9 +93,7 @@ export function HeroDiagonal({
           </div>
         </div>
 
-        {/* Responsive adjustments */}
         <style jsx>{`
-          /* Large desktops fallback handled by inline style */
           @media (max-width: 1280px) {
             .diagonal-clip {
               clip-path: polygon(0% 92%, 100% 36%, 100% 100%, 0% 100%) !important;
@@ -103,27 +101,17 @@ export function HeroDiagonal({
           }
           @media (max-width: 1024px) {
             .diagonal-clip {
-              clip-path: polygon(0% 93%, 100% 42%, 100% 100%, 0% 100%) !important;
+              clip-path: polygon(0% 85%, 100% 45%, 100% 100%, 0% 100%) !important;
             }
           }
           @media (max-width: 768px) {
             .diagonal-clip {
-              clip-path: polygon(0% 94%, 100% 50%, 100% 100%, 0% 100%) !important;
+              clip-path: polygon(0% 80%, 100% 55%, 100% 100%, 0% 100%) !important;
             }
           }
           @media (max-width: 640px) {
             .diagonal-clip {
-              clip-path: polygon(0% 95%, 100% 56%, 100% 100%, 0% 100%) !important;
-            }
-          }
-          @media (max-width: 480px) {
-            .diagonal-clip {
-              clip-path: polygon(0% 96%, 100% 62%, 100% 100%, 0% 100%) !important;
-            }
-          }
-          @media (max-width: 380px) {
-            .diagonal-clip {
-              clip-path: polygon(0% 97%, 100% 68%, 100% 100%, 0% 100%) !important;
+              clip-path: polygon(0% 75%, 100% 65%, 100% 100%, 0% 100%) !important;
             }
           }
         `}</style>
