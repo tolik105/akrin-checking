@@ -351,79 +351,26 @@ export default function NetworkPenetrationTestingClient() {
           </div>
         </div>
 
-        {/* CTA Section with Cal.com Booking */}
+        {/* CTA Section */}
         <div className="bg-[#20B2AA] py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-                Ready to transform your IT infrastructure?
-              </h2>
-              <p className="text-xl text-white/90 max-w-4xl mx-auto leading-relaxed">
-                Get expert consultation and discover how our solutions can drive your business forward with enterprise-grade reliability and startup agility.
-              </p>
-            </div>
-
-            {/* Cal.com Booking Widget */}
-            <div className="bg-white rounded-lg p-8 shadow-xl">
-              <h3 className="text-2xl font-bold text-[#2C2C2C] mb-6 text-center">
-                Schedule Consultation
-              </h3>
-
-              {/* Cal inline embed code begins */}
-              <div style={{width:'100%', height:'600px', overflow:'scroll'}} id="my-cal-inline-30min"></div>
-              <script
-                type="text/javascript"
-                dangerouslySetInnerHTML={{
-                  __html: `
-                    (function (C, A, L) {
-                      let p = function (a, ar) { a.q.push(ar); };
-                      let d = C.document;
-                      C.Cal = C.Cal || function () {
-                        let cal = C.Cal;
-                        let ar = arguments;
-                        if (!cal.loaded) {
-                          cal.ns = {};
-                          cal.q = cal.q || [];
-                          d.head.appendChild(d.createElement("script")).src = A;
-                          cal.loaded = true;
-                        }
-                        if (ar[0] === L) {
-                          const api = function () { p(api, arguments); };
-                          const namespace = ar[1];
-                          api.q = api.q || [];
-                          if(typeof namespace === "string"){
-                            cal.ns[namespace] = cal.ns[namespace] || api;
-                            p(cal.ns[namespace], ar);
-                            p(cal, ["initNamespace", namespace]);
-                          } else p(cal, ar);
-                          return;
-                        }
-                        p(cal, ar);
-                      };
-                    })(window, "https://app.cal.com/embed/embed.js", "init");
-
-                    Cal("init", "30min", {origin:"https://app.cal.com"});
-
-                    Cal.ns["30min"]("inline", {
-                      elementOrSelector:"#my-cal-inline-30min",
-                      config: {"layout":"month_view","theme":"light"},
-                      calLink: "akrinsupport/30min",
-                    });
-
-                    Cal.ns["30min"]("ui", {
-                      "theme":"light",
-                      "cssVarsPerTheme":{
-                        "light":{"cal-brand":"#21B3AA"},
-                        "dark":{"cal-brand":"#21B3AA"}
-                      },
-                      "hideEventTypeDetails":false,
-                      "layout":"month_view"
-                    });
-                  `
-                }}
-              />
-              {/* Cal inline embed code ends */}
-            </div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+              Ready to Test Your Network Security?
+            </h2>
+            <p className="text-xl text-white/90 mb-10 max-w-4xl mx-auto leading-relaxed">
+              Schedule a consultation with our security experts to discuss your penetration testing needs and receive a customized assessment plan.
+            </p>
+            <a
+              href="https://cal.com/akrinsupport/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-12 py-4 bg-white text-[#20B2AA] font-bold text-xl rounded-sm hover:bg-gray-100 transition-all duration-200 shadow-lg hover:shadow-xl"
+            >
+              Schedule Security Consultation
+              <svg className="ml-3 h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </a>
           </div>
         </div>
 
