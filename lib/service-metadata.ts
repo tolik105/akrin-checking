@@ -52,9 +52,9 @@ export const serviceMetadata: Record<string, ServiceMetadata> = {
   },
   'it-security': {
     slug: 'it-security',
-    title: 'IT Security Services for Businesses | Akrin',
-    description: 'Shield endpoints, email, and data with AKRIN\'s layered IT security—EDR, M365 security, backup, and policy enforcement.',
-    keywords: ['IT security Japan', 'endpoint protection', 'EDR services', 'email security', 'M365 security', 'backup disaster recovery', 'security policies', 'data protection Japan']
+    title: 'IT Security & Cybersecurity Services in Japan | AKRIN',
+    description: 'Protect your business from cyber attacks with AKRIN\'s IT security services in Japan — EDR, email & cloud security, 24/7 monitoring, backup & disaster recovery.',
+    keywords: ['IT security services', 'cybersecurity services Japan', 'IT security Japan', 'endpoint protection', 'EDR services', 'email security', 'M365 security', 'cyber attack protection', 'security monitoring', 'vulnerability assessment', 'backup disaster recovery', 'data protection Japan']
   }
 }
 
