@@ -208,6 +208,78 @@ export default function ITSecurityClient() {
           </div>
         </div>
 
+
+        {/* Why AKRIN - Cybersecurity Content Section */}
+        <div className="bg-white py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-4xl lg:text-5xl font-bold text-[#2C2C2C] mb-6 leading-tight">
+              Cybersecurity Services Built for Businesses in Japan
+            </h2>
+            <p className="text-lg text-gray-700 mb-6 leading-relaxed max-w-4xl">
+              AKRIN provides comprehensive IT security services that protect your business from cyber attacks,
+              ransomware, phishing, and data breaches. Our bilingual (English/Japanese) security team designs,
+              implements, and manages layered cybersecurity solutions for companies across Tokyo and all of Japan —
+              from fast-growing startups to established multinational offices.
+            </p>
+            <p className="text-lg text-gray-700 mb-10 leading-relaxed max-w-4xl">
+              Unlike one-size-fits-all security products, we deliver managed security services tailored to your
+              environment: endpoint detection and response (EDR), Microsoft 365 and cloud security, network
+              protection, vulnerability assessments, security awareness training, and 24/7 monitoring with rapid
+              incident response. We also support compliance with ISO 27001, GDPR, and Japan&apos;s Personal
+              Information Protection Law (APPI).
+            </p>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="border border-gray-200 rounded-lg p-6">
+                <h3 className="text-xl font-bold text-[#2C2C2C] mb-3">Managed Security &amp; 24/7 Monitoring</h3>
+                <p className="text-gray-700 leading-relaxed">Continuous security monitoring, threat detection, and incident response so cyber threats are contained before they disrupt your business operations.</p>
+              </div>
+              <div className="border border-gray-200 rounded-lg p-6">
+                <h3 className="text-xl font-bold text-[#2C2C2C] mb-3">Vulnerability Assessment &amp; Hardening</h3>
+                <p className="text-gray-700 leading-relaxed">Regular vulnerability scans, patch management, and security hardening of endpoints, servers, and cloud services to reduce your attack surface.</p>
+              </div>
+              <div className="border border-gray-200 rounded-lg p-6">
+                <h3 className="text-xl font-bold text-[#2C2C2C] mb-3">Backup &amp; Disaster Recovery</h3>
+                <p className="text-gray-700 leading-relaxed">Secure, tested backups and disaster recovery planning that keep your data safe and your business running even after a ransomware attack.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* FAQ Section - visible content matching JSON-LD */}
+        <div className="bg-[#F8F9FA] py-20">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-4xl font-bold text-[#2C2C2C] mb-10 leading-tight">
+              IT Security Services — Frequently Asked Questions
+            </h2>
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-xl font-bold text-[#2C2C2C] mb-2">What types of security threats do you protect against?</h3>
+                <p className="text-gray-700 leading-relaxed">We protect against malware, ransomware, phishing attacks, data breaches, insider threats, and advanced persistent threats (APTs) using a multi-layered security approach.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-[#2C2C2C] mb-2">Do you provide 24/7 security monitoring?</h3>
+                <p className="text-gray-700 leading-relaxed">Yes, we offer 24/7 security monitoring and incident response services to detect and respond to threats in real-time.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-[#2C2C2C] mb-2">How do you handle compliance requirements?</h3>
+                <p className="text-gray-700 leading-relaxed">We help ensure compliance with various regulations including ISO 27001, GDPR, Japanese Personal Information Protection Law, and industry-specific standards.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-[#2C2C2C] mb-2">Can you secure remote work environments?</h3>
+                <p className="text-gray-700 leading-relaxed">Yes, we provide comprehensive remote work security including VPN setup, endpoint protection, secure cloud access, and remote device management.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-[#2C2C2C] mb-2">What is your incident response process?</h3>
+                <p className="text-gray-700 leading-relaxed">Our incident response includes immediate threat containment, forensic analysis, system recovery, and post-incident review to prevent future occurrences.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-[#2C2C2C] mb-2">Do you provide security training for employees?</h3>
+                <p className="text-gray-700 leading-relaxed">Yes, we offer security awareness training, phishing simulations, and ongoing education to help employees recognize and avoid security threats.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* CTA Section - EireSystems Style */}
         <div className="bg-[#20B2AA] py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
