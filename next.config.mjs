@@ -11,6 +11,22 @@ const nextConfig = {
   turbopack: {},
   async redirects() {
     return [
+      // ITAD legacy/ad URLs -> live service page
+      {
+        source: '/itad',
+        destination: '/services/itad-japan-apac-us',
+        permanent: true,
+      },
+      {
+        source: '/itad/:path*',
+        destination: '/services/itad-japan-apac-us',
+        permanent: true,
+      },
+      {
+        source: '/ja/itad/:path*',
+        destination: '/ja/services/itad-japan-apac-us',
+        permanent: true,
+      },
       // Normalize accidental double JA prefix
       {
         source: '/ja/ja/:path*',
