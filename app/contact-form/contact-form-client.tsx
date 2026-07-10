@@ -6,6 +6,7 @@ import { useToast } from "@/hooks/use-toast"
 import { motion } from "framer-motion"
 import { ChevronDownIcon } from "@heroicons/react/16/solid"
 import TurnstileWidget from "@/components/turnstile-widget"
+import { trackLead } from "@/lib/analytics-events"
 
 export default function ContactFormClient() {
   const pathname = usePathname()
@@ -76,6 +77,7 @@ export default function ContactFormClient() {
       const result = await response.json()
 
       if (response.ok) {
+        trackLead('contact_form_page')
         setSubmitted(true)
         setStep(1)
         setFormData({
