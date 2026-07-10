@@ -10,8 +10,8 @@ interface ServiceMetadata {
 export const serviceMetadata: Record<string, ServiceMetadata> = {
   'it-managed-services': {
     slug: 'it-managed-services',
-    title: 'Managed IT Services & 24/7 Support | AKRIN Japan MSP',
-    description: 'Proactive monitoring, unlimited helpdesk, and on-site support. Cut IT costs 30–50% and hit 99.9% uptime with AKRIN—Japan\'s trusted MSP.',
+    title: 'Managed IT Services Tokyo | Bilingual 24/7 Support | AKRIN',
+    description: 'English & Japanese managed IT support in Tokyo. Proactive monitoring, unlimited helpdesk, on-site support. Cut IT costs 30-50% with Japan\'s trusted MSP.',
     keywords: ['managed IT services Japan', '24/7 IT support', 'MSP Japan', 'IT monitoring', 'helpdesk support', 'proactive IT management', 'IT cost reduction', 'bilingual IT support']
   },
   'it-consulting-project-management': {
@@ -40,8 +40,8 @@ export const serviceMetadata: Record<string, ServiceMetadata> = {
   },
   'wifi-assessment': {
     slug: 'wifi-assessment',
-    title: 'Professional WiFi Assessment Japan | Akrin',
-    description: 'Ekahau-certified Wi‑Fi assessments, spectrum analysis, and remediation plans. Eliminate dead zones and slow speeds across your offices.',
+    title: 'Wi-Fi Assessment & Wireless Site Survey Japan | AKRIN',
+    description: 'Ekahau-certified Wi-Fi assessment, wireless site survey and spectrum analysis across Japan. Eliminate dead zones and slow speeds with a clear remediation plan.',
     keywords: ['Wi-Fi site survey Japan', 'wireless assessment', 'Ekahau certified', 'spectrum analysis', 'Wi-Fi optimization', 'wireless network design', 'heatmap analysis', 'Wi-Fi troubleshooting']
   },
   'wifi-design': {
