@@ -2,6 +2,7 @@
 
 import React from 'react'
 import Link from 'next/link'
+import { trackWhatsAppClick } from '@/lib/analytics-events'
 
 // Lightweight WhatsApp floating button with zero external JS and minimal CSS
 // Uses existing /public/whatsapp.svg icon. Number provided by user: 09037728638 (Japan)
@@ -18,6 +19,7 @@ export function WhatsAppFloat() {
       href={`https://wa.me/${PHONE_INTL}?text=${TEXT}`}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => trackWhatsAppClick('floating_button')}
       aria-label="24/7 Whatsapp"
       className="fixed bottom-6 right-6 z-50 flex items-center gap-3 pl-4 pr-5 py-3 rounded-full shadow-lg bg-[#21B3AA] hover:bg-[#1a9891] text-white focus-visible:outline-[hsl(var(--primary))] transition-colors"
       prefetch={false}
