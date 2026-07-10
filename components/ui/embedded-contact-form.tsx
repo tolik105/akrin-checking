@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { trackLead } from "@/lib/analytics-events"
 import { useToast } from "@/hooks/use-toast"
 import { LazyMotion, domAnimation, m } from "framer-motion"
 import { ChevronDownIcon } from "@heroicons/react/16/solid"
@@ -74,6 +75,7 @@ export function EmbeddedContactForm() {
       const result = await response.json()
 
       if (response.ok) {
+        trackLead('embedded_contact_form')
         setSubmitted(true)
         setStep(1)
         setFormData({
