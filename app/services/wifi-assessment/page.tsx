@@ -3,9 +3,9 @@ import { generateBreadcrumbSchema } from "@/lib/seo"
 import WifiAssessmentClient from "./client"
 
 export const metadata = generatePageMetadata({
-  title: 'Professional WiFi Assessment Japan | Akrin',
-  description: 'Ekahau-certified Wi‑Fi assessments, spectrum analysis, and remediation plans. Eliminate dead zones and slow speeds across your offices.',
-  keywords: ['Wi-Fi site survey Japan', 'wireless optimization', 'Ekahau certified', 'Wi-Fi assessment', 'spectrum analysis', 'wireless network optimization', 'dead zone elimination', 'Wi-Fi performance'],
+  title: 'Professional WiFi Assessment & Site Survey Japan | AKRIN',
+  description: 'Ekahau-certified WiFi assessment, wireless site survey & testing services across Japan. Heatmap & spectrum analysis with a clear plan to fix dead zones.',
+  keywords: ['WiFi assessment Japan', 'Wi-Fi site survey Japan', 'professional WiFi assessment services', 'WiFi testing services', 'wireless assessment', 'Ekahau certified', 'spectrum analysis', 'wireless network optimization', 'dead zone elimination', 'Wi-Fi performance'],
   path: '/services/wifi-assessment'
 })
 
