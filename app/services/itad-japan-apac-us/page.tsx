@@ -78,6 +78,53 @@ const serviceSchema = {
   "additionalType": "https://schema.org/ProfessionalService"
 }
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is IT asset disposition (ITAD)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "IT asset disposition (ITAD) is the secure, compliant process of retiring IT equipment, covering data destruction, recycling, and resale. AKRIN provides end-to-end ITAD services across Japan, APAC, and the US with full chain of custody documentation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide on-site data destruction in Japan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. AKRIN offers both on-site and off-site data destruction in Japan, including certified data sanitization aligned with NIST 800-88 and physical destruction, with a certificate of destruction issued for every asset."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which areas do you serve for ITAD projects?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We serve organizations across Japan, including Tokyo, Osaka, and Kobe, as well as the wider APAC region and the United States, supporting multi-site consolidations and cross-border ITAD projects."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What documentation do we receive after disposal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You receive full chain of custody records, certificates of data destruction, and detailed asset-level reporting for audit and compliance purposes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can we recover value from retired IT equipment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Through certified refurbishment and remarketing programs, AKRIN helps maximize value recovery from retired IT assets, offsetting disposal costs."
+      }
+    }
+  ]
+}
+
 export default function ITADPage() {
   return (
     <>
@@ -91,6 +138,12 @@ export default function ITADPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(serviceSchema)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema)
         }}
       />
       <ITADPageClient />
