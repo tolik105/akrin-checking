@@ -1,6 +1,92 @@
 // Mock blog data - in production, this would come from a CMS or API
 
 export const blogPostsEN = {
+  "english-speaking-it-support-tokyo": {
+    id: 8,
+    slug: "english-speaking-it-support-tokyo",
+    title: "English-Speaking IT Support in Tokyo: A Complete Guide for Foreign Companies | AKRIN",
+    metaDescription: "Looking for English-speaking IT support in Tokyo? Learn what bilingual managed IT services cost, what to expect from SLAs, and how foreign companies in Japan choose the right IT partner.",
+    excerpt: "Finding reliable English-speaking IT support in Tokyo is one of the most common challenges foreign companies face in Japan. This guide covers what bilingual IT services include, typical response times, compliance requirements, and how to choose the right partner.",
+    image: "/blog-images/future-of-infrastructure.webp",
+    content: `
+      <h1>English-Speaking IT Support in Tokyo: A Complete Guide for Foreign Companies</h1>
+      <p>For multinational subsidiaries, embassies, and foreign-owned businesses operating in Japan, one challenge appears again and again: finding dependable IT support that works in English. Japan has no shortage of skilled engineers, but the number of providers that can deliver enterprise-grade support in both English and Japanese is small. This guide explains what English-speaking IT support in Tokyo actually looks like, what it should include, and how to evaluate providers.</p>
+
+      <h2>Why English-Speaking IT Support Matters in Japan</h2>
+      <p>Most Japanese IT vendors operate exclusively in Japanese - contracts, ticketing systems, documentation, and phone support included. For a foreign manager, that means every incident report, every escalation, and every quote needs translation before a decision can be made. Delays compound: a printer outage becomes a two-day email chain, and a security incident can stall while messages are translated back to a regional headquarters.</p>
+      <p>A genuinely bilingual IT partner removes that friction. Incidents are reported in English, resolved by engineers who work in Japanese with local carriers, landlords, and vendors, and documented in English for headquarters. Both sides of the language barrier are covered by the same team.</p>
+
+      <h2>What Bilingual Managed IT Services Should Include</h2>
+      <p>English-speaking IT support in Tokyo is usually delivered as part of a managed services agreement. A complete offering typically covers:</p>
+      <ul>
+        <li><strong>24/7 helpdesk:</strong> A service desk reachable around the clock, with English speakers on every shift - not just during Japanese business hours.</li>
+        <li><strong>Onsite support:</strong> Engineers who can be dispatched to your Tokyo office, ideally same-day for critical issues across the Kanto region.</li>
+        <li><strong>Proactive monitoring:</strong> 24/7 monitoring of servers, network equipment, and endpoints so issues are caught before users notice.</li>
+        <li><strong>Endpoint management:</strong> Patching, device provisioning, and lifecycle management for laptops and mobile devices in both English and Japanese OS environments.</li>
+        <li><strong>Vendor coordination:</strong> Handling Japanese-language dealings with ISPs, carriers, and building management on your behalf.</li>
+        <li><strong>Documentation in English:</strong> Runbooks, network diagrams, and monthly reports your headquarters can read.</li>
+      </ul>
+
+      <h2>Response Times and SLAs: What to Expect</h2>
+      <p>Service level agreements separate professional MSPs from break-fix shops. In the Tokyo market, reasonable benchmarks are:</p>
+      <ul>
+        <li><strong>P1 (business-stopping):</strong> Response within 15-30 minutes, remote work begins immediately, onsite dispatch same day.</li>
+        <li><strong>P2 (degraded service):</strong> Response within 1-2 hours, resolution target within one business day.</li>
+        <li><strong>P3 (routine requests):</strong> Response within 4-8 business hours.</li>
+      </ul>
+      <p>Ask any prospective provider how English requests are handled outside business hours. Some vendors advertise bilingual support but staff English speakers only 9:00-18:00 on weekdays - a serious gap if your team works with offices in Europe or North America.</p>
+
+      <h2>The Support Model: Helpdesk, Escalation, and Onsite Response</h2>
+      <p>A mature provider will operate a tiered support model. Level 1 engineers triage incidents, resolve common issues remotely, and assign priorities. Level 2 handles infrastructure problems - network faults, server issues, cloud configuration. Level 3 covers architecture-level work and vendor escalations. Every incident should be tracked in a ticketing system you can access, with resolution notes written in English.</p>
+      <p>For hardware failures, office moves, and network buildouts, remote support is not enough. Confirm that your provider has field engineers in Tokyo who can troubleshoot hardware, racks, and cabling onsite - and that dispatch is included in your agreement rather than billed as an expensive extra.</p>
+
+      <h2>Remote Work and Hybrid Office Support</h2>
+      <p>Since hybrid work became standard in Japan, IT support has extended beyond the office. A capable partner will provision and ship pre-configured devices to remote employees, support VPN and zero-trust access, and secure home-office setups. When remote troubleshooting hits a wall, the provider should offer a smooth escalation to onsite service.</p>
+
+      <h2>Compliance: APPI, ISO 27001, and Data Handling</h2>
+      <p>Foreign companies in Japan must comply with the Act on the Protection of Personal Information (APPI), and many are also bound by group-wide standards such as ISO 27001 or SOC 2. Your IT partner should understand both worlds: Japanese regulatory requirements and international security frameworks.</p>
+      <p>This matters most at the end of the hardware lifecycle. When laptops and servers are retired, data must be destroyed to a verifiable standard such as NIST 800-88, with certificates of destruction for your auditors. If your provider also offers <a href="/services/itad-japan-apac-us">IT asset disposition (ITAD) services in Japan</a>, retirement, data destruction, and recycling can be handled under the same contract.</p>
+
+      <h2>Common Scenarios Where Foreign Companies Need Bilingual IT Support</h2>
+      <ul>
+        <li><strong>Office setup or relocation:</strong> Coordinating internet circuits, cabling, access control, and Wi-Fi design with Japanese building management - explained to you in English. A professional <a href="/services/wifi-assessment">Wi-Fi assessment</a> before moving in prevents coverage problems later.</li>
+        <li><strong>Regional headquarters oversight:</strong> APAC IT directors who need a reliable pair of hands in Japan with reporting they can read.</li>
+        <li><strong>Compliance-driven industries:</strong> Finance, healthcare, and legal firms that need documented processes in two languages.</li>
+        <li><strong>Rapid growth or downsizing:</strong> Scaling helpdesk seats, provisioning equipment, or retiring assets as headcount changes.</li>
+      </ul>
+
+      <h2>How Much Does English-Speaking IT Support Cost in Tokyo?</h2>
+      <p>Pricing models vary, but most bilingual MSPs in Tokyo charge either per user per month or a fixed monthly retainer. Per-user pricing typically ranges from 8,000 to 20,000 JPY per user per month depending on scope - whether it includes 24/7 coverage, onsite visits, security tooling, and hardware lifecycle management. Fully outsourced IT for a 50-person office generally costs far less than a single full-time bilingual IT hire, which is why most foreign SMEs in Japan outsource.</p>
+
+      <h2>How to Evaluate a Provider: A Practical Checklist</h2>
+      <ol>
+        <li>Are English speakers available on every helpdesk shift, including nights and weekends?</li>
+        <li>Is same-day onsite dispatch available in central Tokyo and the wider Kanto area?</li>
+        <li>Can they show SLA definitions and actual response-time performance?</li>
+        <li>Do they hold or align with ISO 27001, and can they support APPI obligations?</li>
+        <li>Can they handle the full lifecycle - procurement, deployment, support, and certified disposal?</li>
+        <li>Will you receive monthly reporting in English that headquarters can consume directly?</li>
+      </ol>
+
+      <h2>Why Companies Choose AKRIN</h2>
+      <p>AKRIN K.K. is a Tokyo-based managed services provider built specifically for this gap in the market. Our engineers work natively in both English and Japanese, our <a href="/services/it-managed-services">managed IT services</a> include 24/7 monitoring and helpdesk with English speakers on every shift, and we provide same-day onsite response across the Kanto region. From cloud migrations and Wi-Fi design to certified IT asset disposition, the full technology lifecycle is covered under one agreement - with documentation your headquarters can actually read.</p>
+
+      <h2>Get Started</h2>
+      <p>If your company needs dependable English-speaking IT support in Tokyo, we are happy to discuss your environment - current pain points, upcoming projects, or a full managed services transition. <a href="/contact-form">Book a free consultation</a> and we will respond within one business day, in English or Japanese, whichever you prefer.</p>
+    `,
+    author: "AKRIN Editorial Team",
+    authorRole: "IT Services",
+    authorBio: "The AKRIN editorial team writes practical guides on IT infrastructure, security, and managed services for businesses operating in Japan.",
+    date: "2026-07-13",
+    readTime: "8 min read",
+    category: "IT Support",
+    tags: ["IT Support", "Tokyo", "Bilingual", "Managed Services", "Japan"],
+    relatedPosts: [
+      { slug: "ai-transforming-it-support", title: "How AI is Transforming IT Support Services in Japan 2025" },
+      { slug: "future-of-it-infrastructure-japan", title: "The Future of IT Infrastructure in Japan 2025" },
+      { slug: "remote-work-security-guide", title: "Complete Guide to Remote Work Security" }
+    ]
+  },
   "future-of-it-infrastructure-japan": {
     id: 1,
     slug: "future-of-it-infrastructure-japan",
