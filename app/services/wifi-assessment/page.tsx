@@ -1,5 +1,5 @@
 import { generatePageMetadata } from "@/lib/metadata-helpers"
-import { generateBreadcrumbSchema } from "@/lib/seo"
+import { generateBreadcrumbSchema, generateFAQSchema } from "@/lib/seo"
 import WifiAssessmentClient from "./client"
 
 export const metadata = generatePageMetadata({
@@ -64,6 +64,33 @@ const serviceSchema = {
   "additionalType": "https://schema.org/ProfessionalService"
 }
 
+const faqSchema = generateFAQSchema([
+  {
+    question: "How long does a WiFi assessment take?",
+    answer: "Assessment duration varies based on facility size and complexity, typically ranging from 1-3 days for standard offices to 1-2 weeks for large enterprise environments."
+  },
+  {
+    question: "What equipment do you use for assessments?",
+    answer: "We use professional-grade spectrum analyzers, wireless survey tools, and enterprise testing equipment to provide accurate and comprehensive assessments."
+  },
+  {
+    question: "Do you provide detailed reports?",
+    answer: "Yes, we provide comprehensive reports including heat maps, coverage analysis, performance metrics, and detailed recommendations for improvements."
+  },
+  {
+    question: "Can you assess existing wireless networks?",
+    answer: "Yes, we assess both existing wireless networks for optimization and new environments for wireless network planning and design."
+  },
+  {
+    question: "What types of facilities do you assess?",
+    answer: "We assess all types of facilities including offices, warehouses, manufacturing plants, retail spaces, healthcare facilities, and educational institutions."
+  },
+  {
+    question: "Do you identify security vulnerabilities?",
+    answer: "Yes, our assessments include wireless security evaluation, rogue access point detection, and identification of potential security risks."
+  }
+])
+
 export default function WifiAssessmentPage() {
   return (
     <>
@@ -77,6 +104,12 @@ export default function WifiAssessmentPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(serviceSchema)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema)
         }}
       />
       <WifiAssessmentClient />
